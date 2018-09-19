@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533D2152172A00668DAB /* AppDelegate.swift */; };
-		AC7953402152172A00668DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533F2152172A00668DAB /* ViewController.swift */; };
+		AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533F2152172A00668DAB /* InTheaterViewController.swift */; };
 		AC7953432152172A00668DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7953412152172A00668DAB /* Main.storyboard */; };
 		AC7953452152173000668DAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7953442152173000668DAB /* Assets.xcassets */; };
 		AC7953482152173000668DAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7953462152173000668DAB /* LaunchScreen.storyboard */; };
+		AC79535221527E7300668DAB /* MovieInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79535021527E7300668DAB /* MovieInfoTableViewCell.swift */; };
+		AC79535321527E7300668DAB /* MovieInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC79535121527E7300668DAB /* MovieInfoTableViewCell.xib */; };
 		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +22,13 @@
 		A74B07B3D1AEB87D24D1E589 /* Pods-MovieBuff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.debug.xcconfig"; sourceTree = "<group>"; };
 		AC79533A2152172A00668DAB /* MovieBuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC79533D2152172A00668DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC79533F2152172A00668DAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC79533F2152172A00668DAB /* InTheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterViewController.swift; sourceTree = "<group>"; };
 		AC7953422152172A00668DAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC7953442152173000668DAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC7953472152173000668DAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC7953492152173000668DAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC79535021527E7300668DAB /* MovieInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoTableViewCell.swift; sourceTree = "<group>"; };
+		AC79535121527E7300668DAB /* MovieInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieInfoTableViewCell.xib; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,8 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
-				AC79533F2152172A00668DAB /* ViewController.swift */,
+				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
 				AC7953412152172A00668DAB /* Main.storyboard */,
+				AC79535021527E7300668DAB /* MovieInfoTableViewCell.swift */,
+				AC79535121527E7300668DAB /* MovieInfoTableViewCell.xib */,
 				AC7953442152173000668DAB /* Assets.xcassets */,
 				AC7953462152173000668DAB /* LaunchScreen.storyboard */,
 				AC7953492152173000668DAB /* Info.plist */,
@@ -150,6 +156,7 @@
 			files = (
 				AC7953482152173000668DAB /* LaunchScreen.storyboard in Resources */,
 				AC7953452152173000668DAB /* Assets.xcassets in Resources */,
+				AC79535321527E7300668DAB /* MovieInfoTableViewCell.xib in Resources */,
 				AC7953432152172A00668DAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,7 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC7953402152172A00668DAB /* ViewController.swift in Sources */,
+				AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */,
+				AC79535221527E7300668DAB /* MovieInfoTableViewCell.swift in Sources */,
 				AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
