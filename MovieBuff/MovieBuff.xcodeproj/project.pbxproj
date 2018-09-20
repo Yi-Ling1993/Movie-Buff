@@ -14,6 +14,9 @@
 		AC7953482152173000668DAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7953462152173000668DAB /* LaunchScreen.storyboard */; };
 		AC79535221527E7300668DAB /* MovieInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79535021527E7300668DAB /* MovieInfoTableViewCell.swift */; };
 		AC79535321527E7300668DAB /* MovieInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC79535121527E7300668DAB /* MovieInfoTableViewCell.xib */; };
+		AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7953542153511400668DAB /* TheaterListViewController.swift */; };
+		AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */; };
+		AC79535921538B2700668DAB /* LocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */; };
 		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		AC7953492152173000668DAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC79535021527E7300668DAB /* MovieInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoTableViewCell.swift; sourceTree = "<group>"; };
 		AC79535121527E7300668DAB /* MovieInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieInfoTableViewCell.xib; sourceTree = "<group>"; };
+		AC7953542153511400668DAB /* TheaterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListViewController.swift; sourceTree = "<group>"; };
+		AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,11 +89,14 @@
 			isa = PBXGroup;
 			children = (
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
-				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
 				AC7953412152172A00668DAB /* Main.storyboard */,
+				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
+				AC7953542153511400668DAB /* TheaterListViewController.swift */,
+				AC7953442152173000668DAB /* Assets.xcassets */,
+				AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */,
+				AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */,
 				AC79535021527E7300668DAB /* MovieInfoTableViewCell.swift */,
 				AC79535121527E7300668DAB /* MovieInfoTableViewCell.xib */,
-				AC7953442152173000668DAB /* Assets.xcassets */,
 				AC7953462152173000668DAB /* LaunchScreen.storyboard */,
 				AC7953492152173000668DAB /* Info.plist */,
 			);
@@ -155,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC7953482152173000668DAB /* LaunchScreen.storyboard in Resources */,
+				AC79535921538B2700668DAB /* LocationCollectionViewCell.xib in Resources */,
 				AC7953452152173000668DAB /* Assets.xcassets in Resources */,
 				AC79535321527E7300668DAB /* MovieInfoTableViewCell.xib in Resources */,
 				AC7953432152172A00668DAB /* Main.storyboard in Resources */,
@@ -208,6 +218,8 @@
 			files = (
 				AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */,
 				AC79535221527E7300668DAB /* MovieInfoTableViewCell.swift in Sources */,
+				AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */,
+				AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */,
 				AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
