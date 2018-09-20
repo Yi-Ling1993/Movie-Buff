@@ -9,10 +9,33 @@
 import UIKit
 
 class InTheaterViewController: UIViewController {
+    
+    @IBOutlet weak var infoTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let infoNibs = UINib(nibName: "MovieInfoTableViewCell", bundle: nil)
+        infoTableView.register(infoNibs, forCellReuseIdentifier: "InfoCell")
+    }
+}
+
+extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let infoCell = infoTableView.dequeueReusableCell(
+            withIdentifier: "InfoCell",
+            for: indexPath as IndexPath)
+            as? MovieInfoTableViewCell else {
+                return UITableViewCell()
+        }
+        
+        return infoCell
     }
 }
 

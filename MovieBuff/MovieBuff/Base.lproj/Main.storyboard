@@ -76,10 +76,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLa-8P-j9I">
-                                <rect key="frame" x="25" y="607" width="150" height="40"/>
+                                <rect key="frame" x="20" y="617" width="120" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Xot-vB-o0A"/>
-                                    <constraint firstAttribute="width" constant="150" id="my9-iJ-GdQ"/>
+                                    <constraint firstAttribute="height" constant="35" id="Xot-vB-o0A"/>
+                                    <constraint firstAttribute="width" constant="120" id="my9-iJ-GdQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
                                 <state key="normal" title="已看過">
@@ -98,11 +98,11 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTL-iF-t0b">
-                                <rect key="frame" x="200" y="607" width="150" height="40"/>
+                                <rect key="frame" x="160" y="617" width="120" height="35"/>
                                 <color key="backgroundColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="B1K-OF-ZXL"/>
-                                    <constraint firstAttribute="height" constant="40" id="fSf-66-Ul4"/>
+                                    <constraint firstAttribute="width" constant="120" id="B1K-OF-ZXL"/>
+                                    <constraint firstAttribute="height" constant="35" id="fSf-66-Ul4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
                                 <state key="normal" title="加至收藏">
@@ -121,18 +121,31 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-vc-MWT">
-                                <rect key="frame" x="0.0" y="84" width="375" height="238"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="248"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-vp-8Bk">
-                                <rect key="frame" x="0.0" y="322" width="375" height="280"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-vp-8Bk">
+                                <rect key="frame" x="0.0" y="332" width="375" height="275"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zsI-6j-A48"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Xoc-ge-eBb"/>
+                                </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOV-Vu-yfe">
+                                <rect key="frame" x="300" y="616" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Gnc-c0-JvL"/>
+                                    <constraint firstAttribute="width" constant="35" id="xNE-LP-GW5"/>
+                                </constraints>
+                                <state key="normal" image="clapperboard"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="x6C-8f-SdC" firstAttribute="centerY" secondItem="XMV-mE-NrZ" secondAttribute="centerY" id="2q3-c2-pL8"/>
-                            <constraint firstItem="yTL-iF-t0b" firstAttribute="top" secondItem="Kdn-vp-8Bk" secondAttribute="bottom" constant="5" id="5WK-U7-MSq"/>
+                            <constraint firstItem="yTL-iF-t0b" firstAttribute="leading" secondItem="SLa-8P-j9I" secondAttribute="trailing" constant="20" id="4Ix-7L-Uh0"/>
+                            <constraint firstItem="yTL-iF-t0b" firstAttribute="top" secondItem="Kdn-vp-8Bk" secondAttribute="bottom" constant="10" id="5WK-U7-MSq"/>
                             <constraint firstItem="Kdn-vp-8Bk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Au-rS-fU5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kdn-vp-8Bk" secondAttribute="trailing" id="9bE-pv-2Du"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2LI-L8-IA9" secondAttribute="trailing" constant="20" id="D6R-MG-csj"/>
@@ -142,26 +155,31 @@
                             <constraint firstItem="f9Y-fZ-qUF" firstAttribute="centerY" secondItem="2LI-L8-IA9" secondAttribute="centerY" id="O63-Lp-ZC3"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PdH-4O-90X"/>
                             <constraint firstItem="x6C-8f-SdC" firstAttribute="leading" secondItem="XMV-mE-NrZ" secondAttribute="trailing" constant="20" id="QCt-jd-QJ1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTL-iF-t0b" secondAttribute="trailing" constant="25" id="QQj-8d-4Ru"/>
                             <constraint firstItem="2LI-L8-IA9" firstAttribute="leading" secondItem="x6C-8f-SdC" secondAttribute="trailing" constant="8" id="TwY-az-tLV"/>
-                            <constraint firstItem="SLa-8P-j9I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="VSm-RS-HIx"/>
+                            <constraint firstItem="SLa-8P-j9I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VSm-RS-HIx"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wok-Ff-U4J"/>
                             <constraint firstItem="XMV-mE-NrZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="ewT-QV-cyt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LOV-Vu-yfe" secondAttribute="bottom" constant="16" id="iyd-Ic-hru"/>
                             <constraint firstItem="2LI-L8-IA9" firstAttribute="leading" secondItem="f9Y-fZ-qUF" secondAttribute="trailing" constant="-25" id="oY2-Eq-EKz"/>
                             <constraint firstItem="yTL-iF-t0b" firstAttribute="bottom" secondItem="SLa-8P-j9I" secondAttribute="bottom" id="via-9d-6co"/>
+                            <constraint firstItem="LOV-Vu-yfe" firstAttribute="leading" secondItem="yTL-iF-t0b" secondAttribute="trailing" constant="20" id="wDo-FB-u0S"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="top" secondItem="2LI-L8-IA9" secondAttribute="bottom" constant="21" id="yA0-lj-mJC"/>
                             <constraint firstItem="2LI-L8-IA9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="yth-qy-ppj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SLa-8P-j9I" secondAttribute="bottom" constant="20" id="zLp-QA-bWC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SLa-8P-j9I" secondAttribute="bottom" constant="15" id="zLp-QA-bWC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="infoTableView" destination="Kdn-vp-8Bk" id="6IM-VT-w7w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="56.799999999999997" y="27.436281859070466"/>
+            <point key="canvasLocation" x="-623.20000000000005" y="-17.541229385307346"/>
         </scene>
     </scenes>
     <resources>
+        <image name="clapperboard" width="512" height="512"/>
         <image name="listing-option" width="256" height="256"/>
         <image name="search-2" width="256" height="256"/>
     </resources>
