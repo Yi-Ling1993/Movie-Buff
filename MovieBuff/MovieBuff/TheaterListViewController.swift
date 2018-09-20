@@ -11,6 +11,7 @@ import UIKit
 class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var locationCollectionView: UICollectionView!
+    @IBOutlet weak var theaterTableView: UITableView!
     
     let location: [String] = ["全部", "台北東區", "台北西區", "台北北區", "台北南區"]
 
@@ -61,4 +62,29 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
         
         return CGSize(width: 100, height: locationCollectionView.frame.height)
     }
+}
+
+extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let theaterCell = theaterTableView.dequeueReusableCell(
+            withIdentifier: "TheaterCell",
+            for: indexPath as IndexPath)
+            as? TheaterTableViewCell else {
+                return UITableViewCell()
+        }
+        
+        return theaterCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    
 }
