@@ -12,11 +12,17 @@ class TheaterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backGroundCardView: UIView!
     
+    @IBOutlet weak var theaterName: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var pinButton: UIButton!
+    @IBOutlet weak var navigationButton: UIButton!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         backGroundCardView.backgroundColor = UIColor(red: 77/255, green: 75/255, blue: 75/255, alpha: 1)
-        backGroundCardView.layer.cornerRadius = 3
+        backGroundCardView.layer.cornerRadius = 2
         backGroundCardView.layer.masksToBounds = false
         
         backGroundCardView.layer.shadowColor = UIColor.white.withAlphaComponent(0.5).cgColor

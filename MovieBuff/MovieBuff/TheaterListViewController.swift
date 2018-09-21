@@ -13,6 +13,14 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
     @IBOutlet weak var locationCollectionView: UICollectionView!
     @IBOutlet weak var theaterTableView: UITableView!
     
+    let data = Data()
+    
+//    var theaterInfo: [TheaterInfo] = [
+//        TheaterInfo(name: "台北信義威秀", address: "台北市信義區松壽路16,18號", region: "台北東區"),
+//        TheaterInfo(name: "國賓微風影城", address: "台北市松山區復興南路一段39號(微風廣場7樓)", region: "台北東區"),
+//        TheaterInfo(name: "誠品電影院", address: "台北市信義區菸廠路88號B2", region: "台北東區")
+//    ]
+    
     let location: [String] = ["全部", "台北東區", "台北西區", "台北北區", "台北南區"]
 
     override func viewDidLoad() {
@@ -67,7 +75,7 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
 extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return Data.instance.theaterInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -78,6 +86,9 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             as? TheaterTableViewCell else {
                 return UITableViewCell()
         }
+        
+        theaterCell.theaterName.text = Data.instance.theaterInfo[indexPath.row].name
+        theaterCell.addressLabel.text = Data.instance.theaterInfo[indexPath.row].address
         
         return theaterCell
     }

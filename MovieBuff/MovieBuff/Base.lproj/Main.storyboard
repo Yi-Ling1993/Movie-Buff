@@ -266,54 +266,60 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2d-xy-ExV">
-                                                    <rect key="frame" x="8" y="8" width="359" height="84"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="15" y="8" width="345" height="84"/>
+                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="誠品電影院" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x4-cU-d3v">
-                                                    <rect key="frame" x="20" y="18" width="100" height="28"/>
+                                                    <rect key="frame" x="25" y="18" width="100" height="28"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="20"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maps-and-flags" translatesAutoresizingMaskIntoConstraints="NO" id="Owa-aI-PFa">
-                                                    <rect key="frame" x="128" y="23" width="18" height="18"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdH-i5-yI1">
+                                                    <rect key="frame" x="133" y="23" width="18" height="18"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="18" id="XeT-Ii-aaG"/>
-                                                        <constraint firstAttribute="height" constant="18" id="zip-dL-1EQ"/>
+                                                        <constraint firstAttribute="height" constant="18" id="N8q-Ht-nhA"/>
+                                                        <constraint firstAttribute="width" constant="18" id="S3b-Za-Ga9"/>
                                                     </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="push-pin" translatesAutoresizingMaskIntoConstraints="NO" id="jV8-ze-BBx">
-                                                    <rect key="frame" x="335" y="23" width="20" height="20"/>
+                                                    <state key="normal" image="maps-and-flags"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-Gs-4zK">
+                                                    <rect key="frame" x="330" y="20" width="20" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="4mN-tT-M56"/>
-                                                        <constraint firstAttribute="height" constant="20" id="QXb-M5-E4V"/>
+                                                        <constraint firstAttribute="height" constant="20" id="fEJ-DD-SMl"/>
+                                                        <constraint firstAttribute="width" constant="20" id="swA-lj-aKS"/>
                                                     </constraints>
-                                                </imageView>
+                                                    <state key="normal" image="push-pin"/>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北市信義區菸廠路80號B2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D19-ju-xio">
-                                                    <rect key="frame" x="20" y="56" width="188" height="21"/>
+                                                    <rect key="frame" x="25" y="56" width="188" height="21"/>
                                                     <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
                                                     <color key="textColor" red="0.69411764705882351" green="0.69411764705882351" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="V2d-xy-ExV" firstAttribute="leading" secondItem="Wnz-px-Wm1" secondAttribute="leading" constant="8" id="2PY-aJ-gCl"/>
-                                                <constraint firstItem="jV8-ze-BBx" firstAttribute="top" secondItem="Wnz-px-Wm1" secondAttribute="topMargin" constant="12" id="5xT-Ti-etM"/>
+                                                <constraint firstItem="V2d-xy-ExV" firstAttribute="leading" secondItem="Wnz-px-Wm1" secondAttribute="leading" constant="15" id="2PY-aJ-gCl"/>
                                                 <constraint firstItem="D19-ju-xio" firstAttribute="leading" secondItem="3x4-cU-d3v" secondAttribute="leading" id="AtT-5H-9qR"/>
-                                                <constraint firstItem="Owa-aI-PFa" firstAttribute="leading" secondItem="3x4-cU-d3v" secondAttribute="trailing" constant="8" id="Cf7-5r-NqC"/>
                                                 <constraint firstItem="V2d-xy-ExV" firstAttribute="top" secondItem="Wnz-px-Wm1" secondAttribute="top" constant="8" id="DlG-2L-NOU"/>
-                                                <constraint firstItem="Owa-aI-PFa" firstAttribute="centerY" secondItem="3x4-cU-d3v" secondAttribute="centerY" id="Eim-qJ-siK"/>
+                                                <constraint firstItem="PdH-i5-yI1" firstAttribute="leading" secondItem="3x4-cU-d3v" secondAttribute="trailing" constant="8" id="EH0-0y-sHN"/>
+                                                <constraint firstItem="V2d-xy-ExV" firstAttribute="trailing" secondItem="Rie-Gs-4zK" secondAttribute="trailing" constant="10" id="Llj-ws-IcB"/>
                                                 <constraint firstItem="D19-ju-xio" firstAttribute="top" secondItem="3x4-cU-d3v" secondAttribute="bottom" constant="10" id="Y4c-sM-ajP"/>
-                                                <constraint firstItem="3x4-cU-d3v" firstAttribute="leading" secondItem="Wnz-px-Wm1" secondAttribute="leading" constant="20" id="e6l-pK-cm9"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="jV8-ze-BBx" secondAttribute="trailing" constant="5" id="esD-cH-UAz"/>
+                                                <constraint firstItem="3x4-cU-d3v" firstAttribute="leading" secondItem="Wnz-px-Wm1" secondAttribute="leading" constant="25" id="e6l-pK-cm9"/>
+                                                <constraint firstItem="Rie-Gs-4zK" firstAttribute="top" secondItem="V2d-xy-ExV" secondAttribute="top" constant="12" id="iq4-qh-qid"/>
                                                 <constraint firstItem="3x4-cU-d3v" firstAttribute="top" secondItem="Wnz-px-Wm1" secondAttribute="top" constant="18" id="mMT-Gy-rd9"/>
+                                                <constraint firstItem="PdH-i5-yI1" firstAttribute="centerY" secondItem="3x4-cU-d3v" secondAttribute="centerY" id="t4j-pt-0wB"/>
                                                 <constraint firstAttribute="bottom" secondItem="V2d-xy-ExV" secondAttribute="bottom" constant="8" id="upm-NH-JlW"/>
-                                                <constraint firstAttribute="trailing" secondItem="V2d-xy-ExV" secondAttribute="trailing" constant="8" id="v0f-te-AMZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="V2d-xy-ExV" secondAttribute="trailing" constant="15" id="v0f-te-AMZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="addressLabel" destination="D19-ju-xio" id="7Mz-5G-6n9"/>
                                             <outlet property="backGroundCardView" destination="V2d-xy-ExV" id="4Ea-NA-sL2"/>
+                                            <outlet property="navigationButton" destination="PdH-i5-yI1" id="fKn-6r-dEx"/>
+                                            <outlet property="pinButton" destination="Rie-Gs-4zK" id="rea-bD-h8p"/>
+                                            <outlet property="theaterName" destination="3x4-cU-d3v" id="TGK-qN-wdm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -351,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RBa-Yg-o55" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-623.20000000000005" y="-17.541229385307346"/>
+            <point key="canvasLocation" x="-447" y="-29"/>
         </scene>
     </scenes>
     <resources>
