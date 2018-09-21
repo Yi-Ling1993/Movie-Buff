@@ -15,9 +15,9 @@ struct TheaterInfo {
     let region: String
 }
 
-class Data {
+class TheaterData {
     
-    static let instance = Data()
+    static let instance = TheaterData()
     
     let theaterInfo: [TheaterInfo] = [
         TheaterInfo(name: "台北信義威秀", address: "台北市信義區松壽路16,18號", region: "台北東區"),
