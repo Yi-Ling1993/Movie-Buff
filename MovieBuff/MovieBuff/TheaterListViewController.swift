@@ -17,7 +17,7 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
     
     let data = TheaterData()
     
-    let location: [String] = ["全部", "台北東區", "台北西區", "台北北區", "台北南區"]
+    let location: [String] = ["全部地區", "台北東區", "台北西區", "台北北區", "台北南區"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
