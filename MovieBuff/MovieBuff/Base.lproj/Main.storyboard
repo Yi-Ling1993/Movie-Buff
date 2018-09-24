@@ -548,13 +548,17 @@
                                 <rect key="frame" x="0.0" y="447" width="375" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowtimeCell" rowHeight="91" id="aUr-Ja-9CL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShowtimeCell" rowHeight="91" id="aUr-Ja-9CL" customClass="ShowtimeTableViewCell" customModule="MovieBuff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aUr-Ja-9CL" id="Bq5-jW-WAN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-Au-pOx">
+                                                    <rect key="frame" x="15" y="8" width="345" height="75"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 月 20 日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWK-8I-atf">
                                                     <rect key="frame" x="25" y="11" width="77" height="23"/>
                                                     <constraints>
@@ -576,10 +580,17 @@
                                                 <constraint firstItem="xWK-8I-atf" firstAttribute="top" secondItem="Bq5-jW-WAN" secondAttribute="top" constant="11" id="2DW-tJ-oFa"/>
                                                 <constraint firstItem="wYQ-ZJ-BNe" firstAttribute="leading" secondItem="xWK-8I-atf" secondAttribute="leading" id="8ug-4A-lGS"/>
                                                 <constraint firstItem="xWK-8I-atf" firstAttribute="leading" secondItem="Bq5-jW-WAN" secondAttribute="leading" constant="25" id="FaM-7D-EbF"/>
+                                                <constraint firstItem="cuT-Au-pOx" firstAttribute="leading" secondItem="Bq5-jW-WAN" secondAttribute="leading" constant="15" id="GP7-Ob-a59"/>
                                                 <constraint firstItem="wYQ-ZJ-BNe" firstAttribute="top" secondItem="xWK-8I-atf" secondAttribute="bottom" constant="10" id="NiV-s3-Ups"/>
+                                                <constraint firstAttribute="trailing" secondItem="cuT-Au-pOx" secondAttribute="trailing" constant="15" id="Qdl-6i-nv8"/>
+                                                <constraint firstAttribute="bottom" secondItem="cuT-Au-pOx" secondAttribute="bottom" constant="8" id="rDb-al-T2A"/>
+                                                <constraint firstItem="cuT-Au-pOx" firstAttribute="top" secondItem="Bq5-jW-WAN" secondAttribute="top" constant="8" id="vGz-a4-3QE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="backGroundView" destination="cuT-Au-pOx" id="93j-Iu-NA0"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
