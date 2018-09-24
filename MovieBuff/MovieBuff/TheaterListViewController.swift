@@ -95,6 +95,14 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     
     @objc func filterLocation(sender: UIButton) {
         print(sender.tag)
+        
+        
+        sender.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+        sender.layer.borderWidth = 2
+        
+    
+        
+        
 
         if sender.titleLabel?.text != "全部" {
             
@@ -109,6 +117,7 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
         print(filteredRegion)
+        
 
         }
     
