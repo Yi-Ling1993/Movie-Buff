@@ -846,6 +846,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KJq-cR-i9r">
+                                <rect key="frame" x="0.0" y="125.5" width="375" height="540.5"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="igE-K6-sOh" id="EST-qv-1GS"/>
+                                    <outlet property="delegate" destination="igE-K6-sOh" id="edM-aJ-tGS"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOv-kI-89T">
                                 <rect key="frame" x="15" y="35" width="25" height="25"/>
                                 <constraints>
@@ -927,6 +935,9 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="indexChange:" destination="igE-K6-sOh" eventType="valueChanged" id="gSJ-BN-k89"/>
+                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUz-XZ-jeY">
                                 <rect key="frame" x="0.0" y="125.5" width="375" height="241.5"/>
@@ -944,8 +955,10 @@
                             <constraint firstItem="nUz-XZ-jeY" firstAttribute="top" secondItem="dvk-7g-2R5" secondAttribute="bottom" constant="15" id="OBJ-UA-3HB"/>
                             <constraint firstItem="m4j-Ul-Ksj" firstAttribute="bottom" secondItem="nUz-XZ-jeY" secondAttribute="bottom" constant="300" id="STS-Ev-evR"/>
                             <constraint firstItem="m4j-Ul-Ksj" firstAttribute="trailing" secondItem="dvk-7g-2R5" secondAttribute="trailing" constant="20" id="UrP-Hv-kXK"/>
+                            <constraint firstItem="KJq-cR-i9r" firstAttribute="leading" secondItem="m4j-Ul-Ksj" secondAttribute="leading" id="VtK-ln-25g"/>
                             <constraint firstItem="nOv-kI-89T" firstAttribute="top" secondItem="m4j-Ul-Ksj" secondAttribute="top" constant="15" id="a3C-bK-3fJ"/>
                             <constraint firstItem="m4j-Ul-Ksj" firstAttribute="bottom" secondItem="3v5-7q-yYq" secondAttribute="bottom" id="aXL-Kn-Jwc"/>
+                            <constraint firstItem="KJq-cR-i9r" firstAttribute="top" secondItem="dvk-7g-2R5" secondAttribute="bottom" constant="15" id="amn-CY-eyE"/>
                             <constraint firstItem="dvk-7g-2R5" firstAttribute="leading" secondItem="m4j-Ul-Ksj" secondAttribute="leading" constant="20" id="cqQ-uc-QAZ"/>
                             <constraint firstItem="nOv-kI-89T" firstAttribute="leading" secondItem="m4j-Ul-Ksj" secondAttribute="leading" constant="15" id="dKJ-CR-yvg"/>
                             <constraint firstItem="dvk-7g-2R5" firstAttribute="centerX" secondItem="n0B-BH-kEH" secondAttribute="centerX" id="gdt-oa-oWD"/>
@@ -955,18 +968,22 @@
                             <constraint firstItem="qcY-7h-gOW" firstAttribute="leading" secondItem="Rrl-jH-Ess" secondAttribute="trailing" constant="-25" id="rXh-Xj-RzY"/>
                             <constraint firstItem="nUz-XZ-jeY" firstAttribute="trailing" secondItem="m4j-Ul-Ksj" secondAttribute="trailing" id="rbc-EV-r64"/>
                             <constraint firstItem="qcY-7h-gOW" firstAttribute="top" secondItem="m4j-Ul-Ksj" secondAttribute="top" constant="15" id="uJ2-wn-Yae"/>
+                            <constraint firstAttribute="bottom" secondItem="KJq-cR-i9r" secondAttribute="bottom" constant="1" id="uWI-CP-drR"/>
+                            <constraint firstItem="KJq-cR-i9r" firstAttribute="trailing" secondItem="m4j-Ul-Ksj" secondAttribute="trailing" id="xD3-7E-6VP"/>
                             <constraint firstItem="Rrl-jH-Ess" firstAttribute="centerY" secondItem="qcY-7h-gOW" secondAttribute="centerY" id="z3C-24-A7t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="m4j-Ul-Ksj"/>
                     </view>
                     <connections>
                         <outlet property="collectedTableView" destination="3v5-7q-yYq" id="U7C-YB-aRK"/>
+                        <outlet property="posterView" destination="nUz-XZ-jeY" id="A1l-PB-nOw"/>
+                        <outlet property="seenTableView" destination="KJq-cR-i9r" id="p7y-MK-3Wb"/>
                         <outlet property="segmentControl" destination="dvk-7g-2R5" id="xgH-1C-hE5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9UW-sL-jQ3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-153" y="-251"/>
+            <point key="canvasLocation" x="-154.40000000000001" y="-251.42428785607197"/>
         </scene>
     </scenes>
     <resources>

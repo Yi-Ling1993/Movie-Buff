@@ -12,7 +12,29 @@ class CollectionViewController: UIViewController {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    @IBOutlet weak var seenTableView: UITableView!
+    
     @IBOutlet weak var collectedTableView: UITableView!
+    
+    @IBOutlet weak var posterView: UIView!
+    
+    @IBAction func indexChange(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+            
+        case 0:
+            collectedTableView.isHidden = false
+            posterView.isHidden = false
+            seenTableView.isHidden = true
+        case 1:
+            collectedTableView.isHidden = true
+            posterView.isHidden = true
+            seenTableView.isHidden = false
+
+        default:
+            break;
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +45,22 @@ class CollectionViewController: UIViewController {
         
         let collectedNibs = UINib(nibName: "CollectedTableViewCell", bundle: nil)
         collectedTableView.register(collectedNibs, forCellReuseIdentifier: "CollectedCell")
+        
+        let seenNibs = UINib(nibName: "SeenTableViewCell", bundle: nil)
+        seenTableView.register(seenNibs, forCellReuseIdentifier: "SeenCell")
     }
 }
 
 extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == collectedTableView {
+            return 1
+        } else if tableView == seenTableView {
+            return 5
+        }
+        
         return 1
     }
     
@@ -41,6 +73,19 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
         
-        return collectedCell
+        guard let seenCell = seenTableView.dequeueReusableCell(
+            withIdentifier: "SeenCell",
+            for: indexPath as IndexPath)
+            as? SeenTableViewCell else {
+                return UITableViewCell()
+        }
+        
+        if tableView == collectedTableView {
+            return collectedCell
+        } else if tableView == seenTableView {
+            return seenCell
+        }
+        
+        return UITableViewCell()
     }
 }
