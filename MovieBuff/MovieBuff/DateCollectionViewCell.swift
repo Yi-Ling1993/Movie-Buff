@@ -9,10 +9,14 @@
 import UIKit
 
 class DateCollectionViewCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var dateButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        dateButton.clipsToBounds = true
+        dateButton.layer.cornerRadius = 4
     }
 
 }

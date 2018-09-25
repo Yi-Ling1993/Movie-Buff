@@ -49,6 +49,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="207" height="87"/>
+            <connections>
+                <outlet property="dateButton" destination="kxR-bI-sz2" id="E2p-O1-LAL"/>
+            </connections>
             <point key="canvasLocation" x="263.19999999999999" y="162.3688155922039"/>
         </collectionViewCell>
     </objects>

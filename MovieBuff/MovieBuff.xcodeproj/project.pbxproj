@@ -14,6 +14,7 @@
 		AC0718B721594B6C003061AC /* MovieShowtimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */; };
 		AC0718BA21594D8A003061AC /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718B821594D8A003061AC /* DateCollectionViewCell.swift */; };
 		AC0718BB21594D8A003061AC /* DateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0718B921594D8A003061AC /* DateCollectionViewCell.xib */; };
+		AC0718BD2159B63B003061AC /* CinemaShowtimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */; };
 		AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533D2152172A00668DAB /* AppDelegate.swift */; };
 		AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533F2152172A00668DAB /* InTheaterViewController.swift */; };
 		AC7953432152172A00668DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7953412152172A00668DAB /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieShowtimeViewController.swift; sourceTree = "<group>"; };
 		AC0718B821594D8A003061AC /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC0718B921594D8A003061AC /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCollectionViewCell.xib; sourceTree = "<group>"; };
+		AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaShowtimeTableViewCell.swift; sourceTree = "<group>"; };
 		AC79533A2152172A00668DAB /* MovieBuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC79533D2152172A00668DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC79533F2152172A00668DAB /* InTheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */,
 				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
 				AC7953442152173000668DAB /* Assets.xcassets */,
+				AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */,
 				AC0718AE21592ECA003061AC /* ShowtimeTableViewCell.swift */,
 				AC0718A82153C348003061AC /* TheaterTableViewCell.swift */,
 				AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */,
@@ -246,6 +249,7 @@
 				AC79535221527E7300668DAB /* MovieInfoTableViewCell.swift in Sources */,
 				AC0718AF21592ECA003061AC /* ShowtimeTableViewCell.swift in Sources */,
 				AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */,
+				AC0718BD2159B63B003061AC /* CinemaShowtimeTableViewCell.swift in Sources */,
 				AC0718AB2154D944003061AC /* TheaterData.swift in Sources */,
 				AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */,
 				AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */,
