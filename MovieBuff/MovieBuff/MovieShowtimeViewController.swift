@@ -49,7 +49,7 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
 
         } else if collectionView == dateCollectionView {
-            return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+            return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
 
         }
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -98,8 +98,6 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             return dateCell
         }
         
-        
-       
         return UICollectionViewCell()
     }
     

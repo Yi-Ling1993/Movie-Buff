@@ -17,6 +17,7 @@ class DateCollectionViewCell: UICollectionViewCell {
 
         dateButton.clipsToBounds = true
         dateButton.layer.cornerRadius = 4
+        
     }
 
 }
