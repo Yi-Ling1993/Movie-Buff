@@ -89,22 +89,19 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         
         theaterCell.theaterName.text = filteredRegion[indexPath.row].name
         theaterCell.addressLabel.text = filteredRegion[indexPath.row].address
+        theaterCell.navigationButton.tag = indexPath.row
+        theaterCell.navigationButton.addTarget(self, action: #selector(navigate(sender:)), for: .touchUpInside)
     
         return theaterCell
     }
     
     @objc func filterLocation(sender: UIButton) {
         print(sender.tag)
-        
-        
+    
         sender.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
         sender.layer.borderWidth = 2
         
-    
-        
-        
-
-        if sender.titleLabel?.text != "全部" {
+        if sender.titleLabel?.text != "全部地區" {
             
             filteredRegion = TheaterData.instance.theaterInfo.filter{$0.region == sender.titleLabel?.text}
             
@@ -120,6 +117,23 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         
 
         }
+    
+    @objc func navigate(sender: UIButton) {
+        print(sender.tag)
+        
+        let lati = filteredRegion[sender.tag].latitude
+        let longti = filteredRegion[sender.tag].long
+        
+        let googleMapAppDeepLink = URL(string: "comgooglemaps://?saddr=&daddr=\(lati),\(longti)&directionsmode=driving")
+        
+        if UIApplication.shared.canOpenURL(googleMapAppDeepLink!) {
+            UIApplication.shared.open(googleMapAppDeepLink!, options: [:], completionHandler: nil)
+        } else {
+            // 若手機沒安裝 Google Map App 則導到 App Store(id443904275 為 Google Map App 的 ID)
+            let appStoreGoogleMapURL = URL(string: "itms-apps://itunes.apple.com/app/id585027354")!
+            UIApplication.shared.open(appStoreGoogleMapURL, options: [:], completionHandler: nil)
+        }
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
