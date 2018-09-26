@@ -169,11 +169,15 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             
             guard let cell = sender.superview?.superview as? TheaterTableViewCell else { return }
             
-            let indexPath = theaterTableView.indexPath(for: cell)
+            guard let indexPath = theaterTableView.indexPath(for: cell) else { return }
             
             print(indexPath)
             
-            theaterTableView.moveRow(at: indexPath!, to: IndexPath(row: 0, section: 0))
+            theaterTableView.moveRow(at: indexPath, to: IndexPath(row: 0, section: 0))
+            
+            TheaterData.instance.theaterInfo.remove(at: indexPath.row)
+            TheaterData.instance.theaterInfo.insert(filteredRegion[sender.tag], at: 0)
+            
         }
         
         
