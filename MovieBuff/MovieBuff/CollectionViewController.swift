@@ -64,6 +64,8 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let collectedCell = collectedTableView.dequeueReusableCell(

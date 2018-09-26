@@ -96,11 +96,17 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         
         if filteredRegion[indexPath.row].isPinned == true {
             theaterCell.pinButton.isSelected = true
+            
         } else {
             theaterCell.pinButton.isSelected = false
         }
+        
     
         return theaterCell
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     @objc func filterLocation(sender: UIButton) {
@@ -149,7 +155,6 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         
         filteredRegion[sender.tag].isPinned = sender.isSelected
         
-
         print(filteredRegion[sender.tag])
         
         for index in 0 ..< TheaterData.instance.theaterInfo.count {
@@ -160,7 +165,16 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             }
         }
         
-
+        if sender.isSelected == true {
+            
+            guard let cell = sender.superview?.superview as? TheaterTableViewCell else { return }
+            
+            let indexPath = theaterTableView.indexPath(for: cell)
+            
+            print(indexPath)
+            
+            theaterTableView.moveRow(at: indexPath!, to: IndexPath(row: 0, section: 0))
+        }
         
         
         }
