@@ -17,7 +17,6 @@ class TheaterTableViewCell: UITableViewCell {
     @IBOutlet weak var pinButton: UIButton!
     @IBOutlet weak var navigationButton: UIButton!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

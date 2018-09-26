@@ -90,7 +90,15 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         theaterCell.theaterName.text = filteredRegion[indexPath.row].name
         theaterCell.addressLabel.text = filteredRegion[indexPath.row].address
         theaterCell.navigationButton.tag = indexPath.row
+        theaterCell.pinButton.tag = indexPath.row
         theaterCell.navigationButton.addTarget(self, action: #selector(navigate(sender:)), for: .touchUpInside)
+        theaterCell.pinButton.addTarget(self, action: #selector(pin(sender:)), for: .touchUpInside)
+        
+        if filteredRegion[indexPath.row].isPinned == true {
+            theaterCell.pinButton.isSelected = true
+        } else {
+            theaterCell.pinButton.isSelected = false
+        }
     
         return theaterCell
     }
@@ -134,6 +142,28 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             UIApplication.shared.open(appStoreGoogleMapURL, options: [:], completionHandler: nil)
         }
     }
+    
+    @objc func pin(sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        filteredRegion[sender.tag].isPinned = sender.isSelected
+        
+
+        print(filteredRegion[sender.tag])
+        
+        for index in 0 ..< TheaterData.instance.theaterInfo.count {
+            
+            if filteredRegion[sender.tag].name == TheaterData.instance.theaterInfo[index].name {
+                
+                TheaterData.instance.theaterInfo[index].isPinned = filteredRegion[sender.tag].isPinned
+            }
+        }
+        
+
+        
+        
+        }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
