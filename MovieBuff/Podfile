@@ -8,6 +8,7 @@ target 'MovieBuff' do
   # Pods for MovieBuff
 pod 'SwiftLint'
 pod 'GoogleMaps'
-pod 'GooglePlaces' 
+pod 'GooglePlaces'
+pod 'WKAwesomeMenu'
 
 end

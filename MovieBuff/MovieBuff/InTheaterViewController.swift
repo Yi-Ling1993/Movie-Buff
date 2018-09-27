@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WKAwesomeMenu
 
 class InTheaterViewController: UIViewController {
     

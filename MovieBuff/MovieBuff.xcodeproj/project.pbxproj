@@ -155,6 +155,7 @@
 				AC7953382152172A00668DAB /* Resources */,
 				AC79534F2152194F00668DAB /* ShellScript */,
 				9AE388BEF9EBCDDDCFF6A11F /* [CP] Copy Pods Resources */,
+				906123632E50F268FA2BC6C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +218,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		906123632E50F268FA2BC6C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/WKAwesomeMenu/WKAwesomeMenu.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WKAwesomeMenu.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9AE388BEF9EBCDDDCFF6A11F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
