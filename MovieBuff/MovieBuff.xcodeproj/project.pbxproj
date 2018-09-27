@@ -21,6 +21,9 @@
 		AC0718C6215A6131003061AC /* SeenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718C4215A6130003061AC /* SeenTableViewCell.swift */; };
 		AC0718C7215A6131003061AC /* SeenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0718C5215A6130003061AC /* SeenTableViewCell.xib */; };
 		AC3B50E5215CA86000313E2E /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B50E4215CA86000313E2E /* AppStyle.swift */; };
+		AC3B5105215CBC9800313E2E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5104215CBC9800313E2E /* MenuItem.swift */; };
+		AC3B5107215CBD9000313E2E /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */; };
+		AC3B5109215CBDFE00313E2E /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5108215CBDFE00313E2E /* MenuTableViewController.swift */; };
 		AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533D2152172A00668DAB /* AppDelegate.swift */; };
 		AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533F2152172A00668DAB /* InTheaterViewController.swift */; };
 		AC7953432152172A00668DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7953412152172A00668DAB /* Main.storyboard */; };
@@ -51,6 +54,9 @@
 		AC0718C4215A6130003061AC /* SeenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeenTableViewCell.swift; sourceTree = "<group>"; };
 		AC0718C5215A6130003061AC /* SeenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeenTableViewCell.xib; sourceTree = "<group>"; };
 		AC3B50E4215CA86000313E2E /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		AC3B5104215CBC9800313E2E /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		AC3B5108215CBDFE00313E2E /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		AC79533A2152172A00668DAB /* MovieBuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC79533D2152172A00668DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC79533F2152172A00668DAB /* InTheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +124,9 @@
 			children = (
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
 				AC3B50E4215CA86000313E2E /* AppStyle.swift */,
+				AC3B5104215CBC9800313E2E /* MenuItem.swift */,
+				AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */,
+				AC3B5108215CBDFE00313E2E /* MenuTableViewController.swift */,
 				AC7953412152172A00668DAB /* Main.storyboard */,
 				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
 				AC7953542153511400668DAB /* TheaterListViewController.swift */,
@@ -228,10 +237,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/WKAwesomeMenu/WKAwesomeMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WKAwesomeMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,8 +308,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3B5105215CBC9800313E2E /* MenuItem.swift in Sources */,
 				AC0718BF215A36A7003061AC /* CollectionViewController.swift in Sources */,
 				AC0718C6215A6131003061AC /* SeenTableViewCell.swift in Sources */,
+				AC3B5109215CBDFE00313E2E /* MenuTableViewController.swift in Sources */,
 				AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */,
 				AC0718BA21594D8A003061AC /* DateCollectionViewCell.swift in Sources */,
 				AC0718B721594B6C003061AC /* MovieShowtimeViewController.swift in Sources */,
@@ -310,6 +323,7 @@
 				AC0718BD2159B63B003061AC /* CinemaShowtimeTableViewCell.swift in Sources */,
 				AC3B50E5215CA86000313E2E /* AppStyle.swift in Sources */,
 				AC0718AB2154D944003061AC /* TheaterData.swift in Sources */,
+				AC3B5107215CBD9000313E2E /* MenuTableViewCell.swift in Sources */,
 				AC0718C2215A4468003061AC /* CollectedTableViewCell.swift in Sources */,
 				AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */,
 				AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WKAwesomeMenu
 
 class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
@@ -19,13 +20,17 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
     
     let location: [String] = ["全部地區", "台北東區", "台北西區", "台北北區", "台北南區"]
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavigationBarItem()
-
+        setNavigationBarItem()        
+      
         let locationNibs = UINib(nibName: "LocationCollectionViewCell", bundle: nil)
+        
         locationCollectionView.register(locationNibs, forCellWithReuseIdentifier: "LocationCell")
+        
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -45,6 +50,7 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
         navigationItem.leftBarButtonItem = leftButton
         leftButton.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        menuButton.addTarget(self, action: #selector(TheaterListViewController.menu), for: .touchUpInside)
         
         let searchButton = UIButton()
         searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
@@ -55,6 +61,11 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
         reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
         reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
+        
+    }
+    
+    @objc func menu() {
+        self.openSideMenu()
         
     }
     

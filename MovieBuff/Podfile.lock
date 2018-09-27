@@ -6,12 +6,14 @@ PODS:
     - GoogleMaps/Base
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
+  - SnapKit (4.0.0)
   - SwiftLint (0.27.0)
   - WKAwesomeMenu (2.0.0)
 
 DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
+  - SnapKit (~> 4.0.0)
   - SwiftLint
   - WKAwesomeMenu
 
@@ -19,15 +21,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GoogleMaps
     - GooglePlaces
+    - SnapKit
     - SwiftLint
     - WKAwesomeMenu
 
 SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
   WKAwesomeMenu: 39d888f93705f63baadd4d7bda8513250c43b7ed
 
-PODFILE CHECKSUM: 5dbf43308444d4d294e46d3bfaaf04d403d1bb42
+PODFILE CHECKSUM: 30c14187da854b097b0e47e5d4531e7fcbe77045
 
 COCOAPODS: 1.5.3

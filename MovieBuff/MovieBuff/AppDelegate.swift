@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMaps
+import WKAwesomeMenu
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,9 +19,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey("AIzaSyD813UwWssk66FntLWLhWotasHUAl99080")
         
+        // 有 storyboard 就要用 storyboard 的初始化方法
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let rootVC = storyboard.instantiateViewController(withIdentifier: "TheaterList")
+        
+        let menuVC = MenuTableViewController()
+        
+        var options = WKAwesomeMenuOptions.defaultOptions()
+        options.backgroundImage = UIImage(named: "blur1-576x1024")
+        let awesomeMenu = WKAwesomeMenu(rootViewController: rootVC, menuViewController: menuVC, options: options)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = awesomeMenu
+        self.window?.makeKeyAndVisible()
         
         return true
     }
+    
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         
