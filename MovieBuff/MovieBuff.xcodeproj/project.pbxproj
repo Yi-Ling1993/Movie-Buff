@@ -20,6 +20,7 @@
 		AC0718C3215A4468003061AC /* CollectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0718C1215A4468003061AC /* CollectedTableViewCell.xib */; };
 		AC0718C6215A6131003061AC /* SeenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718C4215A6130003061AC /* SeenTableViewCell.swift */; };
 		AC0718C7215A6131003061AC /* SeenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0718C5215A6130003061AC /* SeenTableViewCell.xib */; };
+		AC3B50E5215CA86000313E2E /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B50E4215CA86000313E2E /* AppStyle.swift */; };
 		AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533D2152172A00668DAB /* AppDelegate.swift */; };
 		AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533F2152172A00668DAB /* InTheaterViewController.swift */; };
 		AC7953432152172A00668DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7953412152172A00668DAB /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		AC0718C1215A4468003061AC /* CollectedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectedTableViewCell.xib; sourceTree = "<group>"; };
 		AC0718C4215A6130003061AC /* SeenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeenTableViewCell.swift; sourceTree = "<group>"; };
 		AC0718C5215A6130003061AC /* SeenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeenTableViewCell.xib; sourceTree = "<group>"; };
+		AC3B50E4215CA86000313E2E /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		AC79533A2152172A00668DAB /* MovieBuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC79533D2152172A00668DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC79533F2152172A00668DAB /* InTheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
+				AC3B50E4215CA86000313E2E /* AppStyle.swift */,
 				AC7953412152172A00668DAB /* Main.storyboard */,
 				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
 				AC7953542153511400668DAB /* TheaterListViewController.swift */,
@@ -305,6 +308,7 @@
 				AC0718AF21592ECA003061AC /* ShowtimeTableViewCell.swift in Sources */,
 				AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */,
 				AC0718BD2159B63B003061AC /* CinemaShowtimeTableViewCell.swift in Sources */,
+				AC3B50E5215CA86000313E2E /* AppStyle.swift in Sources */,
 				AC0718AB2154D944003061AC /* TheaterData.swift in Sources */,
 				AC0718C2215A4468003061AC /* CollectedTableViewCell.swift in Sources */,
 				AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */,
