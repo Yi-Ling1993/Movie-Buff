@@ -7,10 +7,49 @@
 //
 
 import UIKit
+import FSPagerView
 
 class SoonViewController: UIViewController {
+    
+    let imageNames = ["1","2","3","4","5"]
+    let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
+                                                          .zoomOut,
+                                                          .depth,
+                                                          .linear,
+                                                          .overlap,
+                                                          .ferrisWheel,
+                                                          .invertedFerrisWheel,
+                                                          .coverFlow,
+                                                          .cubic]
+    
+    fileprivate var typeIndex = 4 {
+        didSet {
+            let type = self.transformerTypes[typeIndex]
+            self.soonPagerView.transformer = FSPagerViewTransformer(type:type)
+            switch type {
+            case .crossFading, .zoomOut, .depth:
+                self.soonPagerView.itemSize = .zero // 'Zero' means fill the size of parent
+            case .linear, .overlap:
+                let transform = CGAffineTransform(scaleX: 0.6, y: 0.75)
+                self.soonPagerView.itemSize = self.soonPagerView.frame.size.applying(transform)
+            case .ferrisWheel, .invertedFerrisWheel:
+                self.soonPagerView.itemSize = CGSize(width: 180, height: 140)
+            case .coverFlow:
+                self.soonPagerView.itemSize = CGSize(width: 220, height: 170)
+            case .cubic:
+                let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                self.soonPagerView.itemSize = self.soonPagerView.frame.size.applying(transform)
+            }
+        }
+    }
 
     @IBOutlet weak var soonInfoTableView: UITableView!
+    @IBOutlet weak var soonPagerView: FSPagerView! {
+        didSet {
+            self.soonPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            self.typeIndex = 4
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +58,12 @@ class SoonViewController: UIViewController {
         
         let soonInfoNibs = UINib(nibName: "SoonInfoTableViewCell", bundle: nil)
         soonInfoTableView.register(soonInfoNibs, forCellReuseIdentifier: "SoonInfoCell")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let index = self.typeIndex
+        self.typeIndex = index // Manually trigger didSet
     }
     
     func setNavigationBarItem() {
@@ -46,6 +91,26 @@ class SoonViewController: UIViewController {
         reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
     }
+    
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return imageNames.count
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.image = UIImage(named: self.imageNames[index])
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.imageView?.clipsToBounds = true
+        cell.contentView.layer.shadowColor = UIColor.black.cgColor
+        //        cell.contentView.layer.shadowColor = UIColor.white.withAlphaComponent(1).cgColor
+        return cell
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        soonPagerView.deselectItem(at: index, animated: true)
+        soonPagerView .scrollToItem(at: index, animated: true)
+    }
+
     
     @objc func menu() {
         self.openSideMenu()

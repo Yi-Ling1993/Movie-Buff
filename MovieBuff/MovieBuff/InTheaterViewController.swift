@@ -44,6 +44,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         }
     }
     
+    
     @IBOutlet weak var infoTableView: UITableView!
     
     @IBOutlet weak var inTheaterPagerView: FSPagerView! {

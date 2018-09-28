@@ -886,7 +886,7 @@
             </objects>
             <point key="canvasLocation" x="1151" y="-264"/>
         </scene>
-        <!--本週上映-->
+        <!--Data Source-->
         <scene sceneID="Idf-Hq-ndq">
             <objects>
                 <viewController id="pFJ-OD-dik" customClass="ThisWeekViewController" customModule="MovieBuff" customModuleProvider="target" sceneMemberID="viewController">
@@ -939,12 +939,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66N-LM-TFI">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66N-LM-TFI" customClass="FSPagerView" customModule="FSPagerView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="240"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="cIu-iJ-yit"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="pFJ-OD-dik" id="6pM-bi-J9y"/>
+                                    <outlet property="delegate" destination="pFJ-OD-dik" id="7U4-iA-U74"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wkG-7s-KeS">
                                 <rect key="frame" x="0.0" y="304" width="375" height="303"/>
@@ -984,6 +988,7 @@
                     <navigationItem key="navigationItem" title="本週上映" id="PMn-F4-TmG"/>
                     <connections>
                         <outlet property="thisWeekInfoTableView" destination="wkG-7s-KeS" id="9h2-Do-m1e"/>
+                        <outlet property="thisWeekPagerView" destination="66N-LM-TFI" id="rEu-wH-aoE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmM-7J-fd7" sceneMemberID="firstResponder"/>
@@ -1013,7 +1018,7 @@
             </objects>
             <point key="canvasLocation" x="-1647" y="388"/>
         </scene>
-        <!--即將上映-->
+        <!--Data Source-->
         <scene sceneID="dGp-qG-6Aq">
             <objects>
                 <viewController id="LTj-8T-XeH" customClass="SoonViewController" customModule="MovieBuff" customModuleProvider="target" sceneMemberID="viewController">
@@ -1066,12 +1071,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mi-hk-njf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mi-hk-njf" customClass="FSPagerView" customModule="FSPagerView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="240"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="JvN-IW-cm1"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="LTj-8T-XeH" id="rzC-b5-S5x"/>
+                                    <outlet property="delegate" destination="LTj-8T-XeH" id="AEu-ya-EDV"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zYG-yl-vHO">
                                 <rect key="frame" x="0.0" y="304" width="375" height="303"/>
@@ -1111,6 +1120,7 @@
                     <navigationItem key="navigationItem" title="即將上映" id="Bwk-aK-y2w"/>
                     <connections>
                         <outlet property="soonInfoTableView" destination="zYG-yl-vHO" id="BFX-Bg-DlQ"/>
+                        <outlet property="soonPagerView" destination="2mi-hk-njf" id="ZDC-aW-Dih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyn-Bb-wab" sceneMemberID="firstResponder"/>
