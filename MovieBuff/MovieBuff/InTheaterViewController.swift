@@ -8,21 +8,65 @@
 
 import UIKit
 import WKAwesomeMenu
+import FSPagerView
 
-
-class InTheaterViewController: UIViewController {
+class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
+    
+    let imageNames = ["1","2","3","4","5"]
+    let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
+                                                          .zoomOut,
+                                                          .depth,
+                                                          .linear,
+                                                          .overlap,
+                                                          .ferrisWheel,
+                                                          .invertedFerrisWheel,
+                                                          .coverFlow,
+                                                          .cubic]
+    
+    fileprivate var typeIndex = 4 {
+        didSet {
+            let type = self.transformerTypes[typeIndex]
+            self.inTheaterPagerView.transformer = FSPagerViewTransformer(type:type)
+            switch type {
+            case .crossFading, .zoomOut, .depth:
+                self.inTheaterPagerView.itemSize = .zero // 'Zero' means fill the size of parent
+            case .linear, .overlap:
+                let transform = CGAffineTransform(scaleX: 0.6, y: 0.75)
+                self.inTheaterPagerView.itemSize = self.inTheaterPagerView.frame.size.applying(transform)
+            case .ferrisWheel, .invertedFerrisWheel:
+                self.inTheaterPagerView.itemSize = CGSize(width: 180, height: 140)
+            case .coverFlow:
+                self.inTheaterPagerView.itemSize = CGSize(width: 220, height: 170)
+            case .cubic:
+                let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                self.inTheaterPagerView.itemSize = self.inTheaterPagerView.frame.size.applying(transform)
+            }
+        }
+    }
     
     @IBOutlet weak var infoTableView: UITableView!
-    @IBOutlet weak var inTheaterView: UIView!
+    
+    @IBOutlet weak var inTheaterPagerView: FSPagerView! {
+        didSet {
+            self.inTheaterPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            self.typeIndex = 4
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavigationBarItem()
         
-
         let infoNibs = UINib(nibName: "MovieInfoTableViewCell", bundle: nil)
         infoTableView.register(infoNibs, forCellReuseIdentifier: "InfoCell")
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let index = self.typeIndex
+        self.typeIndex = index // Manually trigger didSet
     }
     
     @objc func menu() {
@@ -55,6 +99,27 @@ class InTheaterViewController: UIViewController {
         
 
     }
+    
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return imageNames.count
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.image = UIImage(named: self.imageNames[index])
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.imageView?.clipsToBounds = true
+        cell.contentView.layer.shadowColor = UIColor.black.cgColor
+//        cell.contentView.layer.shadowColor = UIColor.white.withAlphaComponent(1).cgColor
+        return cell
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        inTheaterPagerView.deselectItem(at: index, animated: true)
+        inTheaterPagerView .scrollToItem(at: index, animated: true)
+    }
+
+    
 }
 
 extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {

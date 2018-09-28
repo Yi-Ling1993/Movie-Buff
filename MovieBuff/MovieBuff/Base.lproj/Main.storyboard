@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--上映中-->
+        <!--Data Source-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="InTheaterViewController" customModule="MovieBuff" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,12 +63,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-vc-MWT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-vc-MWT" customClass="FSPagerView" customModule="FSPagerView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="PNC-wg-pZR"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="itemSize">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Pl5-kW-ocY"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nv6-AN-pnN"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-vp-8Bk">
                                 <rect key="frame" x="0.0" y="240" width="375" height="303"/>
@@ -107,7 +116,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="上映中" id="7JH-Fh-tcm"/>
                     <connections>
-                        <outlet property="inTheaterView" destination="X9k-vc-MWT" id="aDT-D1-QFy"/>
+                        <outlet property="inTheaterPagerView" destination="X9k-vc-MWT" id="4yV-m1-LaT"/>
                         <outlet property="infoTableView" destination="Kdn-vp-8Bk" id="6IM-VT-w7w"/>
                     </connections>
                 </viewController>
