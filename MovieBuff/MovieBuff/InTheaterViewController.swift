@@ -9,10 +9,12 @@
 import UIKit
 import WKAwesomeMenu
 
+
 class InTheaterViewController: UIViewController {
     
     @IBOutlet weak var infoTableView: UITableView!
-
+    @IBOutlet weak var inTheaterView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,9 @@ class InTheaterViewController: UIViewController {
     }
     
     func setNavigationBarItem() {
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
         let menuButton = UIButton()
         menuButton.setImage(#imageLiteral(resourceName: "listing-option.png"), for: .normal)

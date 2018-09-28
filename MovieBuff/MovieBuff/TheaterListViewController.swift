@@ -40,6 +40,9 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
     
     func setNavigationBarItem() {
         
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
         let menuButton = UIButton()
         menuButton.setImage(#imageLiteral(resourceName: "listing-option.png"), for: .normal)
         menuButton.imageView?.contentMode = .scaleAspectFit
