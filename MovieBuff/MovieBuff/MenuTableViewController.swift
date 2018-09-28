@@ -69,7 +69,12 @@ class MenuTableViewController: UITableViewController {
         
         if indexPath.row == 0 {
             viewControllerIdentifier = "InTheater"
-        } else if indexPath.row == 3 {
+        } else if indexPath.row == 1 {
+            viewControllerIdentifier = "ThisWeek"
+        } else if indexPath.row == 2 {
+            viewControllerIdentifier = "Soon"
+        }
+        else if indexPath.row == 3 {
             viewControllerIdentifier = "TheaterList"
         } else if indexPath.row == 4 {
             viewControllerIdentifier = "Collection"

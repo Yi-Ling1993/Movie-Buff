@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let rootVC = storyboard.instantiateViewController(withIdentifier: "TheaterList")
+        let rootVC = storyboard.instantiateViewController(withIdentifier: "InTheater")
         
         let menuVC = MenuTableViewController()
         

@@ -62,6 +62,8 @@ class CollectionViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftButton
         leftButton.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        menuButton.addTarget(self, action: #selector(CollectionViewController.menu), for: .touchUpInside)
+
         
         let searchButton = UIButton()
         searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
@@ -73,6 +75,10 @@ class CollectionViewController: UIViewController {
         reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
         
+    }
+    
+    @objc func menu() {
+        self.openSideMenu()
     }
 }
 

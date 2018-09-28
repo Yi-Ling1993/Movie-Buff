@@ -37,6 +37,7 @@ class InTheaterViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftButton
         leftButton.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        menuButton.addTarget(self, action: #selector(InTheaterViewController.menu), for: .touchUpInside)
         
         let searchButton = UIButton()
         searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
