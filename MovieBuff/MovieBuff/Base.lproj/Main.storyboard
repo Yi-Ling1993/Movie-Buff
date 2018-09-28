@@ -988,12 +988,12 @@
                     <navigationItem key="navigationItem" title="本週上映" id="PMn-F4-TmG"/>
                     <connections>
                         <outlet property="thisWeekInfoTableView" destination="wkG-7s-KeS" id="9h2-Do-m1e"/>
-                        <outlet property="thisWeekPagerView" destination="66N-LM-TFI" id="rEu-wH-aoE"/>
+                        <outlet property="thisWeekPagerView" destination="66N-LM-TFI" id="lds-cR-KQ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmM-7J-fd7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1007" y="388"/>
+            <point key="canvasLocation" x="-926" y="589"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tyV-iw-10e">
@@ -1016,7 +1016,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieV-l5-A2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1647" y="388"/>
+            <point key="canvasLocation" x="-1706" y="589"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="dGp-qG-6Aq">
@@ -1125,7 +1125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyn-Bb-wab" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="387"/>
+            <point key="canvasLocation" x="794" y="603"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WnO-Ed-Zsb">
@@ -1148,7 +1148,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBh-OP-bIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-305" y="387"/>
+            <point key="canvasLocation" x="-218" y="573"/>
         </scene>
     </scenes>
     <resources>

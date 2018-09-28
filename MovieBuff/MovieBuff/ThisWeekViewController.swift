@@ -9,7 +9,7 @@
 import UIKit
 import FSPagerView
 
-class ThisWeekViewController: UIViewController {
+class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
     
     let imageNames = ["1","2","3","4","5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
@@ -44,6 +44,7 @@ class ThisWeekViewController: UIViewController {
     }
     
     @IBOutlet weak var thisWeekInfoTableView: UITableView!
+    
     @IBOutlet weak var thisWeekPagerView: FSPagerView! {
         didSet {
             self.thisWeekPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")

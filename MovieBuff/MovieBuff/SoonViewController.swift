@@ -9,7 +9,7 @@
 import UIKit
 import FSPagerView
 
-class SoonViewController: UIViewController {
+class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
     
     let imageNames = ["1","2","3","4","5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
