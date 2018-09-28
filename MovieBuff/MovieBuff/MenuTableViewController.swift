@@ -14,6 +14,8 @@ class MenuTableViewController: UITableViewController {
     
     var selectedIndex: Int = 0
     
+    var viewControllerIdentifier: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +55,7 @@ class MenuTableViewController: UITableViewController {
         cell.iconView.image = self.items.getIcon((indexPath as NSIndexPath).row)
         cell.titleLabel.text = self.items.getTitle((indexPath as NSIndexPath).row)
         
+        
         return cell
     }
     
@@ -62,7 +65,17 @@ class MenuTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let rootVC = storyboard.instantiateViewController(withIdentifier: "TheaterList")
+        
+        
+        if indexPath.row == 0 {
+            viewControllerIdentifier = "InTheater"
+        } else if indexPath.row == 3 {
+            viewControllerIdentifier = "TheaterList"
+        } else if indexPath.row == 4 {
+            viewControllerIdentifier = "Collection"
+        }
+        
+        let rootVC = storyboard.instantiateViewController(withIdentifier: viewControllerIdentifier)
 //        let rootNC = UINavigationController(rootViewController: rootVC)
         self.changeViewController(rootVC)
         
