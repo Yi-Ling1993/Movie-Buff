@@ -10,6 +10,7 @@ import UIKit
 
 class CollectedTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var collectionShowtimeButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

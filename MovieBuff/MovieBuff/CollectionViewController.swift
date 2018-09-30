@@ -7,9 +7,49 @@
 //
 
 import UIKit
+import FSPagerView
 
-class CollectionViewController: UIViewController {
-
+class CollectionViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
+    
+    let imageNames = ["1","2","3","4","5"]
+    let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
+                                                          .zoomOut,
+                                                          .depth,
+                                                          .linear,
+                                                          .overlap,
+                                                          .ferrisWheel,
+                                                          .invertedFerrisWheel,
+                                                          .coverFlow,
+                                                          .cubic]
+    
+    fileprivate var typeIndex = 4 {
+        didSet {
+            let type = self.transformerTypes[typeIndex]
+            self.collectionPagerView.transformer = FSPagerViewTransformer(type:type)
+            switch type {
+            case .crossFading, .zoomOut, .depth:
+                self.collectionPagerView.itemSize = .zero // 'Zero' means fill the size of parent
+            case .linear, .overlap:
+                let transform = CGAffineTransform(scaleX: 0.6, y: 0.75)
+                self.collectionPagerView.itemSize = self.collectionPagerView.frame.size.applying(transform)
+            case .ferrisWheel, .invertedFerrisWheel:
+                self.collectionPagerView.itemSize = CGSize(width: 180, height: 140)
+            case .coverFlow:
+                self.collectionPagerView.itemSize = CGSize(width: 220, height: 170)
+            case .cubic:
+                let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                self.collectionPagerView.itemSize = self.collectionPagerView.frame.size.applying(transform)
+            }
+        }
+    }
+    
+    @IBOutlet weak var collectionPagerView: FSPagerView! {
+        didSet {
+            self.collectionPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            self.typeIndex = 4
+        }
+    }
+    
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     @IBOutlet weak var seenTableView: UITableView!
@@ -50,6 +90,31 @@ class CollectionViewController: UIViewController {
         
         let seenNibs = UINib(nibName: "SeenTableViewCell", bundle: nil)
         seenTableView.register(seenNibs, forCellReuseIdentifier: "SeenCell")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let index = self.typeIndex
+        self.typeIndex = index // Manually trigger didSet
+    }
+    
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        return imageNames.count
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+        cell.imageView?.image = UIImage(named: self.imageNames[index])
+        cell.imageView?.contentMode = .scaleAspectFit
+        cell.imageView?.clipsToBounds = true
+        cell.contentView.layer.shadowColor = UIColor.black.cgColor
+        //        cell.contentView.layer.shadowColor = UIColor.white.withAlphaComponent(1).cgColor
+        return cell
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        collectionPagerView.deselectItem(at: index, animated: true)
+        collectionPagerView .scrollToItem(at: index, animated: true)
     }
     
     func setNavigationBarItem() {
@@ -109,6 +174,8 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
         
+        collectedCell.collectionShowtimeButton.addTarget(self, action: #selector(toShowtime), for: .touchUpInside)
+        
         guard let seenCell = seenTableView.dequeueReusableCell(
             withIdentifier: "SeenCell",
             for: indexPath as IndexPath)
@@ -123,5 +190,9 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return UITableViewCell()
+    }
+    
+    @objc func toShowtime(sender: UIButton) {
+        performSegue(withIdentifier: "CollectionToShowtime", sender: self)
     }
 }

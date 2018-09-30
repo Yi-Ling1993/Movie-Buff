@@ -138,8 +138,16 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             theaterCell.pinButton.isSelected = false
         }
         
+        theaterCell.selectionStyle = .none
+        
     
         return theaterCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("hi")
+        performSegue(withIdentifier: "TheaterListToDetail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {

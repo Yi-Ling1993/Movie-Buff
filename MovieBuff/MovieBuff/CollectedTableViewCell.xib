@@ -210,6 +210,9 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionShowtimeButton" destination="3Js-lw-MUw" id="kpm-w8-Mw3"/>
+            </connections>
             <point key="canvasLocation" x="-298.39999999999998" y="134.03298350824588"/>
         </tableViewCell>
     </objects>

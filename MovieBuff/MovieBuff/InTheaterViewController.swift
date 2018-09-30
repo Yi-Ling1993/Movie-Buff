@@ -12,6 +12,16 @@ import FSPagerView
 
 class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
     
+    @IBAction func inTheaterToShowtime(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "InTheaterToShowtime", sender: self)
+    }
+    
+//    @IBAction func unwind (for segue: UIStoryboardSegue) {
+//    print("back...")
+//    }
+    
+    
     let imageNames = ["1","2","3","4","5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,

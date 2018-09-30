@@ -21,6 +21,8 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
 
         let locationNibs = UINib(nibName: "LocationCollectionViewCell", bundle: nil)
         regionCollectionView.register(locationNibs, forCellWithReuseIdentifier: "LocationCell")
