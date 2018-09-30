@@ -22,6 +22,8 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "瘋狂亞洲富豪"
+        
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
 
         let locationNibs = UINib(nibName: "LocationCollectionViewCell", bundle: nil)
