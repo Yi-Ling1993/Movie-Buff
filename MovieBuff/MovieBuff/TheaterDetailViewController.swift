@@ -11,6 +11,11 @@ import FSPagerView
 
 class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
     
+    @IBAction func toWebview(_ sender: Any) {
+        performSegue(withIdentifier: "ToWebview", sender: self)
+    }
+    
+    
     let imageNames = ["1","2","3","4","5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,

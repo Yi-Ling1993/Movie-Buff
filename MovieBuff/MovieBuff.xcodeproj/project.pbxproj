@@ -40,6 +40,7 @@
 		AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7953542153511400668DAB /* TheaterListViewController.swift */; };
 		AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */; };
 		AC79535921538B2700668DAB /* LocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */; };
+		ACBD352C216359DC00C0A49C /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD352B216359DC00C0A49C /* WebviewViewController.swift */; };
 		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		AC7953542153511400668DAB /* TheaterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListViewController.swift; sourceTree = "<group>"; };
 		AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCollectionViewCell.xib; sourceTree = "<group>"; };
+		ACBD352B216359DC00C0A49C /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 				AC7953542153511400668DAB /* TheaterListViewController.swift */,
 				AC0718BE215A36A7003061AC /* CollectionViewController.swift */,
 				AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */,
+				ACBD352B216359DC00C0A49C /* WebviewViewController.swift */,
 				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
 				AC7953442152173000668DAB /* Assets.xcassets */,
 				AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */,
@@ -352,6 +355,7 @@
 				AC3B5107215CBD9000313E2E /* MenuTableViewCell.swift in Sources */,
 				AC0718C2215A4468003061AC /* CollectedTableViewCell.swift in Sources */,
 				AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */,
+				ACBD352C216359DC00C0A49C /* WebviewViewController.swift in Sources */,
 				AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,7 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6A948NH8P;
 				INFOPLIST_FILE = MovieBuff/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J6A948NH8P;
 				INFOPLIST_FILE = MovieBuff/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

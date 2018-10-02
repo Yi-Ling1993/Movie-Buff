@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="4352" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -419,6 +419,9 @@
                                     <constraint firstAttribute="width" constant="30" id="8BG-eO-TMN"/>
                                 </constraints>
                                 <state key="normal" image="ticket"/>
+                                <connections>
+                                    <action selector="toWebview:" destination="ev0-DK-JBz" eventType="touchUpInside" id="Pza-XQ-MBa"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8S7-fJ-8Uv">
                                 <rect key="frame" x="0.0" y="383" width="375" height="220"/>
@@ -510,11 +513,100 @@
                     <connections>
                         <outlet property="showTimeTableView" destination="8S7-fJ-8Uv" id="GBX-nN-Rsw"/>
                         <outlet property="theaterDetailPagerView" destination="Rgr-Fj-NhM" id="LBK-51-7ij"/>
+                        <segue destination="UhB-sp-gSQ" kind="show" identifier="ToWebview" id="OqU-cN-mgX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBZ-ZQ-dr0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="438" y="-950"/>
+        </scene>
+        <!--Webview View Controller-->
+        <scene sceneID="iUl-bn-rHR">
+            <objects>
+                <viewController id="UhB-sp-gSQ" customClass="WebviewViewController" customModule="MovieBuff" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pxu-rx-13d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKC-aE-Ucc">
+                                <rect key="frame" x="0.0" y="553" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arL-C5-vuP">
+                                        <rect key="frame" x="15" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="097-Nk-8Hw"/>
+                                            <constraint firstAttribute="height" constant="30" id="OK1-oU-ALM"/>
+                                        </constraints>
+                                        <state key="normal" image="left-arrow-key"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="UhB-sp-gSQ" eventType="touchUpInside" id="eku-6E-zx3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yr-6k-qOS">
+                                        <rect key="frame" x="75" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Ca1-Lg-EAj"/>
+                                            <constraint firstAttribute="height" constant="30" id="ea8-hq-455"/>
+                                        </constraints>
+                                        <state key="normal" image="keyboard-right-arrow-button"/>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="UhB-sp-gSQ" eventType="touchUpInside" id="ulD-li-Vva"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWo-tZ-wAK">
+                                        <rect key="frame" x="330" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="IdV-rh-iMO"/>
+                                            <constraint firstAttribute="width" constant="30" id="S0H-SR-IFz"/>
+                                        </constraints>
+                                        <state key="normal" image="reload"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="UhB-sp-gSQ" eventType="touchUpInside" id="fnc-e0-0Z1"/>
+                                            <action selector="refresh:" destination="UhB-sp-gSQ" eventType="touchUpInside" id="un9-Kk-avo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1Yr-6k-qOS" firstAttribute="centerY" secondItem="UKC-aE-Ucc" secondAttribute="centerY" id="1HN-5v-Nmj"/>
+                                    <constraint firstAttribute="height" constant="50" id="7ER-I1-06m"/>
+                                    <constraint firstAttribute="trailing" secondItem="DWo-tZ-wAK" secondAttribute="trailing" constant="15" id="AT7-CG-BxP"/>
+                                    <constraint firstItem="1Yr-6k-qOS" firstAttribute="leading" secondItem="arL-C5-vuP" secondAttribute="trailing" constant="30" id="F8D-ZB-u4A"/>
+                                    <constraint firstItem="arL-C5-vuP" firstAttribute="centerY" secondItem="UKC-aE-Ucc" secondAttribute="centerY" id="V6l-Em-yK5"/>
+                                    <constraint firstItem="DWo-tZ-wAK" firstAttribute="centerY" secondItem="UKC-aE-Ucc" secondAttribute="centerY" id="jK3-gB-PmH"/>
+                                    <constraint firstItem="arL-C5-vuP" firstAttribute="leading" secondItem="UKC-aE-Ucc" secondAttribute="leading" constant="15" id="vfG-8g-EaC"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIC-92-awq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yIC-92-awq" firstAttribute="top" secondItem="Lmb-Ag-oMX" secondAttribute="top" id="05X-7a-xpt"/>
+                            <constraint firstItem="UKC-aE-Ucc" firstAttribute="leading" secondItem="Lmb-Ag-oMX" secondAttribute="leading" id="LEm-Z2-RT1"/>
+                            <constraint firstItem="Lmb-Ag-oMX" firstAttribute="trailing" secondItem="UKC-aE-Ucc" secondAttribute="trailing" id="UPk-se-BRv"/>
+                            <constraint firstItem="Lmb-Ag-oMX" firstAttribute="trailing" secondItem="yIC-92-awq" secondAttribute="trailing" id="UVs-Pr-SiM"/>
+                            <constraint firstItem="UKC-aE-Ucc" firstAttribute="top" secondItem="yIC-92-awq" secondAttribute="bottom" id="bTS-4C-eaw"/>
+                            <constraint firstItem="UKC-aE-Ucc" firstAttribute="bottom" secondItem="Lmb-Ag-oMX" secondAttribute="bottom" id="mJq-it-CCQ"/>
+                            <constraint firstItem="yIC-92-awq" firstAttribute="leading" secondItem="Lmb-Ag-oMX" secondAttribute="leading" id="ozF-PR-u4B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lmb-Ag-oMX"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="arL-C5-vuP" id="NID-1n-wzP"/>
+                        <outlet property="nextButton" destination="1Yr-6k-qOS" id="k9I-sk-JnK"/>
+                        <outlet property="webView" destination="yIC-92-awq" id="nKh-Oz-VJ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddl-rQ-qqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328.8" y="-950.37481259370327"/>
         </scene>
         <!--Movie Showtime View Controller-->
         <scene sceneID="MtY-eq-iwj">
@@ -1125,9 +1217,12 @@
     </scenes>
     <resources>
         <image name="clapperboard" width="512" height="512"/>
+        <image name="keyboard-right-arrow-button" width="256" height="256"/>
+        <image name="left-arrow-key" width="256" height="256"/>
         <image name="maps-and-flags" width="256" height="256"/>
         <image name="push-pin" width="512" height="512"/>
         <image name="push-pin-2" width="512" height="512"/>
+        <image name="reload" width="256" height="256"/>
         <image name="ticket" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>

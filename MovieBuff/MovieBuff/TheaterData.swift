@@ -19,6 +19,8 @@ struct TheaterInfo {
     let website: String
 }
 
+//swiftlint:disable line_length
+
 class TheaterData {
     
     static let instance = TheaterData()
