@@ -55,8 +55,6 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.backBarButtonItem?.tintColor = UIColor.white
-        //為何這行沒有用？要到appdelegate才行
         
         title = "誠品電影院"
     }

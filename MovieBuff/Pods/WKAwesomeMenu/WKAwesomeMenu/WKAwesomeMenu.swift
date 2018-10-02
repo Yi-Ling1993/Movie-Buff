@@ -12,6 +12,11 @@ open class WKAwesomeMenu: UIViewController {
     
     // MARK: - Private Variables
     
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     fileprivate var rootViewController: UIViewController!
     
     fileprivate var menuViewController: UIViewController!
@@ -21,6 +26,7 @@ open class WKAwesomeMenu: UIViewController {
     fileprivate var menuView: UIView!
     
     fileprivate var shadowView: UIView = UIView()
+    
     
     fileprivate var canSlide: Bool = false
     
@@ -90,6 +96,8 @@ open class WKAwesomeMenu: UIViewController {
                                                        toItem: self.view, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1, constant: 0))
             self.view.addConstraint(NSLayoutConstraint(item: background, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal,
                                                        toItem: self.view, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1, constant: 0))
+            
+            
         }
         
         self.menuView.translatesAutoresizingMaskIntoConstraints = false

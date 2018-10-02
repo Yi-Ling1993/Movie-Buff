@@ -122,6 +122,9 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
 //        cell.contentView.layer.shadowColor = UIColor.white.withAlphaComponent(1).cgColor
+        
+        
+        
         return cell
     }
     

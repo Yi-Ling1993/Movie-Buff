@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let menuVC = MenuTableViewController()
         
         var options = WKAwesomeMenuOptions.defaultOptions()
-        options.backgroundImage = UIImage(named: "blur1-576x1024")
+        options.backgroundImage = UIImage(named: "bg")
         let awesomeMenu = WKAwesomeMenu(rootViewController: rootVC, menuViewController: menuVC, options: options)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
