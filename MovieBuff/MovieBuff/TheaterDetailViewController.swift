@@ -9,11 +9,20 @@
 import UIKit
 import FSPagerView
 
+protocol DataPassDelegate {
+    func passData(data: TheaterInfo)
+}
+
 class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
+    
+    var delegate: DataPassDelegate? = nil
+    
+    var theaterDetail: TheaterInfo?
     
     @IBAction func toWebview(_ sender: Any) {
         performSegue(withIdentifier: "ToWebview", sender: self)
     }
+    
     
     
     let imageNames = ["1","2","3","4","5"]
@@ -61,7 +70,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         super.viewDidLoad()
 
         
-        title = "誠品電影院"
+        title = theaterDetail?.name
     }
     
     override func viewDidLayoutSubviews() {
@@ -89,6 +98,12 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         theaterDetailPagerView .scrollToItem(at: index, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailController = segue.destination as? WebviewViewController else {return}
+        
+        detailController.webDetail = theaterDetail
+        
+    }
 }
 
 extension TheaterDetailViewController: UITableViewDelegate, UITableViewDataSource {

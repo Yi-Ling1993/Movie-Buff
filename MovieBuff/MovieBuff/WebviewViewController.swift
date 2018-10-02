@@ -11,6 +11,8 @@ import WebKit
 
 class WebviewViewController: UIViewController, WKNavigationDelegate {
     
+    var webDetail: TheaterInfo?
+    
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -25,11 +27,13 @@ class WebviewViewController: UIViewController, WKNavigationDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let url = URL(string: "https://apple.com") {
+        if let url = URL(string: webDetail?.website ?? "https://www.apple.com") {
             
             let request = URLRequest(url: url)
             webView.load(request)
         }
+        
+        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

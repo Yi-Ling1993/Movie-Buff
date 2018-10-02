@@ -16,10 +16,20 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
     
     var filteredRegion: [TheaterInfo] = TheaterData.instance.theaterInfo
     
-    let data = TheaterData()
-    
     let location: [String] = ["全部地區", "台北東區", "台北西區", "台北北區", "台北南區"]
+    
+    var theTag: Int?
+   
+    //swiftlint:disable identifier_name
 
+    func passData(data: TheaterInfo) {
+        
+        if let tag = theTag {
+            filteredRegion[tag] = data
+//            theTag = nil
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,10 +105,19 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
         locationCell.locationButton.tag = indexPath.row
         locationCell.locationButton.addTarget(self, action: #selector(filterLocation(sender:)), for: .touchUpInside)
 
-        
         return locationCell
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailController = segue.destination as? TheaterDetailViewController else {return}
+//        detailController.delegate = self as? DataPassDelegate
+        
+        print(filteredRegion)
+        
+        detailController.theaterDetail = filteredRegion[theTag ?? 0]
+        
+    }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
@@ -146,7 +165,10 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("hi")
+        print(filteredRegion[indexPath.row])
+        
+        theTag = indexPath.row
+        
         performSegue(withIdentifier: "TheaterListToDetail", sender: self)
     }
     
@@ -201,6 +223,7 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         filteredRegion[sender.tag].isPinned = sender.isSelected
         
         print(filteredRegion[sender.tag])
+        print(filteredRegion)
         
         for index in 0 ..< TheaterData.instance.theaterInfo.count {
             
@@ -222,6 +245,12 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             
             TheaterData.instance.theaterInfo.remove(at: indexPath.row)
             TheaterData.instance.theaterInfo.insert(filteredRegion[sender.tag], at: 0)
+            
+//            theaterTableView.reloadData()
+            
+//            let zz = filteredRegion[sender.tag]
+//            filteredRegion.remove(at: indexPath.row)
+//            filteredRegion.insert(zz, at: 0)
             
         }
         

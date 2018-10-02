@@ -54,7 +54,7 @@ class TheaterData {
         TheaterInfo(name: "美麗華皇家影城", address: "台北市中山區北安路780號B2", region: "台北北區", latitude: 25.084975, long: 121.553745, isPinned: false, website: "https://www.miramarcinemas.com.tw/Booking/Timetable"),
         TheaterInfo(name: "陽明戲院", address: "台北市士林區文林路113號1樓", region: "台北北區", latitude: 25.088218, long: 121.526122, isPinned: false, website: "http://www.atmovies.com.tw/showtime/t02d09/a02/"),
         TheaterInfo(name: "大千電影院", address: "台北市中山區南京東路三段133號", region: "台北北區", latitude: 25.052317, long: 121.541335, isPinned: false, website: "http://www.westin-taipei.com/03_onl_movie.asp"),
-        TheaterInfo(name: "光點台北電影院", address: "台北市中山區中山北路二段18號", region: "台北北區", latitude: 25.053283, long: 121.522163, isPinned: false, website: "http://www.spot.org.tw/schedule/schedule_one.html#"),
+        TheaterInfo(name: "光點台北電影院", address: "台北市中山區中山北路二段18號", region: "台北北區", latitude: 25.053283, long: 121.522163, isPinned: false, website: "http://www.spot.org.tw/schedule/schedule_one.html#")
 
     ]
 }
