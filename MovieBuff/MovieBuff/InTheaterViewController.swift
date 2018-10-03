@@ -9,8 +9,24 @@
 import UIKit
 import WKAwesomeMenu
 import FSPagerView
+import YouTubePlayer_Swift
 
-class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
+class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        
+        videoView.alpha = 1
+    }
+    
+    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        
+    }
+    
+    func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+        
+    }
+    
+    
+    @IBOutlet weak var videoView: YouTubePlayerView!
     
     @IBAction func inTheaterToShowtime(_ sender: Any) {
         
@@ -72,6 +88,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         let infoNibs = UINib(nibName: "MovieInfoTableViewCell", bundle: nil)
         infoTableView.register(infoNibs, forCellReuseIdentifier: "InfoCell")
         
+        videoView.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -151,7 +168,24 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
         
+        infoCell.trailerButton.addTarget(self, action: #selector(playTrailer(sender:)), for: .touchUpInside)
+        
         return infoCell
+    }
+    
+    @objc func playTrailer(sender: UIButton) {
+        
+        sender.isSelected = !sender.isSelected
+        
+        sender.setTitleColor(UIColor.white, for: .selected)
+        
+        
+        
+
+        videoView.isHidden = false
+        videoView.loadVideoID("Df1xkYYbYrY")
+        
+        
     }
 }
 

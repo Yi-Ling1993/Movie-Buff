@@ -79,6 +79,18 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nv6-AN-pnN"/>
                                 </connections>
                             </view>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4F9-Ui-38u" customClass="YouTubePlayerView" customModule="YouTubePlayer_Swift">
+                                <rect key="frame" x="0.0" y="10" width="375" height="211"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4F9-Ui-38u" secondAttribute="height" multiplier="16:9" id="rWa-HJ-6ej"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="itemSize">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-vp-8Bk">
                                 <rect key="frame" x="0.0" y="240" width="375" height="303"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -106,8 +118,11 @@
                             <constraint firstItem="Kdn-vp-8Bk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Au-rS-fU5"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8DH-w5-bLH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kdn-vp-8Bk" secondAttribute="trailing" id="9bE-pv-2Du"/>
+                            <constraint firstItem="4F9-Ui-38u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="BZx-sc-LuB"/>
+                            <constraint firstAttribute="trailing" secondItem="4F9-Ui-38u" secondAttribute="trailing" id="D8H-XG-9l1"/>
                             <constraint firstItem="Kdn-vp-8Bk" firstAttribute="top" secondItem="X9k-vc-MWT" secondAttribute="bottom" id="LQD-IK-wpk"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PdH-4O-90X"/>
+                            <constraint firstItem="4F9-Ui-38u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RrK-fx-E4C"/>
                             <constraint firstItem="SLa-8P-j9I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VSm-RS-HIx"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wok-Ff-U4J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LOV-Vu-yfe" secondAttribute="bottom" constant="16" id="iyd-Ic-hru"/>
@@ -121,6 +136,7 @@
                     <connections>
                         <outlet property="inTheaterPagerView" destination="X9k-vc-MWT" id="4yV-m1-LaT"/>
                         <outlet property="infoTableView" destination="Kdn-vp-8Bk" id="6IM-VT-w7w"/>
+                        <outlet property="videoView" destination="4F9-Ui-38u" id="sh0-wE-Xft"/>
                         <segue destination="hMi-Ua-sJE" kind="show" identifier="InTheaterToShowtime" id="b58-C0-hoh"/>
                     </connections>
                 </viewController>

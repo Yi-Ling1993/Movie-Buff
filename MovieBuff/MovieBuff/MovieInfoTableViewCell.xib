@@ -92,10 +92,12 @@
                             <constraint firstAttribute="width" constant="80" id="2ex-Fb-F5q"/>
                             <constraint firstAttribute="height" constant="35" id="ZJq-qj-Dql"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                        <color key="tintColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="預告">
                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <state key="selected" title="關閉預告"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="4"/>
@@ -244,6 +246,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="trailerButton" destination="XJm-UF-zpl" id="cL7-7A-Fzb"/>
+            </connections>
             <point key="canvasLocation" x="-508" y="161.46926536731635"/>
         </tableViewCell>
     </objects>

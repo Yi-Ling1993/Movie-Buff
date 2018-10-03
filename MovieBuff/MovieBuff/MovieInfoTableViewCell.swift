@@ -9,9 +9,13 @@
 import UIKit
 
 class MovieInfoTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var trailerButton: UIButton!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
