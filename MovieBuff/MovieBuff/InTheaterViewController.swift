@@ -179,11 +179,17 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         sender.setTitleColor(UIColor.white, for: .selected)
         
-        
-        
+        if videoView.ready && videoView.isHidden == false{
+            videoView.pause()
+            videoView.isHidden = true
+            
+        } else {
+            
+            videoView.isHidden = false
+            videoView.loadVideoID("Df1xkYYbYrY")
+        }
 
-        videoView.isHidden = false
-        videoView.loadVideoID("Df1xkYYbYrY")
+        
         
         
     }
