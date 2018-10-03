@@ -13,5 +13,7 @@ pod 'WKAwesomeMenu'
 pod 'SnapKit', '~> 4.0.0'
 pod 'FSPagerView'
 pod 'YouTubePlayer-Swift'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
 
 end

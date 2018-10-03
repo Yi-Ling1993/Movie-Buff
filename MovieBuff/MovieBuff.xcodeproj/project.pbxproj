@@ -40,6 +40,7 @@
 		AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7953542153511400668DAB /* TheaterListViewController.swift */; };
 		AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */; };
 		AC79535921538B2700668DAB /* LocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */; };
+		AC92160D2164B7D7002133E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */; };
 		ACBD352C216359DC00C0A49C /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD352B216359DC00C0A49C /* WebviewViewController.swift */; };
 		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		AC7953542153511400668DAB /* TheaterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListViewController.swift; sourceTree = "<group>"; };
 		AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCollectionViewCell.xib; sourceTree = "<group>"; };
+		AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ACBD352B216359DC00C0A49C /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 				AC3B5115215E010F00313E2E /* SoonInfoTableViewCell.xib */,
 				AC7953462152173000668DAB /* LaunchScreen.storyboard */,
 				AC0718AA2154D944003061AC /* TheaterData.swift */,
+				AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */,
 				AC7953492152173000668DAB /* Info.plist */,
 			);
 			path = MovieBuff;
@@ -245,6 +248,7 @@
 				AC7953452152173000668DAB /* Assets.xcassets in Resources */,
 				AC79535321527E7300668DAB /* MovieInfoTableViewCell.xib in Resources */,
 				AC7953432152172A00668DAB /* Main.storyboard in Resources */,
+				AC92160D2164B7D7002133E2 /* GoogleService-Info.plist in Resources */,
 				AC3B5117215E010F00313E2E /* SoonInfoTableViewCell.xib in Resources */,
 				AC3B510F215DE1F400313E2E /* ThisWeekInfoTableViewCell.xib in Resources */,
 			);
@@ -261,16 +265,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/WKAwesomeMenu/WKAwesomeMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WKAwesomeMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

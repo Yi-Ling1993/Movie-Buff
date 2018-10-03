@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import WKAwesomeMenu
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         GMSServices.provideAPIKey("AIzaSyD813UwWssk66FntLWLhWotasHUAl99080")
+        
+        FirebaseApp.configure()
         
         // 有 storyboard 就要用 storyboard 的初始化方法
         
