@@ -41,6 +41,7 @@
 		AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */; };
 		AC79535921538B2700668DAB /* LocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */; };
 		AC92160D2164B7D7002133E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */; };
+		AC92160F21675E09002133E2 /* FirebaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92160E21675E09002133E2 /* FirebaseData.swift */; };
 		ACBD352C216359DC00C0A49C /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD352B216359DC00C0A49C /* WebviewViewController.swift */; };
 		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AC92160E21675E09002133E2 /* FirebaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
 		ACBD352B216359DC00C0A49C /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
+				AC92160E21675E09002133E2 /* FirebaseData.swift */,
 				AC3B50E4215CA86000313E2E /* AppStyle.swift */,
 				AC3B5104215CBC9800313E2E /* MenuItem.swift */,
 				AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */,
@@ -353,6 +356,7 @@
 				AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */,
 				AC0718BA21594D8A003061AC /* DateCollectionViewCell.swift in Sources */,
 				AC0718B721594B6C003061AC /* MovieShowtimeViewController.swift in Sources */,
+				AC92160F21675E09002133E2 /* FirebaseData.swift in Sources */,
 				AC0718AD2159182E003061AC /* TheaterDetailViewController.swift in Sources */,
 				AC0718A92153C348003061AC /* TheaterTableViewCell.swift in Sources */,
 				AC3B510E215DE1F400313E2E /* ThisWeekInfoTableViewCell.swift in Sources */,

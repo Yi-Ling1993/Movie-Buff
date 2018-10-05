@@ -10,6 +10,8 @@ import UIKit
 import WKAwesomeMenu
 import FSPagerView
 import YouTubePlayer_Swift
+import FirebaseDatabase
+import Firebase
 
 class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
     func playerReady(_ videoPlayer: YouTubePlayerView) {
@@ -80,6 +82,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         }
     }
     
+    var refref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,6 +93,12 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         infoTableView.register(infoNibs, forCellReuseIdentifier: "InfoCell")
         
         videoView.delegate = self
+        
+        refref = Database.database().reference()
+        
+        refref.child("InTheater").observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
+        }
     }
     
     override func viewDidLayoutSubviews() {

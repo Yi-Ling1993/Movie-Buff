@@ -226,9 +226,9 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         print(filteredRegion)
         
         for index in 0 ..< TheaterData.instance.theaterInfo.count {
-            
+
             if filteredRegion[sender.tag].name == TheaterData.instance.theaterInfo[index].name {
-                
+
                 TheaterData.instance.theaterInfo[index].isPinned = filteredRegion[sender.tag].isPinned
             }
         }

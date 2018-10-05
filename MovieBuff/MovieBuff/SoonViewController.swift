@@ -11,9 +11,6 @@ import FSPagerView
 
 class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
     
-    @IBAction func soonToShowtime(_ sender: Any) {
-        self.performSegue(withIdentifier: "SoonToShowtime", sender: self)
-    }
     let imageNames = ["1","2","3","4","5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
