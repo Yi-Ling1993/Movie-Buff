@@ -84,6 +84,14 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     var refref: DatabaseReference!
     
+    var omdbData: OMDBData?
+    
+    var trailerData: TrailerData?
+    
+    var inTheaterTrailerManager = InTheaterTrailerManager()
+    
+    var inTheaterManager = InTheaterManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -93,6 +101,15 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         infoTableView.register(infoNibs, forCellReuseIdentifier: "InfoCell")
         
         videoView.delegate = self
+        
+        
+        inTheaterTrailerManager.delegate = self
+        
+        inTheaterManager.delegate = self
+        
+        inTheaterManager.requestOMDBData()
+        
+        inTheaterTrailerManager.requestTrailerData()
         
         refref = Database.database().reference()
         
@@ -187,6 +204,8 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         sender.isSelected = !sender.isSelected
         
+        let trailerKey = trailerData?.results[0].key
+        
         sender.setTitleColor(UIColor.white, for: .selected)
         
         if videoView.ready && videoView.isHidden == false{
@@ -196,13 +215,37 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             
             videoView.isHidden = false
-            videoView.loadVideoID("Df1xkYYbYrY")
+            videoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
         }
 
         
         
         
     }
+}
+
+extension InTheaterViewController: InTheaterManagerDelegate {
+    func manager(_ manager: InTheaterManager, didGet products: OMDBData) {
+        omdbData = products
+    }
+    
+    func manager(_ manager: InTheaterManager, didFailWith error: Error) {
+        print(error)
+    }
+    
+    
+}
+
+extension InTheaterViewController: InTheaterTrailerManagerDelegate {
+    func manager(_ manager: InTheaterTrailerManager, didGet products: TrailerData) {
+        trailerData = products
+    }
+    
+    func manager(_ manager: InTheaterTrailerManager, didFailWith error: Error) {
+        print(error)
+    }
+    
+    
 }
 
 extension UIView {

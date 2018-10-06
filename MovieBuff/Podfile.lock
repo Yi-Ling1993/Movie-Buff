@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.3)
   - Firebase/Core (5.9.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.2.0)
@@ -69,6 +70,7 @@ PODS:
   - YouTubePlayer-Swift (1.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - Firebase/Core
   - Firebase/Database
   - FSPagerView
@@ -81,6 +83,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -99,6 +102,7 @@ SPEC REPOS:
     - YouTubePlayer-Swift
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Firebase: 383fa29aca93e371cab776b48a5c66544d3c2003
   FirebaseAnalytics: 831f1f127f4a75698e9875a87bf7e2668730d953
   FirebaseCore: 2a84b6b325792a4319ef71ee18819dcba08d2fd7
@@ -116,6 +120,6 @@ SPEC CHECKSUMS:
   WKAwesomeMenu: 39d888f93705f63baadd4d7bda8513250c43b7ed
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: 5052cbc540433875f26306d0037f1e52076a8937
+PODFILE CHECKSUM: 5447e78fa8f6d82c5392bcbff2a346c7cbaf4a69
 
 COCOAPODS: 1.5.3

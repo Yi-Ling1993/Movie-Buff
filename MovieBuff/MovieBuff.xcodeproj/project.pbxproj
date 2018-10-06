@@ -42,6 +42,9 @@
 		AC79535921538B2700668DAB /* LocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */; };
 		AC92160D2164B7D7002133E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */; };
 		AC92160F21675E09002133E2 /* FirebaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92160E21675E09002133E2 /* FirebaseData.swift */; };
+		AC9216112168CF44002133E2 /* InTheaterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9216102168CF44002133E2 /* InTheaterManager.swift */; };
+		AC9216132168D0AC002133E2 /* OMDBData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9216122168D0AC002133E2 /* OMDBData.swift */; };
+		AC9216152168EF67002133E2 /* TrailerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9216142168EF67002133E2 /* TrailerData.swift */; };
 		ACBD352C216359DC00C0A49C /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD352B216359DC00C0A49C /* WebviewViewController.swift */; };
 		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +89,9 @@
 		AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCollectionViewCell.xib; sourceTree = "<group>"; };
 		AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC92160E21675E09002133E2 /* FirebaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
+		AC9216102168CF44002133E2 /* InTheaterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterManager.swift; sourceTree = "<group>"; };
+		AC9216122168D0AC002133E2 /* OMDBData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBData.swift; sourceTree = "<group>"; };
+		AC9216142168EF67002133E2 /* TrailerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerData.swift; sourceTree = "<group>"; };
 		ACBD352B216359DC00C0A49C /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +148,8 @@
 			children = (
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
 				AC92160E21675E09002133E2 /* FirebaseData.swift */,
+				AC9216122168D0AC002133E2 /* OMDBData.swift */,
+				AC9216142168EF67002133E2 /* TrailerData.swift */,
 				AC3B50E4215CA86000313E2E /* AppStyle.swift */,
 				AC3B5104215CBC9800313E2E /* MenuItem.swift */,
 				AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */,
@@ -156,6 +164,7 @@
 				ACBD352B216359DC00C0A49C /* WebviewViewController.swift */,
 				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
 				AC7953442152173000668DAB /* Assets.xcassets */,
+				AC9216102168CF44002133E2 /* InTheaterManager.swift */,
 				AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */,
 				AC0718AE21592ECA003061AC /* ShowtimeTableViewCell.swift */,
 				AC0718A82153C348003061AC /* TheaterTableViewCell.swift */,
@@ -267,6 +276,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -277,6 +287,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -348,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC9216112168CF44002133E2 /* InTheaterManager.swift in Sources */,
 				AC3B5105215CBC9800313E2E /* MenuItem.swift in Sources */,
 				AC3B5116215E010F00313E2E /* SoonInfoTableViewCell.swift in Sources */,
 				AC0718BF215A36A7003061AC /* CollectionViewController.swift in Sources */,
@@ -357,12 +369,14 @@
 				AC0718BA21594D8A003061AC /* DateCollectionViewCell.swift in Sources */,
 				AC0718B721594B6C003061AC /* MovieShowtimeViewController.swift in Sources */,
 				AC92160F21675E09002133E2 /* FirebaseData.swift in Sources */,
+				AC9216132168D0AC002133E2 /* OMDBData.swift in Sources */,
 				AC0718AD2159182E003061AC /* TheaterDetailViewController.swift in Sources */,
 				AC0718A92153C348003061AC /* TheaterTableViewCell.swift in Sources */,
 				AC3B510E215DE1F400313E2E /* ThisWeekInfoTableViewCell.swift in Sources */,
 				AC79535221527E7300668DAB /* MovieInfoTableViewCell.swift in Sources */,
 				AC3B5113215DFA4C00313E2E /* SoonViewController.swift in Sources */,
 				AC0718AF21592ECA003061AC /* ShowtimeTableViewCell.swift in Sources */,
+				AC9216152168EF67002133E2 /* TrailerData.swift in Sources */,
 				AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */,
 				AC0718BD2159B63B003061AC /* CinemaShowtimeTableViewCell.swift in Sources */,
 				AC3B50E5215CA86000313E2E /* AppStyle.swift in Sources */,
