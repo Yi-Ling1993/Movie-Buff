@@ -248,7 +248,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="ratedLabel" destination="Pnc-aE-bpQ" id="UDP-lm-fgU"/>
-                <outlet property="releaseDateLabel" destination="Pnc-aE-bpQ" id="M7P-u9-2qq"/>
+                <outlet property="releaseDateLabel" destination="ZEv-ih-3Lt" id="PYp-B4-rmR"/>
                 <outlet property="titleLabel" destination="TcA-5s-hrr" id="mNI-s7-jGR"/>
                 <outlet property="trailerButton" destination="XJm-UF-zpl" id="cL7-7A-Fzb"/>
             </connections>

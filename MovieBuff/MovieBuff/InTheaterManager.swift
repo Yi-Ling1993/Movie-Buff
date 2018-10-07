@@ -66,11 +66,11 @@ struct InTheaterTrailerManager {
     
     weak var delegate: InTheaterTrailerManagerDelegate?
     
-    func requestTrailerData() {
+    func requestTrailerData(imdbId: String) {
         
         let decoder = JSONDecoder()
         
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/tt2582802/videos?api_key=05dd8085592c47e1b919c06e49e61126&language=en-US") else {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(imdbId)/videos?api_key=05dd8085592c47e1b919c06e49e61126&language=en-US") else {
             
             return
         }

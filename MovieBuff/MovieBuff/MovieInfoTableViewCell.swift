@@ -12,8 +12,8 @@ class MovieInfoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var trailerButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var ratedLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
     
     
 

@@ -92,6 +92,14 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     var inTheaterManager = InTheaterManager()
     
+    let decoder = JSONDecoder()
+    
+    var inTheaterDatas: [MovieInfo] = []
+    
+    var trailerTag: Int = 0
+    
+//    var trailerKey: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,14 +117,30 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         
         inTheaterManager.requestOMDBData()
         
-        inTheaterTrailerManager.requestTrailerData()
         
         refref = Database.database().reference()
         
         refref.child("InTheater").observeSingleEvent(of: .value) { (snapshot) in
-            print(snapshot)
+//            print(snapshot)
+            
+            guard let value = snapshot.value else { return }
+            
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: value) else { return }
+            
+            do {
+                let inTheaterData = try self.decoder.decode([MovieInfo].self, from: jsonData)
+                print(inTheaterData)
+                
+                self.inTheaterDatas = inTheaterData
+                
+                self.infoTableView.reloadData()
+            } catch {
+                print(error)
+            }
         }
     }
+    
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -169,6 +193,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         
         
         
+        
         return cell
     }
     
@@ -183,7 +208,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
 extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return inTheaterDatas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -197,10 +222,27 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         infoCell.trailerButton.addTarget(self, action: #selector(playTrailer(sender:)), for: .touchUpInside)
         
+        infoCell.titleLabel.text = inTheaterDatas[indexPath.row].title
+        infoCell.ratedLabel.text = inTheaterDatas[indexPath.row].rated
+        infoCell.releaseDateLabel.text = inTheaterDatas[indexPath.row].releaseDate
+        
+        
+        
+
+        
         return infoCell
     }
     
     @objc func playTrailer(sender: UIButton) {
+        
+        guard let cell = sender.superview?.superview as? MovieInfoTableViewCell else { return }
+        
+        guard let indexPath = infoTableView.indexPath(for: cell) else { return }
+        
+        
+        let imdbId = inTheaterDatas[indexPath.row].id
+        
+        inTheaterTrailerManager.requestTrailerData(imdbId: imdbId)
         
         sender.isSelected = !sender.isSelected
         
