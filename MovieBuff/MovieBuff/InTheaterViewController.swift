@@ -115,9 +115,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         
         inTheaterManager.delegate = self
         
-        inTheaterManager.requestOMDBData()
-        
-        
         refref = Database.database().reference()
         
         refref.child("InTheater").observeSingleEvent(of: .value) { (snapshot) in
@@ -226,7 +223,18 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         infoCell.ratedLabel.text = inTheaterDatas[indexPath.row].rated
         infoCell.releaseDateLabel.text = inTheaterDatas[indexPath.row].releaseDate
         
+        let imdbId = inTheaterDatas[indexPath.row].id
         
+        inTheaterManager.requestOMDBData(imdbId: imdbId)
+        
+        infoCell.enTitleLabel.text = omdbData?.Title
+        infoCell.durationLabel.text = omdbData?.Runtime
+        infoCell.genreLabel.text = omdbData?.Genre
+        infoCell.imdbRatingLabel.text = omdbData?.imdbRating
+        infoCell.directorLabel.text = omdbData?.Director
+        infoCell.actorLabel.text = omdbData?.Actors
+        infoCell.plotLabel.text = omdbData?.Plot
+
         
 
         

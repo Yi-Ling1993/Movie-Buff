@@ -21,11 +21,11 @@ struct InTheaterManager {
     
     weak var delegate: InTheaterManagerDelegate?
     
-    func requestOMDBData() {
+    func requestOMDBData(imdbId: String) {
         
         let decoder = JSONDecoder()
         
-        guard let url = URL(string: "http://www.omdbapi.com/?i=tt3896198&apikey=47832d63") else {
+        guard let url = URL(string: "http://www.omdbapi.com/?i=\(imdbId)&apikey=47832d63") else {
             
             return
         }

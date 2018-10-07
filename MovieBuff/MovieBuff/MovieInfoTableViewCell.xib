@@ -68,19 +68,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2g-Q9-JYe">
-                        <rect key="frame" x="94" y="57" width="5" height="20.5"/>
+                        <rect key="frame" x="94" y="57" width="5" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yug-gZ-CG7">
-                        <rect key="frame" x="150" y="57" width="5" height="20.5"/>
+                        <rect key="frame" x="150" y="57" width="5" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMn-dw-Otn">
-                        <rect key="frame" x="202" y="57" width="5" height="20.5"/>
+                        <rect key="frame" x="202" y="57" width="5" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -131,16 +131,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-sP-MkD">
-                        <rect key="frame" x="207" y="59" width="60" height="16"/>
+                        <rect key="frame" x="207" y="59" width="57" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="HfK-gw-KcZ"/>
                             <constraint firstAttribute="height" constant="16" id="hAJ-fE-vfB"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="導演:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgJ-ep-Xxh">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="導演:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgJ-ep-Xxh">
                         <rect key="frame" x="22" y="103" width="39" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,32 +152,32 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="備註:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtk-kf-imo">
-                        <rect key="frame" x="22" y="395" width="39" height="20.5"/>
+                        <rect key="frame" x="22" y="395" width="39" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Jon M. Chu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGF-PK-b6A">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jon M. Chu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGF-PK-b6A">
                         <rect key="frame" x="69" y="104.5" width="80" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Constance Wu, Henry Golding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rX-oG-naJ">
-                        <rect key="frame" x="69" y="131" width="209" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Constance Wu, Henry Golding" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rX-oG-naJ">
+                        <rect key="frame" x="69" y="132" width="286" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brg-kZ-lJH">
-                        <rect key="frame" x="22" y="158" width="333" height="229"/>
+                        <rect key="frame" x="22" y="157.5" width="333" height="229.5"/>
                         <string key="text">This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachael Chu to Singapore to meet her boufriend's family.This contemporary romantic comedy, based on a global b</string>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="我要睡飽This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachael Chu to " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzS-mU-UG0">
-                        <rect key="frame" x="22" y="423.5" width="333" height="57.5"/>
+                        <rect key="frame" x="22" y="424" width="333" height="58"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -195,6 +194,9 @@
                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="T14-yy-TqX" firstAttribute="trailing" secondItem="TcA-5s-hrr" secondAttribute="trailing" id="0Ap-Yq-uD6"/>
+                    <constraint firstItem="1rX-oG-naJ" firstAttribute="leading" secondItem="r9c-4G-NLD" secondAttribute="trailing" constant="8" id="0a7-I2-dOK"/>
+                    <constraint firstItem="1rX-oG-naJ" firstAttribute="top" secondItem="LGF-PK-b6A" secondAttribute="bottom" constant="9" id="2kO-ke-5W5"/>
+                    <constraint firstItem="brg-kZ-lJH" firstAttribute="top" secondItem="1rX-oG-naJ" secondAttribute="bottom" constant="8" id="5hn-RI-pmJ"/>
                     <constraint firstAttribute="trailing" secondItem="zzS-mU-UG0" secondAttribute="trailing" constant="20" id="8WE-SL-J8c"/>
                     <constraint firstItem="cgJ-ep-Xxh" firstAttribute="top" secondItem="0j3-l7-kOe" secondAttribute="bottom" constant="8" id="Ghg-jm-tOB"/>
                     <constraint firstItem="TcA-5s-hrr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="HeW-iV-KJe"/>
@@ -206,7 +208,6 @@
                     <constraint firstItem="TcA-5s-hrr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LcW-fz-cER"/>
                     <constraint firstItem="I4N-8V-oVp" firstAttribute="leading" secondItem="R4E-Vr-AI6" secondAttribute="trailing" constant="8" id="McA-Yh-ALT"/>
                     <constraint firstItem="yF7-tV-NTO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Nzo-N5-UIx"/>
-                    <constraint firstItem="1rX-oG-naJ" firstAttribute="leading" secondItem="r9c-4G-NLD" secondAttribute="trailing" constant="8" id="Qtl-Cv-0Qe"/>
                     <constraint firstItem="T14-yy-TqX" firstAttribute="top" secondItem="TcA-5s-hrr" secondAttribute="bottom" constant="-1" id="RGF-iT-POX"/>
                     <constraint firstAttribute="bottom" secondItem="zzS-mU-UG0" secondAttribute="bottom" constant="23.5" id="WaE-py-4gw"/>
                     <constraint firstItem="ZEv-ih-3Lt" firstAttribute="top" secondItem="T14-yy-TqX" secondAttribute="bottom" constant="1" id="XJq-mV-Bxg"/>
@@ -218,9 +219,10 @@
                     <constraint firstItem="XJm-UF-zpl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="dzp-fm-ucg"/>
                     <constraint firstItem="XJm-UF-zpl" firstAttribute="leading" secondItem="yF7-tV-NTO" secondAttribute="trailing" constant="10" id="eSm-yx-TWi"/>
                     <constraint firstItem="R4E-Vr-AI6" firstAttribute="top" secondItem="ZEv-ih-3Lt" secondAttribute="bottom" constant="5" id="eYq-9l-dxf"/>
-                    <constraint firstItem="brg-kZ-lJH" firstAttribute="top" secondItem="r9c-4G-NLD" secondAttribute="bottom" constant="8" id="hv6-PF-D1P"/>
+                    <constraint firstAttribute="trailing" secondItem="1rX-oG-naJ" secondAttribute="trailing" constant="20" id="i21-Jr-uLJ"/>
                     <constraint firstItem="zzS-mU-UG0" firstAttribute="top" secondItem="wtk-kf-imo" secondAttribute="bottom" constant="8" id="jjt-AD-a2w"/>
                     <constraint firstItem="0zd-sb-Uub" firstAttribute="top" secondItem="ZEv-ih-3Lt" secondAttribute="bottom" constant="5" id="ltk-bx-e4d"/>
+                    <constraint firstAttribute="bottom" secondItem="brg-kZ-lJH" secondAttribute="bottom" constant="117.5" id="mRl-0B-rRz"/>
                     <constraint firstItem="LGF-PK-b6A" firstAttribute="centerY" secondItem="cgJ-ep-Xxh" secondAttribute="centerY" id="mgQ-ee-exY"/>
                     <constraint firstItem="r9c-4G-NLD" firstAttribute="top" secondItem="cgJ-ep-Xxh" secondAttribute="bottom" constant="6" id="myZ-nC-V5e"/>
                     <constraint firstItem="IMn-dw-Otn" firstAttribute="leading" secondItem="Pnc-aE-bpQ" secondAttribute="trailing" constant="-1" id="o3d-Uu-X3N"/>
@@ -235,7 +237,6 @@
                     <constraint firstItem="cgJ-ep-Xxh" firstAttribute="leading" secondItem="TcA-5s-hrr" secondAttribute="leading" constant="2" id="ukG-8R-0W6"/>
                     <constraint firstItem="f2g-Q9-JYe" firstAttribute="leading" secondItem="ZEv-ih-3Lt" secondAttribute="trailing" constant="3" id="vic-Wi-gL3"/>
                     <constraint firstItem="Yug-gZ-CG7" firstAttribute="top" secondItem="f2g-Q9-JYe" secondAttribute="top" id="w7k-D5-olQ"/>
-                    <constraint firstItem="1rX-oG-naJ" firstAttribute="centerY" secondItem="r9c-4G-NLD" secondAttribute="centerY" id="wke-LE-rEo"/>
                     <constraint firstItem="wtk-kf-imo" firstAttribute="top" secondItem="brg-kZ-lJH" secondAttribute="bottom" constant="8" id="wxJ-Ca-fiY"/>
                     <constraint firstItem="IMn-dw-Otn" firstAttribute="top" secondItem="Yug-gZ-CG7" secondAttribute="top" id="x30-vX-sy3"/>
                     <constraint firstItem="0j3-l7-kOe" firstAttribute="leading" secondItem="ZEv-ih-3Lt" secondAttribute="leading" id="yhh-JZ-djC"/>
@@ -247,6 +248,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="actorLabel" destination="1rX-oG-naJ" id="Uaj-dK-kk6"/>
+                <outlet property="directorLabel" destination="LGF-PK-b6A" id="fUE-vH-PDs"/>
+                <outlet property="durationLabel" destination="jT3-dr-Vde" id="pNH-9g-Ipv"/>
+                <outlet property="enTitleLabel" destination="T14-yy-TqX" id="Q5r-nE-oSm"/>
+                <outlet property="genreLabel" destination="mcO-sP-MkD" id="muT-Ne-NWk"/>
+                <outlet property="imdbRatingLabel" destination="R4E-Vr-AI6" id="d4H-Vw-frt"/>
+                <outlet property="plotLabel" destination="brg-kZ-lJH" id="Ouq-DJ-yNV"/>
+                <outlet property="psLabel" destination="zzS-mU-UG0" id="xSx-nV-D3E"/>
                 <outlet property="ratedLabel" destination="Pnc-aE-bpQ" id="UDP-lm-fgU"/>
                 <outlet property="releaseDateLabel" destination="ZEv-ih-3Lt" id="PYp-B4-rmR"/>
                 <outlet property="titleLabel" destination="TcA-5s-hrr" id="mNI-s7-jGR"/>
