@@ -58,6 +58,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.0):
     - GoogleUtilities/Logger
+  - Kingfisher (4.10.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - FSPagerView
   - GoogleMaps
   - GooglePlaces
+  - Kingfisher (~> 4.0)
   - SnapKit (~> 4.0.0)
   - SwiftLint
   - WKAwesomeMenu
@@ -94,6 +96,7 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
+    - Kingfisher
     - leveldb-library
     - nanopb
     - SnapKit
@@ -113,6 +116,7 @@ SPEC CHECKSUMS:
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
+  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
@@ -120,6 +124,6 @@ SPEC CHECKSUMS:
   WKAwesomeMenu: 39d888f93705f63baadd4d7bda8513250c43b7ed
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: 5447e78fa8f6d82c5392bcbff2a346c7cbaf4a69
+PODFILE CHECKSUM: cb0ba8e566fce20a36aa7adb8b3d2e123213d0bc
 
 COCOAPODS: 1.5.3
