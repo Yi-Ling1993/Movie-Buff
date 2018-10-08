@@ -19,7 +19,7 @@ struct FirebaseData: Codable {
 struct  MovieInfo: Codable {
     
     let title: String
-    let id: String
+    let id: String?
     let releaseDate: String
     let rated: String
     let theater: [MovieTheaterInfo]?

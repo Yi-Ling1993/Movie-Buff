@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Data Source-->
+        <!--上映中-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="InTheaterViewController" customModule="MovieBuff" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,10 +74,6 @@
                                         <size key="value" width="0.0" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Pl5-kW-ocY"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nv6-AN-pnN"/>
-                                </connections>
                             </view>
                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4F9-Ui-38u" customClass="YouTubePlayerView" customModule="YouTubePlayer_Swift">
                                 <rect key="frame" x="0.0" y="10" width="375" height="211"/>
@@ -1205,6 +1201,6 @@
         <image name="ticket" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CdZ-Qo-xMl"/>
+        <segue reference="T3I-PL-tHN"/>
     </inferredMetricsTieBreakers>
 </document>

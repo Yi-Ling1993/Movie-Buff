@@ -10,6 +10,8 @@ import UIKit
 
 open class FSPagerViewCell: UICollectionViewCell {
     
+    
+    
     /// Returns the label used for the main textual content of the pager view cell.
     @objc
     open var textLabel: UILabel? {

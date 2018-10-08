@@ -12,6 +12,7 @@ import FSPagerView
 import YouTubePlayer_Swift
 import FirebaseDatabase
 import Firebase
+import Kingfisher
 
 class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
     func playerReady(_ videoPlayer: YouTubePlayerView) {
@@ -39,8 +40,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
 //    print("back...")
 //    }
     
-    
-    let imageNames = ["1","2","3","4","5"]
+
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
                                                           .depth,
@@ -98,12 +98,18 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     var trailerTag: Int = 0
     
+    var postArray: [String: URL] = [:]
+    
 //    var trailerKey: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavigationBarItem()
+        
+        
+        self.inTheaterPagerView.dataSource = self
+        self.inTheaterPagerView.delegate = self
         
         let infoNibs = UINib(nibName: "MovieInfoTableViewCell", bundle: nil)
         infoTableView.register(infoNibs, forCellReuseIdentifier: "InfoCell")
@@ -131,11 +137,20 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
                 self.inTheaterDatas = inTheaterData
                 
                 self.infoTableView.reloadData()
+                
+               
+                
+                
+                self.getPoster()
+                
+                self.inTheaterPagerView.reloadData()
             } catch {
                 print(error)
             }
         }
     }
+    
+    
     
 
     
@@ -177,21 +192,33 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return imageNames.count
+        return inTheaterDatas.count
+    }
+    
+    func getPoster() {
+        
+        for inTh in inTheaterDatas {
+            
+            inTheaterManager.requestOMDBData(imdbId: inTh.id ?? "tt3896198")
+        }
+        
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: self.imageNames[index])
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
 //        cell.contentView.layer.shadowColor = UIColor.white.withAlphaComponent(1).cgColor
         
-        
-        
-        
+        guard let imdbId = inTheaterDatas[index].id else {
+            return cell
+        }
+
+        cell.imageView?.kf.setImage(with: postArray[imdbId])
+
         return cell
+        
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
@@ -219,13 +246,15 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         infoCell.trailerButton.addTarget(self, action: #selector(playTrailer(sender:)), for: .touchUpInside)
         
+        guard inTheaterDatas.count > 0 else { return infoCell }
+            
         infoCell.titleLabel.text = inTheaterDatas[indexPath.row].title
         infoCell.ratedLabel.text = inTheaterDatas[indexPath.row].rated
         infoCell.releaseDateLabel.text = inTheaterDatas[indexPath.row].releaseDate
         
         let imdbId = inTheaterDatas[indexPath.row].id
         
-        inTheaterManager.requestOMDBData(imdbId: imdbId)
+        inTheaterManager.requestOMDBData(imdbId: imdbId ?? "tt3896198")
         
         infoCell.enTitleLabel.text = omdbData?.Title
         infoCell.durationLabel.text = omdbData?.Runtime
@@ -250,7 +279,7 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         let imdbId = inTheaterDatas[indexPath.row].id
         
-        inTheaterTrailerManager.requestTrailerData(imdbId: imdbId)
+        inTheaterTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
         
         sender.isSelected = !sender.isSelected
         
@@ -277,6 +306,13 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
 extension InTheaterViewController: InTheaterManagerDelegate {
     func manager(_ manager: InTheaterManager, didGet products: OMDBData) {
         omdbData = products
+        
+        let posterUrl = URL(string: omdbData?.Poster ?? "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
+        
+        postArray[omdbData?.imdbID ?? "tt3896198"] = posterUrl
+        
+        self.inTheaterPagerView.reloadData()
+//        self.infoTableView.reloadData()
     }
     
     func manager(_ manager: InTheaterManager, didFailWith error: Error) {
