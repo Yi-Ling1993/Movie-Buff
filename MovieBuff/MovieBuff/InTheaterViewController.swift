@@ -264,9 +264,6 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         infoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
         infoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
 
-        
-
-        
         return infoCell
     }
     
@@ -276,29 +273,31 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         guard let indexPath = infoTableView.indexPath(for: cell) else { return }
         
+        if videoView.isHidden == true {
+            
+            let imdbId = inTheaterDatas[pagerIndex].id
+            
+            inTheaterTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
+        }
         
-        let imdbId = inTheaterDatas[pagerIndex].id
         
-        inTheaterTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
         
         sender.isSelected = !sender.isSelected
-        
-        let trailerKey = trailerData?.results[0].key
-        
+    
         sender.setTitleColor(UIColor.white, for: .selected)
-        
-        if videoView.ready && videoView.isHidden == false{
+
+        if videoView.ready && videoView.isHidden == false {
             videoView.pause()
             videoView.isHidden = true
-            
-        } else {
-            
-            videoView.isHidden = false
-            videoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
         }
-
-        
-        
+    
+    }
+    
+    func playTrailer() {
+        let trailerKey = trailerData?.results[0].key
+    
+        videoView.isHidden = false
+        videoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
         
     }
 }
@@ -326,6 +325,8 @@ extension InTheaterViewController: InTheaterManagerDelegate {
 extension InTheaterViewController: InTheaterTrailerManagerDelegate {
     func manager(_ manager: InTheaterTrailerManager, didGet products: TrailerData) {
         trailerData = products
+        
+        playTrailer()
     }
     
     func manager(_ manager: InTheaterTrailerManager, didFailWith error: Error) {
