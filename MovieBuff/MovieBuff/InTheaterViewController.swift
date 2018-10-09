@@ -40,6 +40,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
 //    print("back...")
 //    }
     
+    let image = ["1", "2", "3", "4", "5"]
 
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
@@ -79,6 +80,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         didSet {
             self.inTheaterPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             self.typeIndex = 4
+            
+            inTheaterPagerView.isInfinite = true
         }
     }
     
@@ -188,6 +191,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         return inTheaterDatas.count
+        
     }
     
     func getPoster() {
@@ -211,6 +215,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         }
         
         cell.imageView?.kf.setImage(with: postDict[imdbId])
+    
+//        cell.imageView?.image = UIImage(named: image[index])
 
         return cell
         
@@ -226,11 +232,24 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     }
 
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
-        print(targetIndex)
         
-        pagerIndex = targetIndex
+        print("pagerViewWillEndDragging")
+    
+        print(pagerView.currentIndex)
+        
+        let index = pagerView.currentIndex
+        
+        pagerIndex = index
         
         infoTableView.reloadData()
+    }
+    
+    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
+        
+    }
+    
+    func pagerViewDidScroll(_ pagerView: FSPagerView) {
+        
     }
 
 }
