@@ -221,6 +221,14 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         inTheaterPagerView .scrollToItem(at: index, animated: true)
         
         pagerIndex = index
+
+        infoTableView.reloadData()
+    }
+
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        print(targetIndex)
+        
+        pagerIndex = targetIndex
         
         infoTableView.reloadData()
     }
