@@ -100,6 +100,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     var postDict: [String: URL] = [:]
     
+    var omdbDict: [String: OMDBData] = [:]
+    
     var pagerIndex: Int = 0
     
     override func viewDidLoad() {
@@ -147,10 +149,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         }
     }
     
-    
-    
-
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let index = self.typeIndex
@@ -194,9 +192,9 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     func getPoster() {
         
-        for index in inTheaterDatas {
+        for inTheaterData in inTheaterDatas {
             
-            inTheaterManager.requestOMDBData(imdbId: index.id ?? "tt3896198")
+            inTheaterManager.requestOMDBData(imdbId: inTheaterData.id ?? "tt3896198")
         }
         
     }
@@ -253,16 +251,18 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         infoCell.titleLabel.text = inTheaterDatas[pagerIndex].title
         infoCell.ratedLabel.text = inTheaterDatas[pagerIndex].rated
         infoCell.releaseDateLabel.text = inTheaterDatas[pagerIndex].releaseDate
+        
+        let imdbId = inTheaterDatas[pagerIndex].id
     
         // omdb data
         
-        infoCell.enTitleLabel.text = omdbData?.Title
-        infoCell.durationLabel.text = omdbData?.Runtime
-        infoCell.genreLabel.text = omdbData?.Genre
-        infoCell.imdbRatingLabel.text = omdbData?.imdbRating
-        infoCell.directorLabel.text = omdbData?.Director
-        infoCell.actorLabel.text = omdbData?.Actors
-        infoCell.plotLabel.text = omdbData?.Plot
+        infoCell.enTitleLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Title
+        infoCell.durationLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Runtime
+        infoCell.genreLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Genre
+        infoCell.imdbRatingLabel.text = omdbDict[imdbId ?? "tt3896198"]?.imdbRating
+        infoCell.directorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Director
+        infoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
+        infoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
 
         
 
@@ -310,6 +310,7 @@ extension InTheaterViewController: InTheaterManagerDelegate {
         let posterUrl = URL(string: omdbData?.Poster ?? "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
         
         postDict[omdbData?.imdbID ?? "tt3896198"] = posterUrl
+        omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
         
         self.inTheaterPagerView.reloadData()
         self.infoTableView.reloadData()
