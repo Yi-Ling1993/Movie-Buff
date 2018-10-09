@@ -174,7 +174,7 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
         
-        collectedCell.collectionShowtimeButton.addTarget(self, action: #selector(toShowtime), for: .touchUpInside)
+//        collectedCell.collectionShowtimeButton.addTarget(self, action: #selector(toShowtime), for: .touchUpInside)
         
         guard let seenCell = seenTableView.dequeueReusableCell(
             withIdentifier: "SeenCell",
@@ -192,7 +192,7 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-    @objc func toShowtime(sender: UIButton) {
-        performSegue(withIdentifier: "CollectionToShowtime", sender: self)
-    }
+//    @objc func toShowtime(sender: UIButton) {
+//        performSegue(withIdentifier: "CollectionToShowtime", sender: self)
+//    }
 }

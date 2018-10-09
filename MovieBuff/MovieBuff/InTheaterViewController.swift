@@ -36,6 +36,13 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         self.performSegue(withIdentifier: "InTheaterToShowtime", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let showtimeController = segue.destination as? MovieShowtimeViewController else {return}
+        
+        showtimeController.firebaseMovieData = inTheaterDatas[pagerIndex]
+        
+    }
+    
 //    @IBAction func unwind (for segue: UIStoryboardSegue) {
 //    print("back...")
 //    }

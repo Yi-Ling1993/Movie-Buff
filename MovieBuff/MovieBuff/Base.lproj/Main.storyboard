@@ -625,11 +625,11 @@
             <objects>
                 <viewController id="hMi-Ua-sJE" customClass="MovieShowtimeViewController" customModule="MovieBuff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kdk-XH-iXD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ryF-NN-4jP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QQE-2J-MD5"/>
@@ -647,7 +647,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZrE-0I-D0e">
-                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="558" width="375" height="45"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="DL9-BL-YdX"/>
@@ -674,8 +674,8 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5bH-81-m9G">
-                                <rect key="frame" x="0.0" y="119" width="375" height="503"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="503"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CinemaShowtimeCell" rowHeight="137" id="9Mn-cj-ZIl" customClass="CinemaShowtimeTableViewCell" customModule="MovieBuff" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="137"/>
@@ -686,6 +686,24 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Dx-7n-25R">
                                                     <rect key="frame" x="15" y="8" width="345" height="121"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英文" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0y1-Zi-l2b">
+                                                            <rect key="frame" x="65" y="55" width="47" height="20"/>
+                                                            <color key="backgroundColor" red="0.85098039219999999" green="0.64705882349999999" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="47" id="prS-sW-Imy"/>
+                                                                <constraint firstAttribute="height" constant="20" id="u4l-GY-6W9"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="12"/>
+                                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="台北信義威秀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf7-8t-ZjD">
@@ -710,22 +728,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英文" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7Q-2R-3xj">
-                                                    <rect key="frame" x="80" y="63" width="47" height="20"/>
-                                                    <color key="backgroundColor" red="0.85098039219999999" green="0.64705882349999999" blue="0.0078431372550000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="47" id="tY7-es-QVi"/>
-                                                        <constraint firstAttribute="height" constant="20" id="y1E-d9-Atu"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="12"/>
-                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="4"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="12:00 I 13:45 I 14:50 I 19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8d-iS-7Tv">
                                                     <rect key="frame" x="25" y="97" width="325" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
@@ -735,25 +737,27 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="X8d-iS-7Tv" secondAttribute="bottom" constant="20" id="0gl-6p-fUY"/>
+                                                <constraint firstItem="0y1-Zi-l2b" firstAttribute="leading" secondItem="OyF-pn-2iE" secondAttribute="trailing" constant="8" id="0kb-JE-NZf"/>
                                                 <constraint firstItem="4Dx-7n-25R" firstAttribute="leading" secondItem="E7K-rh-VcX" secondAttribute="leading" constant="15" id="0sC-H2-Cuk"/>
                                                 <constraint firstItem="X8d-iS-7Tv" firstAttribute="leading" secondItem="OyF-pn-2iE" secondAttribute="leading" id="4wS-Pf-3gM"/>
                                                 <constraint firstItem="X8d-iS-7Tv" firstAttribute="top" secondItem="OyF-pn-2iE" secondAttribute="bottom" constant="14" id="6G9-f9-Mwk"/>
-                                                <constraint firstItem="i7Q-2R-3xj" firstAttribute="centerY" secondItem="OyF-pn-2iE" secondAttribute="centerY" id="8LI-vY-0Dt"/>
                                                 <constraint firstItem="OyF-pn-2iE" firstAttribute="top" secondItem="kf7-8t-ZjD" secondAttribute="bottom" constant="8" id="HIu-f2-B84"/>
                                                 <constraint firstItem="kf7-8t-ZjD" firstAttribute="top" secondItem="E7K-rh-VcX" secondAttribute="top" constant="18" id="MpE-wu-ZXe"/>
-                                                <constraint firstItem="i7Q-2R-3xj" firstAttribute="top" secondItem="kf7-8t-ZjD" secondAttribute="bottom" constant="8" id="OiD-p3-XXD"/>
                                                 <constraint firstAttribute="trailing" secondItem="4Dx-7n-25R" secondAttribute="trailing" constant="15" id="U83-Ab-p9v"/>
                                                 <constraint firstItem="4Dx-7n-25R" firstAttribute="top" secondItem="E7K-rh-VcX" secondAttribute="top" constant="8" id="WIr-pE-Xju"/>
                                                 <constraint firstAttribute="trailing" secondItem="X8d-iS-7Tv" secondAttribute="trailing" constant="25" id="aKc-ro-eoC"/>
                                                 <constraint firstItem="OyF-pn-2iE" firstAttribute="leading" secondItem="kf7-8t-ZjD" secondAttribute="leading" id="dZ4-EO-teb"/>
                                                 <constraint firstAttribute="bottom" secondItem="4Dx-7n-25R" secondAttribute="bottom" constant="8" id="gBc-Le-36C"/>
-                                                <constraint firstItem="i7Q-2R-3xj" firstAttribute="leading" secondItem="OyF-pn-2iE" secondAttribute="trailing" constant="8" id="hxY-Oe-Kb3"/>
+                                                <constraint firstItem="0y1-Zi-l2b" firstAttribute="centerY" secondItem="OyF-pn-2iE" secondAttribute="centerY" id="sJL-FQ-8iO"/>
                                                 <constraint firstItem="kf7-8t-ZjD" firstAttribute="leading" secondItem="E7K-rh-VcX" secondAttribute="leading" constant="25" id="tDO-jR-Q7O"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="cinemaBackgroundView" destination="4Dx-7n-25R" id="dhw-v8-zv5"/>
+                                            <outlet property="languageLabel" destination="0y1-Zi-l2b" id="25N-p7-4Vm"/>
+                                            <outlet property="presentLabel" destination="OyF-pn-2iE" id="seq-lQ-0Oh"/>
+                                            <outlet property="theaterNameLabel" destination="kf7-8t-ZjD" id="1Wy-t0-51W"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -786,7 +790,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAz-ms-hNq" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1007" y="-972"/>
+            <point key="canvasLocation" x="-297" y="-1052"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="BPq-Jb-QUq">
@@ -877,7 +881,6 @@
                         <outlet property="posterView" destination="nUz-XZ-jeY" id="A1l-PB-nOw"/>
                         <outlet property="seenTableView" destination="KJq-cR-i9r" id="p7y-MK-3Wb"/>
                         <outlet property="segmentControl" destination="dvk-7g-2R5" id="xgH-1C-hE5"/>
-                        <segue destination="hMi-Ua-sJE" kind="show" identifier="CollectionToShowtime" id="apV-Cu-DGc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9UW-sL-jQ3" sceneMemberID="firstResponder"/>
@@ -1033,9 +1036,6 @@
                                     <constraint firstAttribute="width" constant="35" id="S0P-QF-M3l"/>
                                 </constraints>
                                 <state key="normal" image="clapperboard"/>
-                                <connections>
-                                    <action selector="thisWeekToShowtime:" destination="pFJ-OD-dik" eventType="touchUpInside" id="5ba-Ja-9zV"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1060,7 +1060,6 @@
                     <connections>
                         <outlet property="thisWeekInfoTableView" destination="wkG-7s-KeS" id="9h2-Do-m1e"/>
                         <outlet property="thisWeekPagerView" destination="66N-LM-TFI" id="lds-cR-KQ6"/>
-                        <segue destination="hMi-Ua-sJE" kind="show" identifier="ThisWeekToShowtime" id="T3I-PL-tHN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmM-7J-fd7" sceneMemberID="firstResponder"/>
@@ -1159,7 +1158,6 @@
                     <connections>
                         <outlet property="soonInfoTableView" destination="zYG-yl-vHO" id="BFX-Bg-DlQ"/>
                         <outlet property="soonPagerView" destination="2mi-hk-njf" id="ZDC-aW-Dih"/>
-                        <segue destination="hMi-Ua-sJE" kind="show" identifier="SoonToShowtime" id="CdZ-Qo-xMl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyn-Bb-wab" sceneMemberID="firstResponder"/>
@@ -1200,7 +1198,4 @@
         <image name="reload" width="256" height="256"/>
         <image name="ticket" width="256" height="256"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="T3I-PL-tHN"/>
-    </inferredMetricsTieBreakers>
 </document>

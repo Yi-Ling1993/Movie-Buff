@@ -16,13 +16,19 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
     
     @IBOutlet weak var cinemaShowtimeTableView: UITableView!
     
+    var firebaseMovieData: MovieInfo?
+    
+    var filteredFirebaseData: [MovieTheaterInfo] = []
+    
     let location: [String] = ["全部地區", "台北東區", "台北西區", "台北北區", "台北南區"]
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "瘋狂亞洲富豪"
+        filteredFirebaseData = firebaseMovieData?.theater ?? []
+        
+        title = firebaseMovieData?.title
         
         navigationItem.leftBarButtonItem?.tintColor = UIColor.white
 
@@ -96,6 +102,8 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             
             locationCell.locationButton.setTitle(location[indexPath.row], for: .normal)
             
+            locationCell.locationButton.addTarget(self, action: #selector(filterLocation(sender:)), for: .touchUpInside)
+            
             return locationCell
             
         } else if collectionView == dateCollectionView {
@@ -103,6 +111,26 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         }
         
         return UICollectionViewCell()
+    }
+    
+    @objc func filterLocation(sender: UIButton) {
+        print(sender.tag)
+        
+        if sender.titleLabel?.text != "全部地區" {
+            
+            filteredFirebaseData = firebaseMovieData?.theater?.filter{$0.region == sender.titleLabel?.text} ?? []
+            
+            cinemaShowtimeTableView.reloadData()
+        } else {
+            
+            filteredFirebaseData = firebaseMovieData?.theater ?? []
+            
+            cinemaShowtimeTableView.reloadData()
+        }
+        
+        print(filteredFirebaseData)
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -125,7 +153,8 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
 
 extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        
+        return filteredFirebaseData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -136,6 +165,10 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
             as? CinemaShowtimeTableViewCell else {
                 return UITableViewCell()
         }
+        
+        cinemaShowtimeCell.theaterNameLabel.text = filteredFirebaseData[indexPath.row].name
+        cinemaShowtimeCell.presentLabel.text = filteredFirebaseData[indexPath.row].present
+        cinemaShowtimeCell.languageLabel.text = filteredFirebaseData[indexPath.row].language
         
         return cinemaShowtimeCell
     }

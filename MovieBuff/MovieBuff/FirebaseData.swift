@@ -27,7 +27,7 @@ struct  MovieInfo: Codable {
 
 struct MovieTheaterInfo: Codable {
     
-    let theaterName: String?
+    let name: String?
     let region: String?
     let language: String?
     let present: String?
