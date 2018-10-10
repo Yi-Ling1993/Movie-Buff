@@ -170,6 +170,22 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         cinemaShowtimeCell.presentLabel.text = filteredFirebaseData[indexPath.row].present
         cinemaShowtimeCell.languageLabel.text = filteredFirebaseData[indexPath.row].language
         
+        var showtimeString = ""
+        let showtimeCount: Int = (filteredFirebaseData[indexPath.row].showtime?[0].time?.count)! - 1
+        for index in 0 ... showtimeCount {
+            
+            showtimeString += "\(filteredFirebaseData[indexPath.row].showtime![0].time![index])   "
+        }
+        
+        let attriString = NSMutableAttributedString(string: showtimeString)
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 15
+        style.minimumLineHeight = 0
+        attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: showtimeString.characters.count))
+
+        
+        cinemaShowtimeCell.shoetimeLabel.attributedText = attriString
+        
         return cinemaShowtimeCell
     }
     
@@ -177,3 +193,5 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
 //        return 150
 //    }
 }
+
+
