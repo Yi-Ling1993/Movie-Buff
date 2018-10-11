@@ -53,6 +53,8 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         setNavigationBarItem()
         

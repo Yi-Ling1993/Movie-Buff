@@ -18,7 +18,7 @@ public struct WKAwesomeMenuOptions {
     
     public var cornerRadius: CGFloat = 5
     
-    public var shadowColor: UIColor = UIColor(red:0.56, green:0.77, blue:0.84, alpha:1)
+    public var shadowColor: UIColor = UIColor.orange
     
     public var shadowOffset: CGPoint = CGPoint(x: -10, y: 0)
     

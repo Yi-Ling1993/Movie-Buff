@@ -114,10 +114,17 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     var omdbDict: [String: OMDBData] = [:]
     
     var pagerIndex: Int = 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+       UIApplication.shared.isStatusBarHidden = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+      
         
         setNavigationBarItem()
         

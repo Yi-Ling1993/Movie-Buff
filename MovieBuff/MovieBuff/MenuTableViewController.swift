@@ -16,9 +16,11 @@ class MenuTableViewController: UITableViewController {
     
     var viewControllerIdentifier: String = ""
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .none
@@ -32,6 +34,7 @@ class MenuTableViewController: UITableViewController {
                                 forCellReuseIdentifier: "MenuTableViewCell")
     }
     
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

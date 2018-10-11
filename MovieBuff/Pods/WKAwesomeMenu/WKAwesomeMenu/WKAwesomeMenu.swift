@@ -17,6 +17,7 @@ open class WKAwesomeMenu: UIViewController {
         
     }
     
+    
     fileprivate var rootViewController: UIViewController!
     
     fileprivate var menuViewController: UIViewController!

@@ -60,6 +60,8 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         
 
         setNavigationBarItem()
         

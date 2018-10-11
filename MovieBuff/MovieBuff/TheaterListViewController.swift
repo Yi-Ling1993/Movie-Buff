@@ -29,7 +29,7 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
 //            theTag = nil
         }
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -245,13 +245,7 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             
             TheaterData.instance.theaterInfo.remove(at: indexPath.row)
             TheaterData.instance.theaterInfo.insert(filteredRegion[sender.tag], at: 0)
-            
-//            theaterTableView.reloadData()
-            
-//            let zz = filteredRegion[sender.tag]
-//            filteredRegion.remove(at: indexPath.row)
-//            filteredRegion.insert(zz, at: 0)
-            
+
         }
         
         }
