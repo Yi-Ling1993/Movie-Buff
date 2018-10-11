@@ -625,11 +625,11 @@
             <objects>
                 <viewController id="hMi-Ua-sJE" customClass="MovieShowtimeViewController" customModule="MovieBuff" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kdk-XH-iXD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ryF-NN-4jP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QQE-2J-MD5"/>
@@ -647,7 +647,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZrE-0I-D0e">
-                                <rect key="frame" x="0.0" y="558" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="DL9-BL-YdX"/>
@@ -674,7 +674,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5bH-81-m9G">
-                                <rect key="frame" x="0.0" y="55" width="375" height="503"/>
+                                <rect key="frame" x="0.0" y="119" width="375" height="503"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CinemaShowtimeCell" rowHeight="137" id="9Mn-cj-ZIl" customClass="CinemaShowtimeTableViewCell" customModule="MovieBuff" customModuleProvider="target">
@@ -1044,6 +1044,9 @@
                                     <constraint firstAttribute="width" constant="35" id="S0P-QF-M3l"/>
                                 </constraints>
                                 <state key="normal" image="clapperboard"/>
+                                <connections>
+                                    <action selector="thisWeekToShowtime:" destination="pFJ-OD-dik" eventType="touchUpInside" id="zqO-dB-ISZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1068,6 +1071,7 @@
                     <connections>
                         <outlet property="thisWeekInfoTableView" destination="wkG-7s-KeS" id="9h2-Do-m1e"/>
                         <outlet property="thisWeekPagerView" destination="66N-LM-TFI" id="lds-cR-KQ6"/>
+                        <segue destination="hMi-Ua-sJE" kind="show" identifier="ThisWeekToShowtime" id="P19-i5-GEJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmM-7J-fd7" sceneMemberID="firstResponder"/>
@@ -1206,4 +1210,7 @@
         <image name="reload" width="256" height="256"/>
         <image name="ticket" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="P19-i5-GEJ"/>
+    </inferredMetricsTieBreakers>
 </document>

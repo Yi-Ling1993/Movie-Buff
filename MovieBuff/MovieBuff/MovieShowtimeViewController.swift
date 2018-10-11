@@ -20,8 +20,11 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
     
     var filteredFirebaseData: [MovieTheaterInfo] = []
     
+    var dateFilterSender: Int = 0
+    
     let location: [String] = ["全部地區", "台北東區", "台北西區", "台北北區", "台北南區"]
 
+    let dates: [String] = ["10/4(四)", "10/5(五)", "10/6(六)", "10/7(日)", "10/8(一)", "10/9(二)", "10/10 (三)"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,10 +110,24 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             return locationCell
             
         } else if collectionView == dateCollectionView {
+            
+            dateCell.dateButton.setTitle(dates[indexPath.row], for: .normal)
+            
+            dateCell.dateButton.tag = indexPath.row
+            dateCell.dateButton.addTarget(self, action: #selector(filterDate(sender:)), for: .touchUpInside)
+            
             return dateCell
         }
         
         return UICollectionViewCell()
+    }
+    
+    @objc func filterDate(sender: UIButton) {
+        print(sender.tag)
+        
+        dateFilterSender = sender.tag
+        
+        cinemaShowtimeTableView.reloadData()
     }
     
     @objc func filterLocation(sender: UIButton) {
@@ -171,10 +188,10 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         cinemaShowtimeCell.languageLabel.text = filteredFirebaseData[indexPath.row].language
         
         var showtimeString = ""
-        let showtimeCount: Int = (filteredFirebaseData[indexPath.row].showtime?[0].time?.count)! - 1
+        let showtimeCount: Int = (filteredFirebaseData[indexPath.row].showtime?[dateFilterSender].time?.count)! - 1
         for index in 0 ... showtimeCount {
             
-            showtimeString += "\(filteredFirebaseData[indexPath.row].showtime![0].time![index])   "
+            showtimeString += "\(filteredFirebaseData[indexPath.row].showtime![dateFilterSender].time![index])   "
         }
         
         let attriString = NSMutableAttributedString(string: showtimeString)
