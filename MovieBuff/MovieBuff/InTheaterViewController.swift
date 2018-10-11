@@ -13,6 +13,7 @@ import YouTubePlayer_Swift
 import FirebaseDatabase
 import Firebase
 import Kingfisher
+import Crashlytics
 
 class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
     func playerReady(_ videoPlayer: YouTubePlayerView) {
@@ -113,9 +114,10 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     var omdbDict: [String: OMDBData] = [:]
     
     var pagerIndex: Int = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         setNavigationBarItem()
         
