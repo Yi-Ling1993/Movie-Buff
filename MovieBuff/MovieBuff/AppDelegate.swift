@@ -20,6 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = UINavigationController(rootViewController: UIViewController())
+//        window?.backgroundColor = UIColor.white
+//        window?.makeKeyAndVisible()
+//
+//
+//        let stateBarBlockView = UIView(frame: CGRect(x: 0, y: 0, width: window!.bounds.width, height: 20))
+//        stateBarBlockView.backgroundColor = UIColor.orange
+//        window?.addSubview(stateBarBlockView)
+//        window?.bringSubviewToFront(stateBarBlockView)
+        
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
+
+       
+        
         Fabric.with([Crashlytics.self])
         
         GMSServices.provideAPIKey("AIzaSyD813UwWssk66FntLWLhWotasHUAl99080")
@@ -35,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let menuVC = MenuTableViewController()
         
         var options = WKAwesomeMenuOptions.defaultOptions()
-        options.backgroundImage = UIImage(named: "bg")
+        options.backgroundImage = UIImage(named: "blur1-576x1024")
         let awesomeMenu = WKAwesomeMenu(rootViewController: rootVC, menuViewController: menuVC, options: options)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -70,3 +85,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
+}
+
+
