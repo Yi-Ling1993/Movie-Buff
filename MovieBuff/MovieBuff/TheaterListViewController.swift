@@ -20,7 +20,7 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
     
     var theTag: Int?
     
-    var cellForItemTag: Int?
+    var cellForItemTag: Int? = 0
    
     //swiftlint:disable identifier_name
 
