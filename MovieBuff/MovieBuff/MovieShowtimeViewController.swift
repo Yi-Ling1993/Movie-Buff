@@ -26,6 +26,8 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
 
     let dates: [String] = ["10/4(四)", "10/5(五)", "10/6(六)", "10/7(日)", "10/8(一)", "10/9(二)", "10/10 (三)"]
     
+    var cellForItemTag: Int? = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -107,6 +109,16 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             
             locationCell.locationButton.addTarget(self, action: #selector(filterLocation(sender:)), for: .touchUpInside)
             
+            locationCell.locationButton.tag = indexPath.row
+
+            if cellForItemTag == indexPath.row {
+
+                locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                locationCell.locationButton.layer.borderWidth = 2
+            } else {
+                locationCell.locationButton.layer.borderWidth = 0
+            }
+            
             return locationCell
             
         } else if collectionView == dateCollectionView {
@@ -146,6 +158,28 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         }
         
         print(filteredFirebaseData)
+        
+        cellForItemTag = sender.tag
+        
+        for index in 0 ... 4  {
+            
+            let index = IndexPath(row: index, section: 0)
+            if let cell = regionCollectionView.cellForItem(at: index) as? LocationCollectionViewCell {
+                
+                
+                print("sender.tag\(sender.tag) == cell.locationButton.tag\(cell.locationButton.tag)")
+                
+                if sender.tag == cell.locationButton.tag {
+                    
+                    cell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                    cell.locationButton.layer.borderWidth = 2
+                } else {
+                    cell.locationButton.layer.borderWidth = 0
+                }
+            }
+            
+        }
+
         
         
     }

@@ -107,36 +107,19 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
         locationCell.locationButton.tag = indexPath.row
         locationCell.locationButton.addTarget(self, action: #selector(filterLocation(sender:)), for: .touchUpInside)
         
-//        for index in 0 ... 4  {
-//
-//            let index = IndexPath(row: index, section: 0)
-//            guard let cell = locationCollectionView.cellForItem(at: index) as? LocationCollectionViewCell else {
-//                return
-//            }
-//
-//            print("sender.tag\(sender.tag) == cell.locationButton.tag\(cell.locationButton.tag)")
-        
-        
-        print("cellForItemTag\(cellForItemTag)  indexpath.row\(indexPath.row)")
-        
-        print(cellForItemTag)
-        
-            if cellForItemTag == indexPath.row {
+        if cellForItemTag == indexPath.row {
                 
-                locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
-                locationCell.locationButton.layer.borderWidth = 2
-            } else {
-                locationCell.locationButton.layer.borderWidth = 0
-            }
-        
-//        locationCollectionView.reloadData()
-
+            locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+            locationCell.locationButton.layer.borderWidth = 2
+        } else {
+            locationCell.locationButton.layer.borderWidth = 0
+        }
+    
         return locationCell
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailController = segue.destination as? TheaterDetailViewController else {return}
-//        detailController.delegate = self as? DataPassDelegate
         
         print(filteredRegion)
         
@@ -237,8 +220,6 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
                     cell.locationButton.layer.borderWidth = 0
                 }
             }
-
-            
 
         }
 
