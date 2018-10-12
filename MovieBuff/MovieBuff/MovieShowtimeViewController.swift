@@ -113,13 +113,13 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             
             locationCell.locationButton.tag = indexPath.row
 
-            if cellForItemLocationTag == indexPath.row {
-
-                locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
-                locationCell.locationButton.layer.borderWidth = 2
-            } else {
-                locationCell.locationButton.layer.borderWidth = 0
-            }
+//            if cellForItemLocationTag == indexPath.row {
+//
+//                locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+//                locationCell.locationButton.layer.borderWidth = 2
+//            } else {
+//                locationCell.locationButton.layer.borderWidth = 0
+//            }
             
             return locationCell
             
@@ -130,18 +130,55 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             dateCell.dateButton.tag = indexPath.row
             dateCell.dateButton.addTarget(self, action: #selector(filterDate(sender:)), for: .touchUpInside)
             
-            if cellForItemDateTag == indexPath.row {
-                
-                dateCell.dateButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
-                dateCell.dateButton.layer.borderWidth = 2
-            } else {
-                dateCell.dateButton.layer.borderWidth = 0
-            }
+//            if cellForItemDateTag == indexPath.row {
+//
+//                dateCell.dateButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+//                dateCell.dateButton.layer.borderWidth = 2
+//            } else {
+//                dateCell.dateButton.layer.borderWidth = 0
+//            }
             
             return dateCell
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if let locationCell = cell as? LocationCollectionViewCell {
+             locationCell.locationButton.layer.borderWidth = 0
+        }
+        
+        if let dateCell = cell as? DateCollectionViewCell {
+            dateCell.dateButton.layer.borderWidth = 0
+        }
+        
+       
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        if let locationCell = cell as? LocationCollectionViewCell {
+            if cellForItemLocationTag == indexPath.row {
+                
+                locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                locationCell.locationButton.layer.borderWidth = 2
+            }
+        }
+        
+        if let dateCell = cell as? DateCollectionViewCell {
+            if cellForItemDateTag == indexPath.row {
+                
+                dateCell.dateButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                dateCell.dateButton.layer.borderWidth = 2
+            }
+        }
+        
+        
+        
+        
     }
     
     @objc func filterDate(sender: UIButton) {
@@ -151,7 +188,7 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         
         cellForItemDateTag = sender.tag
         
-        for index in 0 ... 4  {
+        for index in 0 ... 6  {
             
             let index = IndexPath(row: index, section: 0)
             if let cell = dateCollectionView.cellForItem(at: index) as? DateCollectionViewCell {

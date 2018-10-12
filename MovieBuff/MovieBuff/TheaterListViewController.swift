@@ -106,18 +106,31 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
 
         locationCell.locationButton.tag = indexPath.row
         locationCell.locationButton.addTarget(self, action: #selector(filterLocation(sender:)), for: .touchUpInside)
-        
-        if cellForItemTag == indexPath.row {
-                
-            locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
-            locationCell.locationButton.layer.borderWidth = 2
-        } else {
-            locationCell.locationButton.layer.borderWidth = 0
-        }
     
         return locationCell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
+        guard let locationCell = cell as? LocationCollectionViewCell else {
+                return
+        }
+
+        locationCell.locationButton.layer.borderWidth = 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
+        guard let locationCell = cell as? LocationCollectionViewCell else {
+                return
+        }
+
+        if cellForItemTag == indexPath.row {
+
+            locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+            locationCell.locationButton.layer.borderWidth = 2
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailController = segue.destination as? TheaterDetailViewController else {return}
         
@@ -217,6 +230,7 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
                     cell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
                     cell.locationButton.layer.borderWidth = 2
                 } else {
+                    print(index)
                     cell.locationButton.layer.borderWidth = 0
                 }
             }
