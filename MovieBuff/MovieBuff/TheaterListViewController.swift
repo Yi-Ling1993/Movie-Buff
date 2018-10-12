@@ -19,6 +19,8 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
     let location: [String] = ["全部地區", "台北東區", "台北西區", "台北北區", "台北南區"]
     
     var theTag: Int?
+    
+    var cellForItemTag: Int?
    
     //swiftlint:disable identifier_name
 
@@ -104,6 +106,30 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
 
         locationCell.locationButton.tag = indexPath.row
         locationCell.locationButton.addTarget(self, action: #selector(filterLocation(sender:)), for: .touchUpInside)
+        
+//        for index in 0 ... 4  {
+//
+//            let index = IndexPath(row: index, section: 0)
+//            guard let cell = locationCollectionView.cellForItem(at: index) as? LocationCollectionViewCell else {
+//                return
+//            }
+//
+//            print("sender.tag\(sender.tag) == cell.locationButton.tag\(cell.locationButton.tag)")
+        
+        
+        print("cellForItemTag\(cellForItemTag)  indexpath.row\(indexPath.row)")
+        
+        print(cellForItemTag)
+        
+            if cellForItemTag == indexPath.row {
+                
+                locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                locationCell.locationButton.layer.borderWidth = 2
+            } else {
+                locationCell.locationButton.layer.borderWidth = 0
+            }
+        
+//        locationCollectionView.reloadData()
 
         return locationCell
     }
@@ -178,9 +204,8 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     
     @objc func filterLocation(sender: UIButton) {
         print(sender.tag)
-    
-        sender.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
-        sender.layer.borderWidth = 2
+        
+        cellForItemTag = sender.tag
         
         if sender.titleLabel?.text != "全部地區" {
             
@@ -195,9 +220,32 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
         print(filteredRegion)
-        
+    
+        for index in 0 ... 4  {
+
+            let index = IndexPath(row: index, section: 0)
+            if let cell = locationCollectionView.cellForItem(at: index) as? LocationCollectionViewCell {
+            
+                
+                print("sender.tag\(sender.tag) == cell.locationButton.tag\(cell.locationButton.tag)")
+                
+                if sender.tag == cell.locationButton.tag {
+                    
+                    cell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                    cell.locationButton.layer.borderWidth = 2
+                } else {
+                    cell.locationButton.layer.borderWidth = 0
+                }
+            }
+
+            
 
         }
+
+        
+        
+
+    }
     
     @objc func navigate(sender: UIButton) {
         print(sender.tag)
