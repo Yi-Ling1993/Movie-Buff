@@ -143,7 +143,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBS-9W-7HD">
-                        <rect key="frame" x="223" y="15.5" width="30" height="30"/>
+                        <rect key="frame" x="227" y="15.5" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="PZa-qf-cA8"/>
                             <constraint firstAttribute="width" constant="30" id="VSB-Lu-esk"/>
@@ -186,7 +186,7 @@
                     <constraint firstItem="LGF-PK-b6A" firstAttribute="leading" secondItem="cgJ-ep-Xxh" secondAttribute="trailing" constant="8" id="snm-rP-Arc"/>
                     <constraint firstItem="Pnc-aE-bpQ" firstAttribute="top" secondItem="T14-yy-TqX" secondAttribute="bottom" constant="4" id="tLx-xv-EN6"/>
                     <constraint firstItem="jT3-dr-Vde" firstAttribute="leading" secondItem="f2g-Q9-JYe" secondAttribute="trailing" constant="3" id="tRf-EH-EjH"/>
-                    <constraint firstItem="XJm-UF-zpl" firstAttribute="leading" secondItem="hBS-9W-7HD" secondAttribute="trailing" constant="22" id="uW1-1y-6xO"/>
+                    <constraint firstItem="XJm-UF-zpl" firstAttribute="leading" secondItem="hBS-9W-7HD" secondAttribute="trailing" constant="18" id="uW1-1y-6xO"/>
                     <constraint firstItem="cgJ-ep-Xxh" firstAttribute="leading" secondItem="TcA-5s-hrr" secondAttribute="leading" constant="2" id="ukG-8R-0W6"/>
                     <constraint firstItem="f2g-Q9-JYe" firstAttribute="leading" secondItem="ZEv-ih-3Lt" secondAttribute="trailing" constant="3" id="vic-Wi-gL3"/>
                     <constraint firstItem="Yug-gZ-CG7" firstAttribute="top" secondItem="f2g-Q9-JYe" secondAttribute="top" id="w7k-D5-olQ"/>
@@ -207,6 +207,7 @@
                 <outlet property="plotLabel" destination="brg-kZ-lJH" id="Ouq-DJ-yNV"/>
                 <outlet property="ratedLabel" destination="Pnc-aE-bpQ" id="UDP-lm-fgU"/>
                 <outlet property="releaseDateLabel" destination="ZEv-ih-3Lt" id="PYp-B4-rmR"/>
+                <outlet property="showtimeButton" destination="hBS-9W-7HD" id="eDz-eX-nvU"/>
                 <outlet property="titleLabel" destination="TcA-5s-hrr" id="mNI-s7-jGR"/>
                 <outlet property="trailerButton" destination="XJm-UF-zpl" id="cL7-7A-Fzb"/>
             </connections>

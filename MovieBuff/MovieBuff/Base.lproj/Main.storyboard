@@ -43,21 +43,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kdn-vp-8Bk">
-                                <rect key="frame" x="0.0" y="240" width="375" height="303"/>
+                                <rect key="frame" x="0.0" y="240" width="375" height="363"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="zsI-6j-A48"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Xoc-ge-eBb"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOV-Vu-yfe">
-                                <rect key="frame" x="300" y="552" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Gnc-c0-JvL"/>
-                                    <constraint firstAttribute="width" constant="35" id="xNE-LP-GW5"/>
-                                </constraints>
-                                <state key="normal" image="clapperboard"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -66,13 +58,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kdn-vp-8Bk" secondAttribute="trailing" id="9bE-pv-2Du"/>
                             <constraint firstItem="4F9-Ui-38u" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="BZx-sc-LuB"/>
                             <constraint firstAttribute="trailing" secondItem="4F9-Ui-38u" secondAttribute="trailing" id="D8H-XG-9l1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kdn-vp-8Bk" secondAttribute="bottom" constant="60" id="L5P-BE-z5I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kdn-vp-8Bk" secondAttribute="bottom" id="L5P-BE-z5I"/>
                             <constraint firstItem="Kdn-vp-8Bk" firstAttribute="top" secondItem="X9k-vc-MWT" secondAttribute="bottom" id="LQD-IK-wpk"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PdH-4O-90X"/>
                             <constraint firstItem="4F9-Ui-38u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RrK-fx-E4C"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LOV-Vu-yfe" secondAttribute="trailing" constant="40" id="SRd-Av-pNj"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wok-Ff-U4J"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LOV-Vu-yfe" secondAttribute="bottom" constant="16" id="iyd-Ic-hru"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

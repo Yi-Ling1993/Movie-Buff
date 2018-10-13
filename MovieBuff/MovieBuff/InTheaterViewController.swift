@@ -32,11 +32,11 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     @IBOutlet weak var videoView: YouTubePlayerView!
     
-    @IBAction func inTheaterToShowtime(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "InTheaterToShowtime", sender: self)
-    }
-    
+//    @IBAction func inTheaterToShowtime(_ sender: Any) {
+//        
+//        self.performSegue(withIdentifier: "InTheaterToShowtime", sender: self)
+//    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let showtimeController = segue.destination as? MovieShowtimeViewController else {return}
         
@@ -306,8 +306,13 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         infoCell.directorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Director
         infoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
         infoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
+        infoCell.showtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
 
         return infoCell
+    }
+    
+    @objc func toShowtime(sender: UIButton) {
+        self.performSegue(withIdentifier: "InTheaterToShowtime", sender: self)
     }
     
     @objc func playTrailer(sender: UIButton) {

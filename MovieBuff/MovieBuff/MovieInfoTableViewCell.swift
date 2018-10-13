@@ -22,8 +22,7 @@ class MovieInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var directorLabel: UILabel!
     @IBOutlet weak var actorLabel: UILabel!
     @IBOutlet weak var plotLabel: UILabel!
-    @IBOutlet weak var psLabel: UILabel!
-    
+    @IBOutlet weak var showtimeButton: UIButton!
     
 
     override func awakeFromNib() {
