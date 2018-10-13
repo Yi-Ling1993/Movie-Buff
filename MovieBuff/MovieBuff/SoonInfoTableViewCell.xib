@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,21 +109,8 @@
                             <constraint firstAttribute="height" constant="16" id="ZV8-2j-Wvm"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-2" translatesAutoresizingMaskIntoConstraints="NO" id="7Hw-5p-mYa">
-                        <rect key="frame" x="75" y="79" width="16" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="16" id="Dw7-1b-u3x"/>
-                            <constraint firstAttribute="height" constant="16" id="c69-KP-oV2"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EW1-Zv-fEu">
                         <rect key="frame" x="46" y="79" width="21" height="18"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2N-F6-3GE">
-                        <rect key="frame" x="98" y="79" width="21" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -139,102 +125,70 @@
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="導演:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgA-mX-IxX">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="導演:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgA-mX-IxX">
                         <rect key="frame" x="22" y="103" width="39" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="演員:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmf-xJ-9p2">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="演員:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nmf-xJ-9p2">
                         <rect key="frame" x="22" y="129.5" width="39" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="備註:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YxS-XH-Kwu">
-                        <rect key="frame" x="22" y="395" width="39" height="20.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Jon M. Chu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO5-eP-mML">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jon M. Chu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zO5-eP-mML">
                         <rect key="frame" x="69" y="104.5" width="80" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Constance Wu, Henry Golding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-uY-gah">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constance Wu, Henry Golding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-uY-gah">
                         <rect key="frame" x="69" y="131" width="209" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSe-NX-s2A">
-                        <rect key="frame" x="22" y="158" width="333" height="229"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSe-NX-s2A">
+                        <rect key="frame" x="22" y="158" width="333" height="95.5"/>
                         <string key="text">This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachael Chu to Singapore to meet her boufriend's family.This contemporary romantic comedy, based on a global b</string>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="我要睡飽This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachael Chu to " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qay-uE-KPz">
-                        <rect key="frame" x="22" y="423.5" width="333" height="57.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl2-VK-ctI">
-                        <rect key="frame" x="237" y="16" width="28" height="28"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="28" id="mqd-gs-Ejh"/>
-                            <constraint firstAttribute="height" constant="28" id="pAf-EY-XbN"/>
-                        </constraints>
-                        <state key="normal" image="speech-bubble"/>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="zJ5-A4-1tz" firstAttribute="centerY" secondItem="4XR-l6-2Y4" secondAttribute="centerY" id="0qG-5g-1w8"/>
-                    <constraint firstItem="A5v-6q-ag2" firstAttribute="leading" secondItem="Jl2-VK-ctI" secondAttribute="trailing" constant="10" id="2bh-Is-z5A"/>
-                    <constraint firstItem="f2N-F6-3GE" firstAttribute="top" secondItem="SIv-g5-Dat" secondAttribute="bottom" constant="5" id="2mr-1g-CBw"/>
-                    <constraint firstItem="Jl2-VK-ctI" firstAttribute="top" secondItem="wKu-ak-bZ3" secondAttribute="top" constant="16" id="4zW-F7-2JK"/>
-                    <constraint firstItem="YxS-XH-Kwu" firstAttribute="leading" secondItem="Nmf-xJ-9p2" secondAttribute="leading" id="5vC-y4-XIq"/>
                     <constraint firstItem="tcJ-uY-gah" firstAttribute="centerY" secondItem="Nmf-xJ-9p2" secondAttribute="centerY" id="7A7-F2-MeE"/>
                     <constraint firstItem="aAO-yy-u3L" firstAttribute="top" secondItem="m9e-zP-vws" secondAttribute="bottom" id="9DL-Xf-uvq"/>
                     <constraint firstItem="m9e-zP-vws" firstAttribute="leading" secondItem="SIv-g5-Dat" secondAttribute="trailing" constant="-68" id="9hU-3z-GOq"/>
-                    <constraint firstAttribute="trailing" secondItem="qay-uE-KPz" secondAttribute="trailing" constant="20" id="BJn-PL-szr"/>
                     <constraint firstItem="mgA-mX-IxX" firstAttribute="top" secondItem="aMJ-uB-hfi" secondAttribute="bottom" constant="8" id="BfV-Ks-o9L"/>
                     <constraint firstItem="4XR-l6-2Y4" firstAttribute="leading" secondItem="khs-ct-XYV" secondAttribute="trailing" constant="3" id="Bfj-dI-1Fc"/>
                     <constraint firstItem="zJ5-A4-1tz" firstAttribute="leading" secondItem="l68-Sz-ail" secondAttribute="trailing" id="Coo-Fj-RkM"/>
                     <constraint firstItem="zO5-eP-mML" firstAttribute="centerY" secondItem="mgA-mX-IxX" secondAttribute="centerY" id="DEe-7j-0wY"/>
                     <constraint firstItem="Nmf-xJ-9p2" firstAttribute="top" secondItem="mgA-mX-IxX" secondAttribute="bottom" constant="6" id="DJn-4L-lMd"/>
                     <constraint firstItem="mgA-mX-IxX" firstAttribute="leading" secondItem="12T-Td-joq" secondAttribute="leading" constant="2" id="Dd5-Oj-bR1"/>
-                    <constraint firstItem="7Hw-5p-mYa" firstAttribute="top" secondItem="SIv-g5-Dat" secondAttribute="bottom" constant="5" id="FiU-dD-bP6"/>
                     <constraint firstAttribute="trailing" secondItem="CSe-NX-s2A" secondAttribute="trailing" constant="20" id="Gqv-Bu-ACD"/>
                     <constraint firstItem="l68-Sz-ail" firstAttribute="leading" secondItem="4XR-l6-2Y4" secondAttribute="trailing" constant="-1" id="HIY-Vl-4w0"/>
                     <constraint firstItem="zO5-eP-mML" firstAttribute="leading" secondItem="mgA-mX-IxX" secondAttribute="trailing" constant="8" id="JPg-77-ZMu"/>
                     <constraint firstItem="SIv-g5-Dat" firstAttribute="leading" secondItem="m9e-zP-vws" secondAttribute="leading" id="Liu-Cd-ax1"/>
                     <constraint firstItem="m9e-zP-vws" firstAttribute="top" secondItem="12T-Td-joq" secondAttribute="bottom" constant="-1" id="OeQ-tV-Ec2"/>
-                    <constraint firstAttribute="bottom" secondItem="qay-uE-KPz" secondAttribute="bottom" constant="23.5" id="P7D-uT-vRN"/>
                     <constraint firstItem="EW1-Zv-fEu" firstAttribute="leading" secondItem="aMJ-uB-hfi" secondAttribute="trailing" constant="7" id="Skq-cR-uEH"/>
                     <constraint firstItem="aMJ-uB-hfi" firstAttribute="leading" secondItem="SIv-g5-Dat" secondAttribute="leading" id="VMi-Pu-T6d"/>
-                    <constraint firstItem="qay-uE-KPz" firstAttribute="leading" secondItem="CSe-NX-s2A" secondAttribute="leading" id="Vcq-mD-YfW"/>
-                    <constraint firstItem="YxS-XH-Kwu" firstAttribute="top" secondItem="CSe-NX-s2A" secondAttribute="bottom" constant="8" id="cBg-nZ-hLQ"/>
                     <constraint firstItem="SIv-g5-Dat" firstAttribute="top" secondItem="m9e-zP-vws" secondAttribute="bottom" constant="1" id="cPm-BS-FPU"/>
                     <constraint firstItem="A5v-6q-ag2" firstAttribute="top" secondItem="wKu-ak-bZ3" secondAttribute="top" constant="13" id="chz-cT-fhW"/>
                     <constraint firstAttribute="trailing" secondItem="A5v-6q-ag2" secondAttribute="trailing" constant="20" id="eJo-su-7io"/>
                     <constraint firstItem="l68-Sz-ail" firstAttribute="top" secondItem="khs-ct-XYV" secondAttribute="top" id="hUI-kq-Fdr"/>
-                    <constraint firstItem="qay-uE-KPz" firstAttribute="top" secondItem="YxS-XH-Kwu" secondAttribute="bottom" constant="8" id="hft-aJ-lZJ"/>
                     <constraint firstItem="tcJ-uY-gah" firstAttribute="leading" secondItem="Nmf-xJ-9p2" secondAttribute="trailing" constant="8" id="k0W-aF-ULz"/>
                     <constraint firstItem="Nmf-xJ-9p2" firstAttribute="leading" secondItem="12T-Td-joq" secondAttribute="leading" constant="2" id="l61-nm-ere"/>
                     <constraint firstItem="aMJ-uB-hfi" firstAttribute="top" secondItem="SIv-g5-Dat" secondAttribute="bottom" constant="5" id="nmA-mx-ohF"/>
                     <constraint firstItem="CSe-NX-s2A" firstAttribute="leading" secondItem="Nmf-xJ-9p2" secondAttribute="leading" id="pGQ-rZ-r0d"/>
-                    <constraint firstItem="f2N-F6-3GE" firstAttribute="leading" secondItem="7Hw-5p-mYa" secondAttribute="trailing" constant="7" id="qds-54-Osp"/>
                     <constraint firstItem="EW1-Zv-fEu" firstAttribute="top" secondItem="SIv-g5-Dat" secondAttribute="bottom" constant="5" id="rAG-O4-BgH"/>
                     <constraint firstItem="oUj-nc-CYF" firstAttribute="top" secondItem="SIv-g5-Dat" secondAttribute="top" id="ruO-7U-bqx"/>
                     <constraint firstItem="12T-Td-joq" firstAttribute="top" secondItem="wKu-ak-bZ3" secondAttribute="top" constant="10" id="sKr-Jo-d77"/>
                     <constraint firstItem="khs-ct-XYV" firstAttribute="top" secondItem="aAO-yy-u3L" secondAttribute="top" id="t2w-Tf-DUY"/>
                     <constraint firstItem="m9e-zP-vws" firstAttribute="leading" secondItem="wKu-ak-bZ3" secondAttribute="leading" constant="23" id="usE-Sv-Enx"/>
-                    <constraint firstItem="7Hw-5p-mYa" firstAttribute="leading" secondItem="EW1-Zv-fEu" secondAttribute="trailing" constant="8" id="vi8-rE-dTo"/>
                     <constraint firstItem="m9e-zP-vws" firstAttribute="trailing" secondItem="12T-Td-joq" secondAttribute="trailing" id="vqB-XP-1qm"/>
                     <constraint firstItem="oUj-nc-CYF" firstAttribute="leading" secondItem="aAO-yy-u3L" secondAttribute="trailing" constant="3" id="vzT-Ea-zj3"/>
                     <constraint firstItem="12T-Td-joq" firstAttribute="leading" secondItem="wKu-ak-bZ3" secondAttribute="leading" constant="20" id="xnY-Gv-iDO"/>
@@ -249,8 +203,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="speech-bubble" width="512" height="512"/>
         <image name="star" width="256" height="256"/>
-        <image name="star-2" width="256" height="256"/>
     </resources>
 </document>

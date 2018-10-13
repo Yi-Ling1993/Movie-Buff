@@ -131,14 +131,7 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
             locationCell.locationButton.layer.borderWidth = 2
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailController = segue.destination as? TheaterDetailViewController else {return}
-        
-        print(filteredRegion)
-        
-        detailController.theaterDetail = filteredRegion[theTag ?? 0]
-        
-    }
+    
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -187,11 +180,20 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print(filteredRegion[indexPath.row])
+//        print(filteredRegion[indexPath.row])
         
         theTag = indexPath.row
         
         performSegue(withIdentifier: "TheaterListToDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailController = segue.destination as? TheaterDetailViewController else {return}
+        
+//        print(filteredRegion)
+        
+        detailController.theaterDetail = filteredRegion[theTag ?? 0]
+        
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -223,14 +225,14 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             if let cell = locationCollectionView.cellForItem(at: index) as? LocationCollectionViewCell {
             
                 
-                print("sender.tag\(sender.tag) == cell.locationButton.tag\(cell.locationButton.tag)")
+//                print("sender.tag\(sender.tag) == cell.locationButton.tag\(cell.locationButton.tag)")
                 
                 if sender.tag == cell.locationButton.tag {
                     
                     cell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
                     cell.locationButton.layer.borderWidth = 2
                 } else {
-                    print(index)
+//                    print(index)
                     cell.locationButton.layer.borderWidth = 0
                 }
             }
@@ -243,7 +245,7 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     @objc func navigate(sender: UIButton) {
-        print(sender.tag)
+//        print(sender.tag)
         
         let lati = filteredRegion[sender.tag].latitude
         let longti = filteredRegion[sender.tag].long
@@ -265,8 +267,9 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         
         filteredRegion[sender.tag].isPinned = sender.isSelected
         
-        print(filteredRegion[sender.tag])
+//        print(filteredRegion[sender.tag])
         print(filteredRegion)
+        print(TheaterData.instance.theaterInfo)
         
         for index in 0 ..< TheaterData.instance.theaterInfo.count {
 
@@ -282,14 +285,26 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             
             guard let indexPath = theaterTableView.indexPath(for: cell) else { return }
             
-            print(indexPath)
+//            print(indexPath)
             
             theaterTableView.moveRow(at: indexPath, to: IndexPath(row: 0, section: 0))
+
             
-            TheaterData.instance.theaterInfo.remove(at: indexPath.row)
+            filteredRegion.insert(filteredRegion[sender.tag], at: 0)
+            filteredRegion.remove(at: sender.tag + 1)
+            
             TheaterData.instance.theaterInfo.insert(filteredRegion[sender.tag], at: 0)
+            for index in 1 ..< TheaterData.instance.theaterInfo.count - 1 {
+                
+                if filteredRegion[0].name == TheaterData.instance.theaterInfo[index].name {
+                    TheaterData.instance.theaterInfo.remove(at: index )
+
+                }
+            }
 
         }
+        
+        theaterTableView.reloadData()
         
         }
     
