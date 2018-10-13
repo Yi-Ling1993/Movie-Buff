@@ -10,8 +10,8 @@ import UIKit
 
 struct MenuItems {
     
-    fileprivate let titles = ["上映中", "本週上映", "即將上映", "電影院", "收藏清單"]
-    fileprivate let icons  = [Image.homeImage, Image.notifImage, Image.reviewsImage, Image.settingsImage, Image.helpImage]
+    fileprivate let titles = ["上映中", "本週上映", "即將上映", "電影院"]
+    fileprivate let icons  = [Image.inTheaterImage, Image.thisWeekImage, Image.soonImage, Image.cinemaImage]
     
     var count: Int {
         return self.titles.count
