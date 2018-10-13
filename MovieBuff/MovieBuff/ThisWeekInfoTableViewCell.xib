@@ -19,10 +19,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="瘋狂亞洲富豪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22L-bD-beC">
-                        <rect key="frame" x="20" y="10" width="150" height="30"/>
+                        <rect key="frame" x="20" y="10" width="138" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="1I5-39-QbO"/>
-                            <constraint firstAttribute="width" constant="150" id="YVQ-Qn-DEe"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="23"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,10 +79,12 @@
                             <constraint firstAttribute="height" constant="35" id="T0v-R8-ceH"/>
                             <constraint firstAttribute="width" constant="80" id="cri-ZC-HoF"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                        <color key="tintColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="預告">
                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <state key="selected" title="關閉預告"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="4"/>
@@ -104,7 +105,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-59-kYB">
-                        <rect key="frame" x="205.5" y="66.5" width="56.5" height="18.5"/>
+                        <rect key="frame" x="207.5" y="66.5" width="56.5" height="18.5"/>
                         <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -127,7 +128,7 @@
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constance Wu, Henry Golding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7f-R8-Ybf">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Constance Wu, Henry Golding" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7f-R8-Ybf">
                         <rect key="frame" x="69" y="154" width="286" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -171,7 +172,7 @@
                     <constraint firstItem="0hu-yp-lKT" firstAttribute="top" secondItem="UrY-X2-nLP" secondAttribute="top" constant="13" id="N4B-pW-krl"/>
                     <constraint firstItem="YDM-G2-8Xc" firstAttribute="top" secondItem="Q7f-R8-Ybf" secondAttribute="bottom" constant="15" id="N7w-ih-cFf"/>
                     <constraint firstItem="BEp-0e-Mqq" firstAttribute="leading" secondItem="iYE-g3-9Hj" secondAttribute="trailing" constant="3" id="NkG-AJ-078"/>
-                    <constraint firstItem="ssf-59-kYB" firstAttribute="leading" secondItem="4rK-6W-hdl" secondAttribute="trailing" id="PKx-2l-q8W"/>
+                    <constraint firstItem="ssf-59-kYB" firstAttribute="leading" secondItem="4rK-6W-hdl" secondAttribute="trailing" constant="2" id="PKx-2l-q8W"/>
                     <constraint firstItem="Tbc-g8-uIl" firstAttribute="top" secondItem="cBM-iW-63A" secondAttribute="top" id="V9V-gE-KhH"/>
                     <constraint firstItem="m7k-0O-up6" firstAttribute="leading" secondItem="cBM-iW-63A" secondAttribute="leading" id="WWQ-Qx-nWY"/>
                     <constraint firstItem="Uu3-Ij-t4S" firstAttribute="top" secondItem="cBM-iW-63A" secondAttribute="bottom" constant="9" id="WpR-N5-Td2"/>

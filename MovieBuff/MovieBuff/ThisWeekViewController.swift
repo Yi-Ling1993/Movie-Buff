@@ -8,8 +8,25 @@
 
 import UIKit
 import FSPagerView
+import YouTubePlayer_Swift
+import FirebaseDatabase
+import Firebase
+import Kingfisher
 
-class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
+class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource, YouTubePlayerDelegate {
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        thisWeekVideoView.alpha = 1
+
+    }
+    
+    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        
+    }
+    
+    func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+        
+    }
+    
     
     let imageNames = ["1","2","3","4","5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
@@ -49,10 +66,34 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         didSet {
             self.thisWeekPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             self.typeIndex = 4
+            
+            thisWeekPagerView.isInfinite = true
+
         }
     }
     
+    @IBOutlet weak var thisWeekVideoView: YouTubePlayerView!
     
+    var thisWeekDatas: [MovieInfo] = []
+    
+    var pagerIndex: Int = 0
+    
+    var thisWeekTrailerManager = ThisWeekTrailerManager()
+    
+    var thisWeekManager = ThisWeekManager()
+    
+    let decoder = JSONDecoder()
+    
+    var refref: DatabaseReference!
+    
+    var omdbData: OMDBData?
+    
+    var postDict: [String: URL] = [:]
+    
+    var omdbDict: [String: OMDBData] = [:]
+    
+    var trailerData: TrailerData?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +104,45 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         
         let thisWeekInfoNibs = UINib(nibName: "ThisWeekInfoTableViewCell", bundle: nil)
         thisWeekInfoTableView.register(thisWeekInfoNibs, forCellReuseIdentifier: "ThisWeekInfoCell")
+        
+        thisWeekVideoView.delegate = self
+        
+        
+        thisWeekTrailerManager.delegate = self
+        
+        thisWeekManager.delegate = self
+        
+        refref = Database.database().reference()
+        
+        refref.child("ThisWeek").observeSingleEvent(of: .value) { (snapshot) in
+            //            print(snapshot)
+            
+            guard let value = snapshot.value else { return }
+            
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: value) else { return }
+            
+            do {
+                let thisWeekData = try self.decoder.decode([MovieInfo].self, from: jsonData)
+                print(thisWeekData)
+                
+                self.thisWeekDatas = thisWeekData
+                
+                self.getPoster()
+                
+            } catch {
+                print(error)
+            }
+        }
     }
+    
+    func getPoster() {
+        
+        for thisWeekData in thisWeekDatas {
+            
+            thisWeekManager.requestOMDBData(imdbId: thisWeekData.id ?? "tt3896198")
+        }
+    }
+        
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -99,22 +178,43 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return imageNames.count
+        return thisWeekDatas.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: self.imageNames[index])
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
-        //        cell.contentView.layer.shadowColor = UIColor.white.withAlphaComponent(1).cgColor
+        
+        guard let imdbId = thisWeekDatas[index].id else {
+            return cell
+        }
+        
+        cell.imageView?.kf.setImage(with: postDict[imdbId])
         return cell
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         thisWeekPagerView.deselectItem(at: index, animated: true)
         thisWeekPagerView .scrollToItem(at: index, animated: true)
+        
+        pagerIndex = index
+        
+        thisWeekInfoTableView.reloadData()
+    }
+    
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        
+        print("pagerViewWillEndDragging")
+        
+        print(pagerView.currentIndex)
+        
+        let index = pagerView.currentIndex
+        
+        pagerIndex = index
+        
+        thisWeekInfoTableView.reloadData()
     }
 
     
@@ -140,8 +240,30 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
         
+        guard thisWeekDatas.count > 0 else { return thisWeekInfoCell }
+        
+        // firebase data
+        
+        thisWeekInfoCell.titleLabel.text = thisWeekDatas[pagerIndex].title
+        thisWeekInfoCell.ratedLabel.text = thisWeekDatas[pagerIndex].rated
+        thisWeekInfoCell.releaseLabel.text = thisWeekDatas[pagerIndex].releaseDate
+        
+        let imdbId = thisWeekDatas[pagerIndex].id
+        
+        // omdb data
+        
+        thisWeekInfoCell.enTitleLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Title
+        thisWeekInfoCell.durationLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Runtime
+        thisWeekInfoCell.genreLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Genre
+        thisWeekInfoCell.imdbRatingLabel.text = omdbDict[imdbId ?? "tt3896198"]?.imdbRating
+        thisWeekInfoCell.directorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Director
+        thisWeekInfoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
+        thisWeekInfoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
+        
         thisWeekInfoCell.toShowtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
         
+        thisWeekInfoCell.trailerButton.addTarget(self, action: #selector(playTrailer(sender:)), for: .touchUpInside)
+
         return thisWeekInfoCell
     }
     
@@ -149,5 +271,77 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "ThisWeekToShowtime", sender: self)
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let showtimeController = segue.destination as? MovieShowtimeViewController else {return}
+        
+        showtimeController.firebaseMovieData = thisWeekDatas[pagerIndex]
+        
+    }
+    
+    @objc func playTrailer(sender: UIButton) {
+        
+        guard let cell = sender.superview?.superview as? ThisWeekInfoTableViewCell else { return }
+        
+        guard let indexPath = thisWeekInfoTableView.indexPath(for: cell) else { return }
+        
+        if thisWeekVideoView.isHidden == true {
+            
+            let imdbId = thisWeekDatas[pagerIndex].id
+            
+            thisWeekTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
+        }
+        
+        sender.isSelected = !sender.isSelected
+        
+        sender.setTitleColor(UIColor.white, for: .selected)
+        
+        if thisWeekVideoView.ready && thisWeekVideoView.isHidden == false {
+            thisWeekVideoView.pause()
+            thisWeekVideoView.isHidden = true
+        }
+        
+    }
+    
+    func playTrailer() {
+        let trailerKey = trailerData?.results[0].key
+        
+        thisWeekVideoView.isHidden = false
+        thisWeekVideoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
+        
+    }
+}
+
+extension ThisWeekViewController: ThisWeekManagerDelegate {
+    func manager(_ manager: ThisWeekManager, didGet products: OMDBData) {
+        omdbData = products
+        
+        let posterUrl = URL(string: omdbData?.Poster ?? "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
+        
+        postDict[omdbData?.imdbID ?? "tt3896198"] = posterUrl
+        omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
+        
+        self.thisWeekPagerView.reloadData()
+        self.thisWeekInfoTableView.reloadData()
+    }
+    
+    func manager(_ manager: ThisWeekManager, didFailWith error: Error) {
+        print(error)
+    }
+    
+}
+
+extension ThisWeekViewController: ThisWeekTrailerManagerDelegate {
+    func manager(_ manager: ThisWeekTrailerManager, didGet products: TrailerData) {
+        trailerData = products
+        
+        playTrailer()
+    }
+    
+    func manager(_ manager: ThisWeekTrailerManager, didFailWith error: Error) {
+        print(error)
+    }
+    
+    
 }
 

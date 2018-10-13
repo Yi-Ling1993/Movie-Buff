@@ -66,6 +66,9 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         didSet {
             self.soonPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             self.typeIndex = 4
+            
+            soonPagerView.isInfinite = true
+
         }
     }
     
@@ -79,7 +82,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     let decoder = JSONDecoder()
     
-    var inTheaterDatas: [MovieInfo] = []
+    var soonDatas: [MovieInfo] = []
     
     var postDict: [String: URL] = [:]
     
@@ -101,6 +104,8 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         let soonInfoNibs = UINib(nibName: "SoonInfoTableViewCell", bundle: nil)
         soonInfoTableView.register(soonInfoNibs, forCellReuseIdentifier: "SoonInfoCell")
         
+        soonVideoView.delegate = self
+        
         soonTrailerManager.delegate = self
         
         soonManager.delegate = self
@@ -114,10 +119,10 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
             guard let jsonData = try? JSONSerialization.data(withJSONObject: value) else { return }
             
             do {
-                let inTheaterData = try self.decoder.decode([MovieInfo].self, from: jsonData)
-                print(inTheaterData)
+                let soonData = try self.decoder.decode([MovieInfo].self, from: jsonData)
+                print(soonData)
                 
-                self.inTheaterDatas = inTheaterData
+                self.soonDatas = soonData
                 
                 self.getPoster()
                 
@@ -132,16 +137,16 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         
         soonVideoView.isHidden = false
         soonVideoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
-        soonVideoView.alpha = 1
+        
 
         
     }
     
     func getPoster() {
         
-        for inTheaterData in inTheaterDatas {
+        for soonData in soonDatas {
             
-            soonManager.requestOMDBData(imdbId: inTheaterData.id ?? "tt3896198")
+            soonManager.requestOMDBData(imdbId: soonData.id ?? "tt3896198")
         }
         
     }
@@ -179,7 +184,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return inTheaterDatas.count
+        return soonDatas.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
@@ -188,7 +193,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
         
-        guard let imdbId = inTheaterDatas[index].id else {
+        guard let imdbId = soonDatas[index].id else {
             return cell
         }
         
@@ -241,6 +246,26 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         soonInfoCell.trailerButton.addTarget(self, action: #selector(playTrailer(sender:)), for: .touchUpInside)
+        
+        guard soonDatas.count > 0 else { return soonInfoCell }
+        
+        // firebase data
+        
+        soonInfoCell.titleLabel.text = soonDatas[pagerIndex].title
+        soonInfoCell.ratedLabel.text = soonDatas[pagerIndex].rated
+        soonInfoCell.releaseDate.text = soonDatas[pagerIndex].releaseDate
+        
+        let imdbId = soonDatas[pagerIndex].id
+        
+        // omdb data
+        
+        soonInfoCell.enTitleLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Title
+        soonInfoCell.duration.text = omdbDict[imdbId ?? "tt3896198"]?.Runtime
+        soonInfoCell.genreLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Genre
+        soonInfoCell.imdbRating.text = omdbDict[imdbId ?? "tt3896198"]?.imdbRating
+        soonInfoCell.directorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Director
+        soonInfoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
+        soonInfoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
 
         
         return soonInfoCell
@@ -257,7 +282,7 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
         
         if soonVideoView.isHidden == true {
             
-            let imdbId = inTheaterDatas[pagerIndex].id
+            let imdbId = soonDatas[pagerIndex].id
             
             soonTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
         }

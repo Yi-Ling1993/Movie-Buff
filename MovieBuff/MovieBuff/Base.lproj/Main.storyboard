@@ -930,6 +930,13 @@
                                     <outlet property="delegate" destination="pFJ-OD-dik" id="lM0-BL-AjM"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Po-RG-Jdm" customClass="YouTubePlayerView" customModule="YouTubePlayer_Swift">
+                                <rect key="frame" x="0.0" y="94" width="375" height="211"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Po-RG-Jdm" secondAttribute="height" multiplier="16:9" id="4xR-9p-WXR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -939,6 +946,9 @@
                             <constraint firstItem="wkG-7s-KeS" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="Jud-c1-SOE"/>
                             <constraint firstItem="PeL-kZ-riD" firstAttribute="trailing" secondItem="wkG-7s-KeS" secondAttribute="trailing" id="QSu-MR-sC7"/>
                             <constraint firstItem="66N-LM-TFI" firstAttribute="top" secondItem="PeL-kZ-riD" secondAttribute="top" id="YBr-M7-yY7"/>
+                            <constraint firstItem="0Po-RG-Jdm" firstAttribute="trailing" secondItem="PeL-kZ-riD" secondAttribute="trailing" id="ZGT-hD-3HL"/>
+                            <constraint firstItem="0Po-RG-Jdm" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="dKs-0R-YVu"/>
+                            <constraint firstItem="0Po-RG-Jdm" firstAttribute="top" secondItem="PeL-kZ-riD" secondAttribute="top" constant="30" id="gbw-lN-AWA"/>
                             <constraint firstItem="66N-LM-TFI" firstAttribute="trailing" secondItem="PeL-kZ-riD" secondAttribute="trailing" id="yj4-Jh-7Ri"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PeL-kZ-riD"/>
@@ -947,6 +957,7 @@
                     <connections>
                         <outlet property="thisWeekInfoTableView" destination="wkG-7s-KeS" id="9h2-Do-m1e"/>
                         <outlet property="thisWeekPagerView" destination="66N-LM-TFI" id="lds-cR-KQ6"/>
+                        <outlet property="thisWeekVideoView" destination="0Po-RG-Jdm" id="zZ0-7d-dvq"/>
                         <segue destination="hMi-Ua-sJE" kind="show" identifier="ThisWeekToShowtime" id="GtV-Gt-zG4"/>
                     </connections>
                 </viewController>
