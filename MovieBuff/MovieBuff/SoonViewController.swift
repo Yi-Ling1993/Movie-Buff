@@ -83,14 +83,14 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
         menuButton.addTarget(self, action: #selector(SoonViewController.menu), for: .touchUpInside)
         
-        let searchButton = UIButton()
-        searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
-        searchButton.imageView?.contentMode = .scaleAspectFit
-        searchButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        let reightButton = UIBarButtonItem(customView: searchButton)
-        navigationItem.rightBarButtonItem = reightButton
-        reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
+//        let searchButton = UIButton()
+//        searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
+//        searchButton.imageView?.contentMode = .scaleAspectFit
+//        searchButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+//        let reightButton = UIBarButtonItem(customView: searchButton)
+//        navigationItem.rightBarButtonItem = reightButton
+//        reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
+//        reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
     }
     

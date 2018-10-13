@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crazy Rich Asians" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T14-yy-TqX">
-                        <rect key="frame" x="23" y="42" width="147" height="20.5"/>
+                        <rect key="frame" x="23" y="42" width="142.5" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brg-kZ-lJH">
-                        <rect key="frame" x="22" y="189" width="333" height="195.5"/>
+                        <rect key="frame" x="22" y="189" width="333" height="129"/>
                         <string key="text">This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachael Chu to Singapore to meet her boufriend's family.This contemporary romantic comedy, based on a global b</string>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,7 +153,6 @@
                 </subviews>
                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="T14-yy-TqX" firstAttribute="trailing" secondItem="TcA-5s-hrr" secondAttribute="trailing" id="0Ap-Yq-uD6"/>
                     <constraint firstItem="1rX-oG-naJ" firstAttribute="leading" secondItem="r9c-4G-NLD" secondAttribute="trailing" constant="8" id="0a7-I2-dOK"/>
                     <constraint firstItem="brg-kZ-lJH" firstAttribute="top" secondItem="1rX-oG-naJ" secondAttribute="bottom" constant="15" id="5hn-RI-pmJ"/>
                     <constraint firstItem="cgJ-ep-Xxh" firstAttribute="top" secondItem="0j3-l7-kOe" secondAttribute="bottom" constant="15" id="Ghg-jm-tOB"/>
@@ -174,7 +173,6 @@
                     <constraint firstItem="R4E-Vr-AI6" firstAttribute="top" secondItem="ZEv-ih-3Lt" secondAttribute="bottom" constant="9" id="eYq-9l-dxf"/>
                     <constraint firstAttribute="trailing" secondItem="1rX-oG-naJ" secondAttribute="trailing" constant="20" id="i21-Jr-uLJ"/>
                     <constraint firstItem="hBS-9W-7HD" firstAttribute="centerY" secondItem="XJm-UF-zpl" secondAttribute="centerY" id="l6x-KQ-lkp"/>
-                    <constraint firstAttribute="bottom" secondItem="brg-kZ-lJH" secondAttribute="bottom" constant="120" id="mRl-0B-rRz"/>
                     <constraint firstItem="LGF-PK-b6A" firstAttribute="centerY" secondItem="cgJ-ep-Xxh" secondAttribute="centerY" id="mgQ-ee-exY"/>
                     <constraint firstItem="r9c-4G-NLD" firstAttribute="top" secondItem="cgJ-ep-Xxh" secondAttribute="bottom" constant="10" id="myZ-nC-V5e"/>
                     <constraint firstItem="IMn-dw-Otn" firstAttribute="leading" secondItem="Pnc-aE-bpQ" secondAttribute="trailing" constant="-1" id="o3d-Uu-X3N"/>
