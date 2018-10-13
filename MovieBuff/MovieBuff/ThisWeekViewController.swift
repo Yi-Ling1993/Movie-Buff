@@ -11,10 +11,6 @@ import FSPagerView
 
 class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
     
-    @IBAction func thisWeekToShowtime(_ sender: Any) {
-        self.performSegue(withIdentifier: "ThisWeekToShowtime", sender: self)
-    }
-    
     let imageNames = ["1","2","3","4","5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
@@ -144,7 +140,14 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
         
+        thisWeekInfoCell.toShowtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
+        
         return thisWeekInfoCell
+    }
+    
+    @objc func toShowtime(sender: UIButton) {
+        self.performSegue(withIdentifier: "ThisWeekToShowtime", sender: self)
+
     }
 }
 

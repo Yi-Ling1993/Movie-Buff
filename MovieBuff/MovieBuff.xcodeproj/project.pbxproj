@@ -46,6 +46,7 @@
 		AC9216132168D0AC002133E2 /* OMDBData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9216122168D0AC002133E2 /* OMDBData.swift */; };
 		AC9216152168EF67002133E2 /* TrailerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9216142168EF67002133E2 /* TrailerData.swift */; };
 		ACBD352C216359DC00C0A49C /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD352B216359DC00C0A49C /* WebviewViewController.swift */; };
+		ACE1E5B821724600009B113E /* SoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1E5B721724600009B113E /* SoonManager.swift */; };
 		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		AC9216122168D0AC002133E2 /* OMDBData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBData.swift; sourceTree = "<group>"; };
 		AC9216142168EF67002133E2 /* TrailerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerData.swift; sourceTree = "<group>"; };
 		ACBD352B216359DC00C0A49C /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
+		ACE1E5B721724600009B113E /* SoonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonManager.swift; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */,
 				AC3B5108215CBDFE00313E2E /* MenuTableViewController.swift */,
 				AC7953412152172A00668DAB /* Main.storyboard */,
+				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
 				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
 				AC3B510A215DDDCF00313E2E /* ThisWeekViewController.swift */,
 				AC3B5112215DFA4C00313E2E /* SoonViewController.swift */,
@@ -166,9 +169,9 @@
 				AC0718BE215A36A7003061AC /* CollectionViewController.swift */,
 				AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */,
 				ACBD352B216359DC00C0A49C /* WebviewViewController.swift */,
-				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
 				AC7953442152173000668DAB /* Assets.xcassets */,
 				AC9216102168CF44002133E2 /* InTheaterManager.swift */,
+				ACE1E5B721724600009B113E /* SoonManager.swift */,
 				AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */,
 				AC0718AE21592ECA003061AC /* ShowtimeTableViewCell.swift */,
 				AC0718A82153C348003061AC /* TheaterTableViewCell.swift */,
@@ -378,6 +381,7 @@
 				AC3B5109215CBDFE00313E2E /* MenuTableViewController.swift in Sources */,
 				AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */,
 				AC0718BA21594D8A003061AC /* DateCollectionViewCell.swift in Sources */,
+				ACE1E5B821724600009B113E /* SoonManager.swift in Sources */,
 				AC0718B721594B6C003061AC /* MovieShowtimeViewController.swift in Sources */,
 				AC92160F21675E09002133E2 /* FirebaseData.swift in Sources */,
 				AC9216132168D0AC002133E2 /* OMDBData.swift in Sources */,

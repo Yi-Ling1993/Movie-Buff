@@ -80,10 +80,12 @@
                             <constraint firstAttribute="height" constant="35" id="IWp-FB-U4J"/>
                             <constraint firstAttribute="width" constant="80" id="d0J-df-hI7"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                        <color key="tintColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" title="預告">
                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <state key="selected" title="關閉預告"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="4"/>
@@ -183,6 +185,19 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="NdQ-30-2iE"/>
+            <connections>
+                <outlet property="actorLabel" destination="tcJ-uY-gah" id="KUz-Nd-P6i"/>
+                <outlet property="directorLabel" destination="zO5-eP-mML" id="8fT-YQ-awJ"/>
+                <outlet property="duration" destination="oUj-nc-CYF" id="IiU-Ai-Eho"/>
+                <outlet property="enTitleLabel" destination="m9e-zP-vws" id="8qz-5g-qy7"/>
+                <outlet property="genreLabel" destination="zJ5-A4-1tz" id="z7u-66-Zzw"/>
+                <outlet property="imdbRating" destination="EW1-Zv-fEu" id="sGh-1x-gqQ"/>
+                <outlet property="plotLabel" destination="CSe-NX-s2A" id="l2N-hx-QaM"/>
+                <outlet property="ratedLabel" destination="4XR-l6-2Y4" id="M2d-K0-o6Z"/>
+                <outlet property="releaseDate" destination="SIv-g5-Dat" id="Vew-95-Wei"/>
+                <outlet property="titleLabel" destination="12T-Td-joq" id="cAv-uf-Ifq"/>
+                <outlet property="trailerButton" destination="A5v-6q-ag2" id="mTg-PR-HUM"/>
+            </connections>
             <point key="canvasLocation" x="30" y="86"/>
         </tableViewCell>
     </objects>

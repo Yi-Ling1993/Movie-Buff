@@ -32,11 +32,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     @IBOutlet weak var videoView: YouTubePlayerView!
     
-//    @IBAction func inTheaterToShowtime(_ sender: Any) {
-//        
-//        self.performSegue(withIdentifier: "InTheaterToShowtime", sender: self)
-//    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let showtimeController = segue.destination as? MovieShowtimeViewController else {return}
         
@@ -47,8 +42,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
 //    @IBAction func unwind (for segue: UIStoryboardSegue) {
 //    print("back...")
 //    }
-    
-    let image = ["1", "2", "3", "4", "5"]
 
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
@@ -201,7 +194,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
 //        navigationItem.rightBarButtonItem = reightButton
 //        reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
 //        reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
-//        
+//
 
     }
     
@@ -224,7 +217,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
-//        cell.contentView.layer.shadowColor = UIColor.white.withAlphaComponent(1).cgColor
         
         guard let imdbId = inTheaterDatas[index].id else {
             return cell
@@ -328,8 +320,6 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
             inTheaterTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
         }
         
-        
-        
         sender.isSelected = !sender.isSelected
     
         sender.setTitleColor(UIColor.white, for: .selected)
@@ -366,7 +356,6 @@ extension InTheaterViewController: InTheaterManagerDelegate {
     func manager(_ manager: InTheaterManager, didFailWith error: Error) {
         print(error)
     }
-    
     
 }
 

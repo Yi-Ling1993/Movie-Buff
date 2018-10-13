@@ -8,8 +8,26 @@
 
 import UIKit
 import FSPagerView
+import YouTubePlayer_Swift
+import FirebaseDatabase
+import Firebase
+import Kingfisher
 
-class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource {
+class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource, YouTubePlayerDelegate {
+    
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        
+        soonVideoView.alpha = 1
+    }
+    
+    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        
+    }
+    
+    func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+        
+    }
+    
     
     let imageNames = ["1","2","3","4","5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
@@ -51,15 +69,81 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         }
     }
     
+    @IBOutlet weak var soonVideoView: YouTubePlayerView!
+    
+    var refref: DatabaseReference!
+    
+    var soonTrailerManager = SoonTrailerManager()
+    
+    var soonManager = SoonManager()
+    
+    let decoder = JSONDecoder()
+    
+    var inTheaterDatas: [MovieInfo] = []
+    
+    var postDict: [String: URL] = [:]
+    
+    var pagerIndex: Int = 0
+
+    var omdbData: OMDBData?
+    
+    var omdbDict: [String: OMDBData] = [:]
+
+    var trailerData: TrailerData?
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
         setNavigationBarItem()
         
         let soonInfoNibs = UINib(nibName: "SoonInfoTableViewCell", bundle: nil)
         soonInfoTableView.register(soonInfoNibs, forCellReuseIdentifier: "SoonInfoCell")
+        
+        soonTrailerManager.delegate = self
+        
+        soonManager.delegate = self
+        
+        refref = Database.database().reference()
+        
+        refref.child("Soon").observeSingleEvent(of: .value) { (snapshot) in
+            
+            guard let value = snapshot.value else { return }
+            
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: value) else { return }
+            
+            do {
+                let inTheaterData = try self.decoder.decode([MovieInfo].self, from: jsonData)
+                print(inTheaterData)
+                
+                self.inTheaterDatas = inTheaterData
+                
+                self.getPoster()
+                
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func playTrailer() {
+        let trailerKey = trailerData?.results[0].key
+        
+        soonVideoView.isHidden = false
+        soonVideoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
+        soonVideoView.alpha = 1
+
+        
+    }
+    
+    func getPoster() {
+        
+        for inTheaterData in inTheaterDatas {
+            
+            soonManager.requestOMDBData(imdbId: inTheaterData.id ?? "tt3896198")
+        }
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -95,22 +179,44 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return imageNames.count
+        return inTheaterDatas.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
-        cell.imageView?.image = UIImage(named: self.imageNames[index])
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
-        //        cell.contentView.layer.shadowColor = UIColor.white.withAlphaComponent(1).cgColor
+        
+        guard let imdbId = inTheaterDatas[index].id else {
+            return cell
+        }
+        
+        cell.imageView?.kf.setImage(with: postDict[imdbId])
+        
         return cell
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         soonPagerView.deselectItem(at: index, animated: true)
         soonPagerView .scrollToItem(at: index, animated: true)
+        
+        pagerIndex = index
+        
+        soonInfoTableView.reloadData()
+    }
+    
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        
+        print("pagerViewWillEndDragging")
+        
+        print(pagerView.currentIndex)
+        
+        let index = pagerView.currentIndex
+        
+        pagerIndex = index
+        
+        soonInfoTableView.reloadData()
     }
 
     
@@ -134,6 +240,71 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
         
+        soonInfoCell.trailerButton.addTarget(self, action: #selector(playTrailer(sender:)), for: .touchUpInside)
+
+        
         return soonInfoCell
     }
+    
+    @objc func playTrailer(sender: UIButton) {
+        
+        guard let cell = sender.superview?.superview as? SoonInfoTableViewCell else {
+            return
+            
+        }
+        
+        guard let indexPath = soonInfoTableView.indexPath(for: cell) else { return }
+        
+        if soonVideoView.isHidden == true {
+            
+            let imdbId = inTheaterDatas[pagerIndex].id
+            
+            soonTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
+        }
+        
+        sender.isSelected = !sender.isSelected
+        
+        sender.setTitleColor(UIColor.white, for: .selected)
+        
+        if soonVideoView.ready && soonVideoView.isHidden == false {
+            soonVideoView.pause()
+            soonVideoView.isHidden = true
+        }
+    }
+}
+
+
+extension SoonViewController: SoonManagerDelegate {
+    func manager(_ manager: SoonManager, didGet products: OMDBData) {
+        
+        omdbData = products
+        
+        let posterUrl = URL(string: omdbData?.Poster ?? "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
+        
+        postDict[omdbData?.imdbID ?? "tt3896198"] = posterUrl
+        omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
+        
+        self.soonPagerView.reloadData()
+        self.soonInfoTableView.reloadData()
+    }
+    
+    func manager(_ manager: SoonManager, didFailWith error: Error) {
+        print(error)
+    }
+    
+}
+
+extension SoonViewController: SoonTrailerManagerDelegate {
+    func manager(_ manager: SoonTrailerManager, didGet products: TrailerData) {
+        
+        trailerData = products
+        
+        playTrailer()
+    }
+    
+    func manager(_ manager: SoonTrailerManager, didFailWith error: Error) {
+        print(error)
+    }
+    
+    
 }

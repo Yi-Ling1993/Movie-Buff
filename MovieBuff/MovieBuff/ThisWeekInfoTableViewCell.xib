@@ -193,6 +193,20 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="ekh-Me-6QQ"/>
+            <connections>
+                <outlet property="actorLabel" destination="Q7f-R8-Ybf" id="db4-2C-DUJ"/>
+                <outlet property="directorLabel" destination="7eG-1p-FHl" id="Lt7-E6-HVx"/>
+                <outlet property="durationLabel" destination="Tbc-g8-uIl" id="8eQ-y6-Zm6"/>
+                <outlet property="enTitleLabel" destination="qaL-89-9eI" id="hfR-jT-bg0"/>
+                <outlet property="genreLabel" destination="ssf-59-kYB" id="bAJ-aD-Yjg"/>
+                <outlet property="imdbRatingLabel" destination="Uu3-Ij-t4S" id="50i-as-ma1"/>
+                <outlet property="plotLabel" destination="YDM-G2-8Xc" id="Jde-pH-2U2"/>
+                <outlet property="ratedLabel" destination="BEp-0e-Mqq" id="wR8-Yz-2dy"/>
+                <outlet property="releaseLabel" destination="cBM-iW-63A" id="nhN-e4-MYw"/>
+                <outlet property="titleLabel" destination="22L-bD-beC" id="JUg-FV-S9K"/>
+                <outlet property="toShowtimeButton" destination="RXI-kW-5Jb" id="Q2a-Pl-rS8"/>
+                <outlet property="trailerButton" destination="0hu-yp-lKT" id="xhL-TA-EWp"/>
+            </connections>
             <point key="canvasLocation" x="30" y="86"/>
         </tableViewCell>
     </objects>
