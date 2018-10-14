@@ -19,6 +19,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         
         videoView.alpha = 1
+        inTheaterPagerView.isHidden = true
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
@@ -327,6 +328,8 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         if videoView.ready && videoView.isHidden == false {
             videoView.pause()
             videoView.isHidden = true
+            inTheaterPagerView.isHidden = false
+
         }
     
     }

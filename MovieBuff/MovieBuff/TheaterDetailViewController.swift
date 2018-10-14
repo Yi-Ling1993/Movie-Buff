@@ -21,6 +21,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         theaterDetailVideoView.alpha = 1
+        theaterDetailPagerView.isHidden = true
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
@@ -52,6 +53,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         if theaterDetailVideoView.ready && theaterDetailVideoView.isHidden == false {
             theaterDetailVideoView.pause()
             theaterDetailVideoView.isHidden = true
+            theaterDetailPagerView.isHidden = false
+
         }
     }
 
@@ -278,7 +281,26 @@ extension TheaterDetailViewController: UITableViewDelegate, UITableViewDataSourc
             as? ShowtimeTableViewCell else {
                 return UITableViewCell()
         }
-                
+        print(pagerIndex)
+        showtimeCell.dateLabel.text = specificTheaterDetailData?.movie?[pagerIndex].showtime[indexPath.row].date
+        
+//        var showtimeString = ""
+//        let showtimeCount: Int = specificTheaterDetailData?.movie?[pagerIndex].showtime[indexPath.row].time?.count ?? 5 - 1
+//        for index in 0 ... showtimeCount - 1 {
+//
+//            showtimeString += "\(specificTheaterDetailData?.movie?[pagerIndex].showtime[indexPath.row].time?[index])   "
+//        }
+//
+//        let attriString = NSMutableAttributedString(string: showtimeString)
+//        let style = NSMutableParagraphStyle()
+//        style.lineSpacing = 15
+//        style.minimumLineHeight = 0
+//        attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: showtimeString.characters.count))
+//
+//        showtimeCell.showtimeLabel.attributedText = attriString
+//
+//        showTimeTableView.reloadData()
+
         return showtimeCell
     }
     

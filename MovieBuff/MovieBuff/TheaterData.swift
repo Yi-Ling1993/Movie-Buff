@@ -27,7 +27,7 @@ class TheaterData {
     
     var theaterInfo: [TheaterInfo] = [
         TheaterInfo(name: "台北信義威秀", address: "台北市信義區松壽路16,18號", region: "台北東區", latitude: 25.036005, long: 121.566810, isPinned: false, website: "http://www.vscinemas.com.tw/vsTicketing/ticketing/ticket.aspx"),
-        TheaterInfo(name: "國賓微風影城", address: "台北市松山區復興南路一段39號(微風廣場7樓)", region: "台北東區", latitude: 25.046374, long: 121.544140, isPinned: false, website: "https://booking.ambassador.com.tw"),
+        TheaterInfo(name: "國賓微風影城", address: "台北市松山區復興南路一段39號", region: "台北東區", latitude: 25.046374, long: 121.544140, isPinned: false, website: "https://booking.ambassador.com.tw"),
         TheaterInfo(name: "誠品電影院", address: "台北市信義區菸廠路88號B2", region: "台北東區", latitude: 25.044877, long: 121.561500, isPinned: false, website: "https://arthouse.eslite.com/visSelect.aspx?visSearchBy=cin&visCinID=1001"),
         TheaterInfo(name: "新民生戲院", address: "台北市松山區民生東路五段190號3樓", region: "台北東區", latitude: 25.058965, long: 121.564190, isPinned: false, website: "http://www.minshen.com.tw/movies.php"),
         TheaterInfo(name: "喜滿客京華影城", address: "台北市松山區八德路四段138號B1", region: "台北東區", latitude: 25.048391, long: 121.561833, isPinned: false, website: "https://booking.cinemark.com.tw"),

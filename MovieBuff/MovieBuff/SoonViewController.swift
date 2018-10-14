@@ -18,6 +18,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         
         soonVideoView.alpha = 1
+        soonPagerView.isHidden = true
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
@@ -294,6 +295,8 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
         if soonVideoView.ready && soonVideoView.isHidden == false {
             soonVideoView.pause()
             soonVideoView.isHidden = true
+            soonPagerView.isHidden = false
+
         }
     }
 }

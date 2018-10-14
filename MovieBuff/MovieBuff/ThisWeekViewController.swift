@@ -16,6 +16,7 @@ import Kingfisher
 class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource, YouTubePlayerDelegate {
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         thisWeekVideoView.alpha = 1
+        thisWeekPagerView.isHidden = true
 
     }
     
@@ -299,6 +300,8 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
         if thisWeekVideoView.ready && thisWeekVideoView.isHidden == false {
             thisWeekVideoView.pause()
             thisWeekVideoView.isHidden = true
+            thisWeekPagerView.isHidden = false
+
         }
         
     }
