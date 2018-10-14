@@ -176,6 +176,19 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
 
                 self.getPoster()
                 
+                self.titleLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].title
+                self.releaseDateLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].releaseDate
+                self.ratedLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].rated
+                self.presentLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].present
+                self.languageLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].language
+                
+                let imdbId = self.specificTheaterDetailData?.movie?[self.pagerIndex].id
+                
+                self.enTitleLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Title
+                self.durationLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Runtime
+                self.genreLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Genre
+                
+
             } catch {
                 print(error)
             }
@@ -185,7 +198,11 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     
     func getPoster() {
         
-        for movie in (specificTheaterDetailData?.movie)! {
+        guard let movies = specificTheaterDetailData?.movie else {
+            return
+        }
+        
+        for movie in movies   {
             
             theaterDetailManager.requestOMDBData(imdbId: movie.id )
         }
@@ -222,7 +239,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         
         pagerIndex = index
         
-//        infoTableView.reloadData()
+        self.viewDidLoad()
+        
     }
     
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
@@ -234,8 +252,9 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         let index = pagerView.currentIndex
         
         pagerIndex = index
+    
+        self.viewDidLoad()
         
-//        infoTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -286,7 +305,9 @@ extension TheaterDetailViewController: TheaterDetailManagerDelegate {
         omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
         
         self.theaterDetailPagerView.reloadData()
-//        self.infoTableView.reloadData()
+    
+//        self.viewDidLoad()
+        
     }
     
     func manager(_ manager: TheaterDetailManager, didFailWith error: Error) {
