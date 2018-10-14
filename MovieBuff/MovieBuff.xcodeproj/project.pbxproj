@@ -48,6 +48,7 @@
 		ACBD352C216359DC00C0A49C /* WebviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD352B216359DC00C0A49C /* WebviewViewController.swift */; };
 		ACE1E5B821724600009B113E /* SoonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1E5B721724600009B113E /* SoonManager.swift */; };
 		ACE1E5BA21726423009B113E /* ThisWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1E5B921726423009B113E /* ThisWeekManager.swift */; };
+		ACE1E5BC21731BB0009B113E /* TheaterDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */; };
 		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		ACBD352B216359DC00C0A49C /* WebviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewViewController.swift; sourceTree = "<group>"; };
 		ACE1E5B721724600009B113E /* SoonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonManager.swift; sourceTree = "<group>"; };
 		ACE1E5B921726423009B113E /* ThisWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeekManager.swift; sourceTree = "<group>"; };
+		ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterDetailManager.swift; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,13 +170,14 @@
 				AC3B510A215DDDCF00313E2E /* ThisWeekViewController.swift */,
 				AC3B5112215DFA4C00313E2E /* SoonViewController.swift */,
 				AC7953542153511400668DAB /* TheaterListViewController.swift */,
-				AC0718BE215A36A7003061AC /* CollectionViewController.swift */,
 				AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */,
+				AC0718BE215A36A7003061AC /* CollectionViewController.swift */,
 				ACBD352B216359DC00C0A49C /* WebviewViewController.swift */,
 				AC7953442152173000668DAB /* Assets.xcassets */,
 				AC9216102168CF44002133E2 /* InTheaterManager.swift */,
 				ACE1E5B721724600009B113E /* SoonManager.swift */,
 				ACE1E5B921726423009B113E /* ThisWeekManager.swift */,
+				ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */,
 				AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */,
 				AC0718AE21592ECA003061AC /* ShowtimeTableViewCell.swift */,
 				AC0718A82153C348003061AC /* TheaterTableViewCell.swift */,
@@ -379,6 +382,7 @@
 				AC9216112168CF44002133E2 /* InTheaterManager.swift in Sources */,
 				AC3B5105215CBC9800313E2E /* MenuItem.swift in Sources */,
 				AC3B5116215E010F00313E2E /* SoonInfoTableViewCell.swift in Sources */,
+				ACE1E5BC21731BB0009B113E /* TheaterDetailManager.swift in Sources */,
 				AC0718BF215A36A7003061AC /* CollectionViewController.swift in Sources */,
 				AC0718C6215A6131003061AC /* SeenTableViewCell.swift in Sources */,
 				AC3B5109215CBDFE00313E2E /* MenuTableViewController.swift in Sources */,

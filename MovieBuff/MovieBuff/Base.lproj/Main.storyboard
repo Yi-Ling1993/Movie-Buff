@@ -320,15 +320,20 @@
                                     <constraint firstAttribute="width" constant="80" id="DTn-B6-BMp"/>
                                     <constraint firstAttribute="height" constant="35" id="dSM-aj-SR8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                                <color key="tintColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="預告">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="selected" title="關閉預告"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playTrailer:" destination="ev0-DK-JBz" eventType="touchUpInside" id="QJ5-3n-jsY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="數位" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoy-kA-C84">
                                 <rect key="frame" x="23" y="348" width="47" height="20"/>
@@ -362,6 +367,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gs-QJ-x7h" customClass="YouTubePlayerView" customModule="YouTubePlayer_Swift">
+                                <rect key="frame" x="0.0" y="10" width="375" height="211"/>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3gs-QJ-x7h" secondAttribute="height" multiplier="16:9" id="yap-Ya-abO"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqK-mU-3LP">
                                 <rect key="frame" x="318" y="326" width="30" height="30"/>
                                 <constraints>
@@ -419,6 +431,8 @@
                                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="backGroundView" destination="cuT-Au-pOx" id="93j-Iu-NA0"/>
+                                            <outlet property="dateLabel" destination="xWK-8I-atf" id="gPi-jB-lQi"/>
+                                            <outlet property="showtimeLabel" destination="wYQ-ZJ-BNe" id="VEu-bg-enw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -433,6 +447,7 @@
                             <constraint firstItem="36G-6F-ulK" firstAttribute="bottom" secondItem="Rgr-Fj-NhM" secondAttribute="bottom" constant="335" id="2QS-Fv-AnK"/>
                             <constraint firstItem="Rgr-Fj-NhM" firstAttribute="top" secondItem="36G-6F-ulK" secondAttribute="top" id="3Ab-E9-Oj1"/>
                             <constraint firstItem="kVn-fd-v4j" firstAttribute="leading" secondItem="Zoy-kA-C84" secondAttribute="trailing" constant="8" id="6Nc-J3-Kzg"/>
+                            <constraint firstItem="3gs-QJ-x7h" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" id="6Rz-Li-7zx"/>
                             <constraint firstItem="Rgr-Fj-NhM" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="7C7-t2-l1r"/>
                             <constraint firstItem="Zoy-kA-C84" firstAttribute="top" secondItem="9fk-IB-s2q" secondAttribute="bottom" constant="6" id="7rc-7U-Ncl"/>
                             <constraint firstItem="t9r-t4-Zxw" firstAttribute="top" secondItem="4fQ-JW-nXt" secondAttribute="bottom" constant="-1" id="8ty-AB-5pY"/>
@@ -449,11 +464,13 @@
                             <constraint firstItem="25r-k4-oXV" firstAttribute="top" secondItem="t9r-t4-Zxw" secondAttribute="bottom" constant="1" id="bPt-8O-18x"/>
                             <constraint firstItem="8S7-fJ-8Uv" firstAttribute="top" secondItem="Zoy-kA-C84" secondAttribute="bottom" constant="15" id="d9l-Rx-Bbj"/>
                             <constraint firstItem="36G-6F-ulK" firstAttribute="trailing" secondItem="25r-k4-oXV" secondAttribute="trailing" constant="108" id="dLO-TC-q2U"/>
+                            <constraint firstItem="3gs-QJ-x7h" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="j26-CP-Ey4"/>
                             <constraint firstItem="36G-6F-ulK" firstAttribute="bottom" secondItem="8S7-fJ-8Uv" secondAttribute="bottom" id="jtw-5m-jdp"/>
                             <constraint firstItem="t9r-t4-Zxw" firstAttribute="trailing" secondItem="4fQ-JW-nXt" secondAttribute="trailing" id="o6E-xT-o9N"/>
                             <constraint firstItem="51j-Lm-XlO" firstAttribute="top" secondItem="Rgr-Fj-NhM" secondAttribute="bottom" constant="13" id="oHn-MY-CbV"/>
                             <constraint firstItem="25r-k4-oXV" firstAttribute="leading" secondItem="t9r-t4-Zxw" secondAttribute="leading" id="rtV-gW-Fkk"/>
                             <constraint firstItem="36G-6F-ulK" firstAttribute="trailing" secondItem="8S7-fJ-8Uv" secondAttribute="trailing" id="sAC-mC-rOx"/>
+                            <constraint firstItem="3gs-QJ-x7h" firstAttribute="top" secondItem="36G-6F-ulK" secondAttribute="top" constant="10" id="tMf-gs-wxv"/>
                             <constraint firstItem="t9r-t4-Zxw" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" constant="23" id="ufE-Xk-g9t"/>
                             <constraint firstItem="36G-6F-ulK" firstAttribute="trailing" secondItem="51j-Lm-XlO" secondAttribute="trailing" constant="20" id="ybE-K9-G32"/>
                             <constraint firstItem="Zoy-kA-C84" firstAttribute="leading" secondItem="9fk-IB-s2q" secondAttribute="leading" id="zUn-by-yfs"/>
@@ -461,8 +478,17 @@
                         <viewLayoutGuide key="safeArea" id="36G-6F-ulK"/>
                     </view>
                     <connections>
+                        <outlet property="durationLabel" destination="g4L-kx-HyH" id="axR-eN-Nl8"/>
+                        <outlet property="enTitleLabel" destination="t9r-t4-Zxw" id="eA4-Nc-b0G"/>
+                        <outlet property="genreLabel" destination="ZxX-SZ-00R" id="HW7-cW-Qqj"/>
+                        <outlet property="languageLabel" destination="kVn-fd-v4j" id="DCX-me-mlW"/>
+                        <outlet property="presentLabel" destination="Zoy-kA-C84" id="vTa-gt-iLy"/>
+                        <outlet property="ratedLabel" destination="0Y4-Pk-T8Q" id="kEN-4N-OYj"/>
+                        <outlet property="releaseDateLabel" destination="9fk-IB-s2q" id="7zb-mU-xp9"/>
                         <outlet property="showTimeTableView" destination="8S7-fJ-8Uv" id="GBX-nN-Rsw"/>
                         <outlet property="theaterDetailPagerView" destination="Rgr-Fj-NhM" id="LBK-51-7ij"/>
+                        <outlet property="theaterDetailVideoView" destination="3gs-QJ-x7h" id="QyQ-zE-Obj"/>
+                        <outlet property="titleLabel" destination="4fQ-JW-nXt" id="u4F-Ta-bX2"/>
                         <segue destination="UhB-sp-gSQ" kind="show" identifier="ToWebview" id="OqU-cN-mgX"/>
                     </connections>
                 </viewController>

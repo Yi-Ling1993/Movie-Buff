@@ -11,6 +11,9 @@ import UIKit
 class ShowtimeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var backGroundView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var showtimeLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

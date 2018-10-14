@@ -43,6 +43,16 @@ struct ShowtimeInfo: Codable {
 struct CinemaInfo: Codable {
     
     let name: String
-    let movie: String?
+    let movie: [CinemaMovieInfo]?
     let region: String
+}
+
+struct CinemaMovieInfo: Codable {
+    let title: String
+    let id: String
+    let language: String
+    let present: String
+    let rated: String
+    let releaseDate: String
+    let showtime: [ShowtimeInfo]
 }
