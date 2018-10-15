@@ -73,10 +73,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJm-UF-zpl">
-                        <rect key="frame" x="300" y="13" width="60" height="35"/>
+                        <rect key="frame" x="290" y="13" width="70" height="35"/>
                         <color key="backgroundColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="2ex-Fb-F5q"/>
+                            <constraint firstAttribute="width" constant="70" id="2ex-Fb-F5q"/>
                             <constraint firstAttribute="height" constant="35" id="ZJq-qj-Dql"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
@@ -135,7 +135,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBS-9W-7HD">
-                        <rect key="frame" x="225" y="13" width="60" height="35"/>
+                        <rect key="frame" x="214" y="13" width="60" height="35"/>
                         <color key="backgroundColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="PZa-qf-cA8"/>
@@ -176,7 +176,7 @@
                     <constraint firstItem="mcO-sP-MkD" firstAttribute="leading" secondItem="IMn-dw-Otn" secondAttribute="trailing" constant="2" id="L3O-gj-q5L"/>
                     <constraint firstItem="TcA-5s-hrr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LcW-fz-cER"/>
                     <constraint firstItem="1rX-oG-naJ" firstAttribute="leading" secondItem="LGF-PK-b6A" secondAttribute="leading" id="Mgv-nZ-wnc"/>
-                    <constraint firstItem="hBS-9W-7HD" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.76" id="R4P-Ks-FxL"/>
+                    <constraint firstItem="hBS-9W-7HD" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.73" id="R4P-Ks-FxL"/>
                     <constraint firstItem="2X5-MX-0zo" firstAttribute="leading" secondItem="ZEv-ih-3Lt" secondAttribute="leading" id="R9z-J5-iI6"/>
                     <constraint firstItem="T14-yy-TqX" firstAttribute="top" secondItem="TcA-5s-hrr" secondAttribute="bottom" constant="2" id="RGF-iT-POX"/>
                     <constraint firstAttribute="bottom" secondItem="brg-kZ-lJH" secondAttribute="bottom" constant="20" id="U7q-ab-g2N"/>

@@ -289,10 +289,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51j-Lm-XlO">
-                                <rect key="frame" x="300" y="246" width="60" height="35"/>
+                                <rect key="frame" x="290" y="246" width="70" height="35"/>
                                 <color key="backgroundColor" red="0.41568627450000001" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="DTn-B6-BMp"/>
+                                    <constraint firstAttribute="width" constant="70" id="DTn-B6-BMp"/>
                                     <constraint firstAttribute="height" constant="35" id="dSM-aj-SR8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
@@ -406,7 +406,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqK-mU-3LP">
-                                <rect key="frame" x="225" y="246" width="60" height="35"/>
+                                <rect key="frame" x="214" y="246" width="60" height="35"/>
                                 <color key="backgroundColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="1ZV-vN-6oV"/>
@@ -447,7 +447,7 @@
                             <constraint firstItem="8S7-fJ-8Uv" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="Vw5-nu-2h2"/>
                             <constraint firstItem="0Y4-Pk-T8Q" firstAttribute="leading" secondItem="snT-Pv-A69" secondAttribute="trailing" constant="1" id="Y2e-hc-Lyp"/>
                             <constraint firstItem="4fQ-JW-nXt" firstAttribute="top" secondItem="3gs-QJ-x7h" secondAttribute="bottom" constant="17" id="ad9-Wa-3qK"/>
-                            <constraint firstItem="RqK-mU-3LP" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" multiplier="0.76" id="aqG-hC-x51"/>
+                            <constraint firstItem="RqK-mU-3LP" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" multiplier="0.73" id="aqG-hC-x51"/>
                             <constraint firstItem="g4L-kx-HyH" firstAttribute="top" secondItem="9fk-IB-s2q" secondAttribute="top" id="bbN-Zw-Y6a"/>
                             <constraint firstItem="8S7-fJ-8Uv" firstAttribute="top" secondItem="Zoy-kA-C84" secondAttribute="bottom" constant="15" id="d9l-Rx-Bbj"/>
                             <constraint firstItem="3gs-QJ-x7h" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="j26-CP-Ey4"/>
@@ -600,10 +600,10 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZrE-0I-D0e">
-                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="DL9-BL-YdX"/>
+                                    <constraint firstAttribute="height" constant="50" id="DL9-BL-YdX"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1r0-bb-rqu">
                                     <size key="itemSize" width="50" height="50"/>
@@ -627,7 +627,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5bH-81-m9G">
-                                <rect key="frame" x="0.0" y="119" width="375" height="503"/>
+                                <rect key="frame" x="0.0" y="119" width="375" height="498"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CinemaShowtimeCell" rowHeight="137" id="9Mn-cj-ZIl" customClass="CinemaShowtimeTableViewCell" customModule="Taipei_Showtime" customModuleProvider="target">
