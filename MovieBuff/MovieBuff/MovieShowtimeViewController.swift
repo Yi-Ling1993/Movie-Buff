@@ -275,7 +275,7 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         let showtimeCount: Int = (filteredFirebaseData[indexPath.row].showtime?[dateFilterSender].time?.count)! - 1
         for index in 0 ... showtimeCount {
             
-            showtimeString += "\(filteredFirebaseData[indexPath.row].showtime![dateFilterSender].time?[index])   "
+            showtimeString += "\(filteredFirebaseData[indexPath.row].showtime![dateFilterSender].time![index])   "
         }
         
         let attriString = NSMutableAttributedString(string: showtimeString)

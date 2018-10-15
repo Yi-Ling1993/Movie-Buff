@@ -80,7 +80,7 @@
 		AC3B5115215E010F00313E2E /* SoonInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoonInfoTableViewCell.xib; sourceTree = "<group>"; };
 		AC3DBF79216F837D00FFD111 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		AC3DBF7A216F837E00FFD111 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		AC79533A2152172A00668DAB /* MovieBuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC79533A2152172A00668DAB /* Taipei Showtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taipei Showtime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC79533D2152172A00668DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC79533F2152172A00668DAB /* InTheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterViewController.swift; sourceTree = "<group>"; };
 		AC7953422152172A00668DAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		AC79533B2152172A00668DAB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AC79533A2152172A00668DAB /* MovieBuff.app */,
+				AC79533A2152172A00668DAB /* Taipei Showtime.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,9 +206,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AC7953392152172A00668DAB /* MovieBuff */ = {
+		AC7953392152172A00668DAB /* Taipei Showtime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AC79534C2152173000668DAB /* Build configuration list for PBXNativeTarget "MovieBuff" */;
+			buildConfigurationList = AC79534C2152173000668DAB /* Build configuration list for PBXNativeTarget "Taipei Showtime" */;
 			buildPhases = (
 				B6008FEDFCC6CC790938B823 /* [CP] Check Pods Manifest.lock */,
 				AC7953362152172A00668DAB /* Sources */,
@@ -222,9 +222,9 @@
 			);
 			dependencies = (
 			);
-			name = MovieBuff;
+			name = "Taipei Showtime";
 			productName = MovieBuff;
-			productReference = AC79533A2152172A00668DAB /* MovieBuff.app */;
+			productReference = AC79533A2152172A00668DAB /* Taipei Showtime.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AC7953392152172A00668DAB /* MovieBuff */,
+				AC7953392152172A00668DAB /* Taipei Showtime */,
 			);
 		};
 /* End PBXProject section */
@@ -572,7 +572,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appworks.MovieBuff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -597,7 +597,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appworks.MovieBuff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -613,7 +613,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AC79534C2152173000668DAB /* Build configuration list for PBXNativeTarget "MovieBuff" */ = {
+		AC79534C2152173000668DAB /* Build configuration list for PBXNativeTarget "Taipei Showtime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AC79534D2152173000668DAB /* Debug */,
