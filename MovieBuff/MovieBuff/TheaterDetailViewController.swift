@@ -41,7 +41,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         
         if theaterDetailVideoView.isHidden == true {
             
-            let imdbId = specificTheaterDetailData?.movie?[pagerIndex].id
+            let imdbId = specificTheaterDetailData?.movie[pagerIndex].id
             
             theaterDetailTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
         }
@@ -179,17 +179,18 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
 
                 self.getPoster()
                 
-                self.titleLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].title
-                self.releaseDateLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].releaseDate
-                self.ratedLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].rated
-                self.presentLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].present
-                self.languageLabel.text = self.specificTheaterDetailData?.movie?[self.pagerIndex].language
+                self.titleLabel.text = self.specificTheaterDetailData?.movie[self.pagerIndex].title
+                self.releaseDateLabel.text = self.specificTheaterDetailData?.movie[self.pagerIndex].releaseDate
+                self.ratedLabel.text = self.specificTheaterDetailData?.movie[self.pagerIndex].rated
+                self.presentLabel.text = self.specificTheaterDetailData?.movie[self.pagerIndex].present
+                self.languageLabel.text = self.specificTheaterDetailData?.movie[self.pagerIndex].language
                 
-                let imdbId = self.specificTheaterDetailData?.movie?[self.pagerIndex].id
+                let imdbId = self.specificTheaterDetailData?.movie[self.pagerIndex].id
                 
                 self.enTitleLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Title
                 self.durationLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Runtime
                 self.genreLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Genre
+                self.genreLabel.adjustsFontSizeToFitWidth = true
                 
 
             } catch {
@@ -219,7 +220,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return specificTheaterDetailData?.movie?.count ?? 5
+        return specificTheaterDetailData?.movie.count ?? 5
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
@@ -228,7 +229,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
         
-        guard let imdbId = specificTheaterDetailData?.movie?[index].id else {
+        guard let imdbId = specificTheaterDetailData?.movie[index].id else {
             return cell
         }
         
@@ -282,24 +283,22 @@ extension TheaterDetailViewController: UITableViewDelegate, UITableViewDataSourc
                 return UITableViewCell()
         }
         print(pagerIndex)
-        showtimeCell.dateLabel.text = specificTheaterDetailData?.movie?[pagerIndex].showtime[indexPath.row].date
+        showtimeCell.dateLabel.text = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].date
         
-//        var showtimeString = ""
-//        let showtimeCount: Int = specificTheaterDetailData?.movie?[pagerIndex].showtime[indexPath.row].time?.count ?? 5 - 1
-//        for index in 0 ... showtimeCount - 1 {
-//
-//            showtimeString += "\(specificTheaterDetailData?.movie?[pagerIndex].showtime[indexPath.row].time?[index])   "
-//        }
-//
-//        let attriString = NSMutableAttributedString(string: showtimeString)
-//        let style = NSMutableParagraphStyle()
-//        style.lineSpacing = 15
-//        style.minimumLineHeight = 0
-//        attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: showtimeString.characters.count))
-//
-//        showtimeCell.showtimeLabel.attributedText = attriString
-//
-//        showTimeTableView.reloadData()
+        var showtimeString = ""
+        let showtimeCount: Int = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time.count ?? 5
+        for index in 0 ... showtimeCount - 1 {
+
+            showtimeString += "\(specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time[index])   "
+        }
+
+        let attriString = NSMutableAttributedString(string: showtimeString)
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 15
+        style.minimumLineHeight = 0
+        attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: showtimeString.characters.count))
+
+        showtimeCell.showtimeLabel.attributedText = attriString
 
         return showtimeCell
     }
