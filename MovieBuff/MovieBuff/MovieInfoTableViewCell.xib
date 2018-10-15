@@ -135,7 +135,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brg-kZ-lJH">
-                        <rect key="frame" x="22" y="189" width="333" height="129"/>
+                        <rect key="frame" x="22" y="189" width="333" height="295.5"/>
                         <string key="text">This contemporary romantic comedy, based on a global bestseller, follows native New Yorker Rachael Chu to Singapore to meet her boufriend's family.This contemporary romantic comedy, based on a global b</string>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -163,6 +163,7 @@
                     <constraint firstItem="TcA-5s-hrr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LcW-fz-cER"/>
                     <constraint firstItem="1rX-oG-naJ" firstAttribute="leading" secondItem="LGF-PK-b6A" secondAttribute="leading" id="Mgv-nZ-wnc"/>
                     <constraint firstItem="T14-yy-TqX" firstAttribute="top" secondItem="TcA-5s-hrr" secondAttribute="bottom" constant="2" id="RGF-iT-POX"/>
+                    <constraint firstAttribute="bottom" secondItem="brg-kZ-lJH" secondAttribute="bottom" constant="20" id="U7q-ab-g2N"/>
                     <constraint firstItem="ZEv-ih-3Lt" firstAttribute="top" secondItem="T14-yy-TqX" secondAttribute="bottom" constant="5" id="XJq-mV-Bxg"/>
                     <constraint firstItem="1rX-oG-naJ" firstAttribute="top" secondItem="r9c-4G-NLD" secondAttribute="top" id="XiF-Y2-rGL"/>
                     <constraint firstItem="jT3-dr-Vde" firstAttribute="top" secondItem="ZEv-ih-3Lt" secondAttribute="top" id="age-rL-owo"/>

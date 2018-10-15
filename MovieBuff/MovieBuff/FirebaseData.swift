@@ -36,8 +36,8 @@ struct MovieTheaterInfo: Codable {
 
 struct ShowtimeInfo: Codable {
     
-    let date: String
-    let time: [String]
+    let date: String?
+    let time: [String]?
 }
 
 struct CinemaInfo: Codable {

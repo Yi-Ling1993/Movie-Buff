@@ -286,10 +286,10 @@ extension TheaterDetailViewController: UITableViewDelegate, UITableViewDataSourc
         showtimeCell.dateLabel.text = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].date
         
         var showtimeString = ""
-        let showtimeCount: Int = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time.count ?? 5
+        let showtimeCount: Int = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time?.count ?? 5
         for index in 0 ... showtimeCount - 1 {
 
-            showtimeString += "\(specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time[index])   "
+            showtimeString += "\(specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time?[index])   "
         }
 
         let attriString = NSMutableAttributedString(string: showtimeString)
