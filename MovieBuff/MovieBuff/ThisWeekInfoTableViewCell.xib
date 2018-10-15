@@ -66,12 +66,6 @@
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rK-6W-hdl">
-                        <rect key="frame" x="200.5" y="230.5" width="5" height="20.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hu-yp-lKT">
                         <rect key="frame" x="290" y="13" width="70" height="35"/>
                         <color key="backgroundColor" red="0.41568627450000001" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,16 +85,17 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="m7k-0O-up6">
+                        <rect key="frame" x="66" y="258.5" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="NK3-mE-xDL"/>
+                            <constraint firstAttribute="width" constant="16" id="vxZ-hp-C44"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu3-Ij-t4S">
                         <rect key="frame" x="89" y="258.5" width="21" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-59-kYB">
-                        <rect key="frame" x="207.5" y="232.5" width="56.5" height="19"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
-                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="導演:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iR7-Dq-96G">
@@ -155,13 +150,12 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="m7k-0O-up6">
-                        <rect key="frame" x="66" y="258.5" width="16" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="16" id="NK3-mE-xDL"/>
-                            <constraint firstAttribute="width" constant="16" id="vxZ-hp-C44"/>
-                        </constraints>
-                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-59-kYB">
+                        <rect key="frame" x="122" y="259" width="56.5" height="19"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
+                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
@@ -175,8 +169,6 @@
                     <constraint firstItem="RXI-kW-5Jb" firstAttribute="trailing" secondItem="UrY-X2-nLP" secondAttribute="trailing" multiplier="0.73" id="8PY-G9-s3G"/>
                     <constraint firstItem="YDM-G2-8Xc" firstAttribute="leading" secondItem="gMg-Nq-ILw" secondAttribute="leading" id="8js-JV-p9z"/>
                     <constraint firstItem="gMg-Nq-ILw" firstAttribute="top" secondItem="iR7-Dq-96G" secondAttribute="bottom" constant="10" id="8vF-t1-nXA"/>
-                    <constraint firstItem="4rK-6W-hdl" firstAttribute="leading" secondItem="BEp-0e-Mqq" secondAttribute="trailing" constant="-1" id="991-T7-6oP"/>
-                    <constraint firstItem="ssf-59-kYB" firstAttribute="leading" secondItem="4rK-6W-hdl" secondAttribute="trailing" constant="2" id="CFl-nj-qkc"/>
                     <constraint firstItem="m7k-0O-up6" firstAttribute="top" secondItem="cBM-iW-63A" secondAttribute="bottom" constant="9" id="FOd-JC-lJm"/>
                     <constraint firstItem="Uu3-Ij-t4S" firstAttribute="leading" secondItem="m7k-0O-up6" secondAttribute="trailing" constant="7" id="FPz-QU-AbR"/>
                     <constraint firstItem="0hu-yp-lKT" firstAttribute="trailing" secondItem="UrY-X2-nLP" secondAttribute="trailing" multiplier="0.96" id="Fst-Ab-mIX"/>
@@ -191,17 +183,17 @@
                     <constraint firstItem="iYE-g3-9Hj" firstAttribute="top" secondItem="vOU-3d-rQX" secondAttribute="top" id="Rdd-ky-aVL"/>
                     <constraint firstItem="3Jb-Ln-nip" firstAttribute="top" secondItem="cBM-iW-63A" secondAttribute="bottom" constant="9" id="SLS-ab-KCr"/>
                     <constraint firstItem="BEp-0e-Mqq" firstAttribute="leading" secondItem="iYE-g3-9Hj" secondAttribute="trailing" constant="3" id="SxV-i0-1HW"/>
-                    <constraint firstItem="ssf-59-kYB" firstAttribute="centerY" secondItem="BEp-0e-Mqq" secondAttribute="centerY" id="Ttv-pT-CEW"/>
                     <constraint firstItem="Uu3-Ij-t4S" firstAttribute="top" secondItem="cBM-iW-63A" secondAttribute="bottom" constant="9" id="WpR-N5-Td2"/>
                     <constraint firstItem="qaL-89-9eI" firstAttribute="top" secondItem="22L-bD-beC" secondAttribute="bottom" constant="2" id="a8I-0W-zuC"/>
                     <constraint firstItem="m7k-0O-up6" firstAttribute="leading" secondItem="3Jb-Ln-nip" secondAttribute="trailing" constant="5" id="akK-JX-gqx"/>
+                    <constraint firstItem="ssf-59-kYB" firstAttribute="firstBaseline" secondItem="Uu3-Ij-t4S" secondAttribute="firstBaseline" id="esB-IR-axq"/>
                     <constraint firstItem="iR7-Dq-96G" firstAttribute="top" secondItem="m7k-0O-up6" secondAttribute="bottom" constant="15" id="jX6-g4-h94"/>
-                    <constraint firstItem="4rK-6W-hdl" firstAttribute="top" secondItem="iYE-g3-9Hj" secondAttribute="top" id="ja7-ic-hyd"/>
                     <constraint firstItem="cBM-iW-63A" firstAttribute="leading" secondItem="qaL-89-9eI" secondAttribute="leading" id="jh9-QS-YMF"/>
                     <constraint firstItem="iYE-g3-9Hj" firstAttribute="leading" secondItem="Tbc-g8-uIl" secondAttribute="trailing" constant="2" id="lbZ-4N-r6b"/>
                     <constraint firstItem="RXI-kW-5Jb" firstAttribute="centerY" secondItem="0hu-yp-lKT" secondAttribute="centerY" id="mhM-0d-hx0"/>
                     <constraint firstItem="cBM-iW-63A" firstAttribute="top" secondItem="qaL-89-9eI" secondAttribute="bottom" constant="5" id="ncG-HX-534"/>
                     <constraint firstItem="qaL-89-9eI" firstAttribute="leading" secondItem="UrY-X2-nLP" secondAttribute="leading" constant="23" id="pcJ-Wb-MWR"/>
+                    <constraint firstItem="ssf-59-kYB" firstAttribute="leading" secondItem="Uu3-Ij-t4S" secondAttribute="trailing" constant="12" id="q3g-de-MNA"/>
                     <constraint firstAttribute="bottom" secondItem="YDM-G2-8Xc" secondAttribute="bottom" constant="20" id="r32-aK-mNc"/>
                     <constraint firstItem="iR7-Dq-96G" firstAttribute="leading" secondItem="22L-bD-beC" secondAttribute="leading" constant="2" id="sgd-ld-eLw"/>
                     <constraint firstItem="Tbc-g8-uIl" firstAttribute="leading" secondItem="vOU-3d-rQX" secondAttribute="trailing" constant="3" id="tGX-wJ-0Yd"/>

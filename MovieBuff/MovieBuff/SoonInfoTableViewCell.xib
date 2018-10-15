@@ -66,12 +66,6 @@
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="I" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l68-Sz-ail">
-                        <rect key="frame" x="201" y="65" width="5" height="21"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-6q-ag2">
                         <rect key="frame" x="275" y="13" width="80" height="35"/>
                         <color key="backgroundColor" red="0.41568627450000001" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -91,16 +85,17 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="aMJ-uB-hfi">
+                        <rect key="frame" x="66" y="93" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="5pG-RT-O70"/>
+                            <constraint firstAttribute="height" constant="16" id="ZV8-2j-Wvm"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EW1-Zv-fEu">
                         <rect key="frame" x="89" y="93" width="21" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="zJ5-A4-1tz">
-                        <rect key="frame" x="208" y="67" width="165" height="19"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
-                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="導演:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgA-mX-IxX">
@@ -140,41 +135,37 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="aMJ-uB-hfi">
-                        <rect key="frame" x="66" y="93" width="16" height="16"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="16" id="5pG-RT-O70"/>
-                            <constraint firstAttribute="height" constant="16" id="ZV8-2j-Wvm"/>
-                        </constraints>
-                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="zJ5-A4-1tz">
+                        <rect key="frame" x="122" y="93.5" width="56.5" height="19"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
+                        <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="tcJ-uY-gah" firstAttribute="leading" secondItem="zO5-eP-mML" secondAttribute="leading" id="0La-hU-BRE"/>
-                    <constraint firstItem="zJ5-A4-1tz" firstAttribute="centerY" secondItem="4XR-l6-2Y4" secondAttribute="centerY" id="0qG-5g-1w8"/>
+                    <constraint firstItem="zJ5-A4-1tz" firstAttribute="firstBaseline" secondItem="EW1-Zv-fEu" secondAttribute="firstBaseline" id="0TS-ux-43R"/>
                     <constraint firstItem="tcJ-uY-gah" firstAttribute="top" secondItem="Nmf-xJ-9p2" secondAttribute="top" id="3vt-Al-KTb"/>
                     <constraint firstItem="aAO-yy-u3L" firstAttribute="top" secondItem="m9e-zP-vws" secondAttribute="bottom" constant="2" id="9DL-Xf-uvq"/>
                     <constraint firstAttribute="trailing" secondItem="tcJ-uY-gah" secondAttribute="trailing" constant="20" id="Ay9-Zr-5As"/>
                     <constraint firstItem="mgA-mX-IxX" firstAttribute="top" secondItem="aMJ-uB-hfi" secondAttribute="bottom" constant="15" id="BfV-Ks-o9L"/>
                     <constraint firstItem="4XR-l6-2Y4" firstAttribute="leading" secondItem="khs-ct-XYV" secondAttribute="trailing" constant="3" id="Bfj-dI-1Fc"/>
-                    <constraint firstItem="zJ5-A4-1tz" firstAttribute="leading" secondItem="l68-Sz-ail" secondAttribute="trailing" constant="2" id="Coo-Fj-RkM"/>
                     <constraint firstItem="zO5-eP-mML" firstAttribute="centerY" secondItem="mgA-mX-IxX" secondAttribute="centerY" id="DEe-7j-0wY"/>
                     <constraint firstItem="Nmf-xJ-9p2" firstAttribute="top" secondItem="mgA-mX-IxX" secondAttribute="bottom" constant="10" id="DJn-4L-lMd"/>
                     <constraint firstItem="mgA-mX-IxX" firstAttribute="leading" secondItem="12T-Td-joq" secondAttribute="leading" constant="2" id="Dd5-Oj-bR1"/>
                     <constraint firstAttribute="trailing" secondItem="CSe-NX-s2A" secondAttribute="trailing" constant="20" id="Gqv-Bu-ACD"/>
-                    <constraint firstItem="l68-Sz-ail" firstAttribute="leading" secondItem="4XR-l6-2Y4" secondAttribute="trailing" constant="-1" id="HIY-Vl-4w0"/>
                     <constraint firstItem="zO5-eP-mML" firstAttribute="leading" secondItem="mgA-mX-IxX" secondAttribute="trailing" constant="8" id="JPg-77-ZMu"/>
                     <constraint firstItem="SIv-g5-Dat" firstAttribute="leading" secondItem="m9e-zP-vws" secondAttribute="leading" id="Liu-Cd-ax1"/>
-                    <constraint firstAttribute="trailing" secondItem="zJ5-A4-1tz" secondAttribute="trailing" constant="2" id="Oai-jR-CVb"/>
                     <constraint firstItem="m9e-zP-vws" firstAttribute="top" secondItem="12T-Td-joq" secondAttribute="bottom" constant="2" id="OeQ-tV-Ec2"/>
                     <constraint firstItem="aMJ-uB-hfi" firstAttribute="leading" secondItem="SPh-yN-Shq" secondAttribute="trailing" constant="5" id="PFg-CI-X35"/>
                     <constraint firstItem="SPh-yN-Shq" firstAttribute="top" secondItem="SIv-g5-Dat" secondAttribute="bottom" constant="9" id="Rmf-DC-Rlv"/>
                     <constraint firstItem="EW1-Zv-fEu" firstAttribute="leading" secondItem="aMJ-uB-hfi" secondAttribute="trailing" constant="7" id="Skq-cR-uEH"/>
+                    <constraint firstItem="zJ5-A4-1tz" firstAttribute="leading" secondItem="EW1-Zv-fEu" secondAttribute="trailing" constant="12" id="YnT-6O-en9"/>
                     <constraint firstItem="SIv-g5-Dat" firstAttribute="top" secondItem="m9e-zP-vws" secondAttribute="bottom" constant="5" id="cPm-BS-FPU"/>
                     <constraint firstItem="A5v-6q-ag2" firstAttribute="top" secondItem="wKu-ak-bZ3" secondAttribute="top" constant="13" id="chz-cT-fhW"/>
                     <constraint firstAttribute="bottom" secondItem="CSe-NX-s2A" secondAttribute="bottom" constant="20" id="dvm-zo-BUc"/>
                     <constraint firstAttribute="trailing" secondItem="A5v-6q-ag2" secondAttribute="trailing" constant="20" id="eJo-su-7io"/>
-                    <constraint firstItem="l68-Sz-ail" firstAttribute="top" secondItem="khs-ct-XYV" secondAttribute="top" id="hUI-kq-Fdr"/>
                     <constraint firstItem="tcJ-uY-gah" firstAttribute="leading" secondItem="Nmf-xJ-9p2" secondAttribute="trailing" constant="8" id="k0W-aF-ULz"/>
                     <constraint firstItem="Nmf-xJ-9p2" firstAttribute="leading" secondItem="12T-Td-joq" secondAttribute="leading" constant="2" id="l61-nm-ere"/>
                     <constraint firstItem="aMJ-uB-hfi" firstAttribute="top" secondItem="SIv-g5-Dat" secondAttribute="bottom" constant="9" id="nmA-mx-ohF"/>
