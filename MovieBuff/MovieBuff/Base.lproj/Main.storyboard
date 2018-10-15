@@ -519,7 +519,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWo-tZ-wAK">
-                                        <rect key="frame" x="330" y="10" width="30" height="30"/>
+                                        <rect key="frame" x="325" y="10" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="IdV-rh-iMO"/>
                                             <constraint firstAttribute="width" constant="30" id="S0H-SR-IFz"/>
@@ -535,7 +535,7 @@
                                 <constraints>
                                     <constraint firstItem="1Yr-6k-qOS" firstAttribute="centerY" secondItem="UKC-aE-Ucc" secondAttribute="centerY" id="1HN-5v-Nmj"/>
                                     <constraint firstAttribute="height" constant="50" id="7ER-I1-06m"/>
-                                    <constraint firstAttribute="trailing" secondItem="DWo-tZ-wAK" secondAttribute="trailing" constant="15" id="AT7-CG-BxP"/>
+                                    <constraint firstAttribute="trailing" secondItem="DWo-tZ-wAK" secondAttribute="trailing" constant="20" id="AT7-CG-BxP"/>
                                     <constraint firstItem="1Yr-6k-qOS" firstAttribute="leading" secondItem="arL-C5-vuP" secondAttribute="trailing" constant="30" id="F8D-ZB-u4A"/>
                                     <constraint firstItem="arL-C5-vuP" firstAttribute="centerY" secondItem="UKC-aE-Ucc" secondAttribute="centerY" id="V6l-Em-yK5"/>
                                     <constraint firstItem="DWo-tZ-wAK" firstAttribute="centerY" secondItem="UKC-aE-Ucc" secondAttribute="centerY" id="jK3-gB-PmH"/>
@@ -558,7 +558,7 @@
                             <constraint firstItem="Lmb-Ag-oMX" firstAttribute="trailing" secondItem="UKC-aE-Ucc" secondAttribute="trailing" id="UPk-se-BRv"/>
                             <constraint firstItem="Lmb-Ag-oMX" firstAttribute="trailing" secondItem="yIC-92-awq" secondAttribute="trailing" id="UVs-Pr-SiM"/>
                             <constraint firstItem="UKC-aE-Ucc" firstAttribute="top" secondItem="yIC-92-awq" secondAttribute="bottom" id="bTS-4C-eaw"/>
-                            <constraint firstItem="UKC-aE-Ucc" firstAttribute="bottom" secondItem="Lmb-Ag-oMX" secondAttribute="bottom" id="mJq-it-CCQ"/>
+                            <constraint firstItem="UKC-aE-Ucc" firstAttribute="bottom" secondItem="pxu-rx-13d" secondAttribute="bottom" id="mJq-it-CCQ"/>
                             <constraint firstItem="yIC-92-awq" firstAttribute="leading" secondItem="Lmb-Ag-oMX" secondAttribute="leading" id="ozF-PR-u4B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lmb-Ag-oMX"/>
