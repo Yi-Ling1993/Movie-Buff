@@ -73,11 +73,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hu-yp-lKT">
-                        <rect key="frame" x="275" y="13" width="80" height="35"/>
+                        <rect key="frame" x="300" y="13" width="60" height="35"/>
                         <color key="backgroundColor" red="0.41568627450000001" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="T0v-R8-ceH"/>
-                            <constraint firstAttribute="width" constant="80" id="cri-ZC-HoF"/>
+                            <constraint firstAttribute="width" constant="60" id="cri-ZC-HoF"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
                         <color key="tintColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -136,12 +136,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXI-kW-5Jb">
-                        <rect key="frame" x="227" y="15.5" width="30" height="30"/>
+                        <rect key="frame" x="225" y="13" width="60" height="35"/>
+                        <color key="backgroundColor" red="0.41568627450980394" green="0.41568627450980394" blue="0.41568627450980394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="C5a-je-z39"/>
-                            <constraint firstAttribute="height" constant="30" id="RPl-P8-KTD"/>
+                            <constraint firstAttribute="width" constant="60" id="C5a-je-z39"/>
+                            <constraint firstAttribute="height" constant="35" id="RPl-P8-KTD"/>
                         </constraints>
-                        <state key="normal" image="clapperboard"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="15"/>
+                        <state key="normal" title="時刻表"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-59-kYB">
                         <rect key="frame" x="207.5" y="232.5" width="56.5" height="19"/>
@@ -158,15 +165,15 @@
                     <constraint firstItem="Q7f-R8-Ybf" firstAttribute="leading" secondItem="gMg-Nq-ILw" secondAttribute="trailing" constant="8" id="7IF-3g-Nlw"/>
                     <constraint firstItem="Tbc-g8-uIl" firstAttribute="top" secondItem="cBM-iW-63A" secondAttribute="top" id="7lF-Eu-JBz"/>
                     <constraint firstItem="7eG-1p-FHl" firstAttribute="centerY" secondItem="iR7-Dq-96G" secondAttribute="centerY" id="7yS-Sc-Uke"/>
+                    <constraint firstItem="RXI-kW-5Jb" firstAttribute="trailing" secondItem="UrY-X2-nLP" secondAttribute="trailing" multiplier="0.76" id="8PY-G9-s3G"/>
                     <constraint firstItem="YDM-G2-8Xc" firstAttribute="leading" secondItem="gMg-Nq-ILw" secondAttribute="leading" id="8js-JV-p9z"/>
                     <constraint firstItem="gMg-Nq-ILw" firstAttribute="top" secondItem="iR7-Dq-96G" secondAttribute="bottom" constant="10" id="8vF-t1-nXA"/>
                     <constraint firstItem="4rK-6W-hdl" firstAttribute="leading" secondItem="BEp-0e-Mqq" secondAttribute="trailing" constant="-1" id="991-T7-6oP"/>
                     <constraint firstItem="ssf-59-kYB" firstAttribute="leading" secondItem="4rK-6W-hdl" secondAttribute="trailing" constant="2" id="CFl-nj-qkc"/>
                     <constraint firstItem="m7k-0O-up6" firstAttribute="top" secondItem="cBM-iW-63A" secondAttribute="bottom" constant="9" id="FOd-JC-lJm"/>
                     <constraint firstItem="Uu3-Ij-t4S" firstAttribute="leading" secondItem="m7k-0O-up6" secondAttribute="trailing" constant="7" id="FPz-QU-AbR"/>
-                    <constraint firstAttribute="trailing" secondItem="0hu-yp-lKT" secondAttribute="trailing" constant="20" id="Fst-Ab-mIX"/>
+                    <constraint firstItem="0hu-yp-lKT" firstAttribute="trailing" secondItem="UrY-X2-nLP" secondAttribute="trailing" multiplier="0.96" id="Fst-Ab-mIX"/>
                     <constraint firstItem="vOU-3d-rQX" firstAttribute="top" secondItem="qaL-89-9eI" secondAttribute="bottom" constant="2" id="HEH-29-KHl"/>
-                    <constraint firstItem="0hu-yp-lKT" firstAttribute="leading" secondItem="RXI-kW-5Jb" secondAttribute="trailing" constant="18" id="IZD-aI-GNU"/>
                     <constraint firstItem="Q7f-R8-Ybf" firstAttribute="leading" secondItem="7eG-1p-FHl" secondAttribute="leading" id="K4o-Kv-E1Y"/>
                     <constraint firstItem="Q7f-R8-Ybf" firstAttribute="top" secondItem="gMg-Nq-ILw" secondAttribute="top" id="K7h-O0-J76"/>
                     <constraint firstItem="gMg-Nq-ILw" firstAttribute="leading" secondItem="22L-bD-beC" secondAttribute="leading" constant="2" id="KDJ-eI-fsq"/>
@@ -213,7 +220,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="clapperboard" width="512" height="512"/>
         <image name="star" width="256" height="256"/>
     </resources>
 </document>
