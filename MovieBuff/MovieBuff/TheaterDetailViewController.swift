@@ -69,8 +69,6 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var theaterDetailVideoView: YouTubePlayerView!
     
-    
-    
     @IBAction func toWebview(_ sender: Any) {
         performSegue(withIdentifier: "ToWebview", sender: self)
     }
@@ -156,6 +154,11 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         
         theaterDetailManager.delegate = self
         
+        getFirebase()
+        
+    }
+    
+    func getFirebase() {
         refref = Database.database().reference()
         
         refref.child("cinema").observeSingleEvent(of: .value) { (snapshot) in
@@ -166,7 +169,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
             
             do {
                 let theaterDetailData = try self.decoder.decode([CinemaInfo].self, from: jsonData)
-                print(theaterDetailData)
+//                print(theaterDetailData)
                 
                 self.theaterDtailDatas = theaterDetailData
                 
@@ -176,7 +179,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
                         self.specificTheaterDetailData = theaterDetailData
                         
                 }
-
+                
                 self.getPoster()
                 
                 self.titleLabel.text = self.specificTheaterDetailData?.movie[self.pagerIndex].title
@@ -185,19 +188,14 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
                 self.presentLabel.text = self.specificTheaterDetailData?.movie[self.pagerIndex].present
                 self.languageLabel.text = self.specificTheaterDetailData?.movie[self.pagerIndex].language
                 
-                let imdbId = self.specificTheaterDetailData?.movie[self.pagerIndex].id
-                
-                self.enTitleLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Title
-                self.durationLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Runtime
-                self.genreLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Genre
-                self.genreLabel.adjustsFontSizeToFitWidth = true
-                
-
             } catch {
                 print(error)
             }
+            
+            self.showTimeTableView.reloadData()
+
         }
-        
+        print("123")
     }
     
     func getPoster() {
@@ -243,7 +241,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         
         pagerIndex = index
         
-        self.viewDidLoad()
+        self.getFirebase()
+        
         
     }
     
@@ -257,7 +256,9 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         
         pagerIndex = index
     
-        self.viewDidLoad()
+        self.getFirebase()
+        
+
         
     }
     
@@ -271,7 +272,13 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
 
 extension TheaterDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        
+        let count = specificTheaterDetailData?.movie[pagerIndex].showtime.count ?? 0
+        
+        print("-----------")
+        print(count)
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -283,13 +290,22 @@ extension TheaterDetailViewController: UITableViewDelegate, UITableViewDataSourc
                 return UITableViewCell()
         }
         print(pagerIndex)
-        showtimeCell.dateLabel.text = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].date
+        
+        guard let date = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].date  else {
+            return UITableViewCell()
+        }
+        
+        showtimeCell.dateLabel.text = date
         
         var showtimeString = ""
         let showtimeCount: Int = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time?.count ?? 5
         for index in 0 ... showtimeCount - 1 {
-
-            showtimeString += "\(specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time![index])   "
+            
+            guard let content = specificTheaterDetailData?.movie[pagerIndex].showtime[indexPath.row].time?[index] else {
+                return UITableViewCell()
+            }
+            
+            showtimeString += "\(content)   "
         }
 
         let attriString = NSMutableAttributedString(string: showtimeString)
@@ -299,7 +315,7 @@ extension TheaterDetailViewController: UITableViewDelegate, UITableViewDataSourc
         attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: showtimeString.characters.count))
 
         showtimeCell.showtimeLabel.attributedText = attriString
-
+        
         return showtimeCell
     }
     
@@ -326,8 +342,13 @@ extension TheaterDetailViewController: TheaterDetailManagerDelegate {
         omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
         
         self.theaterDetailPagerView.reloadData()
-    
-//        self.viewDidLoad()
+        
+        let imdbId = self.specificTheaterDetailData?.movie[self.pagerIndex].id
+        
+        self.enTitleLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Title
+        self.durationLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Runtime
+        self.genreLabel.text = self.omdbDict[imdbId ?? "tt3896198"]?.Genre
+        self.genreLabel.adjustsFontSizeToFitWidth = true
         
     }
     
