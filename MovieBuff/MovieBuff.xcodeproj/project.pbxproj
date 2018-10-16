@@ -40,7 +40,6 @@
 		AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7953542153511400668DAB /* TheaterListViewController.swift */; };
 		AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */; };
 		AC79535921538B2700668DAB /* LocationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */; };
-		AC92160D2164B7D7002133E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */; };
 		AC92160F21675E09002133E2 /* FirebaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC92160E21675E09002133E2 /* FirebaseData.swift */; };
 		AC9216112168CF44002133E2 /* InTheaterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9216102168CF44002133E2 /* InTheaterManager.swift */; };
 		AC9216132168D0AC002133E2 /* OMDBData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9216122168D0AC002133E2 /* OMDBData.swift */; };
@@ -53,6 +52,7 @@
 		ACE37FC721759A1600AE4958 /* animation-w100-h100.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC621759A1500AE4958 /* animation-w100-h100.json */; };
 		ACE37FC921759EB100AE4958 /* animation-w100-h100-2.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */; };
 		ACE37FCD2175D33800AE4958 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE37FCB2175D33700AE4958 /* Reachability.m */; };
+		ACE37FCF2175EAE400AE4958 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FCE2175EAE400AE4958 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,7 +95,6 @@
 		AC7953542153511400668DAB /* TheaterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListViewController.swift; sourceTree = "<group>"; };
 		AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCollectionViewCell.xib; sourceTree = "<group>"; };
-		AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC92160E21675E09002133E2 /* FirebaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseData.swift; sourceTree = "<group>"; };
 		AC9216102168CF44002133E2 /* InTheaterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterManager.swift; sourceTree = "<group>"; };
 		AC9216122168D0AC002133E2 /* OMDBData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBData.swift; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		ACE37FCA2175D33600AE4958 /* Taipei Movies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Taipei Movies-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACE37FCB2175D33700AE4958 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		ACE37FCC2175D33800AE4958 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		ACE37FCE2175EAE400AE4958 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 		E23222836BB89E9AF0D1DF5A /* Pods_Taipei_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taipei_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E681B68F73BB4A2567DFD557 /* Pods-Taipei Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taipei Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,7 +216,7 @@
 				AC3B5115215E010F00313E2E /* SoonInfoTableViewCell.xib */,
 				AC7953462152173000668DAB /* LaunchScreen.storyboard */,
 				AC0718AA2154D944003061AC /* TheaterData.swift */,
-				AC92160C2164B7D6002133E2 /* GoogleService-Info.plist */,
+				ACE37FCE2175EAE400AE4958 /* GoogleService-Info.plist */,
 				AC7953492152173000668DAB /* Info.plist */,
 			);
 			path = MovieBuff;
@@ -285,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE37FCF2175EAE400AE4958 /* GoogleService-Info.plist in Resources */,
 				AC0718BB21594D8A003061AC /* DateCollectionViewCell.xib in Resources */,
 				AC7953482152173000668DAB /* LaunchScreen.storyboard in Resources */,
 				ACE37FC921759EB100AE4958 /* animation-w100-h100-2.json in Resources */,
@@ -295,7 +296,6 @@
 				AC0718C7215A6131003061AC /* SeenTableViewCell.xib in Resources */,
 				AC79535321527E7300668DAB /* MovieInfoTableViewCell.xib in Resources */,
 				AC7953432152172A00668DAB /* Main.storyboard in Resources */,
-				AC92160D2164B7D7002133E2 /* GoogleService-Info.plist in Resources */,
 				AC3B5117215E010F00313E2E /* SoonInfoTableViewCell.xib in Resources */,
 				AC3B510F215DE1F400313E2E /* ThisWeekInfoTableViewCell.xib in Resources */,
 			);
@@ -595,7 +595,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appworks.MovieBuff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appworks.TaipeiMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MovieBuff/Taipei Movies-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -623,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appworks.MovieBuff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appworks.TaipeiMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MovieBuff/Taipei Movies-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

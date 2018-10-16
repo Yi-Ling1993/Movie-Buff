@@ -24,7 +24,7 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
     
     let location: [String] = ["全部地區", "台北東區", "台北西區", "台北北區", "台北南區"]
 
-    let dates: [String] = ["10/4(四)", "10/5(五)", "10/6(六)", "10/7(日)", "10/8(一)", "10/9(二)", "10/10 (三)"]
+    let dates: [String] = ["10/19 (五)", "10/20 (六)", "10/21 (日)", "10/22 (一)", "10/23 (二)", "10/24 (三)", "10/25 (四)"]
     
     var cellForItemLocationTag: Int? = 0
     

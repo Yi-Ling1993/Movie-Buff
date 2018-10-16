@@ -18,8 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="504.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="瘋狂亞洲富豪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcA-5s-hrr">
-                        <rect key="frame" x="20" y="10" width="138" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="瘋狂亞洲富豪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TcA-5s-hrr">
+                        <rect key="frame" x="20" y="10" width="184" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="oer-6i-b6F"/>
                         </constraints>
@@ -27,8 +27,8 @@
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crazy Rich Asians" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T14-yy-TqX">
-                        <rect key="frame" x="23" y="42" width="142.5" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crazy Rich Asians" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="T14-yy-TqX">
+                        <rect key="frame" x="23" y="42" width="181" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -173,11 +173,13 @@
                     <constraint firstItem="hBS-9W-7HD" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.73" id="R4P-Ks-FxL"/>
                     <constraint firstItem="2X5-MX-0zo" firstAttribute="leading" secondItem="ZEv-ih-3Lt" secondAttribute="leading" id="R9z-J5-iI6"/>
                     <constraint firstItem="T14-yy-TqX" firstAttribute="top" secondItem="TcA-5s-hrr" secondAttribute="bottom" constant="2" id="RGF-iT-POX"/>
+                    <constraint firstItem="hBS-9W-7HD" firstAttribute="leading" secondItem="TcA-5s-hrr" secondAttribute="trailing" constant="10" id="SSY-q1-ole"/>
                     <constraint firstAttribute="bottom" secondItem="brg-kZ-lJH" secondAttribute="bottom" constant="20" id="U7q-ab-g2N"/>
                     <constraint firstItem="ZEv-ih-3Lt" firstAttribute="top" secondItem="T14-yy-TqX" secondAttribute="bottom" constant="5" id="XJq-mV-Bxg"/>
                     <constraint firstItem="1rX-oG-naJ" firstAttribute="top" secondItem="r9c-4G-NLD" secondAttribute="top" id="XiF-Y2-rGL"/>
                     <constraint firstItem="jT3-dr-Vde" firstAttribute="top" secondItem="ZEv-ih-3Lt" secondAttribute="top" id="age-rL-owo"/>
                     <constraint firstItem="R4E-Vr-AI6" firstAttribute="leading" secondItem="0j3-l7-kOe" secondAttribute="trailing" constant="7" id="ayT-cs-sNd"/>
+                    <constraint firstItem="hBS-9W-7HD" firstAttribute="leading" secondItem="T14-yy-TqX" secondAttribute="trailing" constant="10" id="bU0-ZU-XaG"/>
                     <constraint firstItem="ZEv-ih-3Lt" firstAttribute="leading" secondItem="T14-yy-TqX" secondAttribute="leading" id="c0T-93-1QQ"/>
                     <constraint firstItem="0j3-l7-kOe" firstAttribute="top" secondItem="ZEv-ih-3Lt" secondAttribute="bottom" constant="9" id="dXZ-Ef-ve1"/>
                     <constraint firstItem="XJm-UF-zpl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="dzp-fm-ucg"/>

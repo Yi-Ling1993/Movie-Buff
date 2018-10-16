@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1084569152726-naoigo7fj25b2bckd0qtdtjbe9j4hnek.apps.googleusercontent.com</string>
+	<string>1084569152726-58u7hti5dn2gd2oe3pi9upnes2m20n8j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1084569152726-naoigo7fj25b2bckd0qtdtjbe9j4hnek</string>
+	<string>com.googleusercontent.apps.1084569152726-58u7hti5dn2gd2oe3pi9upnes2m20n8j</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBteW1h6JapBiZfc9qFicxxQdnzg9LewbQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.appworks.MovieBuff</string>
+	<string>com.appworks.TaipeiMovies</string>
 	<key>PROJECT_ID</key>
 	<string>movie-buff-63b52</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1084569152726:ios:acdff2cf41af3daa</string>
+	<string>1:1084569152726:ios:01013b1ed11380f8</string>
 	<key>DATABASE_URL</key>
 	<string>https://movie-buff-63b52.firebaseio.com</string>
 </dict>
