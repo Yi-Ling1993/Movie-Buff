@@ -19,6 +19,32 @@ import Lottie
 
 class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
     
+    var reachability = Reachability(hostName: "www.apple.com")
+    
+    func checkInternetFunction() -> Bool {
+        if reachability?.currentReachabilityStatus().rawValue == 0 {
+            print("no internet connected.")
+            return false
+        }else {
+            print("internet connected successfully.")
+            return true
+        }
+    }
+    
+    func downloadData() {
+        if checkInternetFunction() == false {
+            
+            internetLabel1.isHidden = false
+            internetLabel2.isHidden = false
+            
+        }else {
+            
+            internetLabel1.isHidden = true
+            internetLabel2.isHidden = true
+            
+        }
+    }
+    
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         
         videoView.alpha = 1
@@ -115,6 +141,10 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     var pagerIndex: Int = 0
     
+    @IBOutlet weak var internetLabel1: UILabel!
+    @IBOutlet weak var internetLabel2: UILabel!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -124,10 +154,15 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        downloadData()
+        
+        let centerX = UIScreen.main.bounds.width / 2
+        let centerＹ = UIScreen.main.bounds.height / 2 - 70
+
         let loadingView = LOTAnimationView(name: "animation-w100-h100-2")
             
         loadingView.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
-        loadingView.center = animationView.center
+        loadingView.center = CGPoint(x: centerX, y: centerＹ)
         loadingView.contentMode = .scaleAspectFill
             
         loadingView.loopAnimation = true
@@ -137,9 +172,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
             
         loadingView.play()
         
-
         setNavigationBarItem()
-        
         
         self.inTheaterPagerView.dataSource = self
         self.inTheaterPagerView.delegate = self
@@ -177,6 +210,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
             } catch {
                 print(error)
             }
+            
+            self.downloadData()
             
             self.animationView.isHidden = true
         }

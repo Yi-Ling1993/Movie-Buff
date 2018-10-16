@@ -52,7 +52,30 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR7-NA-NEg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty7-WR-qQx">
+                                        <rect key="frame" x="89" y="349" width="197" height="26"/>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please trun on cellular data or use Wi-Fi to access data." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3w-Pa-Dsv">
+                                        <rect key="frame" x="50" y="380" width="275" height="39.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="275" id="afT-0X-45G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="X3w-Pa-Dsv" firstAttribute="top" secondItem="ty7-WR-qQx" secondAttribute="bottom" constant="5" id="B7d-z5-Owg"/>
+                                    <constraint firstItem="X3w-Pa-Dsv" firstAttribute="centerX" secondItem="tR7-NA-NEg" secondAttribute="centerX" id="QNf-w1-QyS"/>
+                                    <constraint firstItem="ty7-WR-qQx" firstAttribute="centerY" secondItem="tR7-NA-NEg" secondAttribute="centerY" multiplier="1.2" id="iHb-tj-i3x"/>
+                                    <constraint firstItem="ty7-WR-qQx" firstAttribute="centerX" secondItem="tR7-NA-NEg" secondAttribute="centerX" id="iWR-G7-vy3"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,6 +103,8 @@
                         <outlet property="animationView" destination="tR7-NA-NEg" id="P6v-5O-qfl"/>
                         <outlet property="inTheaterPagerView" destination="X9k-vc-MWT" id="4yV-m1-LaT"/>
                         <outlet property="infoTableView" destination="Kdn-vp-8Bk" id="6IM-VT-w7w"/>
+                        <outlet property="internetLabel1" destination="ty7-WR-qQx" id="brO-da-Ljn"/>
+                        <outlet property="internetLabel2" destination="X3w-Pa-Dsv" id="ctw-ap-pFI"/>
                         <outlet property="videoView" destination="4F9-Ui-38u" id="sh0-wE-Xft"/>
                         <segue destination="hMi-Ua-sJE" kind="show" identifier="InTheaterToShowtime" id="b58-C0-hoh"/>
                     </connections>
@@ -126,7 +151,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2d-xy-ExV">
-                                                    <rect key="frame" x="15" y="8" width="290" height="84"/>
+                                                    <rect key="frame" x="15" y="8" width="345" height="84"/>
                                                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="誠品電影院" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x4-cU-d3v">
@@ -143,8 +168,8 @@
                                                     </constraints>
                                                     <state key="normal" image="maps-and-flags"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-Gs-4zK">
-                                                    <rect key="frame" x="275" y="20" width="20" height="20"/>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-Gs-4zK">
+                                                    <rect key="frame" x="330" y="20" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="fEJ-DD-SMl"/>
                                                         <constraint firstAttribute="width" constant="20" id="swA-lj-aKS"/>
@@ -428,6 +453,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-qe-vs2">
+                                <rect key="frame" x="89" y="349" width="197" height="26"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please trun on cellular data or use Wi-Fi to access data." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ils-38-17V">
+                                <rect key="frame" x="50" y="380" width="275" height="39.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="hjl-CR-T2R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -443,9 +483,11 @@
                             <constraint firstItem="ALq-tl-Aqk" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" id="Cd2-wh-1t2"/>
                             <constraint firstItem="RqK-mU-3LP" firstAttribute="centerY" secondItem="51j-Lm-XlO" secondAttribute="centerY" id="DUi-vl-k5D"/>
                             <constraint firstItem="4fQ-JW-nXt" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" constant="20" id="Grs-Wa-sT1"/>
+                            <constraint firstItem="Cxf-qe-vs2" firstAttribute="centerY" secondItem="4Cm-g8-6hh" secondAttribute="centerY" multiplier="1.2" id="JIO-PI-umj"/>
                             <constraint firstItem="ALq-tl-Aqk" firstAttribute="top" secondItem="36G-6F-ulK" secondAttribute="top" id="OLV-mG-zGT"/>
                             <constraint firstItem="kVn-fd-v4j" firstAttribute="centerY" secondItem="Zoy-kA-C84" secondAttribute="centerY" id="PL3-H4-kKk"/>
                             <constraint firstItem="Rgr-Fj-NhM" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" id="QOR-gY-8gs"/>
+                            <constraint firstItem="ils-38-17V" firstAttribute="top" secondItem="Cxf-qe-vs2" secondAttribute="bottom" constant="5" id="SuB-Y4-Fg0"/>
                             <constraint firstItem="9fk-IB-s2q" firstAttribute="leading" secondItem="t9r-t4-Zxw" secondAttribute="leading" id="Ubk-eF-2JI"/>
                             <constraint firstItem="g4L-kx-HyH" firstAttribute="leading" secondItem="FiZ-cc-Qk8" secondAttribute="trailing" constant="2" id="Va7-33-LZe"/>
                             <constraint firstItem="8S7-fJ-8Uv" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="Vw5-nu-2h2"/>
@@ -454,6 +496,7 @@
                             <constraint firstItem="RqK-mU-3LP" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" multiplier="0.73" id="aqG-hC-x51"/>
                             <constraint firstItem="g4L-kx-HyH" firstAttribute="top" secondItem="9fk-IB-s2q" secondAttribute="top" id="bbN-Zw-Y6a"/>
                             <constraint firstItem="8S7-fJ-8Uv" firstAttribute="top" secondItem="Zoy-kA-C84" secondAttribute="bottom" constant="15" id="d9l-Rx-Bbj"/>
+                            <constraint firstItem="Cxf-qe-vs2" firstAttribute="centerX" secondItem="4Cm-g8-6hh" secondAttribute="centerX" id="f0A-NL-kps"/>
                             <constraint firstItem="ZxX-SZ-00R" firstAttribute="leading" secondItem="kVn-fd-v4j" secondAttribute="trailing" constant="10" id="fUH-hg-MkX"/>
                             <constraint firstItem="3gs-QJ-x7h" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="j26-CP-Ey4"/>
                             <constraint firstItem="36G-6F-ulK" firstAttribute="bottom" secondItem="8S7-fJ-8Uv" secondAttribute="bottom" id="jtw-5m-jdp"/>
@@ -463,6 +506,7 @@
                             <constraint firstItem="ALq-tl-Aqk" firstAttribute="bottom" secondItem="36G-6F-ulK" secondAttribute="bottom" id="ohN-Gf-TJv"/>
                             <constraint firstItem="51j-Lm-XlO" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" multiplier="0.96" id="ozb-oz-W5z"/>
                             <constraint firstItem="FiZ-cc-Qk8" firstAttribute="top" secondItem="t9r-t4-Zxw" secondAttribute="bottom" constant="1.5" id="pPW-En-7kj"/>
+                            <constraint firstItem="ils-38-17V" firstAttribute="centerX" secondItem="4Cm-g8-6hh" secondAttribute="centerX" id="pUE-P7-meI"/>
                             <constraint firstItem="36G-6F-ulK" firstAttribute="trailing" secondItem="8S7-fJ-8Uv" secondAttribute="trailing" id="sAC-mC-rOx"/>
                             <constraint firstItem="3gs-QJ-x7h" firstAttribute="top" secondItem="36G-6F-ulK" secondAttribute="top" constant="10" id="tMf-gs-wxv"/>
                             <constraint firstItem="t9r-t4-Zxw" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" constant="23" id="ufE-Xk-g9t"/>
@@ -477,6 +521,8 @@
                         <outlet property="durationLabel" destination="g4L-kx-HyH" id="axR-eN-Nl8"/>
                         <outlet property="enTitleLabel" destination="t9r-t4-Zxw" id="eA4-Nc-b0G"/>
                         <outlet property="genreLabel" destination="ZxX-SZ-00R" id="HW7-cW-Qqj"/>
+                        <outlet property="internetLabel1" destination="Cxf-qe-vs2" id="Sep-eE-P8c"/>
+                        <outlet property="internetLabel2" destination="ils-38-17V" id="2he-aa-jb7"/>
                         <outlet property="languageLabel" destination="kVn-fd-v4j" id="DCX-me-mlW"/>
                         <outlet property="presentLabel" destination="Zoy-kA-C84" id="vTa-gt-iLy"/>
                         <outlet property="ratedLabel" destination="0Y4-Pk-T8Q" id="kEN-4N-OYj"/>
@@ -961,8 +1007,28 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2c6-ZL-QOs">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please trun on cellular data or use Wi-Fi to access data." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8V-LX-Zhy">
+                                        <rect key="frame" x="50" y="354" width="275" height="39.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="275" id="3IO-AK-dyX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="K8V-LX-Zhy" firstAttribute="centerX" secondItem="2c6-ZL-QOs" secondAttribute="centerX" id="UgS-nE-VOX"/>
+                                </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzN-1p-96x">
+                                <rect key="frame" x="89" y="387" width="197" height="26"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -972,12 +1038,15 @@
                             <constraint firstItem="PeL-kZ-riD" firstAttribute="bottom" secondItem="wkG-7s-KeS" secondAttribute="bottom" id="DLS-Pb-gIS"/>
                             <constraint firstItem="2c6-ZL-QOs" firstAttribute="trailing" secondItem="PeL-kZ-riD" secondAttribute="trailing" id="Ig2-dt-hNC"/>
                             <constraint firstItem="wkG-7s-KeS" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="Jud-c1-SOE"/>
+                            <constraint firstItem="RzN-1p-96x" firstAttribute="centerX" secondItem="ywd-GG-gRA" secondAttribute="centerX" id="MnD-Bu-3FG"/>
+                            <constraint firstItem="RzN-1p-96x" firstAttribute="centerY" secondItem="ywd-GG-gRA" secondAttribute="centerY" multiplier="1.2" id="Nbr-or-BOO"/>
                             <constraint firstItem="PeL-kZ-riD" firstAttribute="trailing" secondItem="wkG-7s-KeS" secondAttribute="trailing" id="QSu-MR-sC7"/>
                             <constraint firstItem="66N-LM-TFI" firstAttribute="top" secondItem="PeL-kZ-riD" secondAttribute="top" constant="30" id="YBr-M7-yY7"/>
                             <constraint firstItem="0Po-RG-Jdm" firstAttribute="trailing" secondItem="PeL-kZ-riD" secondAttribute="trailing" id="ZGT-hD-3HL"/>
                             <constraint firstItem="0Po-RG-Jdm" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="dKs-0R-YVu"/>
                             <constraint firstItem="0Po-RG-Jdm" firstAttribute="top" secondItem="PeL-kZ-riD" secondAttribute="top" constant="40" id="gbw-lN-AWA"/>
                             <constraint firstItem="2c6-ZL-QOs" firstAttribute="top" secondItem="PeL-kZ-riD" secondAttribute="top" id="lGw-pu-MgK"/>
+                            <constraint firstItem="K8V-LX-Zhy" firstAttribute="top" secondItem="RzN-1p-96x" secondAttribute="bottom" constant="5" id="oFt-NB-mwM"/>
                             <constraint firstItem="2c6-ZL-QOs" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="q8m-bv-K45"/>
                             <constraint firstItem="66N-LM-TFI" firstAttribute="trailing" secondItem="PeL-kZ-riD" secondAttribute="trailing" id="yj4-Jh-7Ri"/>
                         </constraints>
@@ -986,6 +1055,8 @@
                     <navigationItem key="navigationItem" title="本週上映" id="PMn-F4-TmG"/>
                     <connections>
                         <outlet property="animationView" destination="2c6-ZL-QOs" id="LFf-o4-SzT"/>
+                        <outlet property="internetLabel1" destination="RzN-1p-96x" id="OC4-3P-Fgd"/>
+                        <outlet property="internetLabel2" destination="K8V-LX-Zhy" id="BUR-gu-Ukd"/>
                         <outlet property="thisWeekInfoTableView" destination="wkG-7s-KeS" id="9h2-Do-m1e"/>
                         <outlet property="thisWeekPagerView" destination="66N-LM-TFI" id="lds-cR-KQ6"/>
                         <outlet property="thisWeekVideoView" destination="0Po-RG-Jdm" id="zZ0-7d-dvq"/>
@@ -1057,12 +1128,30 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTv-8s-YlH">
+                                <rect key="frame" x="89" y="387" width="197" height="26"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please trun on cellular data or use Wi-Fi to access data." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvW-Wv-SjG">
+                                <rect key="frame" x="50" y="418" width="275" height="39.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="tT8-UL-8Ag"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="XvW-Wv-SjG" firstAttribute="top" secondItem="XTv-8s-YlH" secondAttribute="bottom" constant="5" id="9Ni-pF-Zfa"/>
                             <constraint firstItem="CZc-bc-JE2" firstAttribute="top" secondItem="scD-La-xv8" secondAttribute="top" id="GEH-lV-pNF"/>
                             <constraint firstItem="2mi-hk-njf" firstAttribute="trailing" secondItem="scD-La-xv8" secondAttribute="trailing" id="JLc-8c-cLv"/>
+                            <constraint firstItem="XTv-8s-YlH" firstAttribute="centerX" secondItem="x2O-cc-SjO" secondAttribute="centerX" id="RH7-oa-fW5"/>
                             <constraint firstItem="zYG-yl-vHO" firstAttribute="leading" secondItem="scD-La-xv8" secondAttribute="leading" id="Tyx-fu-bJE"/>
+                            <constraint firstItem="XTv-8s-YlH" firstAttribute="centerY" secondItem="x2O-cc-SjO" secondAttribute="centerY" multiplier="1.2" id="WvJ-ij-xHG"/>
                             <constraint firstItem="2mi-hk-njf" firstAttribute="leading" secondItem="scD-La-xv8" secondAttribute="leading" id="YCv-56-dk4"/>
                             <constraint firstItem="scD-La-xv8" firstAttribute="bottom" secondItem="CZc-bc-JE2" secondAttribute="bottom" id="ZA6-BY-QOl"/>
                             <constraint firstItem="CZc-bc-JE2" firstAttribute="trailing" secondItem="scD-La-xv8" secondAttribute="trailing" id="amK-Nt-19G"/>
@@ -1072,6 +1161,7 @@
                             <constraint firstItem="Hs6-KR-IjE" firstAttribute="leading" secondItem="scD-La-xv8" secondAttribute="leading" id="hRn-Pz-QYd"/>
                             <constraint firstItem="Hs6-KR-IjE" firstAttribute="top" secondItem="scD-La-xv8" secondAttribute="top" constant="40" id="lKT-la-hER"/>
                             <constraint firstItem="zYG-yl-vHO" firstAttribute="top" secondItem="2mi-hk-njf" secondAttribute="bottom" id="p2w-sF-OHS"/>
+                            <constraint firstItem="XvW-Wv-SjG" firstAttribute="centerX" secondItem="x2O-cc-SjO" secondAttribute="centerX" id="pfh-Zx-K3V"/>
                             <constraint firstItem="scD-La-xv8" firstAttribute="bottom" secondItem="zYG-yl-vHO" secondAttribute="bottom" id="vHP-4A-fXw"/>
                             <constraint firstItem="Hs6-KR-IjE" firstAttribute="trailing" secondItem="scD-La-xv8" secondAttribute="trailing" id="y0C-rs-vlL"/>
                         </constraints>
@@ -1080,6 +1170,8 @@
                     <navigationItem key="navigationItem" title="即將上映" id="Bwk-aK-y2w"/>
                     <connections>
                         <outlet property="animationView" destination="CZc-bc-JE2" id="Ga3-Zy-mtd"/>
+                        <outlet property="internetLabel1" destination="XTv-8s-YlH" id="YrX-JM-tQ4"/>
+                        <outlet property="internetLabel2" destination="XvW-Wv-SjG" id="EKR-x8-EBV"/>
                         <outlet property="soonInfoTableView" destination="zYG-yl-vHO" id="BFX-Bg-DlQ"/>
                         <outlet property="soonPagerView" destination="2mi-hk-njf" id="ZDC-aW-Dih"/>
                         <outlet property="soonVideoView" destination="Hs6-KR-IjE" id="rBp-eO-3yY"/>

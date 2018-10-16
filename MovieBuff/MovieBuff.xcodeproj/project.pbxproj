@@ -52,6 +52,7 @@
 		ACE37FC521758E2E00AE4958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC421758E2E00AE4958 /* Assets.xcassets */; };
 		ACE37FC721759A1600AE4958 /* animation-w100-h100.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC621759A1500AE4958 /* animation-w100-h100.json */; };
 		ACE37FC921759EB100AE4958 /* animation-w100-h100-2.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */; };
+		ACE37FCD2175D33800AE4958 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE37FCB2175D33700AE4958 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,9 @@
 		ACE37FC421758E2E00AE4958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACE37FC621759A1500AE4958 /* animation-w100-h100.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "animation-w100-h100.json"; sourceTree = "<group>"; };
 		ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "animation-w100-h100-2.json"; sourceTree = "<group>"; };
+		ACE37FCA2175D33600AE4958 /* Taipei Movies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Taipei Movies-Bridging-Header.h"; sourceTree = "<group>"; };
+		ACE37FCB2175D33700AE4958 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		ACE37FCC2175D33800AE4958 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 		E23222836BB89E9AF0D1DF5A /* Pods_Taipei_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taipei_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E681B68F73BB4A2567DFD557 /* Pods-Taipei Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taipei Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				ACE37FC421758E2E00AE4958 /* Assets.xcassets */,
+				ACE37FCC2175D33800AE4958 /* Reachability.h */,
+				ACE37FCB2175D33700AE4958 /* Reachability.m */,
+				ACE37FCA2175D33600AE4958 /* Taipei Movies-Bridging-Header.h */,
 				ACE37FC621759A1500AE4958 /* animation-w100-h100.json */,
 				ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */,
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
@@ -251,6 +258,7 @@
 				TargetAttributes = {
 					AC7953392152172A00668DAB = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -421,6 +429,7 @@
 				AC3B50E5215CA86000313E2E /* AppStyle.swift in Sources */,
 				AC3B510B215DDDCF00313E2E /* ThisWeekViewController.swift in Sources */,
 				AC0718AB2154D944003061AC /* TheaterData.swift in Sources */,
+				ACE37FCD2175D33800AE4958 /* Reachability.m in Sources */,
 				AC3B5107215CBD9000313E2E /* MenuTableViewCell.swift in Sources */,
 				AC0718C2215A4468003061AC /* CollectedTableViewCell.swift in Sources */,
 				AC7953552153511400668DAB /* TheaterListViewController.swift in Sources */,
@@ -572,6 +581,7 @@
 			baseConfigurationReference = 08EBA34CDE24A0007814323C /* Pods-Taipei Movies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J6A948NH8P;
@@ -587,6 +597,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appworks.MovieBuff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieBuff/Taipei Movies-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -597,6 +609,7 @@
 			baseConfigurationReference = E681B68F73BB4A2567DFD557 /* Pods-Taipei Movies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J6A948NH8P;
@@ -612,6 +625,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appworks.MovieBuff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieBuff/Taipei Movies-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
