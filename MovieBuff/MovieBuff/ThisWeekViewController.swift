@@ -12,6 +12,7 @@ import YouTubePlayer_Swift
 import FirebaseDatabase
 import Firebase
 import Kingfisher
+import Lottie
 
 class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource, YouTubePlayerDelegate {
     func playerReady(_ videoPlayer: YouTubePlayerView) {
@@ -94,12 +95,26 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     var omdbDict: [String: OMDBData] = [:]
     
     var trailerData: TrailerData?
+    
+    @IBOutlet weak var animationView: UIView!
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         
+        let loadingView = LOTAnimationView(name: "animation-w100-h100-2")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
+        loadingView.center = animationView.center
+        loadingView.contentMode = .scaleAspectFill
+        
+        loadingView.loopAnimation = true
+        loadingView.animationSpeed = 0.5
+        
+        animationView.addSubview(loadingView)
+        
+        loadingView.play()
 
         setNavigationBarItem()
         
@@ -133,6 +148,9 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
             } catch {
                 print(error)
             }
+            
+            self.animationView.isHidden = true
+
         }
     }
     

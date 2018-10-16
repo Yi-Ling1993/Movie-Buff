@@ -63,6 +63,7 @@ PODS:
     - GoogleUtilities/Logger
   - Kingfisher (4.10.0)
   - leveldb-library (1.20)
+  - lottie-ios (2.5.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - Kingfisher (~> 4.0)
+  - lottie-ios
   - RealmSwift
   - SnapKit (~> 4.0.0)
   - SwiftLint
@@ -111,6 +113,7 @@ SPEC REPOS:
     - GoogleUtilities
     - Kingfisher
     - leveldb-library
+    - lottie-ios
     - nanopb
     - Realm
     - RealmSwift
@@ -135,6 +138,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 760ccb53b7c7f40f9c02d8c241f76f841a7a6162
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Realm: 92f09a102692b96a9a10e9617f214f15c5ab85fc
   RealmSwift: 5f0481cd658bb751c509314b964a35eaa264d2cf
@@ -143,6 +147,6 @@ SPEC CHECKSUMS:
   WKAwesomeMenu: 39d888f93705f63baadd4d7bda8513250c43b7ed
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: aa26f95a2548a4057215e53c7a35b419b4d56493
+PODFILE CHECKSUM: c1a296360eb050254d9fa3cb825e94099afa14f9
 
 COCOAPODS: 1.5.3

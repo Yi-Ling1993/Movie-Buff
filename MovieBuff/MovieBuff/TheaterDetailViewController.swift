@@ -12,6 +12,7 @@ import YouTubePlayer_Swift
 import FirebaseDatabase
 import Firebase
 import Kingfisher
+import Lottie
 
 protocol DataPassDelegate {
     func passData(data: TheaterInfo)
@@ -68,6 +69,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     @IBOutlet weak var presentLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var theaterDetailVideoView: YouTubePlayerView!
+    
+    @IBOutlet weak var animationView: UIView!
     
     @IBAction func toWebview(_ sender: Any) {
         performSegue(withIdentifier: "ToWebview", sender: self)
@@ -145,6 +148,19 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loadingView = LOTAnimationView(name: "animation-w100-h100-2")
+        
+        loadingView.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
+        loadingView.center = animationView.center
+        loadingView.contentMode = .scaleAspectFill
+        
+        loadingView.loopAnimation = true
+        loadingView.animationSpeed = 0.5
+        
+        animationView.addSubview(loadingView)
+        
+        loadingView.play()
 
         title = theaterDetail?.name
         
@@ -192,10 +208,11 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
                 print(error)
             }
             
+            self.animationView.isHidden = true
+            
             self.showTimeTableView.reloadData()
 
         }
-        print("123")
     }
     
     func getPoster() {

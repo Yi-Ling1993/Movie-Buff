@@ -14,8 +14,11 @@ import FirebaseDatabase
 import Firebase
 import Kingfisher
 import Crashlytics
+import Lottie
+
 
 class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
+    
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         
         videoView.alpha = 1
@@ -78,6 +81,9 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     @IBOutlet weak var infoTableView: UITableView!
     
+    @IBOutlet weak var animationView: UIView!
+    
+    
     @IBOutlet weak var inTheaterPagerView: FSPagerView! {
         didSet {
             self.inTheaterPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -117,9 +123,21 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
         
+        let loadingView = LOTAnimationView(name: "animation-w100-h100-2")
+            
+        loadingView.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
+        loadingView.center = animationView.center
+        loadingView.contentMode = .scaleAspectFill
+            
+        loadingView.loopAnimation = true
+        loadingView.animationSpeed = 0.5
+            
+        animationView.addSubview(loadingView)
+            
+        loadingView.play()
+        
+
         setNavigationBarItem()
         
         
@@ -159,6 +177,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
             } catch {
                 print(error)
             }
+            
+            self.animationView.isHidden = true
         }
     }
     

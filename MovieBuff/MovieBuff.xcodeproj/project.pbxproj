@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8278FA9CFC8B8C91BDE69C15 /* Pods_Taipei_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23222836BB89E9AF0D1DF5A /* Pods_Taipei_Movies.framework */; };
 		AC0718A92153C348003061AC /* TheaterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718A82153C348003061AC /* TheaterTableViewCell.swift */; };
 		AC0718AB2154D944003061AC /* TheaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718AA2154D944003061AC /* TheaterData.swift */; };
 		AC0718AD2159182E003061AC /* TheaterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */; };
@@ -49,10 +50,12 @@
 		ACE1E5BA21726423009B113E /* ThisWeekManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1E5B921726423009B113E /* ThisWeekManager.swift */; };
 		ACE1E5BC21731BB0009B113E /* TheaterDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */; };
 		ACE37FC521758E2E00AE4958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC421758E2E00AE4958 /* Assets.xcassets */; };
-		E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */; };
+		ACE37FC721759A1600AE4958 /* animation-w100-h100.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC621759A1500AE4958 /* animation-w100-h100.json */; };
+		ACE37FC921759EB100AE4958 /* animation-w100-h100-2.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08EBA34CDE24A0007814323C /* Pods-Taipei Movies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taipei Movies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies.debug.xcconfig"; sourceTree = "<group>"; };
 		706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieBuff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74B07B3D1AEB87D24D1E589 /* Pods-MovieBuff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.debug.xcconfig"; sourceTree = "<group>"; };
 		AC0718A82153C348003061AC /* TheaterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterTableViewCell.swift; sourceTree = "<group>"; };
@@ -101,7 +104,11 @@
 		ACE1E5B921726423009B113E /* ThisWeekManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeekManager.swift; sourceTree = "<group>"; };
 		ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterDetailManager.swift; sourceTree = "<group>"; };
 		ACE37FC421758E2E00AE4958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACE37FC621759A1500AE4958 /* animation-w100-h100.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "animation-w100-h100.json"; sourceTree = "<group>"; };
+		ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "animation-w100-h100-2.json"; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
+		E23222836BB89E9AF0D1DF5A /* Pods_Taipei_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taipei_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E681B68F73BB4A2567DFD557 /* Pods-Taipei Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taipei Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E87B28E33F680C2ADCE86E39 /* Pods_MovieBuff.framework in Frameworks */,
+				8278FA9CFC8B8C91BDE69C15 /* Pods_Taipei_Movies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				706D9148D9A280F1E2E8718C /* Pods_MovieBuff.framework */,
+				E23222836BB89E9AF0D1DF5A /* Pods_Taipei_Movies.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +137,8 @@
 			children = (
 				A74B07B3D1AEB87D24D1E589 /* Pods-MovieBuff.debug.xcconfig */,
 				B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */,
+				08EBA34CDE24A0007814323C /* Pods-Taipei Movies.debug.xcconfig */,
+				E681B68F73BB4A2567DFD557 /* Pods-Taipei Movies.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -157,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				ACE37FC421758E2E00AE4958 /* Assets.xcassets */,
+				ACE37FC621759A1500AE4958 /* animation-w100-h100.json */,
+				ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */,
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
 				AC92160E21675E09002133E2 /* FirebaseData.swift */,
 				AC9216122168D0AC002133E2 /* OMDBData.swift */,
@@ -267,7 +279,9 @@
 			files = (
 				AC0718BB21594D8A003061AC /* DateCollectionViewCell.xib in Resources */,
 				AC7953482152173000668DAB /* LaunchScreen.storyboard in Resources */,
+				ACE37FC921759EB100AE4958 /* animation-w100-h100-2.json in Resources */,
 				ACE37FC521758E2E00AE4958 /* Assets.xcassets in Resources */,
+				ACE37FC721759A1600AE4958 /* animation-w100-h100.json in Resources */,
 				AC0718C3215A4468003061AC /* CollectedTableViewCell.xib in Resources */,
 				AC79535921538B2700668DAB /* LocationCollectionViewCell.xib in Resources */,
 				AC0718C7215A6131003061AC /* SeenTableViewCell.xib in Resources */,
@@ -288,7 +302,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -299,6 +313,7 @@
 				"${BUILT_PRODUCTS_DIR}/WKAwesomeMenu/WKAwesomeMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -313,11 +328,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WKAwesomeMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9AE388BEF9EBCDDDCFF6A11F /* [CP] Copy Pods Resources */ = {
@@ -326,7 +342,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
@@ -337,7 +353,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AC79534F2152194F00668DAB /* ShellScript */ = {
@@ -365,7 +381,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MovieBuff-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Taipei Movies-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -553,7 +569,7 @@
 		};
 		AC79534D2152173000668DAB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A74B07B3D1AEB87D24D1E589 /* Pods-MovieBuff.debug.xcconfig */;
+			baseConfigurationReference = 08EBA34CDE24A0007814323C /* Pods-Taipei Movies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -578,7 +594,7 @@
 		};
 		AC79534E2152173000668DAB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */;
+			baseConfigurationReference = E681B68F73BB4A2567DFD557 /* Pods-Taipei Movies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
