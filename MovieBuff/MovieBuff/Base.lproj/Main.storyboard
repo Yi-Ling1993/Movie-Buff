@@ -170,12 +170,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdH-i5-yI1">
-                                                    <rect key="frame" x="133" y="23" width="18" height="18"/>
+                                                    <rect key="frame" x="137" y="17.5" width="25" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="N8q-Ht-nhA"/>
-                                                        <constraint firstAttribute="width" constant="18" id="S3b-Za-Ga9"/>
+                                                        <constraint firstAttribute="height" constant="25" id="N8q-Ht-nhA"/>
+                                                        <constraint firstAttribute="width" constant="25" id="S3b-Za-Ga9"/>
                                                     </constraints>
-                                                    <state key="normal" image="maps-and-flags"/>
+                                                    <state key="normal" image="map"/>
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rie-Gs-4zK">
                                                     <rect key="frame" x="330" y="20" width="20" height="20"/>
@@ -197,13 +197,13 @@
                                                 <constraint firstItem="V2d-xy-ExV" firstAttribute="leading" secondItem="Wnz-px-Wm1" secondAttribute="leading" constant="15" id="2PY-aJ-gCl"/>
                                                 <constraint firstItem="D19-ju-xio" firstAttribute="leading" secondItem="3x4-cU-d3v" secondAttribute="leading" id="AtT-5H-9qR"/>
                                                 <constraint firstItem="V2d-xy-ExV" firstAttribute="top" secondItem="Wnz-px-Wm1" secondAttribute="top" constant="8" id="DlG-2L-NOU"/>
-                                                <constraint firstItem="PdH-i5-yI1" firstAttribute="leading" secondItem="3x4-cU-d3v" secondAttribute="trailing" constant="8" id="EH0-0y-sHN"/>
+                                                <constraint firstItem="PdH-i5-yI1" firstAttribute="leading" secondItem="3x4-cU-d3v" secondAttribute="trailing" constant="12" id="EH0-0y-sHN"/>
                                                 <constraint firstItem="V2d-xy-ExV" firstAttribute="trailing" secondItem="Rie-Gs-4zK" secondAttribute="trailing" constant="10" id="Llj-ws-IcB"/>
                                                 <constraint firstItem="D19-ju-xio" firstAttribute="top" secondItem="3x4-cU-d3v" secondAttribute="bottom" constant="10" id="Y4c-sM-ajP"/>
                                                 <constraint firstItem="3x4-cU-d3v" firstAttribute="leading" secondItem="Wnz-px-Wm1" secondAttribute="leading" constant="25" id="e6l-pK-cm9"/>
                                                 <constraint firstItem="Rie-Gs-4zK" firstAttribute="top" secondItem="V2d-xy-ExV" secondAttribute="top" constant="12" id="iq4-qh-qid"/>
                                                 <constraint firstItem="3x4-cU-d3v" firstAttribute="top" secondItem="Wnz-px-Wm1" secondAttribute="top" constant="18" id="mMT-Gy-rd9"/>
-                                                <constraint firstItem="PdH-i5-yI1" firstAttribute="centerY" secondItem="3x4-cU-d3v" secondAttribute="centerY" id="t4j-pt-0wB"/>
+                                                <constraint firstItem="PdH-i5-yI1" firstAttribute="centerY" secondItem="3x4-cU-d3v" secondAttribute="centerY" constant="-2" id="t4j-pt-0wB"/>
                                                 <constraint firstAttribute="bottom" secondItem="V2d-xy-ExV" secondAttribute="bottom" constant="8" id="upm-NH-JlW"/>
                                                 <constraint firstAttribute="trailing" secondItem="V2d-xy-ExV" secondAttribute="trailing" constant="15" id="v0f-te-AMZ"/>
                                             </constraints>
@@ -1244,7 +1244,7 @@
     <resources>
         <image name="keyboard-right-arrow-button" width="256" height="256"/>
         <image name="left-arrow-key" width="256" height="256"/>
-        <image name="maps-and-flags" width="256" height="256"/>
+        <image name="map" width="256" height="256"/>
         <image name="push-pin" width="512" height="512"/>
         <image name="push-pin-2" width="512" height="512"/>
         <image name="reload" width="256" height="256"/>
