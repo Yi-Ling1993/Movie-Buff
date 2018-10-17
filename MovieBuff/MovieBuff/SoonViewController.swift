@@ -46,6 +46,8 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         
         soonVideoView.alpha = 1
         soonPagerView.isHidden = true
+        coverView.isHidden = true
+
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
@@ -101,6 +103,9 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     }
     
     @IBOutlet weak var soonVideoView: YouTubePlayerView!
+    
+    @IBOutlet weak var coverView: UIView!
+    
     
     var refref: DatabaseReference!
     
@@ -326,6 +331,9 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc func playTrailer(sender: UIButton) {
         
+        coverView.isHidden = false
+
+        
         guard let cell = sender.superview?.superview as? SoonInfoTableViewCell else {
             return
             
@@ -348,6 +356,8 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
             soonVideoView.pause()
             soonVideoView.isHidden = true
             soonPagerView.isHidden = false
+            coverView.isHidden = true
+
 
         }
     }

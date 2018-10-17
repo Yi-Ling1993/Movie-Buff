@@ -49,6 +49,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         theaterDetailVideoView.alpha = 1
         theaterDetailPagerView.isHidden = true
+        coverView.isHidden = true
+
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
@@ -66,6 +68,9 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     
     @IBAction func playTrailer(_ sender: UIButton) {
         
+        coverView.isHidden = false
+
+        
         if theaterDetailVideoView.isHidden == true {
             
             let imdbId = specificTheaterDetailData?.movie[pagerIndex].id
@@ -81,6 +86,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
             theaterDetailVideoView.pause()
             theaterDetailVideoView.isHidden = true
             theaterDetailPagerView.isHidden = false
+            coverView.isHidden = true
+
 
         }
     }
@@ -99,6 +106,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     @IBOutlet weak var animationView: UIView!
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
+    @IBOutlet weak var coverView: UIView!
+    
     
     
     @IBAction func toWebview(_ sender: Any) {

@@ -77,9 +77,15 @@
                                     <constraint firstItem="ty7-WR-qQx" firstAttribute="centerX" secondItem="tR7-NA-NEg" secondAttribute="centerX" id="iWR-G7-vy3"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RgR-d6-Wpn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="RgR-d6-Wpn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="24V-1X-JI0"/>
+                            <constraint firstAttribute="bottom" secondItem="RgR-d6-Wpn" secondAttribute="bottom" id="6DS-YM-IbA"/>
                             <constraint firstItem="Kdn-vp-8Bk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Au-rS-fU5"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8DH-w5-bLH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kdn-vp-8Bk" secondAttribute="trailing" id="9bE-pv-2Du"/>
@@ -94,13 +100,16 @@
                             <constraint firstItem="tR7-NA-NEg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VJs-XB-9mh"/>
                             <constraint firstItem="X9k-vc-MWT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wok-Ff-U4J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="X9k-vc-MWT" secondAttribute="bottom" constant="-240" id="ch8-GE-YE3"/>
+                            <constraint firstItem="RgR-d6-Wpn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="clb-b5-G2g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tR7-NA-NEg" secondAttribute="bottom" id="vbM-8S-jLc"/>
+                            <constraint firstItem="RgR-d6-Wpn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zSa-yU-0tV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="上映中" id="7JH-Fh-tcm"/>
                     <connections>
                         <outlet property="animationView" destination="tR7-NA-NEg" id="P6v-5O-qfl"/>
+                        <outlet property="coverView" destination="RgR-d6-Wpn" id="IbR-En-Lnp"/>
                         <outlet property="inTheaterPagerView" destination="X9k-vc-MWT" id="4yV-m1-LaT"/>
                         <outlet property="infoTableView" destination="Kdn-vp-8Bk" id="6IM-VT-w7w"/>
                         <outlet property="internetLabel1" destination="ty7-WR-qQx" id="brO-da-Ljn"/>
@@ -468,15 +477,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYE-07-tZ3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Zoy-kA-C84" firstAttribute="leading" secondItem="t9r-t4-Zxw" secondAttribute="leading" id="38H-DP-RqF"/>
                             <constraint firstItem="Rgr-Fj-NhM" firstAttribute="top" secondItem="36G-6F-ulK" secondAttribute="top" id="3Ab-E9-Oj1"/>
                             <constraint firstItem="FiZ-cc-Qk8" firstAttribute="leading" secondItem="9fk-IB-s2q" secondAttribute="trailing" constant="2" id="4Bl-30-2T2"/>
+                            <constraint firstItem="mYE-07-tZ3" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="4zG-ez-gfi"/>
                             <constraint firstItem="kVn-fd-v4j" firstAttribute="leading" secondItem="Zoy-kA-C84" secondAttribute="trailing" constant="8" id="6Hw-bp-fFS"/>
                             <constraint firstItem="3gs-QJ-x7h" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" id="6Rz-Li-7zx"/>
                             <constraint firstItem="Rgr-Fj-NhM" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="7C7-t2-l1r"/>
+                            <constraint firstItem="mYE-07-tZ3" firstAttribute="top" secondItem="4Cm-g8-6hh" secondAttribute="top" id="7a5-dg-cEv"/>
                             <constraint firstItem="t9r-t4-Zxw" firstAttribute="top" secondItem="4fQ-JW-nXt" secondAttribute="bottom" constant="-1" id="8ty-AB-5pY"/>
                             <constraint firstItem="51j-Lm-XlO" firstAttribute="top" secondItem="3gs-QJ-x7h" secondAttribute="bottom" constant="25" id="BBk-0y-Ef3"/>
                             <constraint firstItem="0Y4-Pk-T8Q" firstAttribute="top" secondItem="t9r-t4-Zxw" secondAttribute="bottom" constant="2.5" id="CPv-BN-Moh"/>
@@ -495,6 +510,7 @@
                             <constraint firstItem="4fQ-JW-nXt" firstAttribute="top" secondItem="3gs-QJ-x7h" secondAttribute="bottom" constant="17" id="ad9-Wa-3qK"/>
                             <constraint firstItem="RqK-mU-3LP" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" multiplier="0.73" id="aqG-hC-x51"/>
                             <constraint firstItem="g4L-kx-HyH" firstAttribute="top" secondItem="9fk-IB-s2q" secondAttribute="top" id="bbN-Zw-Y6a"/>
+                            <constraint firstItem="mYE-07-tZ3" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" id="bmX-PF-XjP"/>
                             <constraint firstItem="8S7-fJ-8Uv" firstAttribute="top" secondItem="Zoy-kA-C84" secondAttribute="bottom" constant="15" id="d9l-Rx-Bbj"/>
                             <constraint firstItem="Cxf-qe-vs2" firstAttribute="centerX" secondItem="4Cm-g8-6hh" secondAttribute="centerX" id="f0A-NL-kps"/>
                             <constraint firstItem="ZxX-SZ-00R" firstAttribute="leading" secondItem="kVn-fd-v4j" secondAttribute="trailing" constant="10" id="fUH-hg-MkX"/>
@@ -513,11 +529,13 @@
                             <constraint firstItem="9fk-IB-s2q" firstAttribute="top" secondItem="t9r-t4-Zxw" secondAttribute="bottom" constant="3" id="w1a-zL-GwC"/>
                             <constraint firstItem="snT-Pv-A69" firstAttribute="top" secondItem="FiZ-cc-Qk8" secondAttribute="top" id="wOI-jh-0Yg"/>
                             <constraint firstItem="ALq-tl-Aqk" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="xEA-gD-2bc"/>
+                            <constraint firstItem="mYE-07-tZ3" firstAttribute="bottom" secondItem="36G-6F-ulK" secondAttribute="bottom" id="xoy-Em-sqX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="36G-6F-ulK"/>
                     </view>
                     <connections>
                         <outlet property="animationView" destination="ALq-tl-Aqk" id="c67-KE-Xfa"/>
+                        <outlet property="coverView" destination="mYE-07-tZ3" id="ypk-Au-1D3"/>
                         <outlet property="durationLabel" destination="g4L-kx-HyH" id="axR-eN-Nl8"/>
                         <outlet property="enTitleLabel" destination="t9r-t4-Zxw" id="eA4-Nc-b0G"/>
                         <outlet property="genreLabel" destination="ZxX-SZ-00R" id="HW7-cW-Qqj"/>
@@ -631,11 +649,11 @@
             <objects>
                 <viewController id="hMi-Ua-sJE" customClass="MovieShowtimeViewController" customModule="Taipei_Showtime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kdk-XH-iXD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ryF-NN-4jP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="QQE-2J-MD5"/>
@@ -653,7 +671,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZrE-0I-D0e">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="553" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DL9-BL-YdX"/>
@@ -680,7 +698,7 @@
                                 </connections>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5bH-81-m9G">
-                                <rect key="frame" x="0.0" y="119" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="55" width="375" height="498"/>
                                 <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CinemaShowtimeCell" rowHeight="137" id="9Mn-cj-ZIl" customClass="CinemaShowtimeTableViewCell" customModule="Taipei_Showtime" customModuleProvider="target">
@@ -1029,23 +1047,31 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHo-8D-cTK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PeL-kZ-riD" firstAttribute="bottom" secondItem="2c6-ZL-QOs" secondAttribute="bottom" id="1uc-PW-7E0"/>
                             <constraint firstItem="66N-LM-TFI" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="1xr-uz-ROS"/>
                             <constraint firstItem="wkG-7s-KeS" firstAttribute="top" secondItem="66N-LM-TFI" secondAttribute="bottom" id="6xa-Ki-BhE"/>
+                            <constraint firstItem="PeL-kZ-riD" firstAttribute="trailing" secondItem="RHo-8D-cTK" secondAttribute="trailing" id="9w5-EO-c9s"/>
                             <constraint firstItem="PeL-kZ-riD" firstAttribute="bottom" secondItem="wkG-7s-KeS" secondAttribute="bottom" id="DLS-Pb-gIS"/>
                             <constraint firstItem="2c6-ZL-QOs" firstAttribute="trailing" secondItem="PeL-kZ-riD" secondAttribute="trailing" id="Ig2-dt-hNC"/>
                             <constraint firstItem="wkG-7s-KeS" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="Jud-c1-SOE"/>
                             <constraint firstItem="RzN-1p-96x" firstAttribute="centerX" secondItem="ywd-GG-gRA" secondAttribute="centerX" id="MnD-Bu-3FG"/>
+                            <constraint firstItem="RHo-8D-cTK" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="NHZ-Jl-Tpm"/>
                             <constraint firstItem="RzN-1p-96x" firstAttribute="centerY" secondItem="ywd-GG-gRA" secondAttribute="centerY" multiplier="1.2" id="Nbr-or-BOO"/>
                             <constraint firstItem="PeL-kZ-riD" firstAttribute="trailing" secondItem="wkG-7s-KeS" secondAttribute="trailing" id="QSu-MR-sC7"/>
                             <constraint firstItem="66N-LM-TFI" firstAttribute="top" secondItem="PeL-kZ-riD" secondAttribute="top" constant="30" id="YBr-M7-yY7"/>
                             <constraint firstItem="0Po-RG-Jdm" firstAttribute="trailing" secondItem="PeL-kZ-riD" secondAttribute="trailing" id="ZGT-hD-3HL"/>
                             <constraint firstItem="0Po-RG-Jdm" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="dKs-0R-YVu"/>
                             <constraint firstItem="0Po-RG-Jdm" firstAttribute="top" secondItem="PeL-kZ-riD" secondAttribute="top" constant="40" id="gbw-lN-AWA"/>
+                            <constraint firstItem="RHo-8D-cTK" firstAttribute="top" secondItem="ywd-GG-gRA" secondAttribute="top" id="idP-RC-TIV"/>
                             <constraint firstItem="2c6-ZL-QOs" firstAttribute="top" secondItem="PeL-kZ-riD" secondAttribute="top" id="lGw-pu-MgK"/>
+                            <constraint firstItem="PeL-kZ-riD" firstAttribute="bottom" secondItem="RHo-8D-cTK" secondAttribute="bottom" id="mGJ-wo-87K"/>
                             <constraint firstItem="K8V-LX-Zhy" firstAttribute="top" secondItem="RzN-1p-96x" secondAttribute="bottom" constant="5" id="oFt-NB-mwM"/>
                             <constraint firstItem="2c6-ZL-QOs" firstAttribute="leading" secondItem="PeL-kZ-riD" secondAttribute="leading" id="q8m-bv-K45"/>
                             <constraint firstItem="66N-LM-TFI" firstAttribute="trailing" secondItem="PeL-kZ-riD" secondAttribute="trailing" id="yj4-Jh-7Ri"/>
@@ -1055,6 +1081,7 @@
                     <navigationItem key="navigationItem" title="本週上映" id="PMn-F4-TmG"/>
                     <connections>
                         <outlet property="animationView" destination="2c6-ZL-QOs" id="LFf-o4-SzT"/>
+                        <outlet property="coverView" destination="RHo-8D-cTK" id="Rl4-xM-Tp0"/>
                         <outlet property="internetLabel1" destination="RzN-1p-96x" id="OC4-3P-Fgd"/>
                         <outlet property="internetLabel2" destination="K8V-LX-Zhy" id="BUR-gu-Ukd"/>
                         <outlet property="thisWeekInfoTableView" destination="wkG-7s-KeS" id="9h2-Do-m1e"/>
@@ -1143,9 +1170,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOR-kj-TLY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="EOR-kj-TLY" firstAttribute="leading" secondItem="scD-La-xv8" secondAttribute="leading" id="1Vb-s4-Pcm"/>
+                            <constraint firstItem="EOR-kj-TLY" firstAttribute="trailing" secondItem="scD-La-xv8" secondAttribute="trailing" id="9HW-IK-L75"/>
                             <constraint firstItem="XvW-Wv-SjG" firstAttribute="top" secondItem="XTv-8s-YlH" secondAttribute="bottom" constant="5" id="9Ni-pF-Zfa"/>
                             <constraint firstItem="CZc-bc-JE2" firstAttribute="top" secondItem="scD-La-xv8" secondAttribute="top" id="GEH-lV-pNF"/>
                             <constraint firstItem="2mi-hk-njf" firstAttribute="trailing" secondItem="scD-La-xv8" secondAttribute="trailing" id="JLc-8c-cLv"/>
@@ -1162,7 +1195,9 @@
                             <constraint firstItem="Hs6-KR-IjE" firstAttribute="top" secondItem="scD-La-xv8" secondAttribute="top" constant="40" id="lKT-la-hER"/>
                             <constraint firstItem="zYG-yl-vHO" firstAttribute="top" secondItem="2mi-hk-njf" secondAttribute="bottom" id="p2w-sF-OHS"/>
                             <constraint firstItem="XvW-Wv-SjG" firstAttribute="centerX" secondItem="x2O-cc-SjO" secondAttribute="centerX" id="pfh-Zx-K3V"/>
+                            <constraint firstItem="EOR-kj-TLY" firstAttribute="bottom" secondItem="scD-La-xv8" secondAttribute="bottom" id="uFl-oc-jrQ"/>
                             <constraint firstItem="scD-La-xv8" firstAttribute="bottom" secondItem="zYG-yl-vHO" secondAttribute="bottom" id="vHP-4A-fXw"/>
+                            <constraint firstItem="EOR-kj-TLY" firstAttribute="top" secondItem="x2O-cc-SjO" secondAttribute="top" id="xPr-rj-FLp"/>
                             <constraint firstItem="Hs6-KR-IjE" firstAttribute="trailing" secondItem="scD-La-xv8" secondAttribute="trailing" id="y0C-rs-vlL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="scD-La-xv8"/>
@@ -1170,6 +1205,7 @@
                     <navigationItem key="navigationItem" title="即將上映" id="Bwk-aK-y2w"/>
                     <connections>
                         <outlet property="animationView" destination="CZc-bc-JE2" id="Ga3-Zy-mtd"/>
+                        <outlet property="coverView" destination="EOR-kj-TLY" id="aiY-GC-aLO"/>
                         <outlet property="internetLabel1" destination="XTv-8s-YlH" id="YrX-JM-tQ4"/>
                         <outlet property="internetLabel2" destination="XvW-Wv-SjG" id="EKR-x8-EBV"/>
                         <outlet property="soonInfoTableView" destination="zYG-yl-vHO" id="BFX-Bg-DlQ"/>
@@ -1214,6 +1250,6 @@
         <image name="reload" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GtV-Gt-zG4"/>
+        <segue reference="b58-C0-hoh"/>
     </inferredMetricsTieBreakers>
 </document>

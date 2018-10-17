@@ -49,6 +49,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         
         videoView.alpha = 1
         inTheaterPagerView.isHidden = true
+        coverView.isHidden = true
+
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
@@ -143,6 +145,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
+    @IBOutlet weak var coverView: UIView!
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -365,6 +369,9 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc func playTrailer(sender: UIButton) {
         
+        coverView.isHidden = false
+
+        
         guard let cell = sender.superview?.superview as? MovieInfoTableViewCell else { return }
         
         guard let indexPath = infoTableView.indexPath(for: cell) else { return }
@@ -384,6 +391,8 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
             videoView.pause()
             videoView.isHidden = true
             inTheaterPagerView.isHidden = false
+            coverView.isHidden = true
+
 
         }
     

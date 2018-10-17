@@ -45,6 +45,7 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         thisWeekVideoView.alpha = 1
         thisWeekPagerView.isHidden = true
+        coverView.isHidden = true
 
     }
     
@@ -126,6 +127,8 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     @IBOutlet weak var animationView: UIView!
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
+    @IBOutlet weak var coverView: UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -333,6 +336,8 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc func playTrailer(sender: UIButton) {
         
+        coverView.isHidden = false
+        
         guard let cell = sender.superview?.superview as? ThisWeekInfoTableViewCell else { return }
         
         guard let indexPath = thisWeekInfoTableView.indexPath(for: cell) else { return }
@@ -352,6 +357,7 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
             thisWeekVideoView.pause()
             thisWeekVideoView.isHidden = true
             thisWeekPagerView.isHidden = false
+            coverView.isHidden = true
 
         }
         
