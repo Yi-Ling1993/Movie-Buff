@@ -53,6 +53,7 @@
 		ACE37FC921759EB100AE4958 /* animation-w100-h100-2.json in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */; };
 		ACE37FCD2175D33800AE4958 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE37FCB2175D33700AE4958 /* Reachability.m */; };
 		ACE37FCF2175EAE400AE4958 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACE37FCE2175EAE400AE4958 /* GoogleService-Info.plist */; };
+		ACE37FD12178276F00AE4958 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE37FD02178276F00AE4958 /* LandingPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		ACE37FCB2175D33700AE4958 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		ACE37FCC2175D33800AE4958 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		ACE37FCE2175EAE400AE4958 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ACE37FD02178276F00AE4958 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		B1E56F596B5817293DB1DBBD /* Pods-MovieBuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBuff/Pods-MovieBuff.release.xcconfig"; sourceTree = "<group>"; };
 		E23222836BB89E9AF0D1DF5A /* Pods_Taipei_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taipei_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E681B68F73BB4A2567DFD557 /* Pods-Taipei Movies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taipei Movies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taipei Movies/Pods-Taipei Movies.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				AC3B5104215CBC9800313E2E /* MenuItem.swift */,
 				AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */,
 				AC3B5108215CBDFE00313E2E /* MenuTableViewController.swift */,
+				ACE37FD02178276F00AE4958 /* LandingPageViewController.swift */,
 				AC7953412152172A00668DAB /* Main.storyboard */,
 				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
 				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
@@ -413,6 +416,7 @@
 				AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */,
 				AC0718BA21594D8A003061AC /* DateCollectionViewCell.swift in Sources */,
 				ACE1E5B821724600009B113E /* SoonManager.swift in Sources */,
+				ACE37FD12178276F00AE4958 /* LandingPageViewController.swift in Sources */,
 				AC0718B721594B6C003061AC /* MovieShowtimeViewController.swift in Sources */,
 				AC92160F21675E09002133E2 /* FirebaseData.swift in Sources */,
 				AC9216132168D0AC002133E2 /* OMDBData.swift in Sources */,

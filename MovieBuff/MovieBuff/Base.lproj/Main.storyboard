@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="09L-cq-6VB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vbT-RB-ieY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -643,6 +643,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddl-rQ-qqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1328.8" y="-950.37481259370327"/>
+        </scene>
+        <!--Landing Page View Controller-->
+        <scene sceneID="eDC-f0-bvH">
+            <objects>
+                <viewController id="vbT-RB-ieY" customClass="LandingPageViewController" customModule="Taipei_Movies" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="odU-fh-XPd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uD1-A0-FPq">
+                                <rect key="frame" x="149.5" y="80" width="76" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="上映中">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="toInTheater:" destination="vbT-RB-ieY" eventType="touchUpInside" id="MD5-Fb-itV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKU-zq-DC0">
+                                <rect key="frame" x="136.5" y="144" width="102" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="本週上映">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="toThisWeek:" destination="vbT-RB-ieY" eventType="touchUpInside" id="zJN-bd-gNm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smD-FM-np8">
+                                <rect key="frame" x="136.5" y="209" width="102" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="即將上映">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="toSoon:" destination="vbT-RB-ieY" eventType="touchUpInside" id="FnU-DX-rtg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYw-ra-aXu">
+                                <rect key="frame" x="149.5" y="276" width="76" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="電影院">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="toTheater:" destination="vbT-RB-ieY" eventType="touchUpInside" id="Ht2-dY-PnY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="smD-FM-np8" firstAttribute="top" secondItem="AKU-zq-DC0" secondAttribute="bottom" constant="23" id="3dO-J5-PAu"/>
+                            <constraint firstItem="VYw-ra-aXu" firstAttribute="top" secondItem="smD-FM-np8" secondAttribute="bottom" constant="25" id="4sU-EU-QRK"/>
+                            <constraint firstItem="AKU-zq-DC0" firstAttribute="top" secondItem="uD1-A0-FPq" secondAttribute="bottom" constant="22" id="5Va-uU-y0s"/>
+                            <constraint firstItem="AKU-zq-DC0" firstAttribute="centerX" secondItem="odU-fh-XPd" secondAttribute="centerX" id="8Yx-q8-cS8"/>
+                            <constraint firstItem="smD-FM-np8" firstAttribute="centerX" secondItem="odU-fh-XPd" secondAttribute="centerX" id="Z0I-sV-3aB"/>
+                            <constraint firstItem="uD1-A0-FPq" firstAttribute="top" secondItem="L2n-zF-EcK" secondAttribute="top" constant="60" id="b6Z-Re-hrc"/>
+                            <constraint firstItem="uD1-A0-FPq" firstAttribute="centerX" secondItem="odU-fh-XPd" secondAttribute="centerX" id="fws-jd-4D2"/>
+                            <constraint firstItem="VYw-ra-aXu" firstAttribute="centerX" secondItem="odU-fh-XPd" secondAttribute="centerX" id="y4f-82-P0U"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L2n-zF-EcK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DWY-9y-PPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3386.4000000000001" y="205.54722638680661"/>
         </scene>
         <!--Movie Showtime View Controller-->
         <scene sceneID="MtY-eq-iwj">
