@@ -8,8 +8,11 @@
 
 import UIKit
 import WKAwesomeMenu
+import Lottie
 
 class LandingPageViewController: UIViewController {
+    
+    //swiftlint:disable force_cast
     
     @IBAction func toInTheater(_ sender: UIButton) {
         self.performSegue(withIdentifier: "first", sender: self)
@@ -93,19 +96,21 @@ class LandingPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let animationView = LOTAnimationView(name: "empty_box")
 
-        // Do any additional setup after loading the view.
+        let screenWidth = UIScreen.main.bounds.width
+        let screenHeight = UIScreen.main.bounds.height
+        
+        animationView.frame = CGRect(x: 0, y: 0, width: 170, height: 170)
+        animationView.center = CGPoint(x: screenWidth / 2, y: screenHeight * 0.83)
+        animationView.contentMode = .scaleAspectFill
+        
+        animationView.loopAnimation = true
+        animationView.animationSpeed = 0.5
+        
+        view.addSubview(animationView)
+        
+        animationView.play()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

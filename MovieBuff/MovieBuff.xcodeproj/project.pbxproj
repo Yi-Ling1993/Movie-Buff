@@ -31,6 +31,7 @@
 		AC3B5113215DFA4C00313E2E /* SoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5112215DFA4C00313E2E /* SoonViewController.swift */; };
 		AC3B5116215E010F00313E2E /* SoonInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5114215E010F00313E2E /* SoonInfoTableViewCell.swift */; };
 		AC3B5117215E010F00313E2E /* SoonInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3B5115215E010F00313E2E /* SoonInfoTableViewCell.xib */; };
+		AC5AC6A72178AFFD00843ADF /* empty_box.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5AC6A62178AFFD00843ADF /* empty_box.json */; };
 		AC79533E2152172A00668DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533D2152172A00668DAB /* AppDelegate.swift */; };
 		AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC79533F2152172A00668DAB /* InTheaterViewController.swift */; };
 		AC7953432152172A00668DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC7953412152172A00668DAB /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		AC3B5115215E010F00313E2E /* SoonInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoonInfoTableViewCell.xib; sourceTree = "<group>"; };
 		AC3DBF79216F837D00FFD111 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		AC3DBF7A216F837E00FFD111 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		AC5AC6A62178AFFD00843ADF /* empty_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_box.json; sourceTree = "<group>"; };
 		AC79533A2152172A00668DAB /* Taipei Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taipei Movies.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC79533D2152172A00668DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC79533F2152172A00668DAB /* InTheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTheaterViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				ACE37FCA2175D33600AE4958 /* Taipei Movies-Bridging-Header.h */,
 				ACE37FC621759A1500AE4958 /* animation-w100-h100.json */,
 				ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */,
+				AC5AC6A62178AFFD00843ADF /* empty_box.json */,
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
 				AC92160E21675E09002133E2 /* FirebaseData.swift */,
 				AC9216122168D0AC002133E2 /* OMDBData.swift */,
@@ -301,6 +304,7 @@
 				AC7953432152172A00668DAB /* Main.storyboard in Resources */,
 				AC3B5117215E010F00313E2E /* SoonInfoTableViewCell.xib in Resources */,
 				AC3B510F215DE1F400313E2E /* ThisWeekInfoTableViewCell.xib in Resources */,
+				AC5AC6A72178AFFD00843ADF /* empty_box.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
