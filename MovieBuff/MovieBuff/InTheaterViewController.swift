@@ -147,8 +147,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     @IBOutlet weak var internetLabel2: UILabel!
     @IBOutlet weak var coverView: UIView!
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -232,6 +230,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     }
     
     func setNavigationBarItem() {
+        
+        //沒有下面兩行navigationbar會有分隔線
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -370,7 +370,6 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func playTrailer(sender: UIButton) {
         
         coverView.isHidden = false
-
         
         guard let cell = sender.superview?.superview as? MovieInfoTableViewCell else { return }
         

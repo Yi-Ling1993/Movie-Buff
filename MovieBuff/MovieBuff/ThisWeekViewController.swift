@@ -208,8 +208,12 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     
     func setNavigationBarItem() {
         
+        //沒有這兩行web navigationbar可顯示可是這個顏色調得很奇怪
+        
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 60/255, green: 60/255, blue: 60/255, alpha: 1.0)
         
         let menuButton = UIButton()
         menuButton.setImage(#imageLiteral(resourceName: "listing-option.png"), for: .normal)

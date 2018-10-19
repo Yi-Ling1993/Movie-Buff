@@ -356,7 +356,6 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         style.minimumLineHeight = 0
         attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: showtimeString.characters.count))
 
-        
         cinemaShowtimeCell.shoetimeLabel.attributedText = attriString
         
         return cinemaShowtimeCell
@@ -366,6 +365,7 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         
         theaterDetail = theaterDetails[sender.tag]
         
+//        self.navigationController?.navigationBar.barTintColor = UIColor.red
         performSegue(withIdentifier: "showtimeToWeb", sender: self)
     }
     
