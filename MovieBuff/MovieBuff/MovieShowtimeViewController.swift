@@ -31,10 +31,36 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
     
     var cellForItemDateTag: Int? = 0
     
+    var theaterDetails: [TheaterInfo] = []
+    
+    var theaterDetail: TheaterInfo?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         filteredFirebaseData = firebaseMovieData?.theater ?? []
+        
+        for index in 0 ... filteredFirebaseData.count - 1 {
+            
+            //swiftlint:disable identifier_name
+            
+            for i in 0 ... TheaterData.instance.theaterInfo.count - 1{
+                
+                
+                if filteredFirebaseData[index].name == TheaterData.instance.theaterInfo[i].name {
+                    
+                    theaterDetails.append(TheaterData.instance.theaterInfo[i])
+                    print("____________")
+                    
+                    print("____________", theaterDetails.count)
+                    break
+                    
+                }
+                
+                
+            }
+        }
+
         
         title = firebaseMovieData?.title
         
@@ -196,6 +222,7 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
     @objc func filterLocation(sender: UIButton) {
         print(sender.tag)
         
+        
         if sender.titleLabel?.text != "全部地區" {
             
             filteredFirebaseData = firebaseMovieData?.theater?.filter{$0.region == sender.titleLabel?.text} ?? []
@@ -207,6 +234,26 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             
             cinemaShowtimeTableView.reloadData()
         }
+        
+        theaterDetails.removeAll()
+        
+        for filtered in filteredFirebaseData {
+            
+            for i in 0 ... TheaterData.instance.theaterInfo.count - 1{
+                
+                
+                if filtered.name == TheaterData.instance.theaterInfo[i].name {
+                    
+                    theaterDetails.append(TheaterData.instance.theaterInfo[i])
+                    
+                    break
+                    
+            }
+            
+                
+            }
+        }
+        
         
         print(filteredFirebaseData)
         
@@ -271,17 +318,30 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         cinemaShowtimeCell.theaterNameLabel.text = filteredFirebaseData[indexPath.row].name
         cinemaShowtimeCell.presentLabel.text = filteredFirebaseData[indexPath.row].present
         cinemaShowtimeCell.languageLabel.text = filteredFirebaseData[indexPath.row].language
+        cinemaShowtimeCell.bookingButton.addTarget(self, action: #selector(toWeb(sender:)), for: .touchUpInside)
+        
+        cinemaShowtimeCell.bookingButton.tag = indexPath.row
         
         for index in 0 ... TheaterData.instance.theaterInfo.count - 1 {
             
             if TheaterData.instance.theaterInfo[index].name == cinemaShowtimeCell.theaterNameLabel.text {
                 
                 cinemaShowtimeCell.addressLabel.text = TheaterData.instance.theaterInfo[index].address
-
+                
             }
 
         }
         
+//        for index in 0 ... TheaterData.instance.theaterInfo.count - 1 {
+//
+//            if filteredFirebaseData[indexPath.row].name == TheaterData.instance.theaterInfo[index].name {
+//
+//                theaterDetails.append(TheaterData.instance.theaterInfo[index])
+//                print("____________")
+//                print(theaterDetails.count)
+//
+//            }
+//        }
         
         var showtimeString = ""
         let showtimeCount: Int = (filteredFirebaseData[indexPath.row].showtime?[dateFilterSender].time?.count)! - 1
@@ -302,9 +362,21 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         return cinemaShowtimeCell
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 150
-//    }
+    @objc func toWeb(sender: UIButton) {
+        
+        theaterDetail = theaterDetails[sender.tag]
+        
+        performSegue(withIdentifier: "showtimeToWeb", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailController = segue.destination as? WebviewViewController else {return}
+        
+        detailController.webDetail = theaterDetail
+        
+    }
+    
 }
+
 
 

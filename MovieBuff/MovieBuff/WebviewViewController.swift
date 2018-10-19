@@ -21,6 +21,8 @@ class WebviewViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         
         webView.navigationDelegate = self
+        
+        title = webDetail?.name
 
     }
     

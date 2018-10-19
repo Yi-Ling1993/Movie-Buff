@@ -40,7 +40,7 @@ class TheaterData {
         TheaterInfo(name: "台北日新威秀", address: "台北市萬華區武昌街二段87號", region: "台北西區", latitude: 25.045805, long: 121.504166, isPinned: false, website: "http://www.vscinemas.com.tw/vsTicketing/ticketing/ticket.aspx"),
         TheaterInfo(name: "台北京站威秀", address: "台北市大同區市民大道一段209號5樓", region: "台北西區", latitude: 25.049233, long: 121.518567, isPinned: false, website: "http://www.vscinemas.com.tw/vsTicketing/ticketing/ticket.aspx"),
         TheaterInfo(name: "in89豪華數位影城", address: "台北市萬華區武昌街二段89號", region: "台北西區", latitude: 25.045687, long: 121.503961, isPinned: false, website: "https://www.in89.com.tw/booking.php"),
-        TheaterInfo(name: "真善美戲院", address: "台北市萬華區漢中街116號", region: "台北西區", latitude: 25.042958, long: 121.507498, isPinned: false, website: "https://www.ezding.com.tw/cinemabooking?cinemaid=f644412efbb811e58858f2128151146f"),
+        TheaterInfo(name: "真善美劇院", address: "台北市萬華區漢中街116號", region: "台北西區", latitude: 25.042958, long: 121.507498, isPinned: false, website: "https://www.ezding.com.tw/cinemabooking?cinemaid=f644412efbb811e58858f2128151146f"),
         TheaterInfo(name: "國賓戲院", address: "台北市萬華區成都路88號", region: "台北西區", latitude: 25.043115, long: 121.504561, isPinned: false, website: "https://booking.ambassador.com.tw"),
         TheaterInfo(name: "今日秀泰影城", address: "台北市萬華區峨眉街52號", region: "台北西區", latitude: 25.043885, long: 121.505412, isPinned: false, website: "https://www.showtimes.com.tw"),
         TheaterInfo(name: "喜滿客絕色影城", address: "台北市萬華區漢中街52號10,11樓", region: "台北西區", latitude: 25.043869, long: 121.507201, isPinned: false, website: "https://booking.cinemark.com.tw"),

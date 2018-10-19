@@ -920,6 +920,7 @@
                                         <color key="backgroundColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="pXu-1L-Eel" id="abH-8u-tox"/>
+                                            <outlet property="bookingButton" destination="LnV-zB-3t9" id="q5R-S3-fJv"/>
                                             <outlet property="cinemaBackgroundView" destination="4Dx-7n-25R" id="dhw-v8-zv5"/>
                                             <outlet property="languageLabel" destination="0y1-Zi-l2b" id="25N-p7-4Vm"/>
                                             <outlet property="presentLabel" destination="OyF-pn-2iE" id="seq-lQ-0Oh"/>
@@ -953,6 +954,7 @@
                         <outlet property="cinemaShowtimeTableView" destination="5bH-81-m9G" id="KLw-gK-OSy"/>
                         <outlet property="dateCollectionView" destination="ZrE-0I-D0e" id="L3e-pZ-Art"/>
                         <outlet property="regionCollectionView" destination="ryF-NN-4jP" id="75e-K6-9YM"/>
+                        <segue destination="UhB-sp-gSQ" kind="show" identifier="showtimeToWeb" id="Aeq-a4-5ZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAz-ms-hNq" sceneMemberID="firstResponder"/>
@@ -1390,5 +1392,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="b58-C0-hoh"/>
+        <segue reference="Aeq-a4-5ZK"/>
     </inferredMetricsTieBreakers>
 </document>
