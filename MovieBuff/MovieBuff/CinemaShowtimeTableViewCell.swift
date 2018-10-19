@@ -16,6 +16,7 @@ class CinemaShowtimeTableViewCell: UITableViewCell {
     @IBOutlet weak var presentLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var shoetimeLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
     
     override func awakeFromNib() {

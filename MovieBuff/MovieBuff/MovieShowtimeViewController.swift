@@ -15,6 +15,7 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
     @IBOutlet weak var dateCollectionView: UICollectionView!
     
     @IBOutlet weak var cinemaShowtimeTableView: UITableView!
+    @IBOutlet weak var addressTHeaterLabel: UILabel!
     
     var firebaseMovieData: MovieInfo?
     
@@ -270,6 +271,17 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         cinemaShowtimeCell.theaterNameLabel.text = filteredFirebaseData[indexPath.row].name
         cinemaShowtimeCell.presentLabel.text = filteredFirebaseData[indexPath.row].present
         cinemaShowtimeCell.languageLabel.text = filteredFirebaseData[indexPath.row].language
+        
+        for index in 0 ... TheaterData.instance.theaterInfo.count - 1 {
+            
+            if TheaterData.instance.theaterInfo[index].name == cinemaShowtimeCell.theaterNameLabel.text {
+                
+                cinemaShowtimeCell.addressLabel.text = TheaterData.instance.theaterInfo[index].address
+
+            }
+
+        }
+        
         
         var showtimeString = ""
         let showtimeCount: Int = (filteredFirebaseData[indexPath.row].showtime?[dateFilterSender].time?.count)! - 1
