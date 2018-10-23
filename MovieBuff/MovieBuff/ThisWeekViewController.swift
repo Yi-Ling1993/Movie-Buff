@@ -22,7 +22,7 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         if reachability?.currentReachabilityStatus().rawValue == 0 {
             print("no internet connected.")
             return false
-        }else {
+        } else {
             print("internet connected successfully.")
             return true
         }
@@ -56,9 +56,8 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
         
     }
-    
-    
-    let imageNames = ["1","2","3","4","5"]
+
+    let imageNames = ["1", "2", "3", "4", "5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
                                                           .depth,
@@ -72,7 +71,7 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     fileprivate var typeIndex = 4 {
         didSet {
             let type = self.transformerTypes[typeIndex]
-            self.thisWeekPagerView.transformer = FSPagerViewTransformer(type:type)
+            self.thisWeekPagerView.transformer = FSPagerViewTransformer(type: type)
             switch type {
             case .crossFading, .zoomOut, .depth:
                 self.thisWeekPagerView.itemSize = .zero // 'Zero' means fill the size of parent
@@ -129,7 +128,6 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     @IBOutlet weak var internetLabel2: UILabel!
     @IBOutlet weak var coverView: UIView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -158,7 +156,6 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         
         thisWeekVideoView.delegate = self
         
-        
         thisWeekTrailerManager.delegate = self
         
         thisWeekManager.delegate = self
@@ -166,7 +163,6 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         refref = Database.database().reference()
         
         refref.child("ThisWeek").observeSingleEvent(of: .value) { (snapshot) in
-            //            print(snapshot)
             
             guard let value = snapshot.value else { return }
             
@@ -197,14 +193,12 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
             thisWeekManager.requestOMDBData(imdbId: thisWeekData.id ?? "tt3896198")
         }
     }
-        
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let index = self.typeIndex
         self.typeIndex = index // Manually trigger didSet
     }
-    
     
     func setNavigationBarItem() {
         
@@ -213,7 +207,10 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
-        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 60/255, green: 60/255, blue: 60/255, alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 55/255,
+                                                                   green: 55/255,
+                                                                   blue: 55/255,
+                                                                   alpha: 1.0)
         
         let menuButton = UIButton()
         menuButton.setImage(#imageLiteral(resourceName: "listing-option.png"), for: .normal)
@@ -224,15 +221,6 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         leftButton.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
         menuButton.addTarget(self, action: #selector(ThisWeekViewController.menu), for: .touchUpInside)
-        
-//        let searchButton = UIButton()
-//        searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
-//        searchButton.imageView?.contentMode = .scaleAspectFit
-//        searchButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-//        let reightButton = UIBarButtonItem(customView: searchButton)
-//        navigationItem.rightBarButtonItem = reightButton
-//        reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
-//        reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
     }
     
@@ -276,12 +264,9 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         thisWeekInfoTableView.reloadData()
     }
 
-    
     @objc func menu() {
         self.openSideMenu()
     }
-   
-
 }
 
 extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
@@ -342,9 +327,8 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
         
         coverView.isHidden = false
         
-        guard let cell = sender.superview?.superview as? ThisWeekInfoTableViewCell else { return }
-        
-        guard let indexPath = thisWeekInfoTableView.indexPath(for: cell) else { return }
+//        guard let cell = sender.superview?.superview as? ThisWeekInfoTableViewCell else { return }
+//        guard let indexPath = thisWeekInfoTableView.indexPath(for: cell) else { return }
         
         if thisWeekVideoView.isHidden == true {
             
@@ -380,7 +364,8 @@ extension ThisWeekViewController: ThisWeekManagerDelegate {
     func manager(_ manager: ThisWeekManager, didGet products: OMDBData) {
         omdbData = products
         
-        let posterUrl = URL(string: omdbData?.Poster ?? "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
+        let posterUrl = URL(string: omdbData?.Poster ??
+            "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
         
         postDict[omdbData?.imdbID ?? "tt3896198"] = posterUrl
         omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
@@ -405,7 +390,4 @@ extension ThisWeekViewController: ThisWeekTrailerManagerDelegate {
     func manager(_ manager: ThisWeekTrailerManager, didFailWith error: Error) {
         print(error)
     }
-    
-    
 }
-

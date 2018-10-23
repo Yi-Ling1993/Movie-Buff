@@ -14,6 +14,8 @@ import Firebase
 import Kingfisher
 import Lottie
 
+//swiftlint:disable file_length
+
 protocol DataPassDelegate {
     func passData(data: TheaterInfo)
 }
@@ -26,7 +28,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         if reachability?.currentReachabilityStatus().rawValue == 0 {
             print("no internet connected.")
             return false
-        }else {
+        } else {
             print("internet connected successfully.")
             return true
         }
@@ -38,7 +40,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
             internetLabel1.isHidden = false
             internetLabel2.isHidden = false
             
-        }else {
+        } else {
             
             internetLabel1.isHidden = true
             internetLabel2.isHidden = true
@@ -60,8 +62,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
         
     }
-    
-    
+
     var delegate: DataPassDelegate? = nil
     
     var theaterDetail: TheaterInfo?
@@ -70,7 +71,6 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         
         coverView.isHidden = false
 
-        
         if theaterDetailVideoView.isHidden == true {
             
             let imdbId = specificTheaterDetailData?.movie[pagerIndex].id
@@ -88,11 +88,9 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
             theaterDetailPagerView.isHidden = false
             coverView.isHidden = true
 
-
         }
     }
 
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var enTitleLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
@@ -108,15 +106,11 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     @IBOutlet weak var internetLabel2: UILabel!
     @IBOutlet weak var coverView: UIView!
     
-    
-    
     @IBAction func toWebview(_ sender: Any) {
         performSegue(withIdentifier: "ToWebview", sender: self)
     }
     
-    
-    
-    let imageNames = ["1","2","3","4","5"]
+    let imageNames = ["1", "2", "3", "4", "5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
                                                           .depth,
@@ -130,7 +124,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     fileprivate var typeIndex = 4 {
         didSet {
             let type = self.transformerTypes[typeIndex]
-            self.theaterDetailPagerView.transformer = FSPagerViewTransformer(type:type)
+            self.theaterDetailPagerView.transformer = FSPagerViewTransformer(type: type)
             switch type {
             case .crossFading, .zoomOut, .depth:
                 self.theaterDetailPagerView.itemSize = .zero // 'Zero' means fill the size of parent
@@ -228,7 +222,6 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
             
             do {
                 let theaterDetailData = try self.decoder.decode([CinemaInfo].self, from: jsonData)
-//                print(theaterDetailData)
                 
                 self.theaterDtailDatas = theaterDetailData
                 
@@ -266,7 +259,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
             return
         }
         
-        for movie in movies   {
+        for movie in movies {
             
             theaterDetailManager.requestOMDBData(imdbId: movie.id )
         }
@@ -305,7 +298,6 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         
         self.getFirebase()
         
-        
     }
     
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
@@ -319,9 +311,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         pagerIndex = index
     
         self.getFirebase()
-        
-
-        
+    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -374,7 +364,8 @@ extension TheaterDetailViewController: UITableViewDelegate, UITableViewDataSourc
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 15
         style.minimumLineHeight = 0
-        attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: showtimeString.characters.count))
+        attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style,
+                                 range: NSRange(location: 0, length: showtimeString.count))
 
         showtimeCell.showtimeLabel.attributedText = attriString
         
@@ -398,7 +389,8 @@ extension TheaterDetailViewController: TheaterDetailManagerDelegate {
     func manager(_ manager: TheaterDetailManager, didGet products: OMDBData) {
         omdbData = products
         
-        let posterUrl = URL(string: omdbData?.Poster ?? "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
+        let posterUrl = URL(string: omdbData?.Poster ??
+            "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
         
         postDict[omdbData?.imdbID ?? "tt3896198"] = posterUrl
         omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
@@ -430,6 +422,5 @@ extension TheaterDetailViewController: TheaterDetailTrailerManagerDelegate {
     func manager(_ manager: TheaterDetailTrailerManager, didFailWith error: Error) {
         print(error)
     }
-    
     
 }

@@ -16,8 +16,6 @@ class MenuTableViewController: UITableViewController {
     
     var viewControllerIdentifier: String = ""
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -34,7 +32,6 @@ class MenuTableViewController: UITableViewController {
                                 forCellReuseIdentifier: "MenuTableViewCell")
     }
     
-  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -58,7 +55,6 @@ class MenuTableViewController: UITableViewController {
         cell.iconView.image = self.items.getIcon((indexPath as NSIndexPath).row)
         cell.titleLabel.text = self.items.getTitle((indexPath as NSIndexPath).row)
         
-        
         return cell
     }
     
@@ -69,15 +65,13 @@ class MenuTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        
         if indexPath.row == 0 {
             viewControllerIdentifier = "InTheater"
         } else if indexPath.row == 1 {
             viewControllerIdentifier = "ThisWeek"
         } else if indexPath.row == 2 {
             viewControllerIdentifier = "Soon"
-        }
-        else if indexPath.row == 3 {
+        } else if indexPath.row == 3 {
             viewControllerIdentifier = "TheaterList"
         } else if indexPath.row == 4 {
             viewControllerIdentifier = "Collection"

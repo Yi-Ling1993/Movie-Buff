@@ -44,23 +44,16 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
             
             //swiftlint:disable identifier_name
             
-            for i in 0 ... TheaterData.instance.theaterInfo.count - 1{
-                
-                
-                if filteredFirebaseData[index].name == TheaterData.instance.theaterInfo[i].name {
-                    
+            for i in 0 ... TheaterData.instance.theaterInfo.count - 1 where
+                filteredFirebaseData[index].name == TheaterData.instance.theaterInfo[i].name {
+
                     theaterDetails.append(TheaterData.instance.theaterInfo[i])
                     print("____________")
                     
                     print("____________", theaterDetails.count)
                     break
-                    
-                }
-                
-                
             }
         }
-
         
         title = firebaseMovieData?.title
         
@@ -86,8 +79,8 @@ class MovieShowtimeViewController: UIViewController, UICollectionViewDelegateFlo
 
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         
         if collectionView == regionCollectionView {
             return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
@@ -116,7 +109,8 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let locationCell = regionCollectionView.dequeueReusableCell(
             withReuseIdentifier: "LocationCell",
@@ -155,7 +149,8 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         return UICollectionViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         
         if let locationCell = cell as? LocationCollectionViewCell {
              locationCell.locationButton.layer.borderWidth = 0
@@ -164,17 +159,18 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         if let dateCell = cell as? DateCollectionViewCell {
             dateCell.dateButton.layer.borderWidth = 0
         }
-        
-       
-
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         
         if let locationCell = cell as? LocationCollectionViewCell {
             if cellForItemLocationTag == indexPath.row {
                 
-                locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                locationCell.locationButton.layer.borderColor = UIColor(red: 149/255,
+                                                                        green: 208/255,
+                                                                        blue: 120/255,
+                                                                        alpha: 1).cgColor
                 locationCell.locationButton.layer.borderWidth = 2
             }
         }
@@ -182,14 +178,13 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         if let dateCell = cell as? DateCollectionViewCell {
             if cellForItemDateTag == indexPath.row {
                 
-                dateCell.dateButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                dateCell.dateButton.layer.borderColor = UIColor(red: 149/255,
+                                                                green: 208/255,
+                                                                blue: 120/255,
+                                                                alpha: 1).cgColor
                 dateCell.dateButton.layer.borderWidth = 2
             }
         }
-        
-        
-        
-        
     }
     
     @objc func filterDate(sender: UIButton) {
@@ -199,14 +194,17 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         
         cellForItemDateTag = sender.tag
         
-        for index in 0 ... 6  {
+        for index in 0 ... 6 {
             
             let index = IndexPath(row: index, section: 0)
             if let cell = dateCollectionView.cellForItem(at: index) as? DateCollectionViewCell {
                 
                 if sender.tag == cell.dateButton.tag {
                     
-                    cell.dateButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                    cell.dateButton.layer.borderColor = UIColor(red: 149/255,
+                                                                green: 208/255,
+                                                                blue: 120/255,
+                                                                alpha: 1).cgColor
                     cell.dateButton.layer.borderWidth = 2
                 } else {
                     cell.dateButton.layer.borderWidth = 0
@@ -215,17 +213,15 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             
         }
 
-        
         cinemaShowtimeTableView.reloadData()
     }
     
     @objc func filterLocation(sender: UIButton) {
         print(sender.tag)
         
-        
         if sender.titleLabel?.text != "全部地區" {
             
-            filteredFirebaseData = firebaseMovieData?.theater?.filter{$0.region == sender.titleLabel?.text} ?? []
+            filteredFirebaseData = firebaseMovieData?.theater?.filter {$0.region == sender.titleLabel?.text} ?? []
             
             cinemaShowtimeTableView.reloadData()
         } else {
@@ -239,37 +235,32 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         
         for filtered in filteredFirebaseData {
             
-            for i in 0 ... TheaterData.instance.theaterInfo.count - 1{
-                
-                
-                if filtered.name == TheaterData.instance.theaterInfo[i].name {
-                    
+            for i in 0 ... TheaterData.instance.theaterInfo.count - 1 where
+                filtered.name == TheaterData.instance.theaterInfo[i].name {
+            
                     theaterDetails.append(TheaterData.instance.theaterInfo[i])
                     
                     break
-                    
-            }
-            
-                
             }
         }
-        
         
         print(filteredFirebaseData)
         
         cellForItemLocationTag = sender.tag
         
-        for index in 0 ... 4  {
+        for index in 0 ... 4 {
             
             let index = IndexPath(row: index, section: 0)
             if let cell = regionCollectionView.cellForItem(at: index) as? LocationCollectionViewCell {
-                
                 
                 print("sender.tag\(sender.tag) == cell.locationButton.tag\(cell.locationButton.tag)")
                 
                 if sender.tag == cell.locationButton.tag {
                     
-                    cell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                    cell.locationButton.layer.borderColor = UIColor(red: 149/255,
+                                                                    green: 208/255,
+                                                                    blue: 120/255,
+                                                                    alpha: 1).cgColor
                     cell.locationButton.layer.borderWidth = 2
                 } else {
                     cell.locationButton.layer.borderWidth = 0
@@ -277,16 +268,14 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             }
             
         }
-
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == regionCollectionView {
             
@@ -322,26 +311,11 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         
         cinemaShowtimeCell.bookingButton.tag = indexPath.row
         
-        for index in 0 ... TheaterData.instance.theaterInfo.count - 1 {
-            
-            if TheaterData.instance.theaterInfo[index].name == cinemaShowtimeCell.theaterNameLabel.text {
-                
-                cinemaShowtimeCell.addressLabel.text = TheaterData.instance.theaterInfo[index].address
-                
-            }
+        for index in 0 ... TheaterData.instance.theaterInfo.count - 1 where
+            TheaterData.instance.theaterInfo[index].name == cinemaShowtimeCell.theaterNameLabel.text {
 
+                cinemaShowtimeCell.addressLabel.text = TheaterData.instance.theaterInfo[index].address
         }
-        
-//        for index in 0 ... TheaterData.instance.theaterInfo.count - 1 {
-//
-//            if filteredFirebaseData[indexPath.row].name == TheaterData.instance.theaterInfo[index].name {
-//
-//                theaterDetails.append(TheaterData.instance.theaterInfo[index])
-//                print("____________")
-//                print(theaterDetails.count)
-//
-//            }
-//        }
         
         var showtimeString = ""
         let showtimeCount: Int = (filteredFirebaseData[indexPath.row].showtime?[dateFilterSender].time?.count)! - 1
@@ -354,7 +328,8 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 15
         style.minimumLineHeight = 0
-        attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: showtimeString.characters.count))
+        attriString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style,
+                                 range: NSRange(location: 0, length: showtimeString.count))
 
         cinemaShowtimeCell.shoetimeLabel.attributedText = attriString
         
@@ -365,7 +340,8 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         
         theaterDetail = theaterDetails[sender.tag]
         
-//        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        self.navigationController?.navigationBar.barTintColor = UIColor.red
+        
         performSegue(withIdentifier: "showtimeToWeb", sender: self)
     }
     
@@ -377,6 +353,3 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
     }
     
 }
-
-
-

@@ -11,7 +11,7 @@ import FSPagerView
 
 class CollectionViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate {
     
-    let imageNames = ["1","2","3","4","5"]
+    let imageNames = ["1", "2", "3", "4", "5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
                                                           .depth,
@@ -25,7 +25,7 @@ class CollectionViewController: UIViewController, FSPagerViewDataSource, FSPager
     fileprivate var typeIndex = 4 {
         didSet {
             let type = self.transformerTypes[typeIndex]
-            self.collectionPagerView.transformer = FSPagerViewTransformer(type:type)
+            self.collectionPagerView.transformer = FSPagerViewTransformer(type: type)
             switch type {
             case .crossFading, .zoomOut, .depth:
                 self.collectionPagerView.itemSize = .zero // 'Zero' means fill the size of parent
@@ -72,7 +72,7 @@ class CollectionViewController: UIViewController, FSPagerViewDataSource, FSPager
             seenTableView.isHidden = false
 
         default:
-            break;
+            break
         }
     }
     
@@ -81,9 +81,11 @@ class CollectionViewController: UIViewController, FSPagerViewDataSource, FSPager
         
         setNavigationBarItem()
         
-        segmentControl.setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.white ], for: .normal)
+        segmentControl.setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 17),
+                                               NSAttributedString.Key.foregroundColor: UIColor.white ], for: .normal)
         
-        segmentControl.setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 17), NSAttributedString.Key.foregroundColor: UIColor.white ], for: .selected)
+        segmentControl.setTitleTextAttributes([.font: UIFont.boldSystemFont(ofSize: 17),
+                                               NSAttributedString.Key.foregroundColor: UIColor.white ], for: .selected)
         
         let collectedNibs = UINib(nibName: "CollectedTableViewCell", bundle: nil)
         collectedTableView.register(collectedNibs, forCellReuseIdentifier: "CollectedCell")
@@ -132,17 +134,6 @@ class CollectionViewController: UIViewController, FSPagerViewDataSource, FSPager
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
         menuButton.addTarget(self, action: #selector(CollectionViewController.menu), for: .touchUpInside)
 
-        
-//        let searchButton = UIButton()
-//        searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
-//        searchButton.imageView?.contentMode = .scaleAspectFit
-//        searchButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-//        let reightButton = UIBarButtonItem(customView: searchButton)
-//        navigationItem.rightBarButtonItem = reightButton
-//        reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
-//        reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        
     }
     
     @objc func menu() {
@@ -163,8 +154,6 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let collectedCell = collectedTableView.dequeueReusableCell(
@@ -173,8 +162,6 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
             as? CollectedTableViewCell else {
                 return UITableViewCell()
         }
-        
-//        collectedCell.collectionShowtimeButton.addTarget(self, action: #selector(toShowtime), for: .touchUpInside)
         
         guard let seenCell = seenTableView.dequeueReusableCell(
             withIdentifier: "SeenCell",
@@ -192,7 +179,4 @@ extension CollectionViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-//    @objc func toShowtime(sender: UIButton) {
-//        performSegue(withIdentifier: "CollectionToShowtime", sender: self)
-//    }
 }

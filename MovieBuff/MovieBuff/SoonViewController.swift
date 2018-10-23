@@ -22,7 +22,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         if reachability?.currentReachabilityStatus().rawValue == 0 {
             print("no internet connected.")
             return false
-        }else {
+        } else {
             print("internet connected successfully.")
             return true
         }
@@ -34,7 +34,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
             internetLabel1.isHidden = false
             internetLabel2.isHidden = false
             
-        }else {
+        } else {
             
             internetLabel1.isHidden = true
             internetLabel2.isHidden = true
@@ -58,8 +58,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         
     }
     
-    
-    let imageNames = ["1","2","3","4","5"]
+    let imageNames = ["1", "2", "3", "4", "5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
                                                           .depth,
@@ -73,7 +72,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     fileprivate var typeIndex = 4 {
         didSet {
             let type = self.transformerTypes[typeIndex]
-            self.soonPagerView.transformer = FSPagerViewTransformer(type:type)
+            self.soonPagerView.transformer = FSPagerViewTransformer(type: type)
             switch type {
             case .crossFading, .zoomOut, .depth:
                 self.soonPagerView.itemSize = .zero // 'Zero' means fill the size of parent
@@ -106,7 +105,6 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     @IBOutlet weak var coverView: UIView!
     
-    
     var refref: DatabaseReference!
     
     var soonTrailerManager = SoonTrailerManager()
@@ -130,7 +128,6 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     @IBOutlet weak var animationView: UIView!
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -195,9 +192,6 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         
         soonVideoView.isHidden = false
         soonVideoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
-        
-
-        
     }
     
     func getPoster() {
@@ -217,8 +211,10 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     func setNavigationBarItem() {
         
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        navigationController?.navigationBar.barTintColor = UIColor.green
         
         let menuButton = UIButton()
         menuButton.setImage(#imageLiteral(resourceName: "listing-option.png"), for: .normal)
@@ -229,15 +225,6 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         leftButton.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
         menuButton.addTarget(self, action: #selector(SoonViewController.menu), for: .touchUpInside)
-        
-//        let searchButton = UIButton()
-//        searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
-//        searchButton.imageView?.contentMode = .scaleAspectFit
-//        searchButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-//        let reightButton = UIBarButtonItem(customView: searchButton)
-//        navigationItem.rightBarButtonItem = reightButton
-//        reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
-//        reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
     }
     
@@ -282,7 +269,6 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         soonInfoTableView.reloadData()
     }
 
-    
     @objc func menu() {
         self.openSideMenu()
     }
@@ -325,7 +311,6 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
         soonInfoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
         soonInfoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
 
-        
         return soonInfoCell
     }
     
@@ -333,13 +318,8 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
         
         coverView.isHidden = false
 
-        
-        guard let cell = sender.superview?.superview as? SoonInfoTableViewCell else {
-            return
-            
-        }
-        
-        guard let indexPath = soonInfoTableView.indexPath(for: cell) else { return }
+//        guard let cell = sender.superview?.superview as? SoonInfoTableViewCell else {return}
+//        guard let indexPath = soonInfoTableView.indexPath(for: cell) else { return }
         
         if soonVideoView.isHidden == true {
             
@@ -357,19 +337,17 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
             soonVideoView.isHidden = true
             soonPagerView.isHidden = false
             coverView.isHidden = true
-
-
         }
     }
 }
-
 
 extension SoonViewController: SoonManagerDelegate {
     func manager(_ manager: SoonManager, didGet products: OMDBData) {
         
         omdbData = products
         
-        let posterUrl = URL(string: omdbData?.Poster ?? "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
+        let posterUrl = URL(string: omdbData?.Poster ??
+            "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
         
         postDict[omdbData?.imdbID ?? "tt3896198"] = posterUrl
         omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
@@ -395,6 +373,5 @@ extension SoonViewController: SoonTrailerManagerDelegate {
     func manager(_ manager: SoonTrailerManager, didFailWith error: Error) {
         print(error)
     }
-    
     
 }

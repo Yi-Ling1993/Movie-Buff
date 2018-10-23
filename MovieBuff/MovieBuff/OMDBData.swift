@@ -15,7 +15,7 @@ struct OMDBData: Codable {
     let Title: String
     let Year: String
     let Rated: String
-    let Released:String
+    let Released: String
     let Runtime: String
     let Genre: String
     let Director: String
@@ -30,4 +30,3 @@ struct OMDBData: Codable {
     let imdbID: String
     let Response: String
 }
-

@@ -55,7 +55,8 @@ class MenuTableViewCell: UITableViewCell {
         self.titleLabel = UILabel()
         self.titleLabel.textColor = UIColor.white
         self.titleLabel.font = Font.menuLabelFont
-        self.titleLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 249), for: NSLayoutConstraint.Axis.horizontal)
+        self.titleLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 249),
+                                                  for: NSLayoutConstraint.Axis.horizontal)
         self.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints { (make) -> Void in
             make.leading.equalTo(self.iconView.snp.trailing).offset(20)
@@ -92,8 +93,7 @@ class MenuTableViewCell: UITableViewCell {
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        //
+        // 已複寫掉有 hightlight 
     }
     
 }
-

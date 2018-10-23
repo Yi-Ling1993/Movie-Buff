@@ -36,8 +36,6 @@ class WebviewViewController: UIViewController, WKNavigationDelegate {
             let request = URLRequest(url: url)
             webView.load(request)
         }
-        
-        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -64,5 +62,4 @@ class WebviewViewController: UIViewController, WKNavigationDelegate {
         nextButton.isEnabled = webView.canGoForward
     }
     
-
 }

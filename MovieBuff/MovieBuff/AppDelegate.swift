@@ -18,9 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
-        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                      green: 67/255,
+                                                                      blue: 67/255,
+                                                                      alpha: 1.0)
 
         Fabric.with([Crashlytics.self])
         
@@ -33,9 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let rootVC = storyboard.instantiateViewController(withIdentifier: "Landing")
-        
-//        let rootVC = storyboard.instantiateViewController(withIdentifier: "InTheater")
-        
+                
         let menuVC = MenuTableViewController()
         
         var options = WKAwesomeMenuOptions.defaultOptions()
@@ -53,8 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-
-
     func applicationWillResignActive(_ application: UIApplication) {
         
     }

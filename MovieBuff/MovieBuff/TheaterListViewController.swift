@@ -28,7 +28,6 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
         
         if let tag = theTag {
             filteredRegion[tag] = data
-//            theTag = nil
         }
     }
    
@@ -40,7 +39,6 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
         let locationNibs = UINib(nibName: "LocationCollectionViewCell", bundle: nil)
         
         locationCollectionView.register(locationNibs, forCellWithReuseIdentifier: "LocationCell")
-        
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -64,17 +62,6 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
         leftButton.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
         menuButton.addTarget(self, action: #selector(TheaterListViewController.menu), for: .touchUpInside)
-        
-//        let searchButton = UIButton()
-//        searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
-//        searchButton.imageView?.contentMode = .scaleAspectFit
-//        searchButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-//        let reightButton = UIBarButtonItem(customView: searchButton)
-//        navigationItem.rightBarButtonItem = reightButton
-//        reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
-//        reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        
-        
     }
     
     @objc func menu() {
@@ -82,7 +69,8 @@ class TheaterListViewController: UIViewController, UICollectionViewDelegateFlowL
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
@@ -93,7 +81,8 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
         return location.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let locationCell = locationCollectionView.dequeueReusableCell(
             withReuseIdentifier: "LocationCell",
@@ -110,7 +99,8 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
         return locationCell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
 
         guard let locationCell = cell as? LocationCollectionViewCell else {
                 return
@@ -119,7 +109,8 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
         locationCell.locationButton.layer.borderWidth = 0
     }
 
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
 
         guard let locationCell = cell as? LocationCollectionViewCell else {
                 return
@@ -127,17 +118,20 @@ extension TheaterListViewController: UICollectionViewDelegate, UICollectionViewD
 
         if cellForItemTag == indexPath.row {
 
-            locationCell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+            locationCell.locationButton.layer.borderColor = UIColor(red: 149/255,
+                                                                    green: 208/255,
+                                                                    blue: 120/255,
+                                                                    alpha: 1).cgColor
             locationCell.locationButton.layer.borderWidth = 2
         }
     }
     
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 100, height: locationCollectionView.frame.height)
     }
@@ -174,13 +168,10 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         
         theaterCell.selectionStyle = .none
         
-    
         return theaterCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        print(filteredRegion[indexPath.row])
         
         theTag = indexPath.row
         
@@ -189,8 +180,6 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailController = segue.destination as? TheaterDetailViewController else {return}
-        
-//        print(filteredRegion)
         
         detailController.theaterDetail = filteredRegion[theTag ?? 0]
         
@@ -207,7 +196,7 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         
         if sender.titleLabel?.text != "全部地區" {
             
-            filteredRegion = TheaterData.instance.theaterInfo.filter{$0.region == sender.titleLabel?.text}
+            filteredRegion = TheaterData.instance.theaterInfo.filter {$0.region == sender.titleLabel?.text}
             
             theaterTableView.reloadData()
         } else {
@@ -217,35 +206,27 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             theaterTableView.reloadData()
         }
         
-        print(filteredRegion)
-    
-        for index in 0 ... 4  {
+        for index in 0 ... 4 {
 
             let index = IndexPath(row: index, section: 0)
             if let cell = locationCollectionView.cellForItem(at: index) as? LocationCollectionViewCell {
             
-                
-//                print("sender.tag\(sender.tag) == cell.locationButton.tag\(cell.locationButton.tag)")
-                
                 if sender.tag == cell.locationButton.tag {
                     
-                    cell.locationButton.layer.borderColor = UIColor(red: 149/255, green: 208/255, blue: 120/255, alpha: 1).cgColor
+                    cell.locationButton.layer.borderColor = UIColor(red: 149/255,
+                                                                    green: 208/255,
+                                                                    blue: 120/255,
+                                                                    alpha: 1).cgColor
                     cell.locationButton.layer.borderWidth = 2
                 } else {
-//                    print(index)
                     cell.locationButton.layer.borderWidth = 0
                 }
             }
 
         }
-
-        
-        
-
     }
     
     @objc func navigate(sender: UIButton) {
-//        print(sender.tag)
         
         let lati = filteredRegion[sender.tag].latitude
         let longti = filteredRegion[sender.tag].long
@@ -267,16 +248,10 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
         
         filteredRegion[sender.tag].isPinned = sender.isSelected
         
-//        print(filteredRegion[sender.tag])
-        print(filteredRegion)
-        print(TheaterData.instance.theaterInfo)
-        
-        for index in 0 ..< TheaterData.instance.theaterInfo.count {
-
-            if filteredRegion[sender.tag].name == TheaterData.instance.theaterInfo[index].name {
-
+        for index in 0 ..< TheaterData.instance.theaterInfo.count where
+            filteredRegion[sender.tag].name == TheaterData.instance.theaterInfo[index].name {
+            
                 TheaterData.instance.theaterInfo[index].isPinned = filteredRegion[sender.tag].isPinned
-            }
         }
         
         if sender.isSelected == true {
@@ -285,21 +260,16 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             
             guard let indexPath = theaterTableView.indexPath(for: cell) else { return }
             
-//            print(indexPath)
-            
             theaterTableView.moveRow(at: indexPath, to: IndexPath(row: 0, section: 0))
 
-            
             filteredRegion.insert(filteredRegion[sender.tag], at: 0)
             filteredRegion.remove(at: sender.tag + 1)
             
             TheaterData.instance.theaterInfo.insert(filteredRegion[sender.tag], at: 0)
-            for index in 1 ..< TheaterData.instance.theaterInfo.count - 1 {
+            for index in 1 ..< TheaterData.instance.theaterInfo.count - 1 where
+                filteredRegion[0].name == TheaterData.instance.theaterInfo[index].name {
                 
-                if filteredRegion[0].name == TheaterData.instance.theaterInfo[index].name {
                     TheaterData.instance.theaterInfo.remove(at: index )
-
-                }
             }
 
         }
@@ -311,6 +281,5 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
 
 }

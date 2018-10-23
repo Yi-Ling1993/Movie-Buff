@@ -10,12 +10,12 @@ import UIKit
 
 struct Color {
     
-    static let textFieldBorderColor = UIColor(red:0.71, green:0.71, blue:0.71, alpha:1)
-    static let textFieldTextColor   = UIColor(red:0.6, green:0.6, blue:0.6, alpha:1)
+    static let textFieldBorderColor = UIColor(red: 0.71, green: 0.71, blue: 0.71, alpha: 1)
+    static let textFieldTextColor   = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
     
-    static let appTintColor         = UIColor(red:0.27, green:0.52, blue:0.65, alpha:1)
-    static let appTitleColor        = UIColor(red:0.27, green:0.27, blue:0.27, alpha:1)
-    static let appBackgroundColor   = UIColor(red:0.96, green:0.97, blue:0.98, alpha:1)
+    static let appTintColor         = UIColor(red: 0.27, green: 0.52, blue: 0.65, alpha: 1)
+    static let appTitleColor        = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1)
+    static let appBackgroundColor   = UIColor(red: 0.96, green: 0.97, blue: 0.98, alpha: 1)
     
 }
 
@@ -37,7 +37,6 @@ struct Image {
     static let soonImage      = UIImage(named: "right-arrow-4")!
     static let cinemaImage      = UIImage(named: "popcorn-4")!
 
-    
     static let generalBG     = UIImage(named: "general_bg")!
     static let buttonBG      = UIImage(named: "button_bg")!
     
@@ -58,4 +57,3 @@ struct Font {
     static let menuLabelFont  = UIFont.systemFont(ofSize: 16)
     
 }
-

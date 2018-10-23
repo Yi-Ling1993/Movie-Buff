@@ -13,12 +13,10 @@ class ShowtimeTableViewCell: UITableViewCell {
     @IBOutlet weak var backGroundView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var showtimeLabel: UILabel!
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        
         backGroundView.backgroundColor = UIColor(red: 77/255, green: 75/255, blue: 75/255, alpha: 1)
         backGroundView.layer.cornerRadius = 2
         backGroundView.layer.masksToBounds = false

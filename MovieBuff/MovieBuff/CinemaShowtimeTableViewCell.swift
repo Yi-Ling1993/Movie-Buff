@@ -19,7 +19,6 @@ class CinemaShowtimeTableViewCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var bookingButton: UIButton!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -36,7 +35,6 @@ class CinemaShowtimeTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

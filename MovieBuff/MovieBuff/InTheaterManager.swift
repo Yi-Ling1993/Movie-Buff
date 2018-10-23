@@ -70,6 +70,8 @@ struct InTheaterTrailerManager {
         
         let decoder = JSONDecoder()
         
+        //swiftlint:disable line_length
+        
         guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(imdbId)/videos?api_key=05dd8085592c47e1b919c06e49e61126&language=en-US") else {
             
             return
@@ -98,4 +100,3 @@ struct InTheaterTrailerManager {
         }
     }
 }
-

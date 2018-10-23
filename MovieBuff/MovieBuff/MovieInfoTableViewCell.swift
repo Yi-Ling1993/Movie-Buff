@@ -24,7 +24,6 @@ class MovieInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var plotLabel: UILabel!
     @IBOutlet weak var showtimeButton: UIButton!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         

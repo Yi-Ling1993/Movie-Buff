@@ -6,6 +6,8 @@
 //  Copyright © 2018年 Appwork School. All rights reserved.
 //
 
+//swiftlint:disable file_length
+
 import UIKit
 import WKAwesomeMenu
 import FSPagerView
@@ -16,7 +18,6 @@ import Kingfisher
 import Crashlytics
 import Lottie
 
-
 class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
     
     var reachability = Reachability(hostName: "www.apple.com")
@@ -25,7 +26,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         if reachability?.currentReachabilityStatus().rawValue == 0 {
             print("no internet connected.")
             return false
-        }else {
+        } else {
             print("internet connected successfully.")
             return true
         }
@@ -37,7 +38,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
             internetLabel1.isHidden = false
             internetLabel2.isHidden = false
             
-        }else {
+        } else {
             
             internetLabel1.isHidden = true
             internetLabel2.isHidden = true
@@ -61,7 +62,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         
     }
     
-    
     @IBOutlet weak var videoView: YouTubePlayerView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,10 +70,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         showtimeController.firebaseMovieData = inTheaterDatas[pagerIndex]
         
     }
-    
-//    @IBAction func unwind (for segue: UIStoryboardSegue) {
-//    print("back...")
-//    }
 
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
@@ -88,7 +84,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     fileprivate var typeIndex = 4 {
         didSet {
             let type = self.transformerTypes[typeIndex]
-            self.inTheaterPagerView.transformer = FSPagerViewTransformer(type:type)
+            self.inTheaterPagerView.transformer = FSPagerViewTransformer(type: type)
             switch type {
             case .crossFading, .zoomOut, .depth:
                 self.inTheaterPagerView.itemSize = .zero // 'Zero' means fill the size of parent
@@ -106,11 +102,9 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         }
     }
     
-    
     @IBOutlet weak var infoTableView: UITableView!
     
     @IBOutlet weak var animationView: UIView!
-    
     
     @IBOutlet weak var inTheaterPagerView: FSPagerView! {
         didSet {
@@ -147,12 +141,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     @IBOutlet weak var internetLabel2: UILabel!
     @IBOutlet weak var coverView: UIView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-       UIApplication.shared.isStatusBarHidden = false
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -184,7 +172,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         
         videoView.delegate = self
         
-        
         inTheaterTrailerManager.delegate = self
         
         inTheaterManager.delegate = self
@@ -192,7 +179,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         refref = Database.database().reference()
         
         refref.child("InTheater").observeSingleEvent(of: .value) { (snapshot) in
-//            print(snapshot)
             
             guard let value = snapshot.value else { return }
             
@@ -204,11 +190,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
                 
                 self.inTheaterDatas = inTheaterData
                 
-//                self.infoTableView.reloadData()
-                
                 self.getPoster()
                 
-//                self.inTheaterPagerView.reloadData()
             } catch {
                 print(error)
             }
@@ -245,16 +228,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         leftButton.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
         menuButton.addTarget(self, action: #selector(InTheaterViewController.menu), for: .touchUpInside)
-        
-//        let searchButton = UIButton()
-//        searchButton.setImage(#imageLiteral(resourceName: "search-2.png"), for: .normal)
-//        searchButton.imageView?.contentMode = .scaleAspectFit
-//        searchButton.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-//        let reightButton = UIBarButtonItem(customView: searchButton)
-//        navigationItem.rightBarButtonItem = reightButton
-//        reightButton.customView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
-//        reightButton.customView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
-//
 
     }
     
@@ -284,8 +257,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         
         cell.imageView?.kf.setImage(with: postDict[imdbId])
     
-//        cell.imageView?.image = UIImage(named: image[index])
-
         return cell
         
     }
@@ -371,9 +342,10 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         coverView.isHidden = false
         
-        guard let cell = sender.superview?.superview as? MovieInfoTableViewCell else { return }
+        // get indexpath of the cell
         
-        guard let indexPath = infoTableView.indexPath(for: cell) else { return }
+//        guard let cell = sender.superview?.superview as? MovieInfoTableViewCell else { return }
+//        guard let indexPath = infoTableView.indexPath(for: cell) else { return }
         
         if videoView.isHidden == true {
             
@@ -391,8 +363,6 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
             videoView.isHidden = true
             inTheaterPagerView.isHidden = false
             coverView.isHidden = true
-
-
         }
     
     }
@@ -410,7 +380,8 @@ extension InTheaterViewController: InTheaterManagerDelegate {
     func manager(_ manager: InTheaterManager, didGet products: OMDBData) {
         omdbData = products
         
-        let posterUrl = URL(string: omdbData?.Poster ?? "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
+        let posterUrl = URL(string: omdbData?.Poster ??
+            "https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg")
         
         postDict[omdbData?.imdbID ?? "tt3896198"] = posterUrl
         omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
@@ -435,8 +406,6 @@ extension InTheaterViewController: InTheaterTrailerManagerDelegate {
     func manager(_ manager: InTheaterTrailerManager, didFailWith error: Error) {
         print(error)
     }
-    
-    
 }
 
 extension UIView {
@@ -477,8 +446,7 @@ extension UILabel {
             let attributedString: NSMutableAttributedString!
             if let currentAttrString = attributedText {
                 attributedString = NSMutableAttributedString(attributedString: currentAttrString)
-            }
-            else {
+            } else {
                 attributedString = NSMutableAttributedString(string: text ?? "")
                 text = nil
             }
@@ -491,13 +459,12 @@ extension UILabel {
         }
         
         get {
-            if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern, at: 0, effectiveRange: .none) as? CGFloat {
+            if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern,
+                                                                  at: 0, effectiveRange: .none) as? CGFloat {
                 return currentLetterSpace
-            }
-            else {
+            } else {
                 return 0
             }
         }
     }
 }
-
