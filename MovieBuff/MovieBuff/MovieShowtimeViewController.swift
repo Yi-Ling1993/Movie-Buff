@@ -340,7 +340,7 @@ extension MovieShowtimeViewController: UITableViewDataSource, UITableViewDelegat
         
         theaterDetail = theaterDetails[sender.tag]
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.red
+//        self.navigationController?.navigationBar.barTintColor = UIColor.red
         
         performSegue(withIdentifier: "showtimeToWeb", sender: self)
     }

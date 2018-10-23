@@ -16,7 +16,7 @@ import Lottie
 
 //swiftlint:disable file_length
 
-protocol DataPassDelegate {
+protocol DataPassDelegate: AnyObject {
     func passData(data: TheaterInfo)
 }
 
@@ -63,7 +63,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         
     }
 
-    var delegate: DataPassDelegate? = nil
+    weak var delegate: DataPassDelegate?
     
     var theaterDetail: TheaterInfo?
     

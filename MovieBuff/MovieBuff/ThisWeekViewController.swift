@@ -28,6 +28,11 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("yo")
+    }
+    
     func downloadData() {
         if checkInternetFunction() == false {
             
@@ -207,10 +212,8 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
-        navigationController?.navigationBar.barTintColor = UIColor(red: 55/255,
-                                                                   green: 55/255,
-                                                                   blue: 55/255,
-                                                                   alpha: 1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
+        
         
         let menuButton = UIButton()
         menuButton.setImage(#imageLiteral(resourceName: "listing-option.png"), for: .normal)
