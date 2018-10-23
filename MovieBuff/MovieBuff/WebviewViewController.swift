@@ -22,9 +22,7 @@ class WebviewViewController: UIViewController, WKNavigationDelegate {
         
         webView.navigationDelegate = self
         
-//        navigationController?.navigationBar.barTintColor = UIColor.green
-        
-        title = webDetail?.name
+//        title = webDetail?.name
 
     }
     
