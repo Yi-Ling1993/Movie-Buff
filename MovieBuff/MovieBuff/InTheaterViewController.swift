@@ -51,6 +51,10 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         videoView.alpha = 1
         inTheaterPagerView.isHidden = true
         coverView.isHidden = true
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                      green: 67/255,
+                                                                      blue: 67/255,
+                                                                      alpha: 1.0)
 
     }
     
@@ -139,10 +143,19 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
-    @IBOutlet weak var coverView: UIView!
+    
+    let coverView = UIView()
+    
+//    @IBOutlet weak var coverView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let window = UIApplication.shared.keyWindow!
+        coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        window.addSubview(coverView)
+        coverView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        coverView.isHidden = true
         
         downloadData()
         
@@ -342,6 +355,8 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         coverView.isHidden = false
         
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
+        
         // get indexpath of the cell
         
 //        guard let cell = sender.superview?.superview as? MovieInfoTableViewCell else { return }
@@ -363,6 +378,10 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
             videoView.isHidden = true
             inTheaterPagerView.isHidden = false
             coverView.isHidden = true
+            UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                          green: 67/255,
+                                                                          blue: 67/255,
+                                                                          alpha: 1.0)
         }
     
     }

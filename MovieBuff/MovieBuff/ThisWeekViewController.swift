@@ -51,6 +51,10 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         thisWeekVideoView.alpha = 1
         thisWeekPagerView.isHidden = true
         coverView.isHidden = true
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                      green: 67/255,
+                                                                      blue: 67/255,
+                                                                      alpha: 1.0)
 
     }
     
@@ -131,10 +135,18 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     @IBOutlet weak var animationView: UIView!
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
-    @IBOutlet weak var coverView: UIView!
+//    @IBOutlet weak var coverView: UIView!
+    let coverView = UIView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let window = UIApplication.shared.keyWindow!
+        coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        window.addSubview(coverView)
+        coverView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        coverView.isHidden = true
         
         downloadData()
         
@@ -329,6 +341,8 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func playTrailer(sender: UIButton) {
         
         coverView.isHidden = false
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
+
         
 //        guard let cell = sender.superview?.superview as? ThisWeekInfoTableViewCell else { return }
 //        guard let indexPath = thisWeekInfoTableView.indexPath(for: cell) else { return }
@@ -349,6 +363,10 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
             thisWeekVideoView.isHidden = true
             thisWeekPagerView.isHidden = false
             coverView.isHidden = true
+            UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                          green: 67/255,
+                                                                          blue: 67/255,
+                                                                          alpha: 1.0)
 
         }
         

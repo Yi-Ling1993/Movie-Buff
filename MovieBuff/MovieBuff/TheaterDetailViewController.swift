@@ -52,6 +52,10 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         theaterDetailVideoView.alpha = 1
         theaterDetailPagerView.isHidden = true
         coverView.isHidden = true
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                      green: 67/255,
+                                                                      blue: 67/255,
+                                                                      alpha: 1.0)
 
     }
     
@@ -70,6 +74,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     @IBAction func playTrailer(_ sender: UIButton) {
         
         coverView.isHidden = false
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
+
 
         if theaterDetailVideoView.isHidden == true {
             
@@ -87,6 +93,10 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
             theaterDetailVideoView.isHidden = true
             theaterDetailPagerView.isHidden = false
             coverView.isHidden = true
+            UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                          green: 67/255,
+                                                                          blue: 67/255,
+                                                                          alpha: 1.0)
 
         }
     }
@@ -104,8 +114,9 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     @IBOutlet weak var animationView: UIView!
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
-    @IBOutlet weak var coverView: UIView!
-    
+//    @IBOutlet weak var coverView: UIView!
+    let coverView = UIView()
+
     @IBAction func toWebview(_ sender: Any) {
         performSegue(withIdentifier: "ToWebview", sender: self)
     }
@@ -180,6 +191,12 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let window = UIApplication.shared.keyWindow!
+        coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        window.addSubview(coverView)
+        coverView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        coverView.isHidden = true
         
         downloadData()
         

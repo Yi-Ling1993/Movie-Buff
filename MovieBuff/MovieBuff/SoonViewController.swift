@@ -47,6 +47,10 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         soonVideoView.alpha = 1
         soonPagerView.isHidden = true
         coverView.isHidden = true
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                      green: 67/255,
+                                                                      blue: 67/255,
+                                                                      alpha: 1.0)
 
     }
     
@@ -103,7 +107,9 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     @IBOutlet weak var soonVideoView: YouTubePlayerView!
     
-    @IBOutlet weak var coverView: UIView!
+//    @IBOutlet weak var coverView: UIView!
+    let coverView = UIView()
+
     
     var refref: DatabaseReference!
     
@@ -131,6 +137,12 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let window = UIApplication.shared.keyWindow!
+        coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        window.addSubview(coverView)
+        coverView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        coverView.isHidden = true
         
         downloadData()
         
@@ -315,7 +327,8 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func playTrailer(sender: UIButton) {
         
         coverView.isHidden = false
-
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
+        
 //        guard let cell = sender.superview?.superview as? SoonInfoTableViewCell else {return}
 //        guard let indexPath = soonInfoTableView.indexPath(for: cell) else { return }
         
@@ -335,6 +348,10 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
             soonVideoView.isHidden = true
             soonPagerView.isHidden = false
             coverView.isHidden = true
+            UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
+                                                                          green: 67/255,
+                                                                          blue: 67/255,
+                                                                          alpha: 1.0)
         }
     }
 }
