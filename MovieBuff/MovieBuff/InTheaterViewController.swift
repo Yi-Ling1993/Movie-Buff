@@ -263,6 +263,7 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
+        cell.isHighlighted = false
         
         guard let imdbId = inTheaterDatas[index].id else {
             return cell
@@ -303,6 +304,11 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     func pagerViewDidScroll(_ pagerView: FSPagerView) {
         
     }
+    
+//    func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
+//
+//        return false
+//    }
 
 }
 
@@ -343,6 +349,7 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         infoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
         infoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
         infoCell.showtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
+        
 
         return infoCell
     }

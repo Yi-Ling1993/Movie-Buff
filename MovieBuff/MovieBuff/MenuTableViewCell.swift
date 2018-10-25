@@ -93,7 +93,7 @@ class MenuTableViewCell: UITableViewCell {
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        // 已複寫掉有 hightlight 
+        // 已複寫掉有 highlight 
     }
     
 }
