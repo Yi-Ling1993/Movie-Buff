@@ -109,7 +109,6 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     
 //    @IBOutlet weak var coverView: UIView!
     let coverView = UIView()
-
     
     var refref: DatabaseReference!
     

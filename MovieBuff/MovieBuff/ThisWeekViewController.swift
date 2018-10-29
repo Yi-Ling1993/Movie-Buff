@@ -137,7 +137,6 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     @IBOutlet weak var internetLabel2: UILabel!
 //    @IBOutlet weak var coverView: UIView!
     let coverView = UIView()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -225,7 +224,6 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         navigationController?.navigationBar.shadowImage = UIImage()
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
-        
         
         let menuButton = UIButton()
         menuButton.setImage(#imageLiteral(resourceName: "listing-option.png"), for: .normal)
@@ -342,7 +340,6 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
         
         coverView.isHidden = false
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
-
         
 //        guard let cell = sender.superview?.superview as? ThisWeekInfoTableViewCell else { return }
 //        guard let indexPath = thisWeekInfoTableView.indexPath(for: cell) else { return }

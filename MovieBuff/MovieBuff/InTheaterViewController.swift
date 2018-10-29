@@ -349,7 +349,6 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         infoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
         infoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
         infoCell.showtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
-        
 
         return infoCell
     }

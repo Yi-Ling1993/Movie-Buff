@@ -76,7 +76,6 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         coverView.isHidden = false
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
 
-
         if theaterDetailVideoView.isHidden == true {
             
             let imdbId = specificTheaterDetailData?.movie[pagerIndex].id
