@@ -191,7 +191,6 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     
     @objc func filterLocation(sender: UIButton) {
         print(sender.tag)
-    
         
         cellForItemTag = sender.tag
         

@@ -214,6 +214,8 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
         }
 
         cinemaShowtimeTableView.reloadData()
+        cinemaShowtimeTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
     
     @objc func filterLocation(sender: UIButton) {
@@ -224,11 +226,15 @@ extension MovieShowtimeViewController: UICollectionViewDelegate, UICollectionVie
             filteredFirebaseData = firebaseMovieData?.theater?.filter {$0.region == sender.titleLabel?.text} ?? []
             
             cinemaShowtimeTableView.reloadData()
+            cinemaShowtimeTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
         } else {
             
             filteredFirebaseData = firebaseMovieData?.theater ?? []
             
             cinemaShowtimeTableView.reloadData()
+            cinemaShowtimeTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            
         }
         
         theaterDetails.removeAll()
