@@ -191,6 +191,7 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
     
     @objc func filterLocation(sender: UIButton) {
         print(sender.tag)
+    
         
         cellForItemTag = sender.tag
         
@@ -199,11 +200,15 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
             filteredRegion = TheaterData.instance.theaterInfo.filter {$0.region == sender.titleLabel?.text}
             
             theaterTableView.reloadData()
+            theaterTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
         } else {
             
             filteredRegion = TheaterData.instance.theaterInfo
             
             theaterTableView.reloadData()
+            theaterTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
         }
         
         for index in 0 ... 4 {
