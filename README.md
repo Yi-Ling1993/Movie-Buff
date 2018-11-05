@@ -24,6 +24,15 @@
 
 <img src ="https://i.imgur.com/UfSUQOr.gif" width="270px"> <img src ="https://i.imgur.com/M9vlm6B.gif" width="270px"> <img src ="https://i.imgur.com/7Ux8fg6.gif" width="270px">
 
+### 電影院頁面
+* 使用者可直接進入特定電影院找尋此電影院當前上映之電影。
+* 點擊地圖可開啟 Google Map 導航至此電影院。
+* 進入特定電影院選特定電影後能看見基本電影資訊及整週電影時刻。  
+
+<img src ="https://i.imgur.com/UgKVZ9w.png" width="270px"> <img src ="https://i.imgur.com/HIV8G5z.png" width="270px">
+
+
+
 
 ## Libraries
 * SwiftLint
