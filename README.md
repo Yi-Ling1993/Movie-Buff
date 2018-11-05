@@ -1,4 +1,4 @@
-# Taipei Movies [<div align=center><img src = "https://github.com/Yi-Ling1993/Movie-Buff/blob/develop/5847e95fcef1014c0b5e4822.png" width="150px" >](https://itunes.apple.com/us/app/taipei-movies/id1439176860?l=zh&ls=1&mt=8)<img src ="https://i.imgur.com/mu0BHX5.jpg" width="50px">
+# Taipei Movies [<div align=vertical><img src = "https://github.com/Yi-Ling1993/Movie-Buff/blob/develop/5847e95fcef1014c0b5e4822.png" width="150px" >](https://itunes.apple.com/us/app/taipei-movies/id1439176860?l=zh&ls=1&mt=8)<div align=vertical><img src ="https://i.imgur.com/mu0BHX5.jpg" width="50px">
 讓使用者能夠快速知道台北各大電影院當前上映和即將上映的電影，並得知相關電影資訊及觀看預告片。可透過篩選電影院所在區域及日期獲得電影時刻表，並提供電影院訂票連結以及呼叫 Google Map 進行導航。
 * 串接 The Open Movie Database API 及 The Movie Database API 實現 GET 請求，呈現電影相關資料及預告片
 * 呼叫 Google Map 進行導航
