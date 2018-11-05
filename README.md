@@ -12,7 +12,17 @@
 另外請自行下載 Firebase 的 GoogleService-Info.plist。
 ```
 ## Features & ScreenShots
+### 選單列
+* 從側邊選單列切換四個主要頁面：上映中、本週上映、即將上映、電影院。  
 
+<img src ="https://i.imgur.com/1cRKX4Y.gif" width="200px">
+
+### 上映中、本週上映、即將上映頁面
+* 使用者可以切換海報至感興趣之電影並閱讀其相關資訊。
+* 找到感興趣之電影，進入時刻表畫面可篩選區域電影院及日期以獲得目標時刻，接著按“訂票”連結至此電影院之訂票網站。
+* 可先觀看電影預告決定是否對此電影有興趣。  
+
+<img src ="https://i.imgur.com/UfSUQOr.gif" width="200px"> <img src ="https://i.imgur.com/M9vlm6B.gif" width="200px"> <img src ="https://i.imgur.com/7Ux8fg6.gif" width="200px">
 
 
 ## Libraries
@@ -35,7 +45,19 @@
 * iOS 12.0+
 * Xcode 10.0+
 
+## Version
+* 1.1.0 - 2018/10/25
+* 優化使用者體驗  
+
+* 1.0.4 - 2018/10/19
+* First release 
+
+
+
+
+
 ## Contacts
 **Yi-Ling Liu**  
 **email:** liuyiling1993@gmail.com
+
 
