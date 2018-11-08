@@ -11,7 +11,6 @@ import UIKit
 class TheaterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backGroundCardView: UIView!
-    
     @IBOutlet weak var theaterName: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var pinButton: UIButton!
