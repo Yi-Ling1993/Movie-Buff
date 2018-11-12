@@ -24,13 +24,29 @@ class SoonInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    func updateMovieInfoCell(info: MovieInfo) {
+        
+        titleLabel.text = info.title
+        ratedLabel.text = info.rated
+        releaseDate.text = info.releaseDate
+    }
+    
+    func updateOMDBInfoCell(info: OMDBData) {
+        
+        enTitleLabel.text = info.Title
+        duration.text = info.Runtime
+        genreLabel.text = info.Genre
+        imdbRating.text = info.imdbRating
+        directorLabel.text = info.Director
+        actorLabel.text = info.Actors
+        plotLabel.text = info.Plot
     }
     
 }

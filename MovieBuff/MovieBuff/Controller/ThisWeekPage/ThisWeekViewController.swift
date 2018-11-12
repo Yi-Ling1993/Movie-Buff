@@ -1,24 +1,20 @@
 //
-//  ViewController.swift
+//  ThisWeekViewController.swift
 //  MovieBuff
 //
-//  Created by 劉奕伶 on 2018/9/19.
+//  Created by 劉奕伶 on 2018/9/28.
 //  Copyright © 2018年 Appwork School. All rights reserved.
 //
 
-//swiftlint:disable file_length
-
 import UIKit
-import WKAwesomeMenu
 import FSPagerView
 import YouTubePlayer_Swift
 import FirebaseDatabase
 import Firebase
 import Kingfisher
-import Crashlytics
 import Lottie
 
-class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
+class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource, YouTubePlayerDelegate {
     
     var reachability = Reachability(hostName: "www.apple.com")
     
@@ -30,6 +26,11 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
             print("internet connected successfully.")
             return true
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("yo")
     }
     
     func downloadData() {
@@ -47,9 +48,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     }
     
     func playerReady(_ videoPlayer: YouTubePlayerView) {
-        
-        videoView.alpha = 1
-        inTheaterPagerView.isHidden = true
+        thisWeekVideoView.alpha = 1
+        thisWeekPagerView.isHidden = true
         coverView.isHidden = true
         UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
                                                                       green: 67/255,
@@ -65,16 +65,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
         
     }
-    
-    @IBOutlet weak var videoView: YouTubePlayerView!
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let showtimeController = segue.destination as? MovieShowtimeViewController else {return}
-        
-        showtimeController.firebaseMovieData = inTheaterDatas[pagerIndex]
-        
-    }
 
+    let imageNames = ["1", "2", "3", "4", "5"]
     let transformerTypes: [FSPagerViewTransformerType] = [.crossFading,
                                                           .zoomOut,
                                                           .depth,
@@ -88,65 +80,63 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     fileprivate var typeIndex = 4 {
         didSet {
             let type = self.transformerTypes[typeIndex]
-            self.inTheaterPagerView.transformer = FSPagerViewTransformer(type: type)
+            self.thisWeekPagerView.transformer = FSPagerViewTransformer(type: type)
             switch type {
             case .crossFading, .zoomOut, .depth:
-                self.inTheaterPagerView.itemSize = .zero // 'Zero' means fill the size of parent
+                self.thisWeekPagerView.itemSize = .zero // 'Zero' means fill the size of parent
             case .linear, .overlap:
                 let transform = CGAffineTransform(scaleX: 0.6, y: 0.75)
-                self.inTheaterPagerView.itemSize = self.inTheaterPagerView.frame.size.applying(transform)
+                self.thisWeekPagerView.itemSize = self.thisWeekPagerView.frame.size.applying(transform)
             case .ferrisWheel, .invertedFerrisWheel:
-                self.inTheaterPagerView.itemSize = CGSize(width: 180, height: 140)
+                self.thisWeekPagerView.itemSize = CGSize(width: 180, height: 140)
             case .coverFlow:
-                self.inTheaterPagerView.itemSize = CGSize(width: 220, height: 170)
+                self.thisWeekPagerView.itemSize = CGSize(width: 220, height: 170)
             case .cubic:
                 let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-                self.inTheaterPagerView.itemSize = self.inTheaterPagerView.frame.size.applying(transform)
+                self.thisWeekPagerView.itemSize = self.thisWeekPagerView.frame.size.applying(transform)
             }
         }
     }
     
-    @IBOutlet weak var infoTableView: UITableView!
+    @IBOutlet weak var thisWeekInfoTableView: UITableView!
     
-    @IBOutlet weak var animationView: UIView!
-    
-    @IBOutlet weak var inTheaterPagerView: FSPagerView! {
+    @IBOutlet weak var thisWeekPagerView: FSPagerView! {
         didSet {
-            self.inTheaterPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+            self.thisWeekPagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
             self.typeIndex = 4
             
-            inTheaterPagerView.isInfinite = true
+            thisWeekPagerView.isInfinite = true
+
         }
     }
+    
+    @IBOutlet weak var thisWeekVideoView: YouTubePlayerView!
+    
+    var thisWeekDatas: [MovieInfo] = []
+    
+    var pagerIndex: Int = 0
+    
+    var thisWeekTrailerManager = ThisWeekTrailerManager()
+    
+    var thisWeekManager = ThisWeekManager()
+    
+    let decoder = JSONDecoder()
     
     var refref: DatabaseReference!
     
     var omdbData: OMDBData?
     
-    var trailerData: TrailerData?
-    
-    var inTheaterTrailerManager = InTheaterTrailerManager()
-    
-    var inTheaterManager = InTheaterManager()
-    
-    let decoder = JSONDecoder()
-    
-    var inTheaterDatas: [MovieInfo] = []
-    
-    var trailerTag: Int = 0
-    
     var postDict: [String: URL] = [:]
     
     var omdbDict: [String: OMDBData] = [:]
     
-    var pagerIndex: Int = 0
+    var trailerData: TrailerData?
     
+    @IBOutlet weak var animationView: UIView!
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
-    
-    let coverView = UIView()
-    
 //    @IBOutlet weak var coverView: UIView!
+    let coverView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -161,57 +151,62 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         
         let centerX = UIScreen.main.bounds.width / 2
         let centerＹ = UIScreen.main.bounds.height / 2 - 70
-
+        
         let loadingView = LOTAnimationView(name: "animation-w100-h100-2")
-            
+        
         loadingView.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
         loadingView.center = CGPoint(x: centerX, y: centerＹ)
         loadingView.contentMode = .scaleAspectFill
-            
+        
         loadingView.loopAnimation = true
         loadingView.animationSpeed = 0.5
-            
-        animationView.addSubview(loadingView)
-            
-        loadingView.play()
         
+        animationView.addSubview(loadingView)
+        
+        loadingView.play()
+
         setNavigationBarItem()
         
-        self.inTheaterPagerView.dataSource = self
-        self.inTheaterPagerView.delegate = self
+        let thisWeekInfoNibs = UINib(nibName: "ThisWeekInfoTableViewCell", bundle: nil)
+        thisWeekInfoTableView.register(thisWeekInfoNibs, forCellReuseIdentifier: "ThisWeekInfoCell")
         
-        let infoNibs = UINib(nibName: "MovieInfoTableViewCell", bundle: nil)
-        infoTableView.register(infoNibs, forCellReuseIdentifier: "InfoCell")
+        thisWeekVideoView.delegate = self
         
-        videoView.delegate = self
+        thisWeekTrailerManager.delegate = self
         
-        inTheaterTrailerManager.delegate = self
-        
-        inTheaterManager.delegate = self
+        thisWeekManager.delegate = self
         
         refref = Database.database().reference()
         
-        refref.child("InTheater").observeSingleEvent(of: .value) { (snapshot) in
+        refref.child("ThisWeek").observeSingleEvent(of: .value) { (snapshot) in
             
             guard let value = snapshot.value else { return }
             
             guard let jsonData = try? JSONSerialization.data(withJSONObject: value) else { return }
             
             do {
-                let inTheaterData = try self.decoder.decode([MovieInfo].self, from: jsonData)
-                print(inTheaterData)
+                let thisWeekData = try self.decoder.decode([MovieInfo].self, from: jsonData)
+                print(thisWeekData)
                 
-                self.inTheaterDatas = inTheaterData
+                self.thisWeekDatas = thisWeekData
                 
                 self.getPoster()
                 
             } catch {
                 print(error)
             }
-            
             self.downloadData()
             
             self.animationView.isHidden = true
+
+        }
+    }
+    
+    func getPoster() {
+        
+        for thisWeekData in thisWeekDatas {
+            
+            thisWeekManager.requestOMDBData(imdbId: thisWeekData.id ?? "tt3896198")
         }
     }
     
@@ -221,16 +216,14 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         self.typeIndex = index // Manually trigger didSet
     }
     
-    @objc func menu() {
-        self.openSideMenu()
-    }
-    
     func setNavigationBarItem() {
         
-        //沒有下面兩行navigationbar會有分隔線
+        //沒有這兩行web navigationbar可顯示可是這個顏色調得很奇怪
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        navigationController?.navigationBar.barTintColor = UIColor(red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
         
         let menuButton = UIButton()
         menuButton.setImage(#imageLiteral(resourceName: "listing-option.png"), for: .normal)
@@ -240,22 +233,12 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         navigationItem.leftBarButtonItem = leftButton
         leftButton.customView?.widthAnchor.constraint(equalToConstant: 25).isActive = true
         leftButton.customView?.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        menuButton.addTarget(self, action: #selector(InTheaterViewController.menu), for: .touchUpInside)
-
+        menuButton.addTarget(self, action: #selector(ThisWeekViewController.menu), for: .touchUpInside)
+        
     }
     
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return inTheaterDatas.count
-        
-    }
-    
-    func getPoster() {
-        
-        for inTheaterData in inTheaterDatas {
-            
-            inTheaterManager.requestOMDBData(imdbId: inTheaterData.id ?? "tt3896198")
-        }
-        
+        return thisWeekDatas.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
@@ -263,56 +246,43 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         cell.imageView?.contentMode = .scaleAspectFit
         cell.imageView?.clipsToBounds = true
         cell.contentView.layer.shadowColor = UIColor.black.cgColor
-        cell.isHighlighted = false
         
-        guard let imdbId = inTheaterDatas[index].id else {
+        guard let imdbId = thisWeekDatas[index].id else {
             return cell
         }
         
         cell.imageView?.kf.setImage(with: postDict[imdbId])
-    
         return cell
-        
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
-        inTheaterPagerView.deselectItem(at: index, animated: true)
-        inTheaterPagerView .scrollToItem(at: index, animated: true)
+        thisWeekPagerView.deselectItem(at: index, animated: true)
+        thisWeekPagerView .scrollToItem(at: index, animated: true)
         
         pagerIndex = index
-
-        infoTableView.reloadData()
+        
+        thisWeekInfoTableView.reloadData()
     }
-
+    
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
         
         print("pagerViewWillEndDragging")
-    
+        
         print(pagerView.currentIndex)
         
         let index = pagerView.currentIndex
         
         pagerIndex = index
         
-        infoTableView.reloadData()
+        thisWeekInfoTableView.reloadData()
     }
-    
-    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
-        
-    }
-    
-    func pagerViewDidScroll(_ pagerView: FSPagerView) {
-        
-    }
-    
-//    func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
-//
-//        return false
-//    }
 
+    @objc func menu() {
+        self.openSideMenu()
+    }
 }
 
-extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
+extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -320,82 +290,88 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let infoCell = infoTableView.dequeueReusableCell(
-            withIdentifier: "InfoCell",
+        guard let thisWeekInfoCell = thisWeekInfoTableView.dequeueReusableCell(
+            withIdentifier: "ThisWeekInfoCell",
             for: indexPath as IndexPath)
-            as? MovieInfoTableViewCell else {
+            as? ThisWeekInfoTableViewCell else {
                 return UITableViewCell()
         }
         
-        infoCell.trailerButton.addTarget(self, action: #selector(playTrailer(sender:)), for: .touchUpInside)
-        
-        guard inTheaterDatas.count > 0 else { return infoCell }
+        guard thisWeekDatas.count > 0 else { return thisWeekInfoCell }
         
         // firebase data
         
-        infoCell.updateMovieInfoCell(info: inTheaterDatas[pagerIndex])
+        thisWeekInfoCell.updateMovieInfoCell(info: thisWeekDatas[pagerIndex])
         
-        let imdbId = inTheaterDatas[pagerIndex].id
-    
+        let imdbId = thisWeekDatas[pagerIndex].id
+        
         // omdb data
         
-        infoCell.updateOMDBInfoCell(info: omdbDict[imdbId ?? "tt3896198"]!)
+        thisWeekInfoCell.updateOMDBInfoCell(info: omdbDict[imdbId ?? "tt3896198"]!)
         
-        infoCell.showtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
+        thisWeekInfoCell.toShowtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
+        
+        thisWeekInfoCell.trailerButton.addTarget(self, action: #selector(playTrailer(sender:)), for: .touchUpInside)
 
-        return infoCell
+        return thisWeekInfoCell
     }
     
     @objc func toShowtime(sender: UIButton) {
-        self.performSegue(withIdentifier: "InTheaterToShowtime", sender: self)
+        self.performSegue(withIdentifier: "ThisWeekToShowtime", sender: self)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let showtimeController = segue.destination as? MovieShowtimeViewController else {return}
+        
+        showtimeController.firebaseMovieData = thisWeekDatas[pagerIndex]
+        
     }
     
     @objc func playTrailer(sender: UIButton) {
         
         coverView.isHidden = false
-        
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
         
-        // get indexpath of the cell
+//        guard let cell = sender.superview?.superview as? ThisWeekInfoTableViewCell else { return }
+//        guard let indexPath = thisWeekInfoTableView.indexPath(for: cell) else { return }
         
-//        guard let cell = sender.superview?.superview as? MovieInfoTableViewCell else { return }
-//        guard let indexPath = infoTableView.indexPath(for: cell) else { return }
-        
-        if videoView.isHidden == true {
+        if thisWeekVideoView.isHidden == true {
             
-            let imdbId = inTheaterDatas[pagerIndex].id
+            let imdbId = thisWeekDatas[pagerIndex].id
             
-            inTheaterTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
+            thisWeekTrailerManager.requestTrailerData(imdbId: imdbId ?? "tt3896198")
         }
         
         sender.isSelected = !sender.isSelected
-    
+        
         sender.setTitleColor(UIColor.white, for: .selected)
-
-        if videoView.ready && videoView.isHidden == false {
-            videoView.pause()
-            videoView.isHidden = true
-            inTheaterPagerView.isHidden = false
+        
+        if thisWeekVideoView.ready && thisWeekVideoView.isHidden == false {
+            thisWeekVideoView.pause()
+            thisWeekVideoView.isHidden = true
+            thisWeekPagerView.isHidden = false
             coverView.isHidden = true
             UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 67/255,
                                                                           green: 67/255,
                                                                           blue: 67/255,
                                                                           alpha: 1.0)
+
         }
-    
+        
     }
     
     func playTrailer() {
         let trailerKey = trailerData?.results[0].key
-    
-        videoView.isHidden = false
-        videoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
+        
+        thisWeekVideoView.isHidden = false
+        thisWeekVideoView.loadVideoID(trailerKey ?? "QbOG7_vWFJE")
         
     }
 }
 
-extension InTheaterViewController: InTheaterManagerDelegate {
-    func manager(_ manager: InTheaterManager, didGet products: OMDBData) {
+extension ThisWeekViewController: ThisWeekManagerDelegate {
+    func manager(_ manager: ThisWeekManager, didGet products: OMDBData) {
         omdbData = products
         
         let posterUrl = URL(string: omdbData?.Poster ??
@@ -404,85 +380,24 @@ extension InTheaterViewController: InTheaterManagerDelegate {
         postDict[omdbData?.imdbID ?? "tt3896198"] = posterUrl
         omdbDict[omdbData?.imdbID ?? "tt3896198"] = omdbData
         
-        self.inTheaterPagerView.reloadData()
-        self.infoTableView.reloadData()
+        self.thisWeekPagerView.reloadData()
+        self.thisWeekInfoTableView.reloadData()
     }
     
-    func manager(_ manager: InTheaterManager, didFailWith error: Error) {
+    func manager(_ manager: ThisWeekManager, didFailWith error: Error) {
         print(error)
     }
     
 }
 
-extension InTheaterViewController: InTheaterTrailerManagerDelegate {
-    func manager(_ manager: InTheaterTrailerManager, didGet products: TrailerData) {
+extension ThisWeekViewController: ThisWeekTrailerManagerDelegate {
+    func manager(_ manager: ThisWeekTrailerManager, didGet products: TrailerData) {
         trailerData = products
         
         playTrailer()
     }
     
-    func manager(_ manager: InTheaterTrailerManager, didFailWith error: Error) {
+    func manager(_ manager: ThisWeekTrailerManager, didFailWith error: Error) {
         print(error)
-    }
-}
-
-extension UIView {
-    
-    @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
-        }}
-    
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-        }}
-    
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            return UIColor(cgColor: layer.borderColor!)
-        }
-        set {
-            layer.borderColor = newValue?.cgColor
-        }
-    }
-    
-}
-
-extension UILabel {
-    
-    @IBInspectable
-    var letterSpace: CGFloat {
-        set {
-            let attributedString: NSMutableAttributedString!
-            if let currentAttrString = attributedText {
-                attributedString = NSMutableAttributedString(attributedString: currentAttrString)
-            } else {
-                attributedString = NSMutableAttributedString(string: text ?? "")
-                text = nil
-            }
-            
-            attributedString.addAttribute(NSAttributedString.Key.kern,
-                                          value: newValue,
-                                          range: NSRange(location: 0, length: attributedString.length))
-            
-            attributedText = attributedString
-        }
-        
-        get {
-            if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern,
-                                                                  at: 0, effectiveRange: .none) as? CGFloat {
-                return currentLetterSpace
-            } else {
-                return 0
-            }
-        }
     }
 }

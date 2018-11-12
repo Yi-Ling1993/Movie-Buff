@@ -32,4 +32,22 @@ class ThisWeekInfoTableViewCell: UITableViewCell {
 
     }
     
+    func updateMovieInfoCell(info: MovieInfo) {
+        
+        titleLabel.text = info.title
+        ratedLabel.text = info.rated
+        releaseLabel.text = info.releaseDate
+    }
+    
+    func updateOMDBInfoCell(info: OMDBData) {
+        
+        enTitleLabel.text = info.Title
+        durationLabel.text = info.Runtime
+        genreLabel.text = info.Genre
+        imdbRatingLabel.text = info.imdbRating
+        directorLabel.text = info.Director
+        actorLabel.text = info.Actors
+        plotLabel.text = info.Plot
+    }
+    
 }

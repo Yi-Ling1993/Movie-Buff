@@ -304,22 +304,19 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
         
         // firebase data
         
-        soonInfoCell.titleLabel.text = soonDatas[pagerIndex].title
-        soonInfoCell.ratedLabel.text = soonDatas[pagerIndex].rated
-        soonInfoCell.releaseDate.text = soonDatas[pagerIndex].releaseDate
+        soonInfoCell.updateMovieInfoCell(info: soonDatas[pagerIndex])
         
         let imdbId = soonDatas[pagerIndex].id
         
         // omdb data
         
-        soonInfoCell.enTitleLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Title
-        soonInfoCell.duration.text = omdbDict[imdbId ?? "tt3896198"]?.Runtime
-        soonInfoCell.genreLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Genre
-        soonInfoCell.imdbRating.text = omdbDict[imdbId ?? "tt3896198"]?.imdbRating
-        soonInfoCell.directorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Director
-        soonInfoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
-        soonInfoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
-
+        ////////////// ????????
+        guard omdbData != nil else {
+            return UITableViewCell()
+        }
+        
+        soonInfoCell.updateOMDBInfoCell(info: omdbDict[imdbId ?? "tt3896198"] ?? omdbData!)
+        
         return soonInfoCell
     }
     

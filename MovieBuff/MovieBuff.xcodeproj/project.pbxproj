@@ -167,6 +167,74 @@
 			path = LandingPage;
 			sourceTree = "<group>";
 		};
+		AC3B4BA22199F1AE009231C7 /* InTheaterPage */ = {
+			isa = PBXGroup;
+			children = (
+				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
+			);
+			path = InTheaterPage;
+			sourceTree = "<group>";
+		};
+		AC3B4BA32199F1CD009231C7 /* ThisWeekPage */ = {
+			isa = PBXGroup;
+			children = (
+				AC3B510A215DDDCF00313E2E /* ThisWeekViewController.swift */,
+			);
+			path = ThisWeekPage;
+			sourceTree = "<group>";
+		};
+		AC3B4BA42199F1DB009231C7 /* SoonPage */ = {
+			isa = PBXGroup;
+			children = (
+				AC3B5112215DFA4C00313E2E /* SoonViewController.swift */,
+			);
+			path = SoonPage;
+			sourceTree = "<group>";
+		};
+		AC3B4BA52199F216009231C7 /* TheaterPage */ = {
+			isa = PBXGroup;
+			children = (
+				AC7953542153511400668DAB /* TheaterListViewController.swift */,
+				AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */,
+			);
+			path = TheaterPage;
+			sourceTree = "<group>";
+		};
+		AC3B4BA62199F236009231C7 /* WebPage */ = {
+			isa = PBXGroup;
+			children = (
+				ACBD352B216359DC00C0A49C /* WebviewViewController.swift */,
+			);
+			path = WebPage;
+			sourceTree = "<group>";
+		};
+		AC3B4BA72199F246009231C7 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				AC0718BE215A36A7003061AC /* CollectionViewController.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		AC3B4BA82199F27B009231C7 /* MovieShowtimePage */ = {
+			isa = PBXGroup;
+			children = (
+				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
+			);
+			path = MovieShowtimePage;
+			sourceTree = "<group>";
+		};
+		AC3B4BA92199F2BD009231C7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AC9216102168CF44002133E2 /* InTheaterManager.swift */,
+				ACE1E5B721724600009B113E /* SoonManager.swift */,
+				ACE1E5B921726423009B113E /* ThisWeekManager.swift */,
+				ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		AC48864A21957A550023C560 /* LottieAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,16 +282,13 @@
 		AC48864F21957C300023C560 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AC3B4BA92199F2BD009231C7 /* Manager */,
 				AC0718AA2154D944003061AC /* TheaterData.swift */,
 				AC9216122168D0AC002133E2 /* OMDBData.swift */,
 				AC9216142168EF67002133E2 /* TrailerData.swift */,
 				AC92160E21675E09002133E2 /* FirebaseData.swift */,
 				AC3B50E4215CA86000313E2E /* AppStyle.swift */,
 				AC3B5104215CBC9800313E2E /* MenuItem.swift */,
-				AC9216102168CF44002133E2 /* InTheaterManager.swift */,
-				ACE1E5B721724600009B113E /* SoonManager.swift */,
-				ACE1E5B921726423009B113E /* ThisWeekManager.swift */,
-				ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,14 +298,13 @@
 			children = (
 				AC3B4BA021998352009231C7 /* Menu */,
 				AC3B4BA121998371009231C7 /* LandingPage */,
-				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
-				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
-				AC3B510A215DDDCF00313E2E /* ThisWeekViewController.swift */,
-				AC3B5112215DFA4C00313E2E /* SoonViewController.swift */,
-				AC7953542153511400668DAB /* TheaterListViewController.swift */,
-				AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */,
-				AC0718BE215A36A7003061AC /* CollectionViewController.swift */,
-				ACBD352B216359DC00C0A49C /* WebviewViewController.swift */,
+				AC3B4BA22199F1AE009231C7 /* InTheaterPage */,
+				AC3B4BA32199F1CD009231C7 /* ThisWeekPage */,
+				AC3B4BA42199F1DB009231C7 /* SoonPage */,
+				AC3B4BA82199F27B009231C7 /* MovieShowtimePage */,
+				AC3B4BA52199F216009231C7 /* TheaterPage */,
+				AC3B4BA62199F236009231C7 /* WebPage */,
+				AC3B4BA72199F246009231C7 /* Others */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
