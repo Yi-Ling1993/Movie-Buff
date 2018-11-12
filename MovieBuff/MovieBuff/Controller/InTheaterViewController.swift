@@ -333,21 +333,14 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
         
         // firebase data
         
-        infoCell.titleLabel.text = inTheaterDatas[pagerIndex].title
-        infoCell.ratedLabel.text = inTheaterDatas[pagerIndex].rated
-        infoCell.releaseDateLabel.text = inTheaterDatas[pagerIndex].releaseDate
+        infoCell.updateMovieInfoCell(info: inTheaterDatas[pagerIndex])
         
         let imdbId = inTheaterDatas[pagerIndex].id
     
         // omdb data
         
-        infoCell.enTitleLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Title
-        infoCell.durationLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Runtime
-        infoCell.genreLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Genre
-        infoCell.imdbRatingLabel.text = omdbDict[imdbId ?? "tt3896198"]?.imdbRating
-        infoCell.directorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Director
-        infoCell.actorLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Actors
-        infoCell.plotLabel.text = omdbDict[imdbId ?? "tt3896198"]?.Plot
+        infoCell.updateOMDBInfoCell(info: omdbDict[imdbId ?? "tt3896198"]!)
+        
         infoCell.showtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
 
         return infoCell

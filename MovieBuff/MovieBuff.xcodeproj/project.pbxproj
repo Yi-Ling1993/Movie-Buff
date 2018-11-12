@@ -151,6 +151,100 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AC3B4BA021998352009231C7 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				AC3B5108215CBDFE00313E2E /* MenuTableViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		AC3B4BA121998371009231C7 /* LandingPage */ = {
+			isa = PBXGroup;
+			children = (
+				ACE37FD02178276F00AE4958 /* LandingPageViewController.swift */,
+			);
+			path = LandingPage;
+			sourceTree = "<group>";
+		};
+		AC48864A21957A550023C560 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				ACE37FC621759A1500AE4958 /* animation-w100-h100.json */,
+				ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */,
+				AC5AC6A62178AFFD00843ADF /* empty_box.json */,
+			);
+			path = LottieAnimation;
+			sourceTree = "<group>";
+		};
+		AC48864C21957AB00023C560 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AC0718AE21592ECA003061AC /* ShowtimeTableViewCell.swift */,
+				AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */,
+				AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */,
+				AC0718A82153C348003061AC /* TheaterTableViewCell.swift */,
+				AC0718C4215A6130003061AC /* SeenTableViewCell.swift */,
+				AC0718C5215A6130003061AC /* SeenTableViewCell.xib */,
+				AC0718C0215A4468003061AC /* CollectedTableViewCell.swift */,
+				AC0718C1215A4468003061AC /* CollectedTableViewCell.xib */,
+				AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */,
+				AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */,
+				AC0718B821594D8A003061AC /* DateCollectionViewCell.swift */,
+				AC0718B921594D8A003061AC /* DateCollectionViewCell.xib */,
+				AC79535021527E7300668DAB /* MovieInfoTableViewCell.swift */,
+				AC79535121527E7300668DAB /* MovieInfoTableViewCell.xib */,
+				AC3B510C215DE1F300313E2E /* ThisWeekInfoTableViewCell.swift */,
+				AC3B510D215DE1F400313E2E /* ThisWeekInfoTableViewCell.xib */,
+				AC3B5114215E010F00313E2E /* SoonInfoTableViewCell.swift */,
+				AC3B5115215E010F00313E2E /* SoonInfoTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AC48864E21957B900023C560 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AC7953412152172A00668DAB /* Main.storyboard */,
+				AC7953462152173000668DAB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		AC48864F21957C300023C560 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC0718AA2154D944003061AC /* TheaterData.swift */,
+				AC9216122168D0AC002133E2 /* OMDBData.swift */,
+				AC9216142168EF67002133E2 /* TrailerData.swift */,
+				AC92160E21675E09002133E2 /* FirebaseData.swift */,
+				AC3B50E4215CA86000313E2E /* AppStyle.swift */,
+				AC3B5104215CBC9800313E2E /* MenuItem.swift */,
+				AC9216102168CF44002133E2 /* InTheaterManager.swift */,
+				ACE1E5B721724600009B113E /* SoonManager.swift */,
+				ACE1E5B921726423009B113E /* ThisWeekManager.swift */,
+				ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC48865021957CE60023C560 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AC3B4BA021998352009231C7 /* Menu */,
+				AC3B4BA121998371009231C7 /* LandingPage */,
+				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
+				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
+				AC3B510A215DDDCF00313E2E /* ThisWeekViewController.swift */,
+				AC3B5112215DFA4C00313E2E /* SoonViewController.swift */,
+				AC7953542153511400668DAB /* TheaterListViewController.swift */,
+				AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */,
+				AC0718BE215A36A7003061AC /* CollectionViewController.swift */,
+				ACBD352B216359DC00C0A49C /* WebviewViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		AC7953312152172900668DAB = {
 			isa = PBXGroup;
 			children = (
@@ -174,56 +268,18 @@
 		AC79533C2152172A00668DAB /* MovieBuff */ = {
 			isa = PBXGroup;
 			children = (
+				AC48865021957CE60023C560 /* Controller */,
+				AC48864F21957C300023C560 /* Model */,
+				AC48864C21957AB00023C560 /* View */,
+				AC48864E21957B900023C560 /* Storyboard */,
 				ACE37FC421758E2E00AE4958 /* Assets.xcassets */,
+				AC79533D2152172A00668DAB /* AppDelegate.swift */,
+				AC7953492152173000668DAB /* Info.plist */,
+				ACE37FCE2175EAE400AE4958 /* GoogleService-Info.plist */,
 				ACE37FCC2175D33800AE4958 /* Reachability.h */,
 				ACE37FCB2175D33700AE4958 /* Reachability.m */,
 				ACE37FCA2175D33600AE4958 /* Taipei Movies-Bridging-Header.h */,
-				ACE37FC621759A1500AE4958 /* animation-w100-h100.json */,
-				ACE37FC821759EB100AE4958 /* animation-w100-h100-2.json */,
-				AC5AC6A62178AFFD00843ADF /* empty_box.json */,
-				AC79533D2152172A00668DAB /* AppDelegate.swift */,
-				AC92160E21675E09002133E2 /* FirebaseData.swift */,
-				AC9216122168D0AC002133E2 /* OMDBData.swift */,
-				AC9216142168EF67002133E2 /* TrailerData.swift */,
-				AC3B50E4215CA86000313E2E /* AppStyle.swift */,
-				AC3B5104215CBC9800313E2E /* MenuItem.swift */,
-				AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */,
-				AC3B5108215CBDFE00313E2E /* MenuTableViewController.swift */,
-				ACE37FD02178276F00AE4958 /* LandingPageViewController.swift */,
-				AC7953412152172A00668DAB /* Main.storyboard */,
-				AC0718B621594B6C003061AC /* MovieShowtimeViewController.swift */,
-				AC79533F2152172A00668DAB /* InTheaterViewController.swift */,
-				AC3B510A215DDDCF00313E2E /* ThisWeekViewController.swift */,
-				AC3B5112215DFA4C00313E2E /* SoonViewController.swift */,
-				AC7953542153511400668DAB /* TheaterListViewController.swift */,
-				AC0718AC2159182E003061AC /* TheaterDetailViewController.swift */,
-				AC0718BE215A36A7003061AC /* CollectionViewController.swift */,
-				ACBD352B216359DC00C0A49C /* WebviewViewController.swift */,
-				AC9216102168CF44002133E2 /* InTheaterManager.swift */,
-				ACE1E5B721724600009B113E /* SoonManager.swift */,
-				ACE1E5B921726423009B113E /* ThisWeekManager.swift */,
-				ACE1E5BB21731BB0009B113E /* TheaterDetailManager.swift */,
-				AC0718BC2159B63B003061AC /* CinemaShowtimeTableViewCell.swift */,
-				AC0718AE21592ECA003061AC /* ShowtimeTableViewCell.swift */,
-				AC0718A82153C348003061AC /* TheaterTableViewCell.swift */,
-				AC0718C4215A6130003061AC /* SeenTableViewCell.swift */,
-				AC0718C5215A6130003061AC /* SeenTableViewCell.xib */,
-				AC0718C0215A4468003061AC /* CollectedTableViewCell.swift */,
-				AC0718C1215A4468003061AC /* CollectedTableViewCell.xib */,
-				AC79535621538B2700668DAB /* LocationCollectionViewCell.swift */,
-				AC79535721538B2700668DAB /* LocationCollectionViewCell.xib */,
-				AC0718B821594D8A003061AC /* DateCollectionViewCell.swift */,
-				AC0718B921594D8A003061AC /* DateCollectionViewCell.xib */,
-				AC79535021527E7300668DAB /* MovieInfoTableViewCell.swift */,
-				AC79535121527E7300668DAB /* MovieInfoTableViewCell.xib */,
-				AC3B510C215DE1F300313E2E /* ThisWeekInfoTableViewCell.swift */,
-				AC3B510D215DE1F400313E2E /* ThisWeekInfoTableViewCell.xib */,
-				AC3B5114215E010F00313E2E /* SoonInfoTableViewCell.swift */,
-				AC3B5115215E010F00313E2E /* SoonInfoTableViewCell.xib */,
-				AC7953462152173000668DAB /* LaunchScreen.storyboard */,
-				AC0718AA2154D944003061AC /* TheaterData.swift */,
-				ACE37FCE2175EAE400AE4958 /* GoogleService-Info.plist */,
-				AC7953492152173000668DAB /* Info.plist */,
+				AC48864A21957A550023C560 /* LottieAnimation */,
 			);
 			path = MovieBuff;
 			sourceTree = "<group>";
