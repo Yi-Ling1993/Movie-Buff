@@ -16,32 +16,6 @@ import Lottie
 
 class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource, YouTubePlayerDelegate {
     
-    var reachability = Reachability(hostName: "www.apple.com")
-    
-    func checkInternetFunction() -> Bool {
-        if reachability?.currentReachabilityStatus().rawValue == 0 {
-            print("no internet connected.")
-            return false
-        } else {
-            print("internet connected successfully.")
-            return true
-        }
-    }
-    
-    func downloadData() {
-        if checkInternetFunction() == false {
-            
-            internetLabel1.isHidden = false
-            internetLabel2.isHidden = false
-            
-        } else {
-            
-            internetLabel1.isHidden = true
-            internetLabel2.isHidden = true
-            
-        }
-    }
-    
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         
         soonVideoView.alpha = 1
@@ -107,7 +81,6 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     
     @IBOutlet weak var soonVideoView: YouTubePlayerView!
     
-//    @IBOutlet weak var coverView: UIView!
     let coverView = UIView()
     
     var refref: DatabaseReference!
@@ -137,13 +110,14 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ReachabilityChecking.showLabelOrNot(label: internetLabel1)
+        ReachabilityChecking.showLabelOrNot(label: internetLabel2)
+        
         let window = UIApplication.shared.keyWindow!
         coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         window.addSubview(coverView)
         coverView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         coverView.isHidden = true
-        
-        downloadData()
         
         let centerX = UIScreen.main.bounds.width / 2
         let centerＹ = UIScreen.main.bounds.height / 2 - 70
@@ -191,7 +165,7 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
             } catch {
                 print(error)
             }
-            self.downloadData()
+//            self.downloadData()
 
             self.animationView.isHidden = true
 
@@ -310,12 +284,9 @@ extension SoonViewController: UITableViewDelegate, UITableViewDataSource {
         
         // omdb data
         
-        ////////////// ????????
-        guard omdbData != nil else {
-            return UITableViewCell()
+        if let info = omdbDict[imdbId ?? "tt3896198"] {
+            soonInfoCell.updateOMDBInfoCell(info: info)
         }
-        
-        soonInfoCell.updateOMDBInfoCell(info: omdbDict[imdbId ?? "tt3896198"] ?? omdbData!)
         
         return soonInfoCell
     }

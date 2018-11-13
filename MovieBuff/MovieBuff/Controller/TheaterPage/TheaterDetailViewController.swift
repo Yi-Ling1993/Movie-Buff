@@ -22,32 +22,6 @@ protocol DataPassDelegate: AnyObject {
 
 class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource, YouTubePlayerDelegate {
     
-    var reachability = Reachability(hostName: "www.apple.com")
-    
-    func checkInternetFunction() -> Bool {
-        if reachability?.currentReachabilityStatus().rawValue == 0 {
-            print("no internet connected.")
-            return false
-        } else {
-            print("internet connected successfully.")
-            return true
-        }
-    }
-    
-    func downloadData() {
-        if checkInternetFunction() == false {
-            
-            internetLabel1.isHidden = false
-            internetLabel2.isHidden = false
-            
-        } else {
-            
-            internetLabel1.isHidden = true
-            internetLabel2.isHidden = true
-            
-        }
-    }
-    
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         theaterDetailVideoView.alpha = 1
         theaterDetailPagerView.isHidden = true
@@ -113,7 +87,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     @IBOutlet weak var animationView: UIView!
     @IBOutlet weak var internetLabel1: UILabel!
     @IBOutlet weak var internetLabel2: UILabel!
-//    @IBOutlet weak var coverView: UIView!
+
     let coverView = UIView()
 
     @IBAction func toWebview(_ sender: Any) {
@@ -191,13 +165,14 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ReachabilityChecking.showLabelOrNot(label: internetLabel1)
+        ReachabilityChecking.showLabelOrNot(label: internetLabel2)
+        
         let window = UIApplication.shared.keyWindow!
         coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         window.addSubview(coverView)
         coverView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         coverView.isHidden = true
-        
-        downloadData()
         
         let centerX = UIScreen.main.bounds.width / 2
         let centerＹ = UIScreen.main.bounds.height / 2 - 70
@@ -262,7 +237,7 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
             
             self.animationView.isHidden = true
             
-            self.downloadData()
+//            self.downloadData()
             
             self.showTimeTableView.reloadData()
 

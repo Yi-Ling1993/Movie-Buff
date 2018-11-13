@@ -20,32 +20,6 @@ import Lottie
 
 class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerViewDelegate, YouTubePlayerDelegate {
     
-    var reachability = Reachability(hostName: "www.apple.com")
-    
-    func checkInternetFunction() -> Bool {
-        if reachability?.currentReachabilityStatus().rawValue == 0 {
-            print("no internet connected.")
-            return false
-        } else {
-            print("internet connected successfully.")
-            return true
-        }
-    }
-    
-    func downloadData() {
-        if checkInternetFunction() == false {
-            
-            internetLabel1.isHidden = false
-            internetLabel2.isHidden = false
-            
-        } else {
-            
-            internetLabel1.isHidden = true
-            internetLabel2.isHidden = true
-            
-        }
-    }
-    
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         
         videoView.alpha = 1
@@ -151,13 +125,15 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ReachabilityChecking.showLabelOrNot(label: internetLabel1)
+        ReachabilityChecking.showLabelOrNot(label: internetLabel2)
+        
         let window = UIApplication.shared.keyWindow!
         coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         window.addSubview(coverView)
         coverView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         coverView.isHidden = true
         
-        downloadData()
         
         let centerX = UIScreen.main.bounds.width / 2
         let centerＹ = UIScreen.main.bounds.height / 2 - 70
@@ -209,8 +185,9 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
                 print(error)
             }
             
-            self.downloadData()
-            
+//            ReachabilityChecking.downloadData(label: self.internetLabel1)
+//            ReachabilityChecking.downloadData(label: self.internetLabel2)
+//
             self.animationView.isHidden = true
         }
     }
@@ -297,19 +274,6 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         infoTableView.reloadData()
     }
     
-    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
-        
-    }
-    
-    func pagerViewDidScroll(_ pagerView: FSPagerView) {
-        
-    }
-    
-//    func pagerView(_ pagerView: FSPagerView, shouldHighlightItemAt index: Int) -> Bool {
-//
-//        return false
-//    }
-
 }
 
 extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
@@ -339,7 +303,9 @@ extension InTheaterViewController: UITableViewDelegate, UITableViewDataSource {
     
         // omdb data
         
-        infoCell.updateOMDBInfoCell(info: omdbDict[imdbId ?? "tt3896198"]!) // 驚嘆號
+        if let info = omdbDict[imdbId ?? "tt3896198"] {
+            infoCell.updateOMDBInfoCell(info: info)
+        }
         
         infoCell.showtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
 
@@ -426,63 +392,5 @@ extension InTheaterViewController: InTheaterTrailerManagerDelegate {
     }
 }
 
-extension UIView {
-    
-    @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-            layer.masksToBounds = newValue > 0
-        }}
-    
-    @IBInspectable var borderWidth: CGFloat {
-        get {
-            return layer.borderWidth
-        }
-        set {
-            layer.borderWidth = newValue
-        }}
-    
-    @IBInspectable var borderColor: UIColor? {
-        get {
-            return UIColor(cgColor: layer.borderColor!)
-        }
-        set {
-            layer.borderColor = newValue?.cgColor
-        }
-    }
-    
-}
 
-extension UILabel {
-    
-    @IBInspectable
-    var letterSpace: CGFloat {
-        set {
-            let attributedString: NSMutableAttributedString!
-            if let currentAttrString = attributedText {
-                attributedString = NSMutableAttributedString(attributedString: currentAttrString)
-            } else {
-                attributedString = NSMutableAttributedString(string: text ?? "")
-                text = nil
-            }
-            
-            attributedString.addAttribute(NSAttributedString.Key.kern,
-                                          value: newValue,
-                                          range: NSRange(location: 0, length: attributedString.length))
-            
-            attributedText = attributedString
-        }
-        
-        get {
-            if let currentLetterSpace = attributedText?.attribute(NSAttributedString.Key.kern,
-                                                                  at: 0, effectiveRange: .none) as? CGFloat {
-                return currentLetterSpace
-            } else {
-                return 0
-            }
-        }
-    }
-}
+

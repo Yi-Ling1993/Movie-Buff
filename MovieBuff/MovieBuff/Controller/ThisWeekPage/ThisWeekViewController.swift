@@ -16,37 +16,6 @@ import Lottie
 
 class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerViewDataSource, YouTubePlayerDelegate {
     
-    var reachability = Reachability(hostName: "www.apple.com")
-    
-    func checkInternetFunction() -> Bool {
-        if reachability?.currentReachabilityStatus().rawValue == 0 {
-            print("no internet connected.")
-            return false
-        } else {
-            print("internet connected successfully.")
-            return true
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("yo")
-    }
-    
-    func downloadData() {
-        if checkInternetFunction() == false {
-            
-            internetLabel1.isHidden = false
-            internetLabel2.isHidden = false
-            
-        } else {
-            
-            internetLabel1.isHidden = true
-            internetLabel2.isHidden = true
-            
-        }
-    }
-    
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         thisWeekVideoView.alpha = 1
         thisWeekPagerView.isHidden = true
@@ -141,13 +110,14 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ReachabilityChecking.showLabelOrNot(label: internetLabel1)
+        ReachabilityChecking.showLabelOrNot(label: internetLabel2)
+        
         let window = UIApplication.shared.keyWindow!
         coverView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         window.addSubview(coverView)
         coverView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         coverView.isHidden = true
-        
-        downloadData()
         
         let centerX = UIScreen.main.bounds.width / 2
         let centerＹ = UIScreen.main.bounds.height / 2 - 70
@@ -195,7 +165,7 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
             } catch {
                 print(error)
             }
-            self.downloadData()
+//            self.downloadData()
             
             self.animationView.isHidden = true
 
@@ -307,7 +277,9 @@ extension ThisWeekViewController: UITableViewDelegate, UITableViewDataSource {
         
         // omdb data
         
-        thisWeekInfoCell.updateOMDBInfoCell(info: omdbDict[imdbId ?? "tt3896198"]!)
+        if let info = omdbDict[imdbId ?? "tt3896198"] {
+            thisWeekInfoCell.updateOMDBInfoCell(info: info)
+        }
         
         thisWeekInfoCell.toShowtimeButton.addTarget(self, action: #selector(toShowtime(sender:)), for: .touchUpInside)
         

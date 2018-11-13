@@ -21,6 +21,9 @@
 		AC0718C3215A4468003061AC /* CollectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0718C1215A4468003061AC /* CollectedTableViewCell.xib */; };
 		AC0718C6215A6131003061AC /* SeenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0718C4215A6130003061AC /* SeenTableViewCell.swift */; };
 		AC0718C7215A6131003061AC /* SeenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC0718C5215A6130003061AC /* SeenTableViewCell.xib */; };
+		AC3B4BAB219ABF15009231C7 /* ReachabilityChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B4BAA219ABF15009231C7 /* ReachabilityChecking.swift */; };
+		AC3B4BAF219AD5F3009231C7 /* Extension_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B4BAE219AD5F3009231C7 /* Extension_UIView.swift */; };
+		AC3B4BB1219AD632009231C7 /* Extension_UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B4BB0219AD632009231C7 /* Extension_UILabel.swift */; };
 		AC3B50E5215CA86000313E2E /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B50E4215CA86000313E2E /* AppStyle.swift */; };
 		AC3B5105215CBC9800313E2E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5104215CBC9800313E2E /* MenuItem.swift */; };
 		AC3B5107215CBD9000313E2E /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */; };
@@ -74,6 +77,9 @@
 		AC0718C1215A4468003061AC /* CollectedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectedTableViewCell.xib; sourceTree = "<group>"; };
 		AC0718C4215A6130003061AC /* SeenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeenTableViewCell.swift; sourceTree = "<group>"; };
 		AC0718C5215A6130003061AC /* SeenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeenTableViewCell.xib; sourceTree = "<group>"; };
+		AC3B4BAA219ABF15009231C7 /* ReachabilityChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityChecking.swift; sourceTree = "<group>"; };
+		AC3B4BAE219AD5F3009231C7 /* Extension_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UIView.swift; sourceTree = "<group>"; };
+		AC3B4BB0219AD632009231C7 /* Extension_UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension_UILabel.swift; sourceTree = "<group>"; };
 		AC3B50E4215CA86000313E2E /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		AC3B5104215CBC9800313E2E /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		AC3B5106215CBD9000313E2E /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -235,6 +241,26 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		AC3B4BAC219AC8AA009231C7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AC0718AA2154D944003061AC /* TheaterData.swift */,
+				AC9216122168D0AC002133E2 /* OMDBData.swift */,
+				AC9216142168EF67002133E2 /* TrailerData.swift */,
+				AC92160E21675E09002133E2 /* FirebaseData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AC3B4BAD219AD5B7009231C7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AC3B4BAE219AD5F3009231C7 /* Extension_UIView.swift */,
+				AC3B4BB0219AD632009231C7 /* Extension_UILabel.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		AC48864A21957A550023C560 /* LottieAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,12 +309,10 @@
 			isa = PBXGroup;
 			children = (
 				AC3B4BA92199F2BD009231C7 /* Manager */,
-				AC0718AA2154D944003061AC /* TheaterData.swift */,
-				AC9216122168D0AC002133E2 /* OMDBData.swift */,
-				AC9216142168EF67002133E2 /* TrailerData.swift */,
-				AC92160E21675E09002133E2 /* FirebaseData.swift */,
+				AC3B4BAC219AC8AA009231C7 /* Data */,
 				AC3B50E4215CA86000313E2E /* AppStyle.swift */,
 				AC3B5104215CBC9800313E2E /* MenuItem.swift */,
+				AC3B4BAA219ABF15009231C7 /* ReachabilityChecking.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +359,7 @@
 				AC48865021957CE60023C560 /* Controller */,
 				AC48864F21957C300023C560 /* Model */,
 				AC48864C21957AB00023C560 /* View */,
+				AC3B4BAD219AD5B7009231C7 /* Extension */,
 				AC48864E21957B900023C560 /* Storyboard */,
 				ACE37FC421758E2E00AE4958 /* Assets.xcassets */,
 				AC79533D2152172A00668DAB /* AppDelegate.swift */,
@@ -538,6 +563,7 @@
 				AC0718C6215A6131003061AC /* SeenTableViewCell.swift in Sources */,
 				AC3B5109215CBDFE00313E2E /* MenuTableViewController.swift in Sources */,
 				AC7953402152172A00668DAB /* InTheaterViewController.swift in Sources */,
+				AC3B4BB1219AD632009231C7 /* Extension_UILabel.swift in Sources */,
 				AC0718BA21594D8A003061AC /* DateCollectionViewCell.swift in Sources */,
 				ACE1E5B821724600009B113E /* SoonManager.swift in Sources */,
 				ACE37FD12178276F00AE4958 /* LandingPageViewController.swift in Sources */,
@@ -551,7 +577,9 @@
 				AC79535221527E7300668DAB /* MovieInfoTableViewCell.swift in Sources */,
 				AC3B5113215DFA4C00313E2E /* SoonViewController.swift in Sources */,
 				AC0718AF21592ECA003061AC /* ShowtimeTableViewCell.swift in Sources */,
+				AC3B4BAF219AD5F3009231C7 /* Extension_UIView.swift in Sources */,
 				AC9216152168EF67002133E2 /* TrailerData.swift in Sources */,
+				AC3B4BAB219ABF15009231C7 /* ReachabilityChecking.swift in Sources */,
 				AC79535821538B2700668DAB /* LocationCollectionViewCell.swift in Sources */,
 				AC0718BD2159B63B003061AC /* CinemaShowtimeTableViewCell.swift in Sources */,
 				AC3B50E5215CA86000313E2E /* AppStyle.swift in Sources */,
