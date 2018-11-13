@@ -92,7 +92,7 @@
                             <constraint firstAttribute="height" constant="16" id="uG6-PI-2Y6"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4E-Vr-AI6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4E-Vr-AI6">
                         <rect key="frame" x="89" y="92" width="21" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -144,14 +144,14 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2X5-MX-0zo">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="IMDb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2X5-MX-0zo">
                         <rect key="frame" x="23" y="92" width="38" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="mcO-sP-MkD">
-                        <rect key="frame" x="122" y="92.5" width="56.5" height="18.5"/>
+                        <rect key="frame" x="122" y="92.5" width="248" height="18.5"/>
                         <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -185,6 +185,7 @@
                     <constraint firstItem="XJm-UF-zpl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="dzp-fm-ucg"/>
                     <constraint firstItem="R4E-Vr-AI6" firstAttribute="top" secondItem="ZEv-ih-3Lt" secondAttribute="bottom" constant="9" id="eYq-9l-dxf"/>
                     <constraint firstItem="XJm-UF-zpl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailing" multiplier="0.96" id="eud-Md-7QH"/>
+                    <constraint firstAttribute="trailing" secondItem="mcO-sP-MkD" secondAttribute="trailing" constant="5" id="gj8-HH-RSq"/>
                     <constraint firstAttribute="trailing" secondItem="1rX-oG-naJ" secondAttribute="trailing" constant="20" id="i21-Jr-uLJ"/>
                     <constraint firstItem="hBS-9W-7HD" firstAttribute="centerY" secondItem="XJm-UF-zpl" secondAttribute="centerY" id="l6x-KQ-lkp"/>
                     <constraint firstItem="LGF-PK-b6A" firstAttribute="centerY" secondItem="cgJ-ep-Xxh" secondAttribute="centerY" id="mgQ-ee-exY"/>

@@ -152,8 +152,8 @@ extension TheaterListViewController: UITableViewDelegate, UITableViewDataSource 
                 return UITableViewCell()
         }
         
-        theaterCell.theaterName.text = filteredRegion[indexPath.row].name
-        theaterCell.addressLabel.text = filteredRegion[indexPath.row].address
+        theaterCell.updateTheaterCell(info: filteredRegion[indexPath.row])
+        
         theaterCell.navigationButton.tag = indexPath.row
         theaterCell.pinButton.tag = indexPath.row
         theaterCell.navigationButton.addTarget(self, action: #selector(navigate(sender:)), for: .touchUpInside)

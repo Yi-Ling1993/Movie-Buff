@@ -444,13 +444,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ZxX-SZ-00R">
-                                <rect key="frame" x="135" y="318.5" width="56.5" height="18.5"/>
+                                <rect key="frame" x="135" y="318.5" width="235" height="18.5"/>
                                 <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
                                 <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALq-tl-Aqk">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALq-tl-Aqk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-qe-vs2">
@@ -480,11 +481,9 @@
                             <constraint firstItem="t9r-t4-Zxw" firstAttribute="top" secondItem="4fQ-JW-nXt" secondAttribute="bottom" constant="-1" id="8ty-AB-5pY"/>
                             <constraint firstItem="51j-Lm-XlO" firstAttribute="top" secondItem="3gs-QJ-x7h" secondAttribute="bottom" constant="25" id="BBk-0y-Ef3"/>
                             <constraint firstItem="0Y4-Pk-T8Q" firstAttribute="top" secondItem="t9r-t4-Zxw" secondAttribute="bottom" constant="2.5" id="CPv-BN-Moh"/>
-                            <constraint firstItem="ALq-tl-Aqk" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" id="Cd2-wh-1t2"/>
                             <constraint firstItem="RqK-mU-3LP" firstAttribute="centerY" secondItem="51j-Lm-XlO" secondAttribute="centerY" id="DUi-vl-k5D"/>
                             <constraint firstItem="4fQ-JW-nXt" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" constant="20" id="Grs-Wa-sT1"/>
                             <constraint firstItem="Cxf-qe-vs2" firstAttribute="centerY" secondItem="4Cm-g8-6hh" secondAttribute="centerY" multiplier="1.2" id="JIO-PI-umj"/>
-                            <constraint firstItem="ALq-tl-Aqk" firstAttribute="top" secondItem="36G-6F-ulK" secondAttribute="top" id="OLV-mG-zGT"/>
                             <constraint firstItem="kVn-fd-v4j" firstAttribute="centerY" secondItem="Zoy-kA-C84" secondAttribute="centerY" id="PL3-H4-kKk"/>
                             <constraint firstItem="Rgr-Fj-NhM" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" id="QOR-gY-8gs"/>
                             <constraint firstItem="ils-38-17V" firstAttribute="top" secondItem="Cxf-qe-vs2" secondAttribute="bottom" constant="5" id="SuB-Y4-Fg0"/>
@@ -503,16 +502,15 @@
                             <constraint firstItem="Zoy-kA-C84" firstAttribute="top" secondItem="9fk-IB-s2q" secondAttribute="bottom" constant="10" id="kzm-3p-UIq"/>
                             <constraint firstItem="ZxX-SZ-00R" firstAttribute="bottom" secondItem="kVn-fd-v4j" secondAttribute="bottom" constant="1" id="ldc-3j-ZX5"/>
                             <constraint firstItem="snT-Pv-A69" firstAttribute="leading" secondItem="g4L-kx-HyH" secondAttribute="trailing" constant="2" id="lmp-OC-BQ8"/>
-                            <constraint firstItem="ALq-tl-Aqk" firstAttribute="bottom" secondItem="36G-6F-ulK" secondAttribute="bottom" id="ohN-Gf-TJv"/>
                             <constraint firstItem="51j-Lm-XlO" firstAttribute="trailing" secondItem="36G-6F-ulK" secondAttribute="trailing" multiplier="0.96" id="ozb-oz-W5z"/>
                             <constraint firstItem="FiZ-cc-Qk8" firstAttribute="top" secondItem="t9r-t4-Zxw" secondAttribute="bottom" constant="1.5" id="pPW-En-7kj"/>
                             <constraint firstItem="ils-38-17V" firstAttribute="centerX" secondItem="4Cm-g8-6hh" secondAttribute="centerX" id="pUE-P7-meI"/>
+                            <constraint firstItem="36G-6F-ulK" firstAttribute="trailing" secondItem="ZxX-SZ-00R" secondAttribute="trailing" constant="5" id="qSL-aJ-c4V"/>
                             <constraint firstItem="36G-6F-ulK" firstAttribute="trailing" secondItem="8S7-fJ-8Uv" secondAttribute="trailing" id="sAC-mC-rOx"/>
                             <constraint firstItem="3gs-QJ-x7h" firstAttribute="top" secondItem="36G-6F-ulK" secondAttribute="top" constant="10" id="tMf-gs-wxv"/>
                             <constraint firstItem="t9r-t4-Zxw" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" constant="23" id="ufE-Xk-g9t"/>
                             <constraint firstItem="9fk-IB-s2q" firstAttribute="top" secondItem="t9r-t4-Zxw" secondAttribute="bottom" constant="3" id="w1a-zL-GwC"/>
                             <constraint firstItem="snT-Pv-A69" firstAttribute="top" secondItem="FiZ-cc-Qk8" secondAttribute="top" id="wOI-jh-0Yg"/>
-                            <constraint firstItem="ALq-tl-Aqk" firstAttribute="leading" secondItem="36G-6F-ulK" secondAttribute="leading" id="xEA-gD-2bc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="36G-6F-ulK"/>
                     </view>
@@ -1355,7 +1353,7 @@
         <image name="right-arrow-2" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b58-C0-hoh"/>
-        <segue reference="Aeq-a4-5ZK"/>
+        <segue reference="GtV-Gt-zG4"/>
+        <segue reference="OqU-cN-mgX"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="505" id="wpg-Vd-Z9x" customClass="ThisWeekInfoTableViewCell" customModule="MovieBuff" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="505" id="wpg-Vd-Z9x" customClass="ThisWeekInfoTableViewCell" customModule="Taipei_Movies" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="505"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wpg-Vd-Z9x" id="UrY-X2-nLP">
@@ -92,7 +92,7 @@
                             <constraint firstAttribute="width" constant="16" id="vxZ-hp-C44"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu3-Ij-t4S">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="7.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu3-Ij-t4S">
                         <rect key="frame" x="89" y="258.5" width="21" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -144,14 +144,14 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jb-Ln-nip">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="IMDb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jb-Ln-nip">
                         <rect key="frame" x="23" y="258.5" width="38" height="18"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜劇 愛情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ssf-59-kYB">
-                        <rect key="frame" x="122" y="259" width="56.5" height="19"/>
+                        <rect key="frame" x="122" y="259" width="248" height="19"/>
                         <fontDescription key="fontDescription" name="PingFangTC-Semibold" family="PingFang TC" pointSize="13"/>
                         <color key="textColor" red="0.6588235294" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -185,6 +185,7 @@
                     <constraint firstItem="BEp-0e-Mqq" firstAttribute="leading" secondItem="iYE-g3-9Hj" secondAttribute="trailing" constant="3" id="SxV-i0-1HW"/>
                     <constraint firstItem="RXI-kW-5Jb" firstAttribute="leading" secondItem="22L-bD-beC" secondAttribute="trailing" constant="10" id="UPn-xw-s6a"/>
                     <constraint firstItem="Uu3-Ij-t4S" firstAttribute="top" secondItem="cBM-iW-63A" secondAttribute="bottom" constant="9" id="WpR-N5-Td2"/>
+                    <constraint firstAttribute="trailing" secondItem="ssf-59-kYB" secondAttribute="trailing" constant="5" id="a1y-Qj-Pe6"/>
                     <constraint firstItem="qaL-89-9eI" firstAttribute="top" secondItem="22L-bD-beC" secondAttribute="bottom" constant="2" id="a8I-0W-zuC"/>
                     <constraint firstItem="m7k-0O-up6" firstAttribute="leading" secondItem="3Jb-Ln-nip" secondAttribute="trailing" constant="5" id="akK-JX-gqx"/>
                     <constraint firstItem="ssf-59-kYB" firstAttribute="firstBaseline" secondItem="Uu3-Ij-t4S" secondAttribute="firstBaseline" id="esB-IR-axq"/>

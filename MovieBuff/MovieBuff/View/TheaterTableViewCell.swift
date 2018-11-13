@@ -33,5 +33,10 @@ class TheaterTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+    
+    func updateTheaterCell(info: TheaterInfo) {
+        theaterName.text = info.name
+        addressLabel.text = info.address
+    }
 
 }
