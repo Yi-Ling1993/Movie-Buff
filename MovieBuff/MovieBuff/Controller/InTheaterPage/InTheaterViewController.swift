@@ -259,6 +259,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         pagerIndex = index
 
         infoTableView.reloadData()
+        infoTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
 
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
@@ -272,6 +274,8 @@ class InTheaterViewController: UIViewController, FSPagerViewDataSource, FSPagerV
         pagerIndex = index
         
         infoTableView.reloadData()
+        infoTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
     
 }

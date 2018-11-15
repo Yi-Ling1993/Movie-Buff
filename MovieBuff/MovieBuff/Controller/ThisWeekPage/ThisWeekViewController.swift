@@ -232,6 +232,8 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         pagerIndex = index
         
         thisWeekInfoTableView.reloadData()
+        thisWeekInfoTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
     
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
@@ -245,6 +247,8 @@ class ThisWeekViewController: UIViewController, FSPagerViewDelegate, FSPagerView
         pagerIndex = index
         
         thisWeekInfoTableView.reloadData()
+        thisWeekInfoTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
 
     @objc func menu() {

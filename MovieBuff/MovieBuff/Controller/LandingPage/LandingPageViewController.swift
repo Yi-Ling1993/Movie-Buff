@@ -97,8 +97,13 @@ class LandingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setLandingAnimation()
+    }
+    
+    func setLandingAnimation() {
+        
         let animationView = LOTAnimationView(name: "empty_box")
-
+        
         let screenWidth = UIScreen.main.bounds.width
         let screenHeight = UIScreen.main.bounds.height
         

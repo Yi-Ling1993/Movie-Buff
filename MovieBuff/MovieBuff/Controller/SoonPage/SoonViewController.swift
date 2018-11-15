@@ -237,6 +237,8 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         pagerIndex = index
         
         soonInfoTableView.reloadData()
+        soonInfoTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
     
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
@@ -250,6 +252,8 @@ class SoonViewController: UIViewController, FSPagerViewDelegate, FSPagerViewData
         pagerIndex = index
         
         soonInfoTableView.reloadData()
+        soonInfoTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
 
     @objc func menu() {

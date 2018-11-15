@@ -288,7 +288,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         pagerIndex = index
         
         self.getFirebase()
-        
+        showTimeTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
     
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
@@ -302,7 +303,8 @@ class TheaterDetailViewController: UIViewController, FSPagerViewDelegate, FSPage
         pagerIndex = index
     
         self.getFirebase()
-    
+        showTimeTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
